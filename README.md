@@ -56,13 +56,13 @@ Nuestra elección se basó principalmente en la temática del marketplace y gene
 
 - [Home](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/Wireframe/Escritorio/Home/Home%20-%20Escritorio.png)
 - [Detalle del producto](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/Wireframe/Escritorio/Detalle%20de%20producto/Detalle%20del%20producto.jpg)
-- [Carrito de compras](https://)
-- [Formulario de registro](https://)
+- [Carrito de compras](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/Wireframe/Escritorio/Carrito/Carrito-desktop.PNG)
+- [Formulario de registro](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/Wireframe/Escritorio/Registro/registro-popup.PNG)
 - [Formulario de login](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/Wireframe/Escritorio/Login/Pop%20up%20Login%20-%20Desktop_Tablet.PNG)
 
 
 ## Logo, colores y fuentes
 
-- [Logo](https://i.pinimg.com/originals/ee/56/cb/ee56cb4b61c6f9c10ca4018825792568.jpg)
+- [Logo](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/design/Logos/logo.png)
 - Fuentes:
-    - [???]() 
+    - [Alfa Slab One](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/design/Fuente/AlfaSlabOne-Regular.ttf) 
