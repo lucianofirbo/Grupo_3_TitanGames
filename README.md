@@ -1,4 +1,4 @@
-# Grupo_3_TitanGames
+# TitanGames
 # SPRINT 1
 
 ## Integrantes
