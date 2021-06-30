@@ -63,6 +63,6 @@ Nuestra elección se basó principalmente en la temática del marketplace y gene
 
 ## Logo, colores y fuentes
 
-- [Logo](https://ar.pinterest.com/pin/611293349427158629)
+- [Logo](https://i.pinimg.com/originals/ee/56/cb/ee56cb4b61c6f9c10ca4018825792568.jpg)
 - Fuentes:
     - [???]() 
