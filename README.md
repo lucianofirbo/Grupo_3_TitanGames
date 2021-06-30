@@ -1,4 +1,5 @@
 # TitanGames
+![myimage-alt-tag](https://ibb.co/Vtdd2Xw)
 # SPRINT 1
 
 ## Integrantes
