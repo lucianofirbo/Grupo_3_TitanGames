@@ -1,4 +1,5 @@
 # TitanGames
+![](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/design/Logos/logo.png)
 # SPRINT 1
 
 ## Integrantes
@@ -19,7 +20,7 @@
 
 **Navarro, Evelyn Denise**
 - 22 años
-- Estudiante de programación web.
+- Estudiante de la tecnicatura en programación informática en la Univeridad Nacional de Quilmes y alumna en digital house realizando el curso de desarrollador web full-stack.
 
 ## Temática de web y audencia objetivo
 **TEMÁTICA**
