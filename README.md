@@ -5,7 +5,7 @@
 **Berrettoni, Pablo Gregorio**
 
 - 23 años
-- Estudiante de programación web.
+- Estudiante de Licenciatura en Sistemas, realizando curso de desarrollador web full-stack, con un dominio avanzado en ingles.
 
 **Firbo, Luciano**
 
