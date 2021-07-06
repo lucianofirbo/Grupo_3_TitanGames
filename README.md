@@ -6,7 +6,7 @@
 **Berrettoni, Pablo Gregorio**
 
 - 23 años
-- Estudiante de Licenciatura en Sistemas, realizando curso de desarrollador web full-stack, con un dominio avanzado en ingles.
+- Estudiante de Licenciatura en Sistemas en la Universidad Nacional General Sarmiento, realizando curso de desarrollado web full-stack en Digital House y cuento con un dominio avanzado en ingles.
 
 **Firbo, Luciano**
 
