@@ -11,7 +11,7 @@
 **Firbo, Luciano**
 
 - 29 años
-- Estudiante de programación web.
+- Estudiante de una tecnicatura en programación en la universidad de Lomas de Zamora y alumno en Digital House en el curso de desarrolo web full-stack.
 
 **Mungi, Maico Gabriel**
 
