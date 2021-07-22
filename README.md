@@ -1,16 +1,17 @@
 # TitanGames
+![](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/design/Logos/logo.png)
 # SPRINT 1
 
 ## Integrantes
 **Berrettoni, Pablo Gregorio**
 
 - 23 años
-- Estudiante de programación web.
+- Estudiante de Licenciatura en Sistemas en la Universidad Nacional de General Sarmiento, realizando curso de desarrollado web full-stack en Digital House y cuento con un dominio avanzado en ingles.
 
 **Firbo, Luciano**
 
 - 29 años
-- Estudiante de programación web.
+- Estudiante de una tecnicatura en programación en la universidad de Lomas de Zamora y alumno en Digital House en el curso de desarrolo web full-stack.
 
 **Mungi, Maico Gabriel**
 
@@ -19,7 +20,7 @@
 
 **Navarro, Evelyn Denise**
 - 22 años
-- Estudiante de programación web.
+- Estudiante de la tecnicatura en programación informática en la Univeridad Nacional de Quilmes y alumna en digital house realizando el curso de desarrollador web full-stack.
 
 ## Temática de web y audencia objetivo
 **TEMÁTICA**
