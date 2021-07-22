@@ -1,0 +1,23 @@
+{
+  "name": "Grupo_3_TitanGames",
+  "version": "1.0.0",
+  "description": "**Berrettoni, Pablo Gregorio**",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucianofirbo/Grupo_3_TitanGames.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lucianofirbo/Grupo_3_TitanGames/issues"
+  },
+  "homepage": "https://github.com/lucianofirbo/Grupo_3_TitanGames#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
