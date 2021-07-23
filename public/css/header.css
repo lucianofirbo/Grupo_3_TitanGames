@@ -1,0 +1,82 @@
+/* TopNav */
+
+i {
+    color: rgb(247, 240, 240);
+}
+
+.top-nav {
+    display: flex;
+    /*display: none;*/
+    align-items: center;
+    background-color: #1a1a1aec;
+    width: 100%;
+    height: 35px;
+    box-shadow: 2px 0.7698959708213806px 1.078827142715454px 2px #00000065;
+}
+
+.top-left {
+    display: flex;
+    justify-content: center;
+    flex-grow: 0.25;
+}
+
+.top-right {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 7%;
+    gap: 50px;
+    flex-grow: 0.75;
+}
+
+/* Hamburguer */
+
+.hamburguer {
+    display: none;
+    /*display: flex;*/
+    flex-direction: column;
+    width: 55vw;
+    height: 100vh;
+    background-color: #1A1A1A;
+    color: whitesmoke;
+}
+
+.hamburguer i {
+    margin-top: 2.6%;
+}
+
+.hamburguer hr {
+    margin-top: 0;
+    color: rgb(0, 0, 0);
+}
+
+.username,
+.store,
+.about {
+    width: 100%;
+    display: flex;
+    font-size: 20px;
+    flex-direction: row;
+    gap: 5px;
+    margin-top: 15px;
+    margin-left: 5px;
+}
+
+.username {
+    flex-grow: 0.2;
+}
+
+.store {
+    flex-grow: 0.2;
+}
+
+.about {
+    flex-grow: 0.2;
+}
+
+.hamburguer-logo {
+    align-self: center;
+    justify-self: flex-end;
+    width: 40%;
+    margin-top: 50%;
+}
+
