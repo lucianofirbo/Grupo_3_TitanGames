@@ -5,6 +5,7 @@ i {
 }
 
 .top-nav {
+    position: absolute;
     display: flex;
     /*display: none;*/
     align-items: center;
@@ -16,7 +17,8 @@ i {
 
 .top-left {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    margin-left: 7%;
     flex-grow: 0.25;
 }
 
@@ -79,4 +81,3 @@ i {
     width: 40%;
     margin-top: 50%;
 }
-
