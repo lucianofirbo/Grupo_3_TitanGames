@@ -8,6 +8,7 @@ i {
     position: fixed;
 	top: 0;
     display: flex;
+    z-index: 2;
     /*display: none;*/
     align-items: center;
     background-color: rgba(0, 0, 0, 0.7);

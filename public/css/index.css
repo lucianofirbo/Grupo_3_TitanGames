@@ -17,7 +17,6 @@ body {
 /* Image from the event */
 
 .img-evento img {
-    height: 20vh;
     width: 100%;
     margin-top: 35px;
 }
@@ -25,7 +24,7 @@ body {
 /* Section separator */
 
 .separator h4 {
-    font-weight: 400;
+    font-weight: 1000;
     color: whitesmoke;
     margin: 5px 0px 0px 5px;
 }
@@ -33,7 +32,7 @@ body {
 .separator hr {
     margin-top: 0;
     color: whitesmoke;
-    height: 2px;
+    height: 3px;
 }
 
 /* Special Offers */
@@ -54,6 +53,81 @@ body {
     width: 45%;
 }
 
+.see-more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #8EBD00;
+    text-align: center;
+    padding: 5px 35px;
+    border-radius: 5px;
+    color: white;
+    font-weight: 600;
+}
+
 .special-offer-game img {
     width: 100%;
+}
+
+/* Discover */
+
+.categories {
+    display: flex;
+    text-align: center;
+    font-size: 15px;
+    gap: 5px;
+    color: whitesmoke;
+    font-weight: 600;
+    padding: 5px 5px 0px 5px;
+}
+
+.categories p {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.active {
+    background-color: gray;
+    padding-bottom: 10px;
+    margin-bottom: 0;
+}
+
+.games {
+    display: flex;
+    flex-direction: column;
+    background-color: gray;
+    margin-top: 0;
+    width: 100%;
+    color: whitesmoke;
+    font-weight: 600;
+}
+
+.games img {
+    width: 40%;
+    height: 100%;
+}
+
+.game {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 5%;
+}
+
+.game-text h4 {
+    display: flex;
+    padding: 0;
+    flex-direction: row;
+}
+
+.price {
+    display: flex;
+    padding: 30px 0 0 90px;
+    align-self: flex-end;
+    gap: 5px;
+}
+
+.sale-box {
+    background-color: hotpink;
 }
