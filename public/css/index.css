@@ -19,6 +19,7 @@ body {
 .img-evento img {
     width: 100%;
     margin-top: 35px;
+    box-shadow: 2px 0.7698959708213806px 1.078827142715454px 2px #00000065;
 }
 
 /* Section separator */
@@ -51,6 +52,7 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
     width: 45%;
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.548);
 }
 
 .see-more {
@@ -67,6 +69,7 @@ body {
 
 .special-offer-game img {
     width: 100%;
+    box-shadow: 2px 0.7698959708213806px 1.078827142715454px 2px #00000065;
 }
 
 /* Discover */
@@ -88,7 +91,6 @@ body {
 
 .active {
     background-color: gray;
-    padding-bottom: 10px;
     margin-bottom: 0;
 }
 
@@ -100,6 +102,7 @@ body {
     width: 100%;
     color: whitesmoke;
     font-weight: 600;
+    margin-bottom: 5%;
 }
 
 .games img {
