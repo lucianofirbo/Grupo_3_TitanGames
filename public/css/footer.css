@@ -34,7 +34,6 @@ footer .container-footer {
 
 .container-footer .logo {
     margin: 15px;
-    /* margin-left: 50px; */
 }
 
 .container-footer .logo img {   
@@ -46,16 +45,21 @@ footer .container-footer {
  
 .social {   
     display: flex;
+    justify-content: center;
+}
+
+.box-footer-social {
+    flex-grow: 0.3;
 }
 
 .box-footer-social a{
+    flex-grow: 0.5;
     display: flex;
     color: black;
     font-size: 25px;
-    /* height: 40px; */
     width: 40px;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 } 
 
 .social a:hover {
