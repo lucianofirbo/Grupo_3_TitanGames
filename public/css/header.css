@@ -5,11 +5,12 @@ i {
 }
 
 .top-nav {
-    position: absolute;
+    position: fixed;
+	top: 0;
     display: flex;
     /*display: none;*/
     align-items: center;
-    background-color: #1a1a1aec;
+    background-color: rgba(0, 0, 0, 0.7);
     width: 100%;
     height: 35px;
     box-shadow: 2px 0.7698959708213806px 1.078827142715454px 2px #00000065;
@@ -38,7 +39,7 @@ i {
     flex-direction: column;
     width: 55vw;
     height: 100vh;
-    background-color: #1A1A1A;
+    background-color: rgba(0, 0, 0, 0.7);
     color: whitesmoke;
 }
 

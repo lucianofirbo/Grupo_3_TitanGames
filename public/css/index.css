@@ -10,8 +10,8 @@
 body {
     background: linear-gradient(179.96deg, #1E16FF 2.64%, #4F00FF 51.79%, #8F00FF 99.92%);
     background-size: cover;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
 }
 
 /* Image from the event */
@@ -42,19 +42,18 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    padding: 30px;
+    padding: 0 10px 10px 10px;
+    width: 100vw;
+    gap: 15px;
 }
 
 .special-offer-game {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
     width: 45%;
-    margin-bottom: 30px;
-    transition: all 0.5s ease-in-out;
 }
 
 .special-offer-game img {
-    height: 50px;
+    width: 100%;
 }
