@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
 @import url('header.css');
+@import url('footer.css');
 
 * {
     box-sizing: border-box;
@@ -18,8 +19,16 @@ body {
 
 .img-evento img {
     width: 100%;
-    margin-top: 35px;
+    margin-top: 36px;
+    margin-bottom: 5px;
+    min-height: 22vh;
     box-shadow: 2px 0.7698959708213806px 1.078827142715454px 2px #00000065;
+}
+
+/* Carousel */
+
+.carousel {
+    margin-bottom: 10px;
 }
 
 /* Section separator */
@@ -90,24 +99,26 @@ body {
 }
 
 .active {
-    background-color: gray;
+    background-color: rgba(128, 128, 128, 0.6);
     margin-bottom: 0;
 }
 
 .games {
     display: flex;
     flex-direction: column;
-    background-color: gray;
+    background-color: rgba(128, 128, 128, 0.6);
     margin-top: 0;
     width: 100%;
     color: whitesmoke;
     font-weight: 600;
     margin-bottom: 5%;
+    justify-content: space-around;
 }
 
 .games img {
     width: 40%;
     height: 100%;
+    max-height: 105px;
 }
 
 .game {
@@ -133,4 +144,8 @@ body {
 
 .sale-box {
     background-color: hotpink;
+}
+
+.top-left:hover > .hamburguer {
+    display: flex;
 }

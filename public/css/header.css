@@ -35,12 +35,15 @@ i {
 /* Hamburguer */
 
 .hamburguer {
-    display: none;
+    position: fixed;
+    top: 0;
+    z-index: 3;
     /*display: flex;*/
+    display: none;
     flex-direction: column;
     width: 55vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.7);
+    height: 100%;
+    background-color: gray;
     color: whitesmoke;
 }
 
@@ -65,21 +68,13 @@ i {
     margin-left: 5px;
 }
 
-.username {
-    flex-grow: 0.2;
-}
-
-.store {
-    flex-grow: 0.2;
-}
-
-.about {
-    flex-grow: 0.2;
+.hamburguer-logo img {
+    width: 40%;
 }
 
 .hamburguer-logo {
-    align-self: center;
-    justify-self: flex-end;
-    width: 40%;
-    margin-top: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100%;
 }
