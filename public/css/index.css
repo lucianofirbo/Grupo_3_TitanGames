@@ -15,8 +15,9 @@
 
 /* Carousel */
 
-.carousel {
-    margin-bottom: 10px;
+.slide img {
+    height: 25vh;    
+    margin-bottom: 5px;
 }
 
 /* Section separator */
@@ -106,12 +107,12 @@
     gap: 5px;
     color: whitesmoke;
     font-weight: 600;
-    padding: 5px 5px 0px 5px;
+    padding: 5px 5px 0px 0px;
+    width: 97.4%;
 }
 
 .categories p {
     padding-right: 5px;
-    padding-left: 5px;
 }
 
 .active {
@@ -122,7 +123,7 @@
 .games {
     display: flex;
     flex-direction: column;
-    background-color: #807c7c36;
+    background-color: rgba(0, 0, 0, 0);
     margin-top: 0;
     width: 100%;
     color: whitesmoke;
@@ -140,10 +141,11 @@
 }
 
 .game {
+    background-color: #807c7c36;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 5px 0;
+    padding: 5px;
     gap: 5%;
     justify-content: space-between;
 }
@@ -173,4 +175,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.see-more-d button {
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    background-color: #8EBD00;
+    text-align: center;
+    padding: 5px 35px;
+    border-radius: 5px;
+    color: white;
+    font-weight: 600;
 }
