@@ -54,11 +54,12 @@ footer .container-footer {
     width: 40px;
     align-items: center;
     justify-content: center;
+    transition: all 0.3s ease-in-out;
 } 
 
 .social a:hover {
     transform: scale(1.2);
-    transition: all 0.3s ease-in-out;
+    
     transform: scale(0.9);
 }
 
