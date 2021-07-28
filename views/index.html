@@ -11,14 +11,18 @@
 </head>
 <body>
 
+    <div class="bolita1"></div>
+    <div class="bolita2"></div>
+    <div class="bolita3"></div>
+
     <nav>
-        
+
         <div class="top-nav">
 
             <div class="top-left">
 
                 <div class="hamburguer-icon">
-                    <i class="fas fa-bars"></i>
+                    <i class="fas fa-bars" id="hamburguer-icon"></i>
                 </div>
                 
                 <div class="nav-logo">
@@ -38,7 +42,7 @@
 
         </div>
 
-        <div class="hamburguer">
+        <div class="hamburguer" id="hamburguer">
 
             <div class="username">
                 <i class="fas fa-user-circle"></i><h3>Username</h3>
@@ -61,7 +65,7 @@
 
     </nav>
 
-    <main>
+    <main id="main">
 
         <div class="img-evento">
             <img src="img/event.png" alt="Image of current event">
@@ -158,9 +162,9 @@
             <div class="games">
 
                 <div class="categories">
-                    <p class="active">Descubrir juegos</p>
-                    <p>Lo mas vendido</p>
-                    <p>Lo nuevo</p>
+                    <p id="active">Descubrir juegos</p>
+                    <p id="active2">Lo mas vendido</p>
+                    <p id="active3">Lo nuevo</p>
                 </div>
 
                 <div class="game">
@@ -226,7 +230,7 @@
 
     </main>
 
-    <!-- <footer>
+   <!--<footer>
         <div class="container-footer">
             <div class="logo">
                 <img src="/design/Logos/logo.png" alt="logo">
@@ -257,5 +261,7 @@
         </div>
     </footer> !-->
     
+
+    <script src="js/index.js"></script>
 </body>
 </html>

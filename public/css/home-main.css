@@ -110,8 +110,17 @@
     padding-right: 5px;
 }
 
-.active {
+#active {    
     background-color: #807c7c36;
+    margin-bottom: 0;
+}
+
+#active2 {
+    background-color: rgba(0, 0, 0, 0);
+    margin-bottom: 0;
+}
+#active3 {
+    background-color: rgba(0, 0, 0, 0);
     margin-bottom: 0;
 }
 

@@ -2,13 +2,6 @@
     --greenTitan: #8EBD00;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-}
-
 footer {
     background-color: rgba(0, 0, 0, 0.7);
     font-family: 'Poppins';
