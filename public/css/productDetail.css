@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('background.css');
+@import url('header.css');
+@import url('footer.css');
+
+:root {
+  --greenTitan : #8EBD00;
+  --pinkTitan: #D94969;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.row {  
+  display: flex;
+/*   flex-direction: column; */
+  flex-wrap: wrap;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+
+/* MAIN  */
+
+main {
+  font-family: 'Poppins';
+  display: block;
+  margin: 10px;
+  width: 100%;
+}
+
+h2 {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+/*   text-shadow: 1px 2px px rgb(255, 255, 255); */
+  color: white;
+}
+
+.main {
+  flex: 70%;
+  margin-top: 40px;
+  padding: 20px;
+  width: 100%;
+}
+
+/*  PORTADA IMG  */
+
+.img-product img{
+  width: 100%;
+  box-shadow: 5px 5px 5px #0000008f;
+}
+
+/*  IMG INDIVIDUALES-SLIDER  */
+
+div.img-ind-group img{
+  height: 70px ;
+  transition: all 0.5s ease-in-out;
+}
+
+div.img-ind-group img:hover {
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+
+.img-container-group {
+  display: flex;
+  width: 100%;
+  margin-top: 30px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+div .img-container-group {
+  align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+div .buy {
+  display: flex;
+  justify-content: space-between;
+}
+
+.box-for-buy {
+  padding: 10px;
+}
+
+/* .img-ind-group {
+  height: 100px;
+  width: 100px;
+  margin-right: 10px;
+} */
+
+/*  COMPRAR-PRECIO  */
+
+.buy{
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.desc p{
+  background-color: var(--pinkTitan);
+  color: rgb(250, 250, 250);
+  width: 100%;
+}
+
+.price {
+    color: rgb(223, 215, 215);
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding-left: 10px;
+}
+
+.button-container {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  padding-right: 20px;
+  position: relative;
+  margin: 1rem ;
+  width: 100%;
+}
+
+.btn-submit {
+  text-align:start;
+  padding-left: 15px;
+  color: rgb(255, 255, 255);
+  font-weight: normal;
+}
+
+/*  BOTÓN añadir al carrito  */
+
+.btn {
+  background: linear-gradient(-180deg,#a8c906,#516b01 91%);
+  border-radius: 0.3rem;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 25%);
+  border-bottom-color: #69941b;
+  border-left-color: #7fa721;
+  border-right-color: #7fa721;
+  cursor: pointer;
+  font-weight: bold;
+  height: 2.3rem;
+  margin-bottom: 1rem;
+  transition: all 1s ease;
+  width: 10rem;
+  display: block;
+}
+
+.btn:hover{
+  box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.7); 
+  background-color: var(--greenTitan);
+  background: linear-gradient(180deg,#516b01,#a8c906 91%);
+
+}
+
+ .fa-cart-plus{
+  position: relative;
+  top: 25px;
+  right: 15px;
+}
+
+/*  DESCRIPCIÓN DEL JUEGO-IMAGÉN  */
+.description-game-aside {
+  width: 70%;
+}
+.description-game-aside .game-aside-img img{
+  width: 100%;
+  display: flex;
+
+}
+
+/*  ESPECIFICACIONES  */
+aside {
+  /* display: column; */
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  background-color: rgba(0, 0, 0, 0.253);
+  
+}
+aside h4 {
+  color: rgb(164, 172, 172);
+}
+
+hr {
+  background-color: rgb(164, 172, 172);
+  border: none;
+  height: 1px;
+}
+
+.container-requeriments {
+  margin: 15px;
+  color: white;
+  display: grid;
+  justify-items: center;
+}
+
+ul {
+  margin-left: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+ul li {
+  margin: 15px;
+}
+.description-game-aside p{
+  margin-bottom: 20px;
+}
+  @media screen and (min-width:320px){
+    .row {  
+          flex-direction: column;
+    }
+    
+}
+  @media screen and (min-width:760px){
+      main, aside {
+        display: flex;
+        width: 50%;
+      }
+      aside {
+        /* display: column; */
+        margin-top: 50px;
+        flex-wrap: nowrap;
+        width: 100%;
+      }
+      
+      .game-aside-img img {
+        margin-bottom: 10px;
+      }
+}

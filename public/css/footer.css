@@ -13,7 +13,6 @@
 
 footer {
     background-color: rgba(0, 0, 0, 0.7);
-    font-family: 'Poppins';
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
 }
 
@@ -31,7 +30,7 @@ footer .container-footer {
 }
 
 .container-footer .logo img {   
-    width: 160px;
+
     display: flex;
 }
 
@@ -59,7 +58,6 @@ footer .container-footer {
 
 .social a:hover {
     transform: scale(1.2);
-    
     transform: scale(0.9);
 }
 
