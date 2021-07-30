@@ -1,5 +1,5 @@
 # TitanGames
-![](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/design/Logos/logo.png)
+![](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/design/Logos/logo-white.png)
 # SPRINT 1
 
 ## Integrantes
@@ -67,3 +67,8 @@ Nuestra elección se basó principalmente en la temática del marketplace y gene
 - [Logo](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/design/Logos/logo.png)
 - Fuentes:
     - [Alfa Slab One](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/design/Fuente/AlfaSlabOne-Regular.ttf) 
+    - [Poppins](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/design/Fuente/Poppins-Light.ttf) 
+
+# SPRINT 2
+### [TABLERO - Trello](https://trello.com/b/z7Q4GyE1/grupo-3-uwu-c8)
+
