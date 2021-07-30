@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,400,500,600,700,800,900&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 15px;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    background: #161623;
+    height: 100%;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#f00,#f0f);
+    clip-path: circle(30% at right 70%);
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#2196f3,#e91e63);
+    clip-path: circle(20% at 10% 10%);
+}
+
+.form_container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+form {
+    width: 100%;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    bottom: 5px;
+}
+
+.input-container {
+    width: 100%;
+}
+
+.form_container .card {
+    display: flex;
+    width: 340px;
+    height: 480px;
+    margin: 10px ;
+    box-shadow: 20px 20px 20px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+}
+
+
+
+.form_container .card .content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 150px;
+    max-height: 130px;
+    margin-top: 15px;
+}
+
+.form_container .card .content .form {
+    font-size: 8em;
+    padding: 0 10px;
+}
+
+.input-container,
+.input-style {
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 3px;
+    margin-top: 7px;
+    height: 9vh;
+    outline: none;
+}
+
+.input-style {
+    border: 1px solid black;
+    padding-left: 15px;
+}
+
+.error-message {
+    display: none;
+}
+
+.check {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    margin-bottom: 6px;
+}
+
+.recordar {
+    display: flex;
+    align-items: center;
+    height: 5vh;
+    color: white;
+}
+
+span.error-message {
+    color:red;
+    font-size: 0.8rem;
+    margin: 5px auto 0;
+}
+
+.submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    color:black;
+    border-radius: 20px;
+    text-decoration: none;
+    border: 1px solid black;
+    height: 8vh;
+    width: 120px;
+    cursor: pointer;
+    outline: none;
+}
+
+
+a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+} 
+
+@media (min-width:481px) {
+    .form_container .card {
+        width: 90vw;
+    }
+
+    div.input-container {
+        width: 300px;
+    }
+}
+
+@media (min-width:769px) {
+    .form_container .card {
+        max-width: 360px;
+        height: 85vh;
+    }
+
+    div.input-container {
+        width: 300px;
+    }
+}
+
+@media (min-width:1280px) {
+    .form_container .card {
+        max-width: 400px;
+        height: 50vh;
+        box-shadow: 15px 15px 15px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    div.input-container {
+        width: 350px;
+        height: 5vh;
+        margin-bottom: 10px;
+    }
+
+    .submit {
+        height: 5vh;
+        
+    }
+}
