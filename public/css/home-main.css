@@ -1,4 +1,5 @@
 /* Transitions */ 
+/* Open to right */
 
 .slide-right {
 	-webkit-animation: slide-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
@@ -24,6 +25,16 @@
         -webkit-transform: translateX(0%);
                 transform: translateX(0%);
       }
+}
+
+/* Grow item */
+
+.special-offer-game:hover {    
+    -moz-transform: scale(1.1);
+-webkit-transform: scale(1.1);
+-o-transform: scale(1.1);
+-ms-transform: scale(1.1);
+transform: scale(1.1);
 }
 
 /* Image from the event */
@@ -83,6 +94,7 @@
     width: 45%;
     box-shadow: 2px 2px rgba(0, 0, 0, 0.548);
     position: relative;
+    transition: all .2s ease-in-out;
 }
 
 .see-more {
@@ -95,6 +107,7 @@
     border-radius: 5px;
     color: white;
     font-weight: 600;
+    border: none;
 }
 
 .special-offer-game img {

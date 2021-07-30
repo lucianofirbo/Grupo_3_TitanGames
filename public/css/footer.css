@@ -13,6 +13,7 @@
 
 .copy p {
     margin-bottom: 0;
+    color: white;
 }
 
 footer {
@@ -36,6 +37,7 @@ footer .container-footer {
 
 .container-footer .logo img {   
     display: flex;
+    width: 100%;
 }
 
 /* Redes Sociales */
