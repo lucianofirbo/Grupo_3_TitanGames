@@ -11,9 +11,14 @@
     text-decoration: none;
 }
 
+.copy p {
+    margin-bottom: 0;
+}
+
 footer {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.7);;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    margin-bottom: 0;
 }
 
 footer .container-footer {
