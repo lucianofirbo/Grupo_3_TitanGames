@@ -49,13 +49,13 @@ i {
 .hamburguer {
     position: fixed;
     top: 0;
-    z-index: 3;
-    /*display: flex;*/
+    z-index: 16;
+    display: flex;
     display: none;
     flex-direction: column;
-    width: 55vw;
+    width: 70vw;
     height: 100%;
-    background-color: gray;
+    background-color: #1A1A1A;
     color: whitesmoke;
 }
 
@@ -71,6 +71,7 @@ i {
 .username,
 .store,
 .about {
+    padding: 3%;
     width: 100%;
     display: flex;
     font-size: 20px;
@@ -81,7 +82,8 @@ i {
 }
 
 .hamburguer-logo img {
-    width: 40%;
+    width: 30%;
+    margin: 20%;
 }
 
 .hamburguer-logo {
