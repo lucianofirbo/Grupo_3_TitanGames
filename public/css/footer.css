@@ -79,3 +79,9 @@ i.fa-shield-alt{
 .box-info li:hover {
     transform: scale(1.1);
 }
+
+@media screen and (min-width:769px){
+    .box-footer-social i{
+        font-size: 30px;
+    }
+}
