@@ -264,7 +264,7 @@ transform: scale(1.1);
 
 /* Media Querys */ 
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 480px) {
     
     .img-evento img {
         max-height: 30vh;
@@ -289,6 +289,10 @@ transform: scale(1.1);
 
     .games p {
         font-size: 1.3rem;
+    }
+
+    .games {
+        height: 600px;
     }
 
 }
