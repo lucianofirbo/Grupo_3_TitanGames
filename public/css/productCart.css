@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('background.css');
+@import url('header.css');
+@import url('footer.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+section {
+    margin: 10px;
+}
+section h3 {
+    text-transform: uppercase;
+}
+.detail-cart {
+    background-color: rgba(0, 0, 0, 0.315);
+    display: column;
+    justify-content: center;
+    margin: 10px;
+    padding: 10px;
+}
+
+.game-cart {
+    background-color: rgba(0, 0, 0, 0.26);
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+}
+
+.game-cart img {
+    width: 40%;
+    height: auto;
+    margin-top: 10px;
+    margin-left: 10px;
+    transition: all 0.4s ease;
+}
+
+.game-cart img:hover {
+    transform: scale(1.1);
+}
+
+#remove {
+    position: absolute;
+    top: 50px;
+    left: 260px;
+    font-size: 0.7rem;
+    cursor: pointer;
+    color: var(--greenTitan);
+}
+
+#remove:hover {
+    color: red;
+}
+
+.confirm-cart {
+    margin: 10px;
+    background-color: rgba(0, 0, 0, 0.315);
+    padding: 10px 0;
+}
+
+.total-cart {
+    margin: 10px;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+}
+
+#remove-all {
+    position: absolute;
+    font-size: 0.7rem;
+    left: 220px;
+    top: 20px;
+    cursor: pointer;
+    font-weight: normal;
+}
+
+#remove-all:hover {
+    color: red;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
+.btn-submit {
+    padding: 10px 20px;
+    border: 1px solid #96bd27;
+    border-radius: 5px;
+    border-bottom-color: #69941b;
+    border-left-color: #7fa721;
+    border-right-color: #7fa721;
+    color: #fff;
+    font-weight: bold;
+    text-align: right;
+    background-image: linear-gradient(-180deg,#9fbf00,#80ab00 91%);
+}
+
+.btn-submit:hover {
+    background: linear-gradient(180deg,#a7c900,#88b500);
+  }

@@ -4,238 +4,338 @@
 @import url('footer.css');
 
 :root {
-  --greenTitan : #8EBD00;
   --pinkTitan: #D94969;
 }
-
-* {
+body {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
-
-.row {  
-  display: flex;
-/*   flex-direction: column; */
-  flex-wrap: wrap;
-  width: 100%;
-  position: relative;
-  z-index: 1;
-}
-
-
-/* MAIN  */
-
-main {
-  font-family: 'Poppins';
-  display: block;
-  margin: 10px;
-  width: 100%;
-}
-
-h2 {
-  text-transform: uppercase;
-  letter-spacing: 3px;
-/*   text-shadow: 1px 2px px rgb(255, 255, 255); */
+* {
   color: white;
 }
-
-.main {
-  flex: 70%;
-  margin-top: 40px;
-  padding: 20px;
-  width: 100%;
+main {
+  margin-top: 50px;
+  margin-left: 10px;
 }
 
-/*  PORTADA IMG  */
-
-.img-product img{
-  width: 100%;
-  box-shadow: 5px 5px 5px #0000008f;
+/*    */
+.title-product h3 {
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
 }
-
-/*  IMG INDIVIDUALES-SLIDER  */
-
-div.img-ind-group img{
-  height: 70px ;
-  transition: all 0.5s ease-in-out;
-}
-
-div.img-ind-group img:hover {
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  transform: scale(1.05);
-}
-
-.img-container-group {
-  display: flex;
-  width: 100%;
-  margin-top: 30px;
-  justify-content: space-between;
-  align-items: center;
-}
-
-div .img-container-group {
-  align-items: center;
-  display: flex;
-  flex-wrap: nowrap;
-  margin-bottom: 10px;
-  width: 100%;
-}
-
-div .buy {
-  display: flex;
-  justify-content: space-between;
-}
-
-.box-for-buy {
-  padding: 10px;
-}
-
-/* .img-ind-group {
-  height: 100px;
-  width: 100px;
+.media {
   margin-right: 10px;
-} */
-
-/*  COMPRAR-PRECIO  */
-
-.buy{
-  align-items: center;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
+  justify-content: center;
+  align-items: center;
+  
 }
-
-.desc p{
+.media iframe {
+  width: 100%;
+  height: 300px;
+}
+.buy-product {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+#offer {
   background-color: var(--pinkTitan);
-  color: rgb(250, 250, 250);
-  width: 100%;
+  line-height: 30px;
+  width: 50px;
+  height: 35px;
+  text-align: center;
+  border-radius: 4px;
+}
+.buy-product p {
+  font-weight: bold;
+  font-size: 20px;
 }
 
-.price {
-    color: rgb(223, 215, 215);
-  font-weight: bold;
-  font-size: 1.5rem;
+/*--  -- SLIDER --  --*/
+.mySlides img {
+  vertical-align: middle;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+  transition:0.4s ease;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+ 	color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
   padding-left: 10px;
 }
 
-.button-container {
-  align-items: flex-end;
+/* Add a transparency effect for thumnbail images */
+
+.demo {
+  opacity: 0.6;
+  transition: all 0.5s ease-in-out;
+}
+.active,
+.demo:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.row {
   display: flex;
+  justify-content: space-between;
+}
+
+
+/*botón >comprar*/
+.button-container {
+  display: flex;
+  width: 50%;
+  flex-wrap: wrap;
+  align-items: flex-end;
   flex-direction: column;
-  padding-right: 20px;
-  position: relative;
-  margin: 1rem ;
-  width: 100%;
 }
-
-.btn-submit {
-  text-align:start;
-  padding-left: 15px;
-  color: rgb(255, 255, 255);
-  font-weight: normal;
-}
-
-/*  BOTÓN añadir al carrito  */
-
-.btn {
-  background: linear-gradient(-180deg,#a8c906,#516b01 91%);
-  border-radius: 0.3rem;
+.button-container .btn-submit {
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 25%);
+  padding: 15px;
+}
+.btn-submit {
+  border: 1px solid #96bd27;
+  border-radius: 5px;
   border-bottom-color: #69941b;
   border-left-color: #7fa721;
   border-right-color: #7fa721;
-  cursor: pointer;
+  color: #fff;
   font-weight: bold;
-  height: 2.3rem;
-  margin-bottom: 1rem;
-  transition: all 1s ease;
-  width: 10rem;
+  text-align: right;
+  background-image: linear-gradient(-180deg,#9fbf00,#80ab00 91%);
+}
+.btn-submit:hover {
+  background: linear-gradient(180deg,#a7c900,#88b500);
+}
+.button.btn.btn-submit {
   display: block;
+  justify-content: center;
 }
 
-.btn:hover{
-  box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.7); 
-  background-color: var(--greenTitan);
-  background: linear-gradient(180deg,#516b01,#a8c906 91%);
-
-}
-
- .fa-cart-plus{
+/*  APARTADO IMAGÉN-DESCRIPCIÓN  */
+.img-prod-descrp {
+  text-align: center;
   position: relative;
-  top: 25px;
-  right: 15px;
+} 
+.img-prod-descrp img {
+  width: 90%;
+  margin-top: 15px;
 }
 
-/*  DESCRIPCIÓN DEL JUEGO-IMAGÉN  */
-.description-game-aside {
-  width: 70%;
+.img-prod-descrp p {
+  margin: 10px;
+  font-weight: lighter;
 }
-.description-game-aside .game-aside-img img{
+
+/* VIDEO POPUP */
+.img-prod-descrp a {
+  position: relative;
+  text-transform: uppercase;
+  background: rgba(0, 0, 0, 0.5);
+  color: var(--greenTitan);
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px 15px;
+  transition: all .4s ease;
+}
+
+.img-prod-descrp a:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.trailer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99999;
+  background: rgba(0, 0, 0, 0.9);
   width: 100%;
+  height: 100%;
   display: flex;
-
-}
-
-/*  ESPECIFICACIONES  */
-aside {
-  /* display: column; */
   justify-content: center;
   align-items: center;
-  margin: 10px;
-  background-color: rgba(0, 0, 0, 0.253);
+  visibility: hidden;
+  opacity: 0;
+  transition: all .3s ease;
   
 }
-aside h4 {
-  color: rgb(164, 172, 172);
+
+.trailer.active {
+  visibility: visible;
+  opacity: 1;
+  
 }
 
-hr {
-  background-color: rgb(164, 172, 172);
-  border: none;
-  height: 1px;
+.trailer iframe {
+  position: relative;
+  max-width: 900px;
+  outline: none;
 }
 
-.container-requeriments {
+.close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  cursor: pointer;
+  filter: invert(1);
+  max-width: 32px;
+  opacity: 0.5;
+}
+
+.close:hover {
+  opacity: 1;
+}
+
+@keyframes in {
+
+}
+
+/*  ESPECIFICACIONES TÉCNICAS  */
+.specs-product {
   margin: 15px;
-  color: white;
-  display: grid;
-  justify-items: center;
+}
+.specs-product h4{
+  margin-block-end: 0;
+  text-transform: uppercase;
 }
 
-ul {
-  margin-left: 30px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+.specs-product ul li {
+  color: darkgray;
 }
 
-ul li {
-  margin: 15px;
+
+
+/* ------ MEDIA QUERIES ------ */
+
+/*Mobile*/
+@media screen and (min-width:480px){
+  .button-container .btn-submit {
+    max-width: 80%;
+  }
 }
-.description-game-aside p{
-  margin-bottom: 20px;
+
+/*Tablets*/
+@media screen and (min-width:769px){
+  .buy-product {
+    justify-content: space-around;
+  }
+  .specs-product ul li {
+    line-height: 400%;
+  }
+  iframe {
+    width: 90%;
+    height: 400px;
+  }
+
+  .title-product h3 {
+    font-size: 25px;
+    margin-bottom: 0;
+  }
+
+  #offer {
+    padding: 5px 10px;
+  }
+
+  .container {
+    width: 90%;
+    margin: auto;
+  }
+  
 }
-  @media screen and (min-width:320px){
-    .row {  
-          flex-direction: column;
-    }
-    
-}
-  @media screen and (min-width:760px){
-      main, aside {
-        display: flex;
-        width: 50%;
-      }
-      aside {
-        /* display: column; */
-        margin-top: 50px;
-        flex-wrap: nowrap;
-        width: 100%;
-      }
-      
-      .game-aside-img img {
-        margin-bottom: 10px;
-      }
+
+/*Desktop*/
+@media screen and (min-width:1024px){
+  main {
+    display: flex;
+  }
+  .principal-container {
+    width: 70%;
+  }
+  .info-container {
+    width: 40%;
+  }
+  .buy-product p {
+    font-size: 30px;
+  }
+  .button-container {
+    align-items: inherit;
+  }
+
+  .btn-submit {
+    padding: 10px;
+  }
+  .img-prod-descrp {
+    margin-top: 20px;
+  }
+  .specs-product ul li {
+    line-height: 200%;
+  }
+
+  .img-prod-descrp a {
+    margin-top: 10px;
+  }
+  .specs-product {
+    margin: 0;
+  }
+
+  .specs-product hr {
+    width: 90%;
+  }
+  #offer {
+    width: auto;
+  }
 }

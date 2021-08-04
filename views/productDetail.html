@@ -7,11 +7,11 @@
     <title>Detalle del producto</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" /> 
     <link rel="stylesheet" href="css/productDetail.css">
+    <link rel="icon" href="img/isotipo-white.ico">
 </head>
 <body>
     <div class="bolita1"></div>
     <div class="bolita2"></div>
-    <div class="bolita3"></div>
     <nav>   
         <div class="top-nav">
             <div class="top-left">
@@ -42,102 +42,138 @@
             <div class="hamburguer-logo">
                 <img src="img/logo-titanGames.png"  alt="Titan Games Logo">
             </div>            
-
         </div>
-
     </nav>
+
+    <!--ACÁ EMPIEZA LA ESTRUCTURA DEL DETALLE DEL PRODUCTO-->
+    
     <main>
-        <div class="row">
-            <div class="main">
-                <h2>The Witcher 3: Wild Hunt</h2>
-                <div class="img-product">
-                    <img src="img/thewitcher-portada.png" alt="">
-                </div>
+        <div class="principal-container">
+            <div class="title-product">
+                <h3>The Witcher 3: Wild Hunt</h4>
+                 <!--SLIDER-->
+                 <div class="container">
 
-                <div class="img-container-group">
-                    <div class="img-ind-group"><img width="100px" src="img/img1.jpg" alt=""></div>
-                    <div class="img-ind-group"><img width="100px" src="img/img2.jpg" alt=""></div>
-                    <div class="img-ind-group"><img width="100px" src="img/img3.jpg" alt=""></div>
-                    <div class="img-ind-group"><img width="100px" src="img/img4.jpg" alt=""></div>
+                    <div class="mySlides">
+                      <img src="img/1.png" style="width:100%">
+                    </div>
+                  
+                    <div class="mySlides">
+                      <img src="img/2.png" style="width:100%">
+                    </div>
+                  
+                    <div class="mySlides">
+                      <img src="img/3.png" style="width:100%">
+                    </div>
+                      
+                    <div class="mySlides">
+                      <img src="img/4.png" style="width:100%">
+                    </div>
+
+                    <div class="mySlides">
+                        <img src="img/5.png" style="width:100%">
+                    </div>
+                  
+                      
+                    <a class="prev" onclick="plusSlides(-1)">❮</a>
+                    <a class="next" onclick="plusSlides(1)">❯</a>
+                  
+                    <div class="caption-container">
+                      <p id="caption"></p>
+                    </div>
+                  
+                    <div class="row">
+                      <div class="column">
+                        <img class="demo cursor" src="img/1.png" style="width:100%" onclick="currentSlide(1)" alt="theWitcherImg">
+                      </div>
+                      <div class="column">
+                        <img class="demo cursor" src="img/2.png" style="width:100%" onclick="currentSlide(2)" alt="theWitcherImg">
+                      </div>
+                      <div class="column">
+                        <img class="demo cursor" src="img/3.png" style="width:100%" onclick="currentSlide(3)" alt="theWitcherImg">
+                      </div>
+                      <div class="column">
+                        <img class="demo cursor" src="img/4.png" style="width:100%" onclick="currentSlide(4)" alt="theWitcherImg">
+                      </div>
+                      <div class="column">
+                        <img class="demo cursor" src="img/5.png" style="width:100%" onclick="currentSlide(5)" alt="theWitcherImg">
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <!-- TERMINA SLIDER-->
+            <div class="buy-product">
+                <p id="offer">-90%</p>
+                <p>$1999.99</p>
+                <div class="button-container">
+                    <button type="submit" class="btn btn-submit">Añadir al carrito <i class="fas fa-cart-plus"></i></button>
                 </div>
-                <div class="box-for-buy">
+            </div>
+        </div>
+
+        <!--Descripción del juego-->
+        <div class="info-container">
+            <div>
+                <div class="img-prod-descrp">
+                    <img src="/img/thewitcher-portada.png" alt="">
+                    <a href="#" onclick="toggle();" >Mirar Trailer</a>
+                    <div class="trailer">
+                        <iframe height="200px" src="https://www.youtube.com/embed/c0i88t0Kacs?start=15" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <img src="/img/close.png" class="close" onclick="toggle();">
+                    </div>
                     
-                    <div class="buy">
-                        <div class="desc">
-                            <p>-90%</p>
-                        </div>
-                        <div class="price">
-                            <p>$1999.99</p>
-                        </div>
-                        <div class="button-container">
-                            <i class="fas fa-cart-plus"></i>
-                            <button type="submit" class="btn btn-submit">Añadir al carrito</button>
-                        </div>
-                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa nihil non, numquam sunt assumenda repellendus autem id ullam quod obcaecati deserunt ipsam eligendi dignissimos! Explicabo, repellat minima consequatur eaque cumque tempore a id alias molestiae accusamus. Corrupti similique iste ratione?</p>
                 </div>
-
             </div>
-
-            <aside>
-
-                <div class="container-requeriments">
-                    <div class="description-game-aside">
-                        <div class="game-aside-img">
-                            <img src="/img/The-Witcher-3-Cabecera.jpg" alt="">
-                        </div>
-                        <div>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci omnis iste exercitationem cupiditate error laudantium neque voluptatum, vel nulla dolorum delectus vero. Commodi iusto nostrum ut consequuntur, placeat saepe quidem natus quos labore eaque quam reiciendis sint praesentium, earum blanditiis.</p>
-                        </div>
-                    </div>
-                    <h4>Especificaciones técnicas recomendadas:</h4>
-                    <hr>
-                    <ul>
-                        <li>Placa 9999ti rtx como minimo</li>
-                        <li>Procesador I80000 como minimo</li>
-                        <li>Ram 999999gb como minimo</li>
-                    </ul>
-                    <br>
-                    <h4>Especificaciones técnicas mínimas:</h4>
-                    <hr>
-                    <ul>
-                        <li>Placa 9999ti rtx como minimo</li>
-                        <li>Procesador I80000 como minimo</li>
-                        <li>Ram 999999gb como minimo</li>
-                    </ul>
-                </div>
-                
-            </aside>
-        </div>
-    </main>
-    <footer>
-        <div class="container-footer">
-            <div class="logo">
-                <img src="/design/Logos/logo-white.png" alt="logo">
-            </div>
-
-            <div class="box-footer-social">
-                <p>SEGUINOS!</p>
-                <div class="social">
-                    <a href=""><i class="fab fa-instagram"></i></a>
-                    <a href=""><i class="fab fa-facebook"></i></a>
-                    <a href=""><i class="fab fa-twitch"></i></a>
-                    <a href=""><i class="fab fa-twitter"></i></a>
-                </div>
-                
-            </div>
-
-            <div class="box-info">
-                <i class="fas fa-shield-alt"></i>  
+            <div class="specs-product">
+    
+                <div>
+                    <h4>Especificaciones técnicas mínimas</h4>
+                <hr>
                 <ul>
-                    <li><a href="">Políticas de Privacidad</a></li>
-                    <li><a href="">Acerca de</a></li>
-                    <li><a href="">Contactanos</a></li>
-                </ul> 
+                    <li>Placa 9999ti rtx minimo</li>
+                    <li>Procesador I80000 minimo</li>
+                    <li>Ram 999999gb minimo</li>
+                </ul>
+                </div>
+    
+                <div>
+                    <h4>Especificaciones técnicas Recomendadas</h4>
+                <hr>
+                <ul>
+                    <li>Ram 999999gb</li>
+                    <li>Procesador I80000</li>
+                    <li>Placa 9999ti rtx</li>
+                </ul>
+                </div>
+            </div>
+        </div>    
+    </main>
+
+    <footer> 
+        <div class="logo">
+            <img src="/img/logo.png" alt="logo">
+        </div>
+        <div class="box-footer-social">
+            <p>SEGUINOS</p>
+            <div class="social">
+                <a href="https://www.instagram.com/_titan_games_/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/Titan-Games-markteplace-109552258094094" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.twitch.tv/titangamesmarket" target="_blank"><i class="fab fa-twitch"></i></a>
+                <a href="https://twitter.com/_Titan_Games_" target="_blank"><i class="fab fa-twitter"></i></a>
             </div>
         </div>
-        <div class="copy">
-            <p>Derechos reservados &copy; 2021 <b>TitanGames</b></p>
+        <div class="box-info">
+            <i class="fas fa-shield-alt"></i>
+            <ul>
+                <li><a href="#">Políticas de Privacidad</a></li>
+                <li><a href="#">Acerca de</a></li>
+                <li><a href="mailto:titanGames@correo.com">Contactanos</a></li>
+            </ul> 
         </div>
     </footer>
+    
+    <script src="js/productDetail.js"></script>
+    <script src="js/videoPopup.js"></script>
 </body>
 </html>

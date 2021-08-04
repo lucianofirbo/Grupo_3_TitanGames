@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
-@import url('header.css');
-@import url('footer.css');
+/* @import url('login.css'); */
 @import url('background.css');
+<<<<<<< HEAD
 @import url('login.css');
 @import url('register.css');
 
@@ -176,3 +176,8 @@
     justify-content: center;
     align-items: center;
 }
+=======
+@import url('header.css');
+@import url('home-main.css');
+@import url('footer.css');
+>>>>>>> de3fc0d66c38502b5d9973cfecbff5387782ca89
