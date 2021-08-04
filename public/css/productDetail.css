@@ -48,77 +48,89 @@ main {
 }
 .buy-product p {
   font-weight: bold;
+  font-size: 20px;
 }
 
-/*--  -- SLIDER --  --
-/* .slider {
-  /* width: 100%; 
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+/*--  -- SLIDER --  --*/
+.mySlides img {
+  vertical-align: middle;
 }
-div.slider-container {
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
   position: relative;
-}
-
-.slider-prev, 
-.slider-next {
-  position: absolute;
-  display: block;
-  width: 30px;
-  height: 30px;
-  border: none;
-  top: calc(50% - 35px);
-  cursor: pointer;
-  line-height: 30px;
-  text-align: center;
-  background: none;
-  color: rgba(255, 255, 255, 0);
-  opacity: 20%;
-}
-
-.slider-prev:hover, 
-.slider-next:hover {
-  opacity: 100%;
-}
-
-.slider-prev {
-  left: -20px;
-} 
-
-.slider-next {
-  right: -30px;
-} 
-
-.slider-list {
-  overflow: hidden;
-}
-
-div.slider-ind, .glider-dot {
-  flex-wrap: nowrap;
-}
-.slider-ind .glider-dot {
-  display: flex;
-  width: 30px;
-  height: 4px;
-  background: #fff;
-  opacity: .2;
-  border-radius: 0;
-}
-
-.slider-ind .glider-dot:hover {
-  opacity: .5;
-}
-
-.slider-ind .glider-dot.active {
-  opacity: 1;
-}
-div.slider-container img {
   margin-top: 10px;
+  margin-right: 10px;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+  transition:0.4s ease;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+ 	color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+  padding-left: 10px;
+}
+
+/* Add a transparency effect for thumnbail images */
+
+.demo {
+  opacity: 0.6;
+  transition: all 0.5s ease-in-out;
+}
+.active,
+.demo:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.row {
   display: flex;
-  justify-content: center;
-  width: 80%;
-} */
+  justify-content: space-between;
+}
+
 
 /*botón >comprar*/
 .button-container {
@@ -154,6 +166,7 @@ div.slider-container img {
 /*  APARTADO IMAGÉN-DESCRIPCIÓN  */
 .img-prod-descrp {
   text-align: center;
+  position: relative;
 } 
 .img-prod-descrp img {
   width: 90%;
@@ -163,6 +176,72 @@ div.slider-container img {
 .img-prod-descrp p {
   margin: 10px;
   font-weight: lighter;
+}
+
+/* VIDEO POPUP */
+.img-prod-descrp a {
+  position: relative;
+  text-transform: uppercase;
+  background: rgba(0, 0, 0, 0.5);
+  color: var(--greenTitan);
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px 15px;
+  transition: all .4s ease;
+}
+
+.img-prod-descrp a:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.trailer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99999;
+  background: rgba(0, 0, 0, 0.9);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: all .3s ease;
+  
+}
+
+.trailer.active {
+  visibility: visible;
+  opacity: 1;
+  
+}
+
+.trailer iframe {
+  position: relative;
+  max-width: 900px;
+  outline: none;
+}
+
+.close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  cursor: pointer;
+  filter: invert(1);
+  max-width: 32px;
+  opacity: 0.5;
+}
+
+.close:hover {
+  opacity: 1;
+}
+
+@keyframes in {
+
 }
 
 /*  ESPECIFICACIONES TÉCNICAS  */
@@ -194,20 +273,32 @@ div.slider-container img {
   .buy-product {
     justify-content: space-around;
   }
-  .specs-product {
-    display: flex;
-    justify-content: space-evenly;
-  }
   .specs-product ul li {
     line-height: 400%;
   }
-  .media iframe {
+  iframe {
+    width: 90%;
     height: 400px;
   }
+
+  .title-product h3 {
+    font-size: 25px;
+    margin-bottom: 0;
+  }
+
+  #offer {
+    padding: 5px 10px;
+  }
+
+  .container {
+    width: 90%;
+    margin: auto;
+  }
+  
 }
 
 /*Desktop*/
-@media screen and (min-width:1280px){
+@media screen and (min-width:1024px){
   main {
     display: flex;
   }
@@ -218,10 +309,14 @@ div.slider-container img {
     width: 40%;
   }
   .buy-product p {
-    font-size: 20px;
+    font-size: 30px;
   }
   .button-container {
     align-items: inherit;
+  }
+
+  .btn-submit {
+    padding: 10px;
   }
   .img-prod-descrp {
     margin-top: 20px;
@@ -229,11 +324,18 @@ div.slider-container img {
   .specs-product ul li {
     line-height: 200%;
   }
-  div.slider-container img {
-    margin-top: 20px;
-    margin-bottom: 10px;
+
+  .img-prod-descrp a {
+    margin-top: 10px;
   }
-  div.slider-container {
-    width: 95%;
+  .specs-product {
+    margin: 0;
+  }
+
+  .specs-product hr {
+    width: 90%;
+  }
+  #offer {
+    width: auto;
   }
 }
