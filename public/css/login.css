@@ -9,47 +9,41 @@
     height: 100%;
 }
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 80vh;
-    background: #161623;
-    height: 100%;
-}
 
-body::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(#f00,#f0f);
-    clip-path: circle(30% at right 70%);
-}
 
-body::after {
-    content: '';
+.card .close {
+    text-align: center;
+    cursor: pointer;
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(#2196f3,#e91e63);
-    clip-path: circle(20% at 10% 10%);
+    color: white;
+    top: 1%;
+    right: 2%;
+    padding: 4px 10px;
+    z-index: 1;
+    height: 33px;
+}
+  
+.close:hover {
+      background: rgba(0, 0, 0, 0.1);
+      border-radius: 50%;
 }
 
 .form_container {
-    position: relative;
+    box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 1;
 }
 
 form {
-    width: 100%;
+    width: 90%;
+    
 }
 
 .form {
@@ -58,23 +52,17 @@ form {
     justify-content: center;
     align-items: center;
     bottom: 5px;
-}
-
-.input-container {
     width: 100%;
 }
 
 .form_container .card {
     display: flex;
-    width: 340px;
+    width: 310px;
     height: 480px;
-    margin: 10px ;
-    box-shadow: 20px 20px 20px 20px rgba(0, 0, 0, 0.5);
     border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(5px);
 }
-
-
 
 .form_container .card .content {
     display: flex;
@@ -96,7 +84,6 @@ form {
 
 .form_container .card .content .form {
     font-size: 8em;
-    padding: 0 10px;
 }
 
 .input-container,
@@ -109,7 +96,7 @@ form {
     width: 100%;
     margin-bottom: 3px;
     margin-top: 7px;
-    height: 9vh;
+    height: 100%;
     outline: none;
 }
 
@@ -150,10 +137,10 @@ span.error-message {
     align-items: center;
     background: #fff;
     color:black;
-    border-radius: 20px;
+    border-radius: 25px;
     text-decoration: none;
     border: 1px solid black;
-    height: 8vh;
+    height: 100%;
     width: 120px;
     cursor: pointer;
     outline: none;
@@ -178,32 +165,38 @@ a {
     }
 }
 
-@media (min-width:769px) {
+@media (min-width:768px) {
     .form_container .card {
         max-width: 360px;
-        height: 85vh;
+        
     }
 
     div.input-container {
-        width: 300px;
+        width: 290px;
     }
+
+    .input-container,
+    .input-style {
+        height: 8vh;
+        border-radius: 50px;
+    }
+
 }
 
 @media (min-width:1280px) {
+
     .form_container .card {
-        max-width: 400px;
-        height: 50vh;
-        box-shadow: 15px 15px 15px 15px rgba(0, 0, 0, 0.2);
+        width: 120vw;
+        height: 75vh;
+    }
+    
+    .input-container,
+    .input-style {
+        height: 8vh;
     }
 
-    div.input-container {
-        width: 350px;
-        height: 5vh;
-        margin-bottom: 10px;
-    }
-
-    .submit {
-        height: 5vh;
-        
+    button.submit {
+        height: 8vh;
+        border-radius: 30px;
     }
 }
