@@ -15,10 +15,16 @@ window.onload = () => {
         } else if (idElemento=== 'active') {            
             showHideCategories('active', 'active2', 'active3')
             showHide('discover-games', 'newest', 'top-sales')
-        } else if (idElemento === 'jajamacri') {
-            document.getElementById('register-card').style.display = 'flex'
+        } else if (idElemento === 'user-icon') {
+            document.getElementById('login-card').style.display = 'flex'
+        } else if (idElemento === 'user-icon') {
+            document.getElementById('login-card').style.display = 'flex'
         } else if (idElemento === 'close') {
+            document.getElementById('login-card').style.display = 'none'
             document.getElementById('register-card').style.display = 'none'
+        } else if (idElemento === 'create-account') {
+            document.getElementById('login-card').style.display = 'none'
+            document.getElementById('register-card').style.display = 'flex'
         } else if(idElemento !== 'hamburguer') {
             document.getElementById('hamburguer').style.display = 'none'
         } 

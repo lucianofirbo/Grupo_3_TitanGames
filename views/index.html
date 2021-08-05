@@ -19,9 +19,7 @@
     <div class="bolita1"></div>
     <div class="bolita2"></div>
 
-    <!-- Login Popup -->
-
-    
+    <!-- Registro Popup -->
 
     <div class="register-card" id="register-card">
         <span class="close" id="close">x</span>
@@ -51,6 +49,39 @@
             </div>
         </div>
     </div>
+
+    
+    <!-- Login Popup -->
+
+    <div class="form_container" id="login-card">
+        <div class="card">
+            <span class="close" id="close">x</span>
+            <div class="content">
+                <img src="img/logo.png" alt="logotipo" class="logo">
+                <form class="" action="" method="">
+                    <div class="form">
+                        <div class="input-container">
+                            <input class="input-style" type="email" name="email" placeholder="Ingrese su email">
+                            <span class="error-message">Debe ingresar su email</span>
+                        </div>
+                        <div class="input-container">
+                            <input class="input-style" type="password" name="pass" placeholder="Contraseña">
+                            <span class="error-message">Debe ingresar su contraseña</span>
+                        </div>
+                        <div class="check">
+                            <label class="recordar" for="recordar">Recordarme</label>
+                            <input type="checkbox" name="recordar" id="recordar">
+                        </div>
+                        <div class="button-container">
+                            <span class="error-message">Credenciales inválidas</span>
+                            <button type="submit" class="submit">Ingresar</button>
+                        </div class="links">
+                        <span><a href="">¿Olvidaste tu contraseña?</a></span>
+                        <span id="create-account"><p>Aún no tengo cuenta</p></span>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 
     <nav>
@@ -64,7 +95,7 @@
                 </div>
 
                 <div class="nav-logo">
-                    <img src="img/logo-titanGames.png" alt="Titan Games Logo">
+                    <img src="img/logo.png" alt="Titan Games Logo">
                 </div>
 
                 <p>Tienda</p>
@@ -75,7 +106,7 @@
             <div class="top-right">
                 <i class="fas fa-search"></i>
                 <i class="fas fa-bell"></i>
-                <i class="fas fa-user-circle" id="jajamacri"></i>
+                <i class="fas fa-user-circle" id="user-icon"></i>
             </div>
 
         </div>
@@ -382,31 +413,26 @@
 
     </main>
 
-    <footer>
-        <div class="container-footer">
-            <div class="logo-footer">
-                <img src="img/logo.png" alt="">
+    <footer> 
+        <div class="logo-footer">
+            <img src="/img/logo.png" alt="logo">
+        </div>
+        <div class="box-footer-social">
+            <p>SEGUINOS</p>
+            <div class="social">
+                <a href="https://www.instagram.com/_titan_games_/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/Titan-Games-markteplace-109552258094094" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.twitch.tv/titangamesmarket" target="_blank"><i class="fab fa-twitch"></i></a>
+                <a href="https://twitter.com/_Titan_Games_" target="_blank"><i class="fab fa-twitter"></i></a>
             </div>
-
-            <div class="box-footer-social">
-                <p>SEGUINOS!</p>
-                <div class="social">
-                    <a href=""><i class="fab fa-instagram"></i></a>
-                    <a href=""><i class="fab fa-facebook"></i></a>
-                    <a href=""><i class="fab fa-twitch"></i></a>
-                    <a href=""><i class="fab fa-twitter"></i></a>
-                </div>
-
-            </div>
-
-            <div class="box-info">
-                <i class="fas fa-shield-alt"></i>
-                <ul>
-                    <li><a href="">Políticas de Privacidad</a></li>
-                    <li><a href="">Acerca de</a></li>
-                    <li><a href="">Contactanos</a></li>
-                </ul>
-            </div>
+        </div>
+        <div class="box-info">
+            <i class="fas fa-shield-alt"></i>
+            <ul>
+                <li><a href="http://localhost:3000/privacyPolitics" target="_blank">Políticas de Privacidad</a></li>
+                <li><a href="http://localhost:3000/about" target="_blank">Acerca de</a></li>
+                <li><a href="mailto:titanGames@correo.com">Contactanos</a></li>
+            </ul> 
         </div>
     </footer>
 
