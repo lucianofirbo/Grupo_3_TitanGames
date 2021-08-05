@@ -32,7 +32,7 @@ div.register-card {
       border-radius: 50%;
     }
 
-div.logo-register {
+.logo-register {
     display: flex;
     align-items: center;
     justify-content: center;
