@@ -15,6 +15,8 @@ window.onload = () => {
         } else if (idElemento=== 'active') {            
             showHideCategories('active', 'active2', 'active3')
             showHide('discover-games', 'newest', 'top-sales')
+        } else if (idElemento=== 'jajamacri') {
+            document.getElementById('register-card').style.display = 'flex'
         } else if(idElemento !== 'hamburguer'){
             document.getElementById('hamburguer').style.display = 'none'
         }
