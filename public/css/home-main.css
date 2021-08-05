@@ -85,6 +85,7 @@ transform: scale(1.1);
     width: 100vw;
     gap: 15px;
     margin-top: 20px;
+    min-height: 250px;
 }
 
 .special-offer-game {
@@ -135,6 +136,14 @@ transform: scale(1.1);
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
+.see-more-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 1% 0;
+}
+
 /* Discover */
 
 .discover {
@@ -142,6 +151,7 @@ transform: scale(1.1);
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 3%;
 }
 
 .categories {
@@ -205,8 +215,6 @@ transform: scale(1.1);
 
 .games img {
     width: 40%;
-    height: 100%;
-    max-height: 105px;
 }
 
 .game {
@@ -264,7 +272,7 @@ transform: scale(1.1);
 
 /* Media Querys */ 
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 480px) {
     
     .img-evento img {
         max-height: 30vh;
@@ -289,6 +297,18 @@ transform: scale(1.1);
 
     .games p {
         font-size: 1.3rem;
+    }
+
+    .games {
+        height: 600px;
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+    
+    .games img {
+        max-height: 160px;
     }
 
 }
