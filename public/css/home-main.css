@@ -229,6 +229,12 @@ transform: scale(1.1);
     max-height: 199px;
 }
 
+.game-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
 .game-text p {
     display: flex;
     padding: 0;
@@ -237,8 +243,7 @@ transform: scale(1.1);
 
 .price {
     display: flex;
-    justify-content: flex-end;
-    flex-direction: row;
+    justify-content: center;
     gap: 5px;
 }
 
