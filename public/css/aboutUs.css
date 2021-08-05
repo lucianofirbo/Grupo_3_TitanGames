@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('background.css');
+@import url('header.css');
+@import url('footer.css');
+
+* {
+    margin: 0;
+}
+
+.in-process {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+ h1 {
+    color: var(--greenTitan);
+    margin-bottom: 30px;
+}
+

@@ -4,26 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito</title>
+    <title>About Us</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" /> 
-    <link rel="stylesheet" href="css/productCart.css">
+    <link rel="stylesheet" href="css/aboutUs.css">
+    <link rel="icon" href="img/isotipo-white.ico">
+    
+    
 </head>
 <body>
     <div class="bolita1"></div>
     <div class="bolita2"></div>
-    <nav>   
+    
+    <nav>
+
         <div class="top-nav">
+
             <div class="top-left">
-                <i class="fas fa-bars"></i>
+
+                <div class="hamburguer-icon">
+                    <i class="fas fa-bars" id="hamburguer-icon"></i>
+                </div>
+                
+                <div class="nav-logo">
+                    <img src="img/logo-titanGames.png"  alt="Titan Games Logo">
+                </div>
+                
+                <p>Tienda</p>
+                <p>Ofertas</p>
+
             </div> 
+
             <div class="top-right">
                 <i class="fas fa-search"></i>
                 <i class="fas fa-bell"></i>
-                <i class="fas fa-shopping-cart"></i>
+                <i class="fas fa-user-circle"></i>
             </div>
+
         </div>
 
-        <div class="hamburguer">
+        <div class="hamburguer slide-right" id="hamburguer">
 
             <div class="username">
                 <i class="fas fa-user-circle"></i><h3>Username</h3>
@@ -39,44 +58,22 @@
             <hr>
 
             <div class="hamburguer-logo">
-                <img src="/img/logo.png"  alt="Titan Games Logo">
-            </div>            
+                <img src="img/logo.png"  alt="Titan Games Logo">
+            </div>             
+
         </div>
+
     </nav>
-    
-    <section>
-        <h3 class="detalle-compra">Detalles de compra</h3>
-        <div class="detail-cart">         
-            <div class="game-cart">
-                <img src="img/ni-no-kuni-2.jpg" alt="">
-                <p>$999.99</p>
-                <strong id="remove">eliminar</strong>
-            </div>
 
-            <div class="game-cart">
-                <img src="img/gta.png" alt="">
-                <p>$999.99</p>
-                <strong id="remove">eliminar</strong>
-            </div>
-        </div>
+    <!-- SOBRE NOSOTROS -->
 
-        <div class="confirm-cart">
-            <div class="total-cart">
-                <p>Total estimado:</p>
-                <p>$1999.99</p>
-                <strong id="remove-all">eliminar todo</strong>
-            </div>
-            <div class="button-container">
-                <button type="submit" class="btn btn-submit">Comprar</button>
-            </div>
-        </div>
+    <div class="in-process">
+        <h1>EN PROCESO...</h1>
+        <img src="https://i.pinimg.com/originals/ea/aa/be/eaaabefeedf074037978ac193154cf7e.gif" alt="">
+    </div>
 
-        <div class="interes">
-            <h5>Puede que te interese</h5>
-        </div>
+    <!-- SOBRE NOSOTROS -->
 
-    </section>
-    
     <footer> 
         <div class="logo-footer">
             <img src="/img/logo.png" alt="logo">
@@ -93,8 +90,8 @@
         <div class="box-info">
             <i class="fas fa-shield-alt"></i>
             <ul>
-                <li><a href="#">Políticas de Privacidad</a></li>
-                <li><a href="#">Acerca de</a></li>
+                <li><a href="http://localhost:3000/privacyPolitics" target="_blank">Políticas de Privacidad</a></li>
+                <li><a href="http://localhost:3000/about">Acerca de</a></li>
                 <li><a href="mailto:titanGames@correo.com">Contactanos</a></li>
             </ul> 
         </div>
