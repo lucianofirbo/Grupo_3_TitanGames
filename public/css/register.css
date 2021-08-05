@@ -129,7 +129,6 @@ hr {
     }
     div.register-card {
         max-width: 360px;
-        display: flex;
         align-items: center;
         height: 75vh;
         max-height: 80vh;
@@ -158,7 +157,6 @@ hr {
 
     div.register-card {
         max-width: 360px;
-        display: flex;
         align-items: center;
         height: 75vh;
         max-height: 80vh;
@@ -187,7 +185,6 @@ hr {
 
     div.register-card {
         max-width: 360px;
-        display: flex;
         align-items: center;
         height: 75vh;
         max-height: 80vh;

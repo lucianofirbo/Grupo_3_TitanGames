@@ -7,7 +7,11 @@ footer {
     justify-content: space-around;
 }
 
-.logo img{
+.container-footer {
+    display: flex;
+}
+
+.logo-footer img{
     max-width: 150px;
 }
 
