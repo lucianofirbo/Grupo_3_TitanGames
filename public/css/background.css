@@ -1,9 +1,10 @@
 body {
+    position: absolute;
     justify-content: center;
     align-items: center;
     width: 100%;
+    font-family: 'Poppins';    
     background: #161623;
-    font-family: 'Poppins';
 }
 
 .bolita1 {

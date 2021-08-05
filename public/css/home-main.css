@@ -73,6 +73,10 @@ transform: scale(1.1);
     color: whitesmoke;
     padding: 10px 0px;
     margin: 0 0 0 5px;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
 }
 
 /* Special Offers */
@@ -174,7 +178,8 @@ transform: scale(1.1);
 
 .categories p {
     padding: 5px 5px 5px 5px;
-    border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;    
+    font-size: 1.85vh;
 }
 
 #active {    
@@ -219,10 +224,7 @@ transform: scale(1.1);
 
 .game {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1%;
-    gap: 5%;
+    padding: 2%;
     justify-content: space-between;
 }
 
@@ -245,6 +247,7 @@ transform: scale(1.1);
 
 .game-discover-hr {
     margin: 0;
+    width: 100%;
 }
 
 .see-more-d {

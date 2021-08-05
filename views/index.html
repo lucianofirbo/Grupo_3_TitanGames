@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Titan Games</title>
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/background.css">
     <script src="https://kit.fontawesome.com/f0097a676d.js" crossorigin="anonymous"></script>
 </head>
 
@@ -22,7 +23,7 @@
     
 
     <div class="register-card" id="register-card">
-        <span class="close">x</span>
+        <span class="close" id="close">x</span>
         <div class="register-container">
             <img src="/img/logo.png" alt="logotipo" class="logo">
             <div class="form-container">
@@ -42,10 +43,10 @@
                     <span class="error-message">Credenciales inválidas</span>
                     <button type="submit" class="submit">Registrarse</button>
                 </div class="links">
-                <span><a href="http://localhost:3000/login">¿tienes una cuenta?</a></span>
-            <div>
-                <hr>
-            </div>
+                <span><a href="localhost:3000/login">¿tienes una cuenta?</a></span>
+                <div>
+                    <hr>
+                </div>
             </div>
         </div>
     </div>
@@ -141,7 +142,6 @@
 
         <div class="separator">
             <h4>Ofertas Especiales</h4>
-            <hr class="hr">
         </div>
 
         <div class="special-offer">

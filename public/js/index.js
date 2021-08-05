@@ -17,9 +17,11 @@ window.onload = () => {
             showHide('discover-games', 'newest', 'top-sales')
         } else if (idElemento === 'jajamacri') {
             document.getElementById('register-card').style.display = 'flex'
-        } else if(idElemento !== 'hamburguer'){
+        } else if (idElemento === 'close') {
+            document.getElementById('register-card').style.display = 'none'
+        } else if(idElemento !== 'hamburguer') {
             document.getElementById('hamburguer').style.display = 'none'
-        }
+        } 
     })
 
 }
