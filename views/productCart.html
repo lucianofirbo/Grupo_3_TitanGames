@@ -67,22 +67,28 @@
         <div class="detail-cart">         
             <div class="game-cart">
                 <img src="img/ni-no-kuni-2.jpg" alt="">
-                <p>$999.99</p>
-                <strong id="remove">eliminar</strong>
+                <div class="price-flex">
+                    <p>$1999.99</p>
+                    <strong id="remove-all">eliminar</strong>
+                </div>  
             </div>
 
             <div class="game-cart">
                 <img src="img/gta.png" alt="">
-                <p>$999.99</p>
-                <strong id="remove">eliminar</strong>
+                <div class="price-flex">
+                    <p>$1999.99</p>
+                    <strong id="remove-all">eliminar</strong>
+                </div>  
             </div>
         </div>
 
         <div class="confirm-cart">
             <div class="total-cart">
                 <p>Total estimado:</p>
-                <p>$1999.99</p>
-                <strong id="remove-all">eliminar todo</strong>
+                <div class="price-flex">
+                    <p>$1999.99</p>
+                    <strong id="remove-all">eliminar todo</strong>
+                </div>          
             </div>
             <div class="button-container">
                 <button type="submit" class="btn btn-submit">Comprar</button>
@@ -91,6 +97,20 @@
 
         <div class="interes">
             <h5>Puede que te interese</h5>
+        </div>
+        <div class="int-games">
+            <div class="int-ind-games">
+                <img src="img/batt.jpg" alt="">
+            </div>
+            <div class="int-ind-games">
+                <img src="img/fall.jpg" alt="">
+            </div>
+            <div class="int-ind-games">
+                <img src="img/thelast.png" alt="">
+            </div>
+        </div>
+        <div class="button-container-int">
+            <a href="http://localhost:3000/" target="_blank" ><button type="submit" class="btn int-btn-submit">Ver Más</button></a>
         </div>
 
     </section>
@@ -111,11 +131,21 @@
         <div class="box-info">
             <i class="fas fa-shield-alt"></i>
             <ul>
-                <li><a href="#">Políticas de Privacidad</a></li>
-                <li><a href="#">Acerca de</a></li>
+                <li><a href="http://localhost:3000/privacyPolitics" target="_blank">Políticas de Privacidad</a></li>
+                <li><a href="http://localhost:3000/about" target="_blank">Acerca de</a></li>
                 <li><a href="mailto:titanGames@correo.com">Contactanos</a></li>
             </ul> 
         </div>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="js/index.js"></script>
 </body>
 </html>
