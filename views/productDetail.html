@@ -12,19 +12,35 @@
 <body>
     <div class="bolita1"></div>
     <div class="bolita2"></div>
-    <nav>   
+    
+    <nav>
+
         <div class="top-nav">
+
             <div class="top-left">
-                <i class="fas fa-bars"></i>
+
+                <div class="hamburguer-icon">
+                    <i class="fas fa-bars" id="hamburguer-icon"></i>
+                </div>
+                
+                <div class="nav-logo">
+                    <img src="img/logo-titanGames.png"  alt="Titan Games Logo">
+                </div>
+                
+                <p>Tienda</p>
+                <p>Ofertas</p>
+
             </div> 
+
             <div class="top-right">
                 <i class="fas fa-search"></i>
                 <i class="fas fa-bell"></i>
-                <i class="fas fa-shopping-cart"></i>
+                <i class="fas fa-user-circle"></i>
             </div>
+
         </div>
 
-        <div class="hamburguer">
+        <div class="hamburguer slide-right" id="hamburguer">
 
             <div class="username">
                 <i class="fas fa-user-circle"></i><h3>Username</h3>
@@ -40,9 +56,11 @@
             <hr>
 
             <div class="hamburguer-logo">
-                <img src="img/logo-titanGames.png"  alt="Titan Games Logo">
+                <img src="img/logo.png"  alt="Titan Games Logo">
             </div>            
+
         </div>
+
     </nav>
 
     <!--ACÁ EMPIEZA LA ESTRUCTURA DEL DETALLE DEL PRODUCTO-->
@@ -174,6 +192,7 @@
         </div>
     </footer>
     
+    <script src="js/index.js"></script>
     <script src="js/productDetail.js"></script>
     <script src="js/videoPopup.js"></script>
 </body>
