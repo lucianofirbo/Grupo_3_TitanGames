@@ -11,7 +11,7 @@ i {
     z-index: 2;
     /*display: none;*/
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: #161623;
     width: 100%;
     height: 40px;
     box-shadow: 2px 0.7698959708213806px 1.078827142715454px 2px #00000065;
@@ -51,7 +51,7 @@ i {
     flex-direction: column;
     width: 70vw;
     height: 100%;
-    background-color: #1A1A1A;
+    background-color: #161623;
     color: whitesmoke;
 }
 

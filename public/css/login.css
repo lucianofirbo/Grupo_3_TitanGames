@@ -25,7 +25,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 1;   
+    z-index: 18;   
     position: fixed;
 }
 
@@ -45,9 +45,10 @@ form {
 .form_container .card {
     display: flex;
     width: 310px;
+    max-width: 320px;
     height: 480px;
     border-radius: 15px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: #161623;
     backdrop-filter: blur(5px);
 }
 
@@ -66,7 +67,6 @@ form {
     align-items: center;
     max-width: 150px;
     max-height: 130px;
-    margin-top: 15px;
 }
 
 .input-container,
@@ -86,6 +86,8 @@ form {
 .input-style {
     border: 1px solid black;
     padding-left: 15px;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .error-message {
@@ -98,7 +100,7 @@ form {
     justify-content: center;
     align-items: center;
     gap: 5%;
-    margin-bottom: 6px;
+    margin-top: 10px;
 }
 
 .recordar {
@@ -108,39 +110,50 @@ form {
     color: white;
 }
 
+label.recordar {
+    margin: 0;
+}
+
 span.error-message {
     color:red;
     font-size: 0.8rem;
     margin: 5px auto 0;
 }
 
-.submit {
+button.submit-login {
     display: flex;
     justify-content: center;
     align-items: center;
     background: #fff;
     color:black;
+    font-size: 21px;
+    font-weight: bold;
     border-radius: 25px;
     text-decoration: none;
     border: 1px solid black;
-    height: 100%;
     width: 120px;
     cursor: pointer;
     outline: none;
+    height: 48px;
+    margin-top: 21px;
 }
 
+#create-account {
+    color: white;
+}
 
-a {
+a{
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
     color: white;
+    margin-top: 30px;
 } 
 
 @media (min-width:481px) {
     .form_container .card {
-        width: 90vw;
+        width: 80vw;
     }
 
     div.input-container {
