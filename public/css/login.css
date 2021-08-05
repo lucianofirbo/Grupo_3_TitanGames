@@ -59,7 +59,7 @@ form {
     height: 100%;
 }
 
-.logo {
+div.logo-login {
     display: flex;
     justify-content: center;
     align-items: center;

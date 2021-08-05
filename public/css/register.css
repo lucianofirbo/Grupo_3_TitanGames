@@ -11,7 +11,7 @@ div.register-card {
     width: 310px;
     height: 480px;
     border-radius: 15px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(5px);
     z-index: 1;
     position: fixed;
@@ -32,7 +32,7 @@ div.register-card {
       border-radius: 50%;
     }
 
-.logo {
+div.logo-register {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -60,7 +60,7 @@ div.register-card {
     align-items: center;
     margin-bottom: 3px;
     margin-top: 7px;
-    height: 8vh;
+    height: 7vh;
     width: 250px;
     outline: none;
 }
