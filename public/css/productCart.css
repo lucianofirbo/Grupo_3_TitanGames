@@ -19,8 +19,12 @@ section h3 {
     background-color: rgba(0, 0, 0, 0.315);
     display: column;
     justify-content: center;
-    margin: 10px;
+    margin: 5px;
     padding: 10px;
+}
+.detalle-compra {
+    margin-top: 50px;
+    margin-left: 5px;
 }
 
 .game-cart {
@@ -47,7 +51,7 @@ section h3 {
 #remove {
     position: absolute;
     top: 50px;
-    left: 260px;
+    left: 200px;
     font-size: 0.7rem;
     cursor: pointer;
     color: var(--greenTitan);
@@ -73,10 +77,16 @@ section h3 {
 #remove-all {
     position: absolute;
     font-size: 0.7rem;
-    left: 220px;
-    top: 20px;
+    left: 194px;
+    top: 102px;
+    width: 74px;
     cursor: pointer;
     font-weight: normal;
+}
+
+.interes {
+    width: 150px;
+    margin-left: 12px;
 }
 
 #remove-all:hover {
@@ -87,7 +97,7 @@ section h3 {
     display: flex;
     justify-content: flex-end;
     margin-top: 20px;
-    margin-right: 10px;
+    margin-right: 8px;
 }
 
 .btn-submit {
@@ -106,3 +116,5 @@ section h3 {
 .btn-submit:hover {
     background: linear-gradient(180deg,#a7c900,#88b500);
   }
+
+  
