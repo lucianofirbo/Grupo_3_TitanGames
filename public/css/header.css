@@ -81,8 +81,31 @@ i {
     margin: 15px;
 }
 
+.store-hamburguer {
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.store-hamburguer-main {
+    display: flex;
+    flex-direction: row;
+}
+
+.store-hamburguer-dropdown {
+    flex-direction: column;
+    display: none;
+    background-color: #161623;
+    width: 210px;
+    color: white;
+    right: -5px;
+    border-radius: 5px;
+    z-index: 17;
+}
+
 .store-dropdown:hover .dropdown-content {display: flex;}
 .notificacion-dropdown:hover .dropdown-content-notificacion {display: flex;}
+.store-hamburguer:hover .store-hamburguer-dropdown {display: flex;}
 
 /* Hamburguer */
 
