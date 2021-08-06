@@ -142,7 +142,7 @@ button.submit-login {
     color: white;
 }
 
-a{
+.redirect-log-reg a{
     display: flex;
     justify-content: center;
     align-items: center;

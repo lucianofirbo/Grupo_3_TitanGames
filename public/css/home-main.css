@@ -41,7 +41,7 @@ transform: scale(1.1);
 
 .img-evento img {
     width: 100%;
-    margin-top: 36px;
+    margin-top: 35px;
     margin-bottom: 5px;
     min-height: 22vh;
     box-shadow: 2px 0.7698959708213806px 1.078827142715454px 2px #00000065;
@@ -90,6 +90,20 @@ transform: scale(1.1);
     gap: 15px;
     margin-top: 20px;
     min-height: 250px;
+}
+
+.special-offer div {
+    max-height: 270px;
+}
+
+.special-offer a {
+    height: 100%;
+    width: 100%;
+}
+
+.special-offer img {
+    height: 100%;
+width: 100%;
 }
 
 .special-offer-game {
@@ -149,6 +163,8 @@ transform: scale(1.1);
 }
 
 /* Discover */
+
+
 
 .discover {
     display: flex;
@@ -218,8 +234,13 @@ transform: scale(1.1);
     display: none;
 }
 
-.games img {
+.game a {
     width: 40%;
+    height: 100%;
+}
+
+.game img {
+    width: 100%;
     height: 100%;
 }
 
@@ -263,6 +284,7 @@ transform: scale(1.1);
     align-items: center;
     background-color: #807c7c36;
     width: 40%;
+    max-height: 60px;
     margin-bottom: 15px;
     border-radius: 0 0 15px 15px;
 }
@@ -302,7 +324,7 @@ transform: scale(1.1);
     }
 
     .special-offer img {
-        height: 23vh;
+        width: 100%;
     }
 
     .games p {
@@ -319,6 +341,7 @@ transform: scale(1.1);
     
     .games img {
         max-height: 160px;
+        width: 100%;
     }
 
 }

@@ -25,7 +25,7 @@ window.onload = () => {
         } else if (idElemento === 'create-account') {
             document.getElementById('login-card').style.display = 'none'
             document.getElementById('register-card').style.display = 'flex'
-        } else if(idElemento !== 'hamburguer') {
+        } else if(idElemento !== 'hamburguer' || idElemento !== 'username' || idElemento !== 'store') {
             document.getElementById('hamburguer').style.display = 'none'
         } 
     })

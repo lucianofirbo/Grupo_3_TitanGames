@@ -40,7 +40,7 @@
                     <span class="error-message">Credenciales inválidas</span>
                     <button type="submit" class="submit">Registrarse</button>
                 </div class="links">
-                <span><a href="localhost:3000/login">¿tienes una cuenta?</a></span>
+                <span><a href="localhost:3000/login" class="redirect-log-reg">¿tienes una cuenta?</a></span>
                 <div>
                     <hr>
                 </div>
@@ -72,10 +72,10 @@
                         </div>
                         <div class="button-container">
                             <span class="error-message">Credenciales inválidas</span>
-                            <button type="submit" class="submit">Ingresar</button>
+                            <button type="submit" class="submit-login">Ingresar</button>
                         </div class="links">
                         <span><a href="">¿Olvidaste tu contraseña?</a></span>
-                        <span id="create-account"><p>Aún no tengo cuenta</p></span>
+                        <span id="create-account">Aún no tengo cuenta</span>
                     </div>
                 </form>
             </div>
@@ -93,18 +93,36 @@
                 </div>
 
                 <div class="nav-logo">
-                    <img src="img/logo.png" alt="Titan Games Logo">
+                    <a href="http://localhost:3000/"><img src="img/logo.png" alt="Titan Games Logo"></a>
                 </div>
 
-                <p>Tienda</p>
-                <p>Ofertas</p>
+                <div class="store-dropdown">
+                    <p>Tienda</p>
+                    <div class="dropdown-content">
+                        <p>Ofertas</p>
+                        <p>Mas vendido</p>
+                    </div>
+                </div>
 
             </div>
 
             <div class="top-right">
+
                 <i class="fas fa-search"></i>
-                <i class="fas fa-bell"></i>
+
+                <a href="http://localhost:3000/productCart">
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
+
+                <div class="notificacion-dropdown">
+                    <i class="fas fa-bell"></i>
+                    <div class="dropdown-content-notificacion">
+                        <p>No tienes notificaciones nuevas</p>
+                    </div>
+                </div>
+
                 <i class="fas fa-user-circle" id="user-icon"></i>
+
             </div>
 
         </div>
@@ -151,13 +169,19 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="img/ni-no-kuni-2.jpg" class="d-block w-100" alt="Ni no kuni 2">
+                    <a href="http://localhost:3000/productDetail">
+                        <img src="img/ni-no-kuni-2.jpg" class="d-block w-100" alt="Ni no kuni 2">
+                    </a>
                 </div>
                 <div class="carousel-item">
-                    <img src="img/cyberpunk.jpg" class="d-block w-100" alt="Cyberpunk">
+                    <a href="http://localhost:3000/productDetail">
+                        <img src="img/ni-no-kuni-2.jpg" class="d-block w-100" alt="Ni no kuni 2">
+                    </a>
                 </div>
                 <div class="carousel-item">
-                    <img src="img/ni-no-kuni-2.jpg" class="d-block w-100" alt="Ni no kuni 2">
+                    <a href="http://localhost:3000/productDetail">
+                        <img src="img/ni-no-kuni-2.jpg" class="d-block w-100" alt="Ni no kuni 2">
+                    </a>
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -177,7 +201,10 @@
         <div class="special-offer">
 
             <div class="special-offer-game">
-                <img src="img/cyberpunk.jpg" alt="">
+
+                <a href="http://localhost:3000/productDetail">
+                    <img src="img/cyberpunk.jpg" alt="">
+                </a>
 
                 <div class="special-offer-details">
                     <p>Nombre del juego</p>
@@ -188,7 +215,9 @@
 
             <div class="special-offer-game">
 
-                <img src="img/cyberpunk.jpg" alt="">
+                <a href="http://localhost:3000/productDetail">
+                    <img src="img/cyberpunk.jpg" alt="">
+                </a>
 
                 <div class="special-offer-details">
                     <p>Nombre del juego</p>
@@ -199,7 +228,9 @@
 
             <div class="special-offer-game">
 
-                <img src="img/cyberpunk.jpg" alt="">
+                <a href="http://localhost:3000/productDetail">
+                    <img src="img/cyberpunk.jpg" alt="">
+                </a>
 
                 <div class="special-offer-details">
                     <p>Nombre del juego</p>
@@ -210,7 +241,9 @@
 
             <div class="special-offer-game">
 
-                <img src="img/cyberpunk.jpg" alt="">
+                <a href="http://localhost:3000/productDetail">
+                    <img src="img/cyberpunk.jpg" alt="">
+                </a>
 
                 <div class="special-offer-details">
                     <p>Nombre del juego</p>
@@ -243,7 +276,9 @@
 
                 <div class="game">
 
-                    <img src="img/ni-no-kuni-2.jpg" alt="ni no kuni 2">
+                    <a href="http://localhost:3000/productDetail">                        
+                        <img src="img/ni-no-kuni-2.jpg" alt="ni no kuni 2" class="games-img-w">
+                    </a>
 
                     <div class="game-text">
                         <p>Nombre del juego</p>
@@ -260,7 +295,9 @@
 
                 <div class="game">
 
-                    <img src="img/ni-no-kuni-2.jpg" alt="ni no kuni 2">
+                    <a href="http://localhost:3000/productDetail">                        
+                        <img src="img/ni-no-kuni-2.jpg" alt="ni no kuni 2" class="games-img-w">
+                    </a>
 
                     <div class="game-text">
                         <p>Nombre del juego</p>
@@ -277,7 +314,9 @@
 
                 <div class="game">
 
-                    <img src="img/ni-no-kuni-2.jpg" alt="ni no kuni 2">
+                    <a href="http://localhost:3000/productDetail">                        
+                        <img src="img/ni-no-kuni-2.jpg" alt="ni no kuni 2" class="games-img-w">
+                    </a>
 
                     <div class="game-text">
                         <p>Nombre del juego</p>
@@ -297,7 +336,9 @@
 
                 <div class="game">
 
-                    <img src="img/ni-no-kuni-2.jpg" alt="ni no kuni 2">
+                    <a href="http://localhost:3000/productDetail">                        
+                        <img src="img/ni-no-kuni-2.jpg" alt="ni no kuni 2" class="games-img-w">
+                    </a>
 
                     <div class="game-text">
                         <p>Nombre del juego</p>
@@ -314,7 +355,9 @@
 
                 <div class="game">
 
-                    <img src="img/cyberpunk.jpg" alt="ni no kuni 2">
+                    <a href="http://localhost:3000/productDetail">                        
+                        <img src="img/ni-no-kuni-2.jpg" alt="ni no kuni 2" class="games-img-w">
+                    </a>
 
                     <div class="game-text">
                         <p>Nombre del juego</p>
@@ -331,7 +374,9 @@
 
                 <div class="game">
 
-                    <img src="img/ni-no-kuni-2.jpg" alt="ni no kuni 2">
+                    <a href="http://localhost:3000/productDetail">                        
+                        <img src="img/ni-no-kuni-2.jpg" alt="ni no kuni 2" class="games-img-w">
+                    </a>
 
                     <div class="game-text">
                         <p>Nombre del juego</p>
@@ -351,7 +396,9 @@
 
                 <div class="game">
 
-                    <img src="img/cyberpunk.jpg" alt="ni no kuni 2">
+                    <a href="http://localhost:3000/productDetail">                        
+                        <img src="img/ni-no-kuni-2.jpg" alt="ni no kuni 2" class="games-img-w">
+                    </a>
 
                     <div class="game-text">
                         <p>Nombre del juego</p>
@@ -368,7 +415,9 @@
 
                 <div class="game">
 
-                    <img src="img/cyberpunk.jpg" alt="ni no kuni 2">
+                    <a href="http://localhost:3000/productDetail">                        
+                        <img src="img/ni-no-kuni-2.jpg" alt="ni no kuni 2" class="games-img-w">
+                    </a>
 
                     <div class="game-text">
                         <p>Nombre del juego</p>
@@ -385,7 +434,9 @@
 
                 <div class="game">
 
-                    <img src="img/cyberpunk.jpg" alt="ni no kuni 2">
+                    <a href="http://localhost:3000/productDetail">                        
+                        <img src="img/ni-no-kuni-2.jpg" alt="ni no kuni 2" class="games-img-w">
+                    </a>
 
                     <div class="game-text">
                         <p>Nombre del juego</p>
