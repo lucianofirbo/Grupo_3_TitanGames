@@ -164,8 +164,6 @@ width: 100%;
 
 /* Discover */
 
-
-
 .discover {
     display: flex;
     flex-direction: column;
@@ -289,13 +287,18 @@ width: 100%;
     border-radius: 0 0 15px 15px;
 }
 
+.see-more-d a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .see-more-d button {
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: transparent;
     text-align: center;
-    padding: 5px 35px;
     border-radius: 5px;
     color: white;
     font-weight: 600;
@@ -307,11 +310,11 @@ width: 100%;
 @media screen and (min-width: 480px) {
     
     .img-evento img {
-        max-height: 30vh;
+        max-height: 40vh;
     }
 
     .slide img {
-        height: 35vh;
+        height: 45vh;
     }
 
     .special-offer-details {

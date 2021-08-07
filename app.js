@@ -28,3 +28,7 @@ app.get('/privacyPolitics', (req, res) => {
 app.get('/about', (req, res) => {
     res.sendFile(path.join(__dirname, 'views/aboutUs.html'))
 });
+
+app.get('/search', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views/search.html'))
+});
