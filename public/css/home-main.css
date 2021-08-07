@@ -1,6 +1,11 @@
 /* Transitions */ 
 /* Open to right */
 
+main {
+    margin: auto;
+    max-width: 1024px;
+}
+
 .slide-right {
 	-webkit-animation: slide-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 	        animation: slide-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
@@ -86,7 +91,7 @@ transform: scale(1.1);
     flex-wrap: wrap;
     justify-content: space-evenly;
     padding: 0 10px 10px 10px;
-    width: 100vw;
+    width: 100%;
     gap: 15px;
     margin-top: 20px;
     min-height: 250px;
