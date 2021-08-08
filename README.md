@@ -20,7 +20,7 @@
 
 **Navarro, Evelyn Denise**
 - 22 años
-- Estudiante de la tecnicatura en programación informática en la Univeridad Nacional de Quilmes y alumna en digital house realizando el curso de desarrollador web full-stack.
+- Estudiante de la tecnicatura en programación informática en la Universidad Nacional de Quilmes y alumna en digital house realizando el curso de desarrollador web full-stack.
 
 ## Temática de web y audencia objetivo
 **TEMÁTICA**
