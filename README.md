@@ -1,5 +1,5 @@
 # TitanGames
-![](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/design/Logos/logo-white.png)
+![](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/public/img/logo.png)
 # SPRINT 1
 
 ## Integrantes
@@ -25,7 +25,7 @@
 ## Temática de web y audencia objetivo
 **TEMÁTICA**
 
->Intuitiva, simple con estilo futurista
+>Intuitiva, simple con estilo futurista :tw-1f47e:
 
 Nuestro sitio web estará orientado a la venta de videojuegos digitales y estará dirigido a jóvenes adultos entre aproximadamente 18 y 35 años interesados en los videojuegos digitales, aquellos que pertenezcan a la cultura geek y de otras comunidades que estén relacionadas a los videojuegos como discord, twitch, etc.
 - ¿Qué productos vamos a ofrecer?:
