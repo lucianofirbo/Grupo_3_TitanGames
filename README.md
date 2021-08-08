@@ -1,8 +1,8 @@
 # TitanGames
-![](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/design/Logos/logo-white.png)
+![](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/public/img/logo.png)
 # SPRINT 1
 
-## Integrantes
+## Integrantes :octocat:
 **Berrettoni, Pablo Gregorio**
 
 - 23 años
@@ -20,12 +20,12 @@
 
 **Navarro, Evelyn Denise**
 - 22 años
-- Estudiante de la tecnicatura en programación informática en la Univeridad Nacional de Quilmes y alumna en digital house realizando el curso de desarrollador web full-stack.
+- Estudiante de la tecnicatura en programación informática en la Universidad Nacional de Quilmes y alumna en digital house realizando el curso de desarrollador web full-stack.
 
 ## Temática de web y audencia objetivo
 **TEMÁTICA**
 
->Intuitiva, simple con estilo futurista
+>Intuitiva, simple con estilo futurista :rocket:
 
 Nuestro sitio web estará orientado a la venta de videojuegos digitales y estará dirigido a jóvenes adultos entre aproximadamente 18 y 35 años interesados en los videojuegos digitales, aquellos que pertenezcan a la cultura geek y de otras comunidades que estén relacionadas a los videojuegos como discord, twitch, etc.
 - ¿Qué productos vamos a ofrecer?:
@@ -42,7 +42,7 @@ Cada usuario de nuestra plataforma va a poder comercializar distintos ítems den
 También habrán sorteos mensuales de keys, tienda exclusiva para cada usuario una vez al mes en la que tendrá descuentos para juegos similares a su lista de deseos y navegación.
 
 
-## Páginas de referencia
+## Páginas de referencia :link:
 
 Nuestro proyecto se basó en los siguientes sitios referentes del mercado:
 - [Steam](https://store.steampowered.com/?l=spanish)
@@ -68,6 +68,13 @@ Nuestra elección se basó principalmente en la temática del marketplace y gene
 - Fuentes:
     - [Alfa Slab One](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/design/Fuente/AlfaSlabOne-Regular.ttf) 
     - [Poppins](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/design/Fuente/Poppins-Light.ttf) 
+- Colores:
+ 
+    - ![#8EBD00](https://via.placeholder.com/15/8EBD00/000000?text=+) `greenTitan`
+    - ![#D94969](https://via.placeholder.com/15/D94969/000000?text=+) `pinkTitan`
+    - ![#161623](https://via.placeholder.com/15/161623/000000?text=+) `background`
+    - ![#2196f3](https://via.placeholder.com/15/2196f3/000000?text=+) `background`
+    - ![#4F00FF](https://via.placeholder.com/15/4F00FF/000000?text=+) `background`
 
 # SPRINT 2
 ### [TABLERO - Trello](https://trello.com/b/z7Q4GyE1/grupo-3-uwu-c8)
