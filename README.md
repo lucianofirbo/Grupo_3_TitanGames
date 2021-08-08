@@ -2,7 +2,7 @@
 ![](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/public/img/logo.png)
 # SPRINT 1
 
-## Integrantes
+## Integrantes :octocat:
 **Berrettoni, Pablo Gregorio**
 
 - 23 años
@@ -25,7 +25,7 @@
 ## Temática de web y audencia objetivo
 **TEMÁTICA**
 
->Intuitiva, simple con estilo futurista :tw-1f47e:
+>Intuitiva, simple con estilo futurista :rocket:
 
 Nuestro sitio web estará orientado a la venta de videojuegos digitales y estará dirigido a jóvenes adultos entre aproximadamente 18 y 35 años interesados en los videojuegos digitales, aquellos que pertenezcan a la cultura geek y de otras comunidades que estén relacionadas a los videojuegos como discord, twitch, etc.
 - ¿Qué productos vamos a ofrecer?:
@@ -42,7 +42,7 @@ Cada usuario de nuestra plataforma va a poder comercializar distintos ítems den
 También habrán sorteos mensuales de keys, tienda exclusiva para cada usuario una vez al mes en la que tendrá descuentos para juegos similares a su lista de deseos y navegación.
 
 
-## Páginas de referencia
+## Páginas de referencia :link:
 
 Nuestro proyecto se basó en los siguientes sitios referentes del mercado:
 - [Steam](https://store.steampowered.com/?l=spanish)
