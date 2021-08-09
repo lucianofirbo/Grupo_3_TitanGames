@@ -6,8 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Titan Games</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/search.css">
     <link rel="icon" href="img/isotipo-white.ico">
     <script src="https://kit.fontawesome.com/f0097a676d.js" crossorigin="anonymous"></script>
 </head>
@@ -159,113 +160,30 @@
 
     </nav>
 
-    <main id="main">
+    <main>
 
-        <div class="img-evento">
-            <figure>
-                <img src="img/event.png" alt="Image of current event">
-            </figure>
+        <div class="search-searchbar">
+            <i class="fas fa-search"></i><input type="text" placeholder="Search for...">
         </div>
 
-        <div class="separator">
-            <h4>Destacados</h4>
-        </div>
+        <div class="search-settings">
 
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <a href="http://localhost:3000/productDetail">
-                        <img src="img/ni-no-kuni-2.jpg" class="d-block w-100" alt="Ni no kuni 2">
-                    </a>
-                </div>
-                <div class="carousel-item">
-                    <a href="http://localhost:3000/productDetail">
-                        <img src="img/ni-no-kuni-2.jpg" class="d-block w-100" alt="Ni no kuni 2">
-                    </a>
-                </div>
-                <div class="carousel-item">
-                    <a href="http://localhost:3000/productDetail">
-                        <img src="img/ni-no-kuni-2.jpg" class="d-block w-100" alt="Ni no kuni 2">
-                    </a>
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
+            <div class="filters-hamburguer">
 
-        <div class="separator">
-            <h4>Ofertas Especiales</h4>
-        </div>
-
-        <div class="special-offer">
-
-            <div class="special-offer-game">
-
-                <a href="http://localhost:3000/productDetail">
-                    <img src="img/cyberpunk.jpg" alt="">
-                </a>
-
-                <div class="special-offer-details">
-                    <p>Nombre del juego</p>
-                    <p>-85%</p>
-                </div>
+                <p>Filtros  <i class="fas fa-angle-down"></i></p>
 
             </div>
 
-            <div class="special-offer-game">
-
-                <a href="http://localhost:3000/productDetail">
-                    <img src="img/cyberpunk.jpg" alt="">
-                </a>
-
-                <div class="special-offer-details">
-                    <p>Nombre del juego</p>
-                    <p>-85%</p>
+            <div class="sort-by-dropdown">
+                <p>Ordenar por   <i class="fas fa-angle-down"></i></p>
+                <div class="sort-by-content">
+                    <p>Todo</p>
+                    <p>Popular</p>
+                    <p>En oferta</p>
+                    <p>Más jugado</p>
                 </div>
-
             </div>
 
-            <div class="special-offer-game">
-
-                <a href="http://localhost:3000/productDetail">
-                    <img src="img/cyberpunk.jpg" alt="">
-                </a>
-
-                <div class="special-offer-details">
-                    <p>Nombre del juego</p>
-                    <p>-85%</p>
-                </div>
-
-            </div>
-
-            <div class="special-offer-game">
-
-                <a href="http://localhost:3000/productDetail">
-                    <img src="img/cyberpunk.jpg" alt="">
-                </a>
-
-                <div class="special-offer-details">
-                    <p>Nombre del juego</p>
-                    <p>-85%</p>
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="see-more-button">
-            <button class="see-more">Ver más</button>
         </div>
 
         <div class="discover">
@@ -275,12 +193,6 @@
             221-274 section2
             276-329 section3
             -->
-
-            <div class="categories">
-                <p id="active">Descubrir juegos</p>
-                <p id="active2">Lo mas vendido</p>
-                <p id="active3">Lo nuevo</p>
-            </div>
 
             <section class="games" id="discover-games">
 
@@ -339,34 +251,12 @@
                     </div>
 
                 </div>
-
-            </section>
-
-            <section class="games" id="top-sales">
-
-                <div class="game">
-
-                    <a href="http://localhost:3000/productDetail">                        
-                        <img src="img/ni-no-kuni-2.jpg" alt="ni no kuni 2" class="games-img-w">
-                    </a>
-
-                    <div class="game-text">
-                        <p>Nombre del juego</p>
-
-                        <div class="price">
-                            <p class="sale-box">-10%</p>
-                            <p>1000$</p>
-                        </div>
-
-                    </div>
-
-                </div>
                 <hr class="game-discover-hr">
 
                 <div class="game">
 
                     <a href="http://localhost:3000/productDetail">                        
-                        <img src="img/cyberpunk.jpg" alt="ni no kuni 2" class="games-img-w">
+                        <img src="img/ni-no-kuni-2.jpg" alt="ni no kuni 2" class="games-img-w">
                     </a>
 
                     <div class="game-text">
@@ -399,15 +289,12 @@
                     </div>
 
                 </div>
-
-            </section>
-
-            <section class="games" id="newest">
+                <hr class="game-discover-hr">
 
                 <div class="game">
 
                     <a href="http://localhost:3000/productDetail">                        
-                        <img src="img/cyberpunk.jpg" alt="ni no kuni 2" class="games-img-w">
+                        <img src="img/ni-no-kuni-2.jpg" alt="ni no kuni 2" class="games-img-w">
                     </a>
 
                     <div class="game-text">
@@ -426,26 +313,7 @@
                 <div class="game">
 
                     <a href="http://localhost:3000/productDetail">                        
-                        <img src="img/cyberpunk.jpg" alt="ni no kuni 2" class="games-img-w">
-                    </a>
-
-                    <div class="game-text">
-                        <p>Nombre del juego</p>
-
-                        <div class="price">
-                            <p class="sale-box">-10%</p>
-                            <p>1000$</p>
-                        </div>
-
-                    </div>
-
-                </div>
-                <hr class="game-discover-hr">
-
-                <div class="game">
-
-                    <a href="http://localhost:3000/productDetail">                        
-                        <img src="img/cyberpunk.jpg" alt="ni no kuni 2" class="games-img-w">
+                        <img src="img/ni-no-kuni-2.jpg" alt="ni no kuni 2" class="games-img-w">
                     </a>
 
                     <div class="game-text">
@@ -461,12 +329,6 @@
                 </div>
 
             </section>
-
-            <div class="game see-more-d">
-                <a href="http://localhost:3000/search"><button>Ver más</button></a>
-            </div>
-
-        </div>
 
         </div>
 
@@ -495,16 +357,6 @@
         </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-    <script src="js/index.js"></script>
 </body>
 
 </html>

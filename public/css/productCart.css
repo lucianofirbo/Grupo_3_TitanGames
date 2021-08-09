@@ -2,6 +2,8 @@
 @import url('background.css');
 @import url('header.css');
 @import url('footer.css');
+@import url('login.css');
+@import url('register.css');
 
 * {
     margin: 0;
@@ -21,6 +23,8 @@ section h3 {
     justify-content: center;
     margin: 5px;
     padding: 10px;
+    box-shadow: 5px 5px 5px #0a0a0a;
+    border: 1px solid rgb(24, 24, 24);
 }
 .detalle-compra {
     margin-top: 50px;
@@ -28,7 +32,7 @@ section h3 {
 }
 
 .game-cart {
-    background-color: rgba(0, 0, 0, 0.26);
+    background-color: rgba(0, 0, 0, 0.37);
     padding: 10px;
     margin-bottom: 10px;
     display: flex;
@@ -44,12 +48,8 @@ section h3 {
     transition: all 0.4s ease;
 }
 
-.game-cart img:hover {
-    transform: scale(1.1);
-}
 
 #remove {
-    position: absolute;
     top: 50px;
     left: 200px;
     font-size: 0.7rem;
@@ -65,6 +65,8 @@ section h3 {
     margin: 10px;
     background-color: rgba(0, 0, 0, 0.315);
     padding: 10px 0;
+    box-shadow: 5px 5px 5px #0a0a0a;
+    border: 1px solid rgb(24, 24, 24);
 }
 
 .total-cart {
@@ -75,17 +77,16 @@ section h3 {
 }
 
 #remove-all {
-    position: absolute;
     font-size: 0.7rem;
     left: 194px;
     top: 102px;
     width: 74px;
     cursor: pointer;
     font-weight: normal;
+    color: var(--greenTitan);
 }
 
 .interes {
-    width: 150px;
     margin-left: 12px;
 }
 
@@ -117,4 +118,86 @@ section h3 {
     background: linear-gradient(180deg,#a7c900,#88b500);
   }
 
-  
+.interes {
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+
+.interes h5 {
+    color: var(--greenTitan);
+}
+
+.int-games {
+    background-color: rgba(0, 0, 0, 0.397);
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.int-ind-games img {
+    width: 90px;
+    height: 100px;
+    opacity: 0.7;
+    transition: all .4s ease;
+}
+
+.int-ind-games img:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+div.button-container-int {
+    text-align: center;
+    margin: 10px;
+}
+
+.button-container-int .int-btn-submit {
+    cursor: pointer;
+    padding: 10px 20px;
+    border: 1px solid #96bd27;
+    border-radius: 5px;
+    border-bottom-color: #69941b;
+    border-left-color: #7fa721;
+    border-right-color: #7fa721;
+    color: #fff;
+    font-weight: bold;
+    background-image: linear-gradient(-180deg,#9fbf00,#80ab00 91%);
+}
+
+@media  screen and (min-width: 480px) {
+    .int-ind-games img {
+        width: 110px;
+        height: 120px;
+    }
+}
+
+@media screen and (min-width: 769px){
+    section {
+        width: 80%;
+        margin: 0 auto;
+    }
+    .detalle-compra {
+        margin-top: 80px;
+    }
+
+    .price-flex p {
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .int-ind-games img {
+        width: 150px;
+        height: 180px;
+        padding: 10px 0;
+    }
+    .game-cart img {
+        width: 25%;
+    }
+    section {
+        width: 70%;
+    }
+}

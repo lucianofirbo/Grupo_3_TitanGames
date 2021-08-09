@@ -2,7 +2,7 @@ body {
     position: absolute;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 100vw;
     font-family: 'Poppins';    
     background: #161623;
 }
@@ -12,8 +12,8 @@ body {
     position: absolute;
     z-index: -1;
     top: 0;
-    left: 0;
-    width: 100%;
+    left: 0;    
+    width: 100vw;
     height: 100%;
     background: linear-gradient(#f00,rgb(98, 0, 255));
     clip-path: circle(30% at right 70%);
@@ -25,7 +25,7 @@ body {
     z-index: -1;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: 100%;
     background: linear-gradient(#2196f3,#69e91e);
     clip-path: circle(20% at 10% 10%);

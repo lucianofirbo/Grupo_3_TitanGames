@@ -92,7 +92,7 @@ button.submit-register {
     outline: none;
 }
 
-a {
+.redirect-log-reg a {
     display: flex;
     justify-content: center;
     align-items: center;
