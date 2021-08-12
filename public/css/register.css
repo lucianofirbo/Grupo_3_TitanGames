@@ -4,16 +4,16 @@ div.register-card {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    position: absolute;
+
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 310px;
     height: 480px;
     border-radius: 15px;
-    background-color: rgba(0, 0, 0, 0.95);
+    background-color: #161623;
     backdrop-filter: blur(5px);
-    z-index: 1;
+    z-index: 18;
     position: fixed;
 }
 
@@ -23,7 +23,8 @@ div.register-card {
     position: absolute;
     top: 2%;
     right: 2%;
-    padding: 6px 10px;
+    padding: 0px 7px;
+    font-size: 18px;
     color: white;
   }
   
@@ -32,11 +33,15 @@ div.register-card {
       border-radius: 50%;
     }
 
-.logo-register {
+div.register-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 25%;
+    flex-direction: column;
+    
+}
+
+.logo-register {
     max-width: 150px;
     max-height: 130px;
 }
@@ -48,7 +53,6 @@ div.register-card {
     align-items: center;
     flex-direction: column;
     height: 40vh;
-    margin-top: 25px;
 }
 
 .input-container,
@@ -60,7 +64,7 @@ div.register-card {
     align-items: center;
     margin-bottom: 3px;
     margin-top: 7px;
-    height: 7vh;
+    max-height: 53px;
     width: 250px;
     outline: none;
 }
@@ -86,30 +90,29 @@ button.submit-register {
     text-decoration: none;
     border: 1px solid black;
     height: 100%;
-    height: 8vh;
+    max-height: 48px;
     width: 120px;
     cursor: pointer;
     outline: none;
+    font-size: 18px;
+    font-weight: bold;
 }
 
-.redirect-log-reg a {
+.redirect-register h5{
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
     color: white;
+    font-size: 16px;
+    margin-top: 18px;
+    cursor: pointer;
 }
 
-hr {
-    background-color: white;
-    width: 220px;
-    margin-top: 60px;
-    margin-left: 12px;
-}
 
 @media (min-width:481px) {
     div.register-card {
-        width: 90vw;
+        max-width: 70vw;
     }
 }
 
@@ -118,8 +121,6 @@ hr {
         max-width: 360px;
         
     }
-
-    
 }
 
 @media (min-width:1024px) {
@@ -130,12 +131,6 @@ hr {
     div.register-card {
         max-width: 360px;
         align-items: center;
-        height: 75vh;
-        max-height: 80vh;
-    }
-
-    hr {
-        margin-top: 30px;
     }
 
     .input-container,
@@ -158,12 +153,7 @@ hr {
     div.register-card {
         max-width: 360px;
         align-items: center;
-        height: 75vh;
         max-height: 80vh;
-    }
-
-    hr {
-        margin-bottom: 20px;
     }
 
     .input-container,
@@ -186,12 +176,7 @@ hr {
     div.register-card {
         max-width: 360px;
         align-items: center;
-        height: 75vh;
         max-height: 80vh;
-    }
-
-    hr {
-        margin-bottom: 0%;
     }
 
     .input-container,

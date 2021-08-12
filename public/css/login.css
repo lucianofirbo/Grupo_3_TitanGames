@@ -5,9 +5,9 @@
     color: white;
     top: 1%;
     right: 2%;
-    padding: 4px 10px;
+    padding: 0px 7px;
     z-index: 1;
-    height: 33px;
+    font-size: 18px;
 }
   
 .close:hover {
@@ -149,8 +149,24 @@ button.submit-login {
     margin-top: 21px;
 }
 
-#create-account {
+
+.last-text {
     color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.last-text h5 {
+    font-size: 14px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.last-text #create-account {
+    margin-top: 10px;
 }
 
 .redirect-log-reg a{
@@ -194,7 +210,6 @@ button.submit-login {
 
     .form_container .card {
         width: 120vw;
-        height: 75vh;
     }
     
     .input-container,

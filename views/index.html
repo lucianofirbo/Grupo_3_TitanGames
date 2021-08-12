@@ -19,14 +19,12 @@
     <div class="bolita2"></div>
 
     <div class="logReg">
-
-        <!-- Registro Popup -->
-
+    
         <div class="register-card" id="register-card">
             <span class="close" id="close">x</span>
             <div class="register-container">
-                <img src="/img/logo.png" alt="logotipo" class="logo-register">
                 <div class="form-container">
+                    <img src="/img/logo.png" alt="logotipo" class="logo-register">
                     <div class="input-container">
                         <input class="input-style" type="email" name="email" placeholder="Ingrese su usuario">
                         <span class="error-message">Debe ingresar su usuario</span>
@@ -41,50 +39,55 @@
                     </div>
                     <div class="button-container">
                         <span class="error-message">Credenciales inválidas</span>
-                        <button type="submit" class="submit">Registrarse</button>
-                    </div class="links">
-                    <span><a href="localhost:3000/login" class="redirect-log-reg">¿tienes una cuenta?</a></span>
-                    <div>
-                        <hr>
+                        <button type="submit" class="submit-register">Registrarse</button>
+                    </div>
+                    <div class="redirect-register">
+                        <span>
+                            <h5>¿tienes una cuenta?</h5>
+                        </span>
                     </div>
                 </div>
             </div>
         </div>
-
-
-        <!-- Login Popup -->
-
-        <div class="form_container" id="login-card">
-            <div class="card">
-                <span class="close" id="close">x</span>
-                <div class="content">
-                    <img src="img/logo.png" alt="logotipo" class="logo-login">
-                    <form class="" action="" method="">
-                        <div class="form">
-                            <div class="input-container">
-                                <input class="input-style" type="email" name="email" placeholder="Ingrese su email">
-                                <span class="error-message">Debe ingresar su email</span>
+    
+    
+            <!-- Login Popup -->
+    
+            <div class="form_container" id="login-card">
+                <div class="card">
+                    <span class="close" id="close">x</span>
+                    <div class="content">
+                        <img src="img/logo.png" alt="logotipo" class="logo-login">
+                        <form>
+                            <div class="form">
+                                <div class="input-container">
+                                    <input class="input-style" type="email" name="email" placeholder="Ingrese su email">
+                                    <span class="error-message">Debe ingresar su email</span>
+                                </div>
+                                <div class="input-container">
+                                    <input class="input-style" type="password" name="pass" placeholder="Contraseña">
+                                    <span class="error-message">Debe ingresar su contraseña</span>
+                                </div>
+                                <div class="check">
+                                    <label class="recordar" for="recordar">Recordarme</label>
+                                    <input type="checkbox" name="recordar" id="recordar">
+                                </div>
+                                <div class="button-container">
+                                    <span class="error-message">Credenciales inválidas</span>
+                                    <button type="submit" class="submit-login">Ingresar</button>
+                                </div>
+                                <div class="last-text">
+                                    <span>
+                                        <h5>¿Olvidaste tu contraseña?</h4>
+                                    </span>
+                                    <span id="create-account">Aún no tengo cuenta</span>
+                                </div>
                             </div>
-                            <div class="input-container">
-                                <input class="input-style" type="password" name="pass" placeholder="Contraseña">
-                                <span class="error-message">Debe ingresar su contraseña</span>
-                            </div>
-                            <div class="check">
-                                <label class="recordar" for="recordar">Recordarme</label>
-                                <input type="checkbox" name="recordar" id="recordar">
-                            </div>
-                            <div class="button-container">
-                                <span class="error-message">Credenciales inválidas</span>
-                                <button type="submit" class="submit-login">Ingresar</button>
-                            </div class="links">
-                            <span><a href="">¿Olvidaste tu contraseña?</a></span>
-                            <span id="create-account">Aún no tengo cuenta</span>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
+    
             </div>
-        </div>
-
     </div>
 
     <nav>
@@ -167,9 +170,7 @@
     <main id="main">
 
         <div class="img-evento">
-            <figure>
-                <img src="img/event.png" alt="Image of current event">
-            </figure>
+            <img src="img/event.png" alt="Image of current event">
         </div>
 
         <div class="separator">
