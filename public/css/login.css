@@ -20,13 +20,11 @@
     display: none;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     z-index: 18;   
-    position: fixed;
+    animation-name: aparecer;
+    animation-duration: 1s;
+
 }
 
 form {
@@ -166,6 +164,17 @@ button.submit-login {
     color: white;
     margin-top: 30px;
 } 
+
+@keyframes aparecer {
+    from {
+      transform: translatey(-50%);
+    }
+  
+    to {
+      transform: translatey(100%);
+    }
+  }
+  
 
 @media (min-width:481px) {
     .form_container .card {
