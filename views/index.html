@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Titan Games</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/index.css">
     <link rel="icon" href="img/isotipo-white.ico">
     <script src="https://kit.fontawesome.com/f0097a676d.js" crossorigin="anonymous"></script>
@@ -17,69 +18,73 @@
     <div class="bolita1"></div>
     <div class="bolita2"></div>
 
-    <!-- Registro Popup -->
+    <div class="logReg">
 
-    <div class="register-card" id="register-card">
-        <span class="close" id="close">x</span>
-        <div class="register-container">
-            <img src="/img/logo.png" alt="logotipo" class="logo-register">
-            <div class="form-container">
-                <div class="input-container">
-                    <input class="input-style" type="email" name="email" placeholder="Ingrese su usuario">
-                    <span class="error-message">Debe ingresar su usuario</span>
-                </div>
-                <div class="input-container">
-                    <input class="input-style" type="email" name="email" placeholder="Ingrese su email">
-                    <span class="error-message">Debe ingresar su email</span>
-                </div>
-                <div class="input-container">
-                    <input class="input-style" type="password" name="pass" placeholder="Contraseña">
-                    <span class="error-message">Debe ingresar su contraseña</span>
-                </div>
-                <div class="button-container">
-                    <span class="error-message">Credenciales inválidas</span>
-                    <button type="submit" class="submit">Registrarse</button>
-                </div class="links">
-                <span><a href="localhost:3000/login" class="redirect-log-reg">¿tienes una cuenta?</a></span>
-                <div>
-                    <hr>
-                </div>
-            </div>
-        </div>
-    </div>
+        <!-- Registro Popup -->
 
-    
-    <!-- Login Popup -->
-
-    <div class="form_container" id="login-card">
-        <div class="card">
+        <div class="register-card" id="register-card">
             <span class="close" id="close">x</span>
-            <div class="content">
-                <img src="img/logo.png" alt="logotipo" class="logo-login">
-                <form class="" action="" method="">
-                    <div class="form">
-                        <div class="input-container">
-                            <input class="input-style" type="email" name="email" placeholder="Ingrese su email">
-                            <span class="error-message">Debe ingresar su email</span>
-                        </div>
-                        <div class="input-container">
-                            <input class="input-style" type="password" name="pass" placeholder="Contraseña">
-                            <span class="error-message">Debe ingresar su contraseña</span>
-                        </div>
-                        <div class="check">
-                            <label class="recordar" for="recordar">Recordarme</label>
-                            <input type="checkbox" name="recordar" id="recordar">
-                        </div>
-                        <div class="button-container">
-                            <span class="error-message">Credenciales inválidas</span>
-                            <button type="submit" class="submit-login">Ingresar</button>
-                        </div class="links">
-                        <span><a href="">¿Olvidaste tu contraseña?</a></span>
-                        <span id="create-account">Aún no tengo cuenta</span>
+            <div class="register-container">
+                <img src="/img/logo.png" alt="logotipo" class="logo-register">
+                <div class="form-container">
+                    <div class="input-container">
+                        <input class="input-style" type="email" name="email" placeholder="Ingrese su usuario">
+                        <span class="error-message">Debe ingresar su usuario</span>
                     </div>
-                </form>
+                    <div class="input-container">
+                        <input class="input-style" type="email" name="email" placeholder="Ingrese su email">
+                        <span class="error-message">Debe ingresar su email</span>
+                    </div>
+                    <div class="input-container">
+                        <input class="input-style" type="password" name="pass" placeholder="Contraseña">
+                        <span class="error-message">Debe ingresar su contraseña</span>
+                    </div>
+                    <div class="button-container">
+                        <span class="error-message">Credenciales inválidas</span>
+                        <button type="submit" class="submit">Registrarse</button>
+                    </div class="links">
+                    <span><a href="localhost:3000/login" class="redirect-log-reg">¿tienes una cuenta?</a></span>
+                    <div>
+                        <hr>
+                    </div>
+                </div>
             </div>
         </div>
+
+
+        <!-- Login Popup -->
+
+        <div class="form_container" id="login-card">
+            <div class="card">
+                <span class="close" id="close">x</span>
+                <div class="content">
+                    <img src="img/logo.png" alt="logotipo" class="logo-login">
+                    <form class="" action="" method="">
+                        <div class="form">
+                            <div class="input-container">
+                                <input class="input-style" type="email" name="email" placeholder="Ingrese su email">
+                                <span class="error-message">Debe ingresar su email</span>
+                            </div>
+                            <div class="input-container">
+                                <input class="input-style" type="password" name="pass" placeholder="Contraseña">
+                                <span class="error-message">Debe ingresar su contraseña</span>
+                            </div>
+                            <div class="check">
+                                <label class="recordar" for="recordar">Recordarme</label>
+                                <input type="checkbox" name="recordar" id="recordar">
+                            </div>
+                            <div class="button-container">
+                                <span class="error-message">Credenciales inválidas</span>
+                                <button type="submit" class="submit-login">Ingresar</button>
+                            </div class="links">
+                            <span><a href="">¿Olvidaste tu contraseña?</a></span>
+                            <span id="create-account">Aún no tengo cuenta</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <nav>
@@ -138,7 +143,7 @@
             </div>
             <hr>
 
-            
+
 
             <div class="store-hamburguer">
                 <div class="store-hamburguer-main">
@@ -286,7 +291,7 @@
 
                 <div class="game">
 
-                    <a href="http://localhost:3000/productDetail">                        
+                    <a href="http://localhost:3000/productDetail">
                         <img src="img/ni-no-kuni-2.jpg" alt="ni no kuni 2" class="games-img-w">
                     </a>
 
@@ -305,7 +310,7 @@
 
                 <div class="game">
 
-                    <a href="http://localhost:3000/productDetail">                        
+                    <a href="http://localhost:3000/productDetail">
                         <img src="img/ni-no-kuni-2.jpg" alt="ni no kuni 2" class="games-img-w">
                     </a>
 
@@ -324,7 +329,7 @@
 
                 <div class="game">
 
-                    <a href="http://localhost:3000/productDetail">                        
+                    <a href="http://localhost:3000/productDetail">
                         <img src="img/ni-no-kuni-2.jpg" alt="ni no kuni 2" class="games-img-w">
                     </a>
 
@@ -346,7 +351,7 @@
 
                 <div class="game">
 
-                    <a href="http://localhost:3000/productDetail">                        
+                    <a href="http://localhost:3000/productDetail">
                         <img src="img/ni-no-kuni-2.jpg" alt="ni no kuni 2" class="games-img-w">
                     </a>
 
@@ -365,7 +370,7 @@
 
                 <div class="game">
 
-                    <a href="http://localhost:3000/productDetail">                        
+                    <a href="http://localhost:3000/productDetail">
                         <img src="img/cyberpunk.jpg" alt="ni no kuni 2" class="games-img-w">
                     </a>
 
@@ -384,7 +389,7 @@
 
                 <div class="game">
 
-                    <a href="http://localhost:3000/productDetail">                        
+                    <a href="http://localhost:3000/productDetail">
                         <img src="img/ni-no-kuni-2.jpg" alt="ni no kuni 2" class="games-img-w">
                     </a>
 
@@ -406,7 +411,7 @@
 
                 <div class="game">
 
-                    <a href="http://localhost:3000/productDetail">                        
+                    <a href="http://localhost:3000/productDetail">
                         <img src="img/cyberpunk.jpg" alt="ni no kuni 2" class="games-img-w">
                     </a>
 
@@ -425,7 +430,7 @@
 
                 <div class="game">
 
-                    <a href="http://localhost:3000/productDetail">                        
+                    <a href="http://localhost:3000/productDetail">
                         <img src="img/cyberpunk.jpg" alt="ni no kuni 2" class="games-img-w">
                     </a>
 
@@ -444,7 +449,7 @@
 
                 <div class="game">
 
-                    <a href="http://localhost:3000/productDetail">                        
+                    <a href="http://localhost:3000/productDetail">
                         <img src="img/cyberpunk.jpg" alt="ni no kuni 2" class="games-img-w">
                     </a>
 
@@ -472,7 +477,7 @@
 
     </main>
 
-    <footer> 
+    <footer>
         <div class="logo-footer">
             <img src="/img/logo.png" alt="logo">
         </div>
@@ -480,7 +485,8 @@
             <p>SEGUINOS</p>
             <div class="social">
                 <a href="https://www.instagram.com/_titan_games_/" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.facebook.com/Titan-Games-markteplace-109552258094094" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.facebook.com/Titan-Games-markteplace-109552258094094" target="_blank"><i
+                        class="fab fa-facebook"></i></a>
                 <a href="https://www.twitch.tv/titangamesmarket" target="_blank"><i class="fab fa-twitch"></i></a>
                 <a href="https://twitter.com/_Titan_Games_" target="_blank"><i class="fab fa-twitter"></i></a>
             </div>
@@ -491,7 +497,7 @@
                 <li><a href="http://localhost:3000/privacyPolitics" target="_blank">Políticas de Privacidad</a></li>
                 <li><a href="http://localhost:3000/about" target="_blank">Acerca de</a></li>
                 <li><a href="mailto:titanGames@correo.com">Contactanos</a></li>
-            </ul> 
+            </ul>
         </div>
     </footer>
 

@@ -15,6 +15,17 @@
       border-radius: 50%;
 }
 
+@keyframes aparecer {
+    from {
+      transform: translatey(-100%);
+    }
+  
+    to {
+      transform: translatey(0%);
+    }
+  }
+  
+
 .form_container {
     box-sizing: border-box;
     display: none;
@@ -22,11 +33,11 @@
     align-items: center;
     flex-direction: column;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     z-index: 18;   
     position: fixed;
+    animation-name: aparecer;
+    animation-duration: 1s;
+
 }
 
 form {
