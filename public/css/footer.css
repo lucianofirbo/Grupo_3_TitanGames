@@ -1,6 +1,10 @@
 :root {
     --greenTitan : #8EBD00;
 }
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
 footer {
     background-color: rgba(0, 0, 0, 0.7);
     display: flex;
@@ -96,6 +100,7 @@ i.fa-shield-alt{
     }
     .box-footer-social p {
         margin-bottom: 10px;
+        margin-top: 10px;
     }
         
 }
