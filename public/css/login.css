@@ -56,7 +56,6 @@ form {
 .form_container .card {
     display: flex;
     width: 310px;
-    max-width: 320px;
     height: 480px;
     border-radius: 15px;
     background-color: #161623;
