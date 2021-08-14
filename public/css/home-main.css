@@ -1,5 +1,4 @@
 /* Transitions */ 
-/* Open to right */
 
 main {
     margin: auto;
@@ -103,11 +102,7 @@ transform: scale(1.1);
     width: 100%;
     gap: 15px;
     margin-top: 20px;
-    min-height: 250px;
-}
-
-.special-offer div {
-    max-height: 270px;
+    height: 70vh;
 }
 
 .special-offer a {
@@ -117,14 +112,14 @@ transform: scale(1.1);
 
 .special-offer img {
     height: 100%;
-width: 100%;
+    width: 100%;
 }
 
 .special-offer-game {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    width: 45%;
+    width: 31%;
     box-shadow: 2px 2px rgba(0, 0, 0, 0.548);
     position: relative;
     transition: all .2s ease-in-out;
