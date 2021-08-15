@@ -1,0 +1,91 @@
+
+* {
+    margin: 0;
+}
+
+div.top-nav {
+    box-shadow: none;
+}
+
+body .box-shop {
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
+    height: 60px;
+    margin-top: 42px;
+}
+
+.box-shop .box-shop1 {
+    background: rgba(255, 255, 255, 0.1);
+    height: 100%;
+    width: 50%;
+    border: 0.1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.box-shop .box-shop2 {
+    
+    background: rgba(255, 255, 255, 0.1);
+    height: 100%;
+    width: 50%;
+    border: 0.1px solid;
+    border-left: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.box-shop .box-shop1 .circle1 {
+    height: 80%;
+    border-radius: 50%;
+    border: 1px solid white;
+    width: 45px;
+    margin-left: 10px;
+}
+
+.box-shop .box-shop2 .circle2 {
+    height: 80%;
+    border-radius: 50%;
+    border: 1px solid white;
+    width: 45px;
+    margin-left: 10px;
+}
+
+.box-shop .box-shop1 .circle1 #icon-shop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.text-shop h4 {
+    color: white;
+    margin-left: 14px;
+}
+
+.box-shop .box-shop2 .circle2 #shop-icon2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    font-size: 20px;
+}
+
+.game-keys {
+    box-sizing: border-box;
+    width: 100%;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 0.1px solid;
+}
+
+.game-keys .profile-text {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: space-around;
+    color: white;
+    gap: 60%;
+}
