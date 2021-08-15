@@ -11,157 +11,11 @@
     
 </head>
 <body>
-    <div class="bolita1"></div>
-    <div class="bolita2"></div>
-    
-    <div class="logReg">
-    
-        <div class="register-card" id="register-card">
-            <span class="close" id="close">x</span>
-            <div class="register-container">
-                <div class="form-container">
-                    <img src="/img/logo.png" alt="logotipo" class="logo-register">
-                    <div class="input-container">
-                        <input class="input-style" type="email" name="email" placeholder="Ingrese su usuario">
-                        <span class="error-message">Debe ingresar su usuario</span>
-                    </div>
-                    <div class="input-container">
-                        <input class="input-style" type="email" name="email" placeholder="Ingrese su email">
-                        <span class="error-message">Debe ingresar su email</span>
-                    </div>
-                    <div class="input-container">
-                        <input class="input-style" type="password" name="pass" placeholder="Contraseña">
-                        <span class="error-message">Debe ingresar su contraseña</span>
-                    </div>
-                    <div class="button-container">
-                        <span class="error-message">Credenciales inválidas</span>
-                        <button type="submit" class="submit-register">Registrarse</button>
-                    </div>
-                    <div class="redirect-register">
-                        <span>
-                            <h5>¿tienes una cuenta?</h5>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-    
-            <!-- Login Popup -->
-    
-            <div class="form_container" id="login-card">
-                <div class="card">
-                    <span class="close" id="close">x</span>
-                    <div class="content">
-                        <img src="img/logo.png" alt="logotipo" class="logo-login">
-                        <form>
-                            <div class="form">
-                                <div class="input-container">
-                                    <input class="input-style" type="email" name="email" placeholder="Ingrese su email">
-                                    <span class="error-message">Debe ingresar su email</span>
-                                </div>
-                                <div class="input-container">
-                                    <input class="input-style" type="password" name="pass" placeholder="Contraseña">
-                                    <span class="error-message">Debe ingresar su contraseña</span>
-                                </div>
-                                <div class="check">
-                                    <label class="recordar" for="recordar">Recordarme</label>
-                                    <input type="checkbox" name="recordar" id="recordar">
-                                </div>
-                                <div class="button-container">
-                                    <span class="error-message">Credenciales inválidas</span>
-                                    <button type="submit" class="submit-login">Ingresar</button>
-                                </div>
-                                <div class="last-text">
-                                    <span>
-                                        <h5>¿Olvidaste tu contraseña?</h4>
-                                    </span>
-                                    <span id="create-account">Aún no tengo cuenta</span>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-    
-            </div>
-    </div>
+    <%- include('./partials/background') -%>
 
-    <nav>
+    <%- include('./partials/logReg') -%>
 
-        <div class="top-nav">
-
-            <div class="top-left">
-
-                <div class="hamburguer-icon">
-                    <i class="fas fa-bars" id="hamburguer-icon"></i>
-                </div>
-
-                <div class="nav-logo">
-                    <a href="http://localhost:3000/"><img src="img/logo.png" alt="Titan Games Logo"></a>
-                </div>
-
-                <div class="store-dropdown">
-                    <p>Tienda</p>
-                    <div class="dropdown-content">
-                        <p>Ofertas</p>
-                        <p>Mas vendido</p>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="top-right">
-
-                <a href="http://localhost:3000/search">
-                    <i class="fas fa-search"></i>
-                </a>
-
-                <a href="http://localhost:3000/productCart">
-                    <i class="fas fa-shopping-cart"></i>
-                </a>
-
-                <div class="notificacion-dropdown">
-                    <i class="fas fa-bell"></i>
-                    <div class="dropdown-content-notificacion">
-                        <p>No tienes notificaciones nuevas</p>
-                    </div>
-                </div>
-
-                <i class="fas fa-user-circle" id="user-icon"></i>
-
-            </div>
-
-        </div>
-
-        <div class="hamburguer slide-right" id="hamburguer">
-
-            <div class="username">
-                <i class="fas fa-user-circle"></i>
-                <h3>Username</h3>
-                <span class="close" id="close">x</span>
-            </div>
-            <hr>
-
-
-
-            <div class="store-hamburguer">
-                <div class="store-hamburguer-main">
-                    <h3>Tienda</h3><i class="fas fa-caret-down"></i>
-                </div>
-                <div class="store-hamburguer-dropdown">
-                    <p>Ofertas</p>
-                    <p>Mas vendido</p>
-                </div>
-            </div>
-            <hr>
-
-            <div class="hamburguer-logo">
-                <img src="img/logo.png" alt="Titan Games Logo">
-            </div>
-
-        </div>
-
-    </nav>
+    <%- include('./partials/header') -%>
 
     <!-- FORMULARIO DE CARGA DE PRODDUCTOS -->
     <div class="bar-product">
@@ -415,28 +269,7 @@
         </div>   
     </section>
 
-    <footer> 
-        <div class="logo-footer">
-            <img src="/img/logo.png" alt="logo">
-        </div>
-        <div class="box-footer-social">
-            <p>SEGUINOS</p>
-            <div class="social">
-                <a href="https://www.instagram.com/_titan_games_/" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.facebook.com/Titan-Games-markteplace-109552258094094" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.twitch.tv/titangamesmarket" target="_blank"><i class="fab fa-twitch"></i></a>
-                <a href="https://twitter.com/_Titan_Games_" target="_blank"><i class="fab fa-twitter"></i></a>
-            </div>
-        </div>
-        <div class="box-info">
-            <i class="fas fa-shield-alt"></i>
-            <ul>
-                <li><a href="http://localhost:3000/privacyPolitics" target="_blank">Políticas de Privacidad</a></li>
-                <li><a href="http://localhost:3000/about" target="_blank">Acerca de</a></li>
-                <li><a href="mailto:titanGames@correo.com">Contactanos</a></li>
-            </ul> 
-        </div>
-    </footer>
+    <%- include('./partials/footer') -%>
 
     <script src="js/productLoad.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
