@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('background.css');
+@import url('header.css');
+@import url('login.css');
+@import url('register.css');
+@import url('footer.css');
+
+.bar-product {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 40px;
+    width: 100%;
+    height: 5%;
+    background-color: #22223ae3;
+    box-shadow: 8px 10px 12px -9px rgba(0,0,0,1);
+    -webkit-box-shadow: 8px 10px 12px -9px rgba(0,0,0,1);
+    -moz-box-shadow: 8px 10px 12px -9px rgba(0,0,0,1);
+    position: fixed;
+    top: 0;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.bar-product p{
+    color: white;
+    text-align: center;
+    margin-top: 5px;
+    text-transform: uppercase;
+    font-size: 0.6rem;
+}
+
+/* SECTION1 */
+
+form.load-product {
+    margin-top: 100px;
+    width: 100%;
+}
+
+.field-product {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+}
+
+.field-flex {
+    display: flex;
+    margin: 10px;
+}
+.field-flex .field-gen {
+    width: 100%;
+    display: grid;
+    justify-content: start;
+}
+
+.field-flex .field-subgen {
+    width: 100%;
+    display: grid;
+    justify-content: start;
+}
+
+.desc-flex {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+}
+
+label {
+    color: white;
+}
+
+.grid {
+    margin-top: 50px; 
+    display: grid;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.grid p{
+    color: white;
+}
+
+.grid .form-element {
+    width: 300px;
+    height: 200px;
+    box-shadow: 0px 0px 20px 5px rgba(100,100,100, 0.1);
+}
+
+.grid .form-element input {
+    display: none;
+}
+
+.grid .form-element img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.grid .form-element div {
+    height: 40px;
+    text-align: center;
+    font-size: 13px; 
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+}
+
+.grid .form-element div span {
+    font-size: 40px;
+}
+
+.grid .form-elements {
+    width: 250px;
+    height: 10px;
+    box-shadow: 0px 0px 20px 5px rgba(100,100,100, 0.1);
+}
+
+/**/
+
+.form-elements-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+
+.form-elements-ind {
+    width: 150px;
+    height: 100px;
+    box-shadow: 0px 0px 20px 5px rgba(100,100,100, 0.1);
+}
+
+.form-elements-ind input {
+    display: none;
+}
+
+.form-elements-ind img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.form-elements-ind div {
+    height: 40px;
+    text-align: center;
+    font-size: 13px; 
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+}
+
+.field-trailer {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 10px;
+}
+
+.button-container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+}
+.button-container .btn-submit {
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 25%);
+    padding: 10px 40px; 
+    margin-bottom: 30px;
+}
+.btn-submit {
+    border: 1px solid #96bd27;
+    border-radius: 5px;
+    border-bottom-color: #69941b;
+    border-left-color: #7fa721;
+    border-right-color: #7fa721;
+    color: #fff;
+    font-weight: bold;
+    text-align: right;
+    background: linear-gradient(-180deg,#9fbf00,#80ab00 91%);
+}
+.btn-submit:hover {
+    background: linear-gradient(180deg,#88b500, #c7e23e);
+}
+.button.btn.btn-submit {
+    display: block;
+    justify-content: center;
+}
+
+input.style-input {
+    border: none;
+    height: 1.8rem;
+    padding: 5px;
+    opacity: 0.8;
+}
+
+select.style-select {
+    border: none;
+    height: 2.4rem;
+    padding: 0.5rem;
+    opacity: 0.8;
+}
+
+textarea.style-textarea {
+    border: none;
+    opacity: 0.8;
+}
+
+input.style-input:focus ,
+select.style-select:focus,
+textarea.style-textarea:focus {
+    box-shadow: 0 0 6px white;
+    outline: none;
+}
+
+/* SECTION2 */
+
+section.section-2 {
+    background-color: rgba(255, 255, 255, 0.315);
+    display: column;
+    justify-content: center;
+    margin: 5px;
+    padding: 10px;
+    box-shadow: 5px 5px 5px #0a0a0a;
+    border: 1px solid rgb(255, 255, 255);
+    margin-top: 80px;
+}
+
+section.section-2 h2 {
+    color: white;
+}
+
+.detail-stock {
+    display: column;
+}
+
+.game-stock {
+    padding-left: 10px;
+    padding-top: 10px;
+    text-align: center;
+    border-bottom: 1px solid white;
+}
+.game-stock img {
+    width:100%;
+    height: auto;
+}
+
+.game-name {
+    color: white;
+    font-weight: bold;
+}
+
+.price p {
+    color: white;
+}
+
+strong#remove {
+    font-size: 0.8rem;
+    cursor: pointer;
+    color: var(--greenTitan);
+}
+
+strong#remove:hover {
+    color: red;
+}
+
+[data-content] {
+    display: none;
+}
+
+.active[data-content] {
+    display: block;
+}
+
+/*  SECCION3  */
+section#section3 {
+    background-color: rgba(255, 255, 255, 0.315);
+    display: column;
+    justify-content: center;
+    margin: 5px;
+    padding: 10px;
+    box-shadow: 5px 5px 5px #0a0a0a;
+    border: 1px solid rgb(255, 255, 255);
+    margin-top: 90px;
+}
+
+section#section3 h2 {
+    color: white;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (min-width: 768px){
+    .bar-product {
+        margin-top: 60px;
+    }
+    form.load-product {
+        padding-top: 100px;
+        width: 90%;
+        margin: 0 auto;
+    }
+    section.section-2 {
+        width: 90%;
+        margin: 90px auto 30px;
+    }
+    .game-stock img {
+        width: 60%;
+    }
+    section#section3 {
+        width: 90%;
+        margin: 90px auto 30px;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    form.load-product {
+        display: flex;
+    }
+    .desc-product-load {
+        width: 60%;
+        margin-bottom: 40px;
+    }
+    .other-box {
+        width: 50%;
+        margin-left: 50px;
+    }
+    .display-flex-box {
+        display: flex;
+        width: fit-content;
+    }
+    .grid {
+        justify-content: center;
+        margin-top: 0;
+    }
+    .grid .form-element {
+        width: 400px;
+        height: 300px;
+    }
+    .form-elements-flex {
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+    .form-elements-ind {
+        width: 100px;
+        height: 100px;
+    }
+    .button-container {
+        justify-content: flex-end;
+        flex-direction: row;
+    }
+    .bar-product p {
+        font-size: 1rem;
+        justify-content: space-evenly;
+    }
+    section.section-2 {
+        width: 80%;
+        margin: 90px auto 30px;
+    }
+    .game-stock img {
+        width: 40%;
+        box-shadow: 0 0 6px 5px rgba(0, 0, 0, 0.274);
+        transition: all .4s ease;
+    }
+    .game-stock img:hover {
+        transform: scale(1.1);
+    }
+    section#section3 {
+        width: 80%;
+        margin: 90px auto 30px;
+    }
+}
