@@ -34,3 +34,6 @@ app.use('/aboutUs', aboutRouter);
 
 const searchRouter = require('./routes/searchRouter.js');
 app.use('/search', searchRouter);
+
+const productLoadRouter = require('./routes/productLoadRouter');
+app.use('/productLoad', productLoadRouter);
