@@ -9,7 +9,7 @@ app.listen(port, () => {
     console.log(`App listening on localhost:${port}`);
 });
 
-/* Setting up static folder */
+/* Setting up static folders */
 
 app.use(express.static('../public'));
 app.set('views', path.join(__dirname, 'views'))
