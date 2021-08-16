@@ -69,6 +69,8 @@ form {
     padding: 10px;
     width: 100%;
     height: 100%;
+    border: 1px solid black;
+    border-radius: 12px;
 }
 
 .logo-login {
@@ -178,9 +180,6 @@ button.submit-login {
 } 
 
 @media (min-width:481px) {
-    .form_container .card {
-        width: 80vw;
-    }
 
     div.input-container {
         width: 300px;

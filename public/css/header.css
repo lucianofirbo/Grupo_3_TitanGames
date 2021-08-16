@@ -1,10 +1,5 @@
 /* TopNav */
 
-/*figure {
-    padding: 0;
-    margin: 0;
-}*/
-
 i {
     color: rgb(247, 240, 240);
 }
@@ -27,6 +22,7 @@ i {
     justify-content: flex-start;
     margin-left: 7%;
     flex-grow: 0.25;
+    gap: 5px;
 }
 
 .top-right {
@@ -63,27 +59,43 @@ i {
     border-radius: 5px;
 }
 
-.notificacion-dropdown {
+.notificacion-dropdown-main-nav {
     position: relative;
     display: inline-block;
 }
 
-.dropdown-content-notificacion {
+.dropdown-content-notificacion-main-nav {
     display: none;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-end;
+    align-items: flex-end;
     position: absolute;
     background-color: #161623;
-    width: 210px;
-    color: white;
-    right: -5px;
+    width: 170px;
     border-radius: 5px;
+    color: white;
+    right: 0px;
+    text-align: center;
+    top: 30px;
 }
 
-.dropdown-content-notificacion p {
-    padding: 5px;
-    margin: 15px;
+.dropdown-content-notificacion-main-nav p {
+    font-size: 18px;
+}
+
+.notificacion-dropdown-hamburguer {
+    display: inline-block;
+    flex-direction: row;
+    margin-left: 15px;
+    font-size: 1.6rem;
+}
+
+.dropdown-content-notificacion-hamburguer {
+    display: none;
+    background-color: #161623;
+    color: white;
+    font-size: 1rem;
+    width: 100%;
 }
 
 .store-hamburguer {
@@ -109,8 +121,9 @@ i {
 }
 
 .store-dropdown:hover .dropdown-content {display: flex;}
-.notificacion-dropdown:hover .dropdown-content-notificacion {display: flex;}
+.notificacion-dropdown-hamburguer:hover .dropdown-content-notificacion-hamburguer {display: flex;}
 .store-hamburguer:hover .store-hamburguer-dropdown {display: flex;}
+.notificacion-dropdown-main-nav:hover .dropdown-content-notificacion-main-nav {display: flex;}
 
 /* Hamburguer */
 
@@ -125,10 +138,12 @@ i {
     height: 100%;
     background-color: #161623;
     color: whitesmoke;
+    border: 1px solid black;
 }
 
 .hamburguer i {
     margin-top: 2.6%;
+    font-size: 25px;
 }
 
 .hamburguer hr {
@@ -137,16 +152,38 @@ i {
 }
 
 .username,
-.store,
-.about {
+.store {
     padding: 3%;
     width: 100%;
     display: flex;
     font-size: 20px;
-    flex-direction: row;
+    flex-direction: column;
     gap: 5px;
     margin-top: 15px;
     margin-left: 5px;
+}
+
+.username {
+    background-color: black;
+    margin: 0;
+}
+
+.notificacion-content-hamburguer {
+    display: flex;
+}
+
+.hamburguer-cart {
+    display: flex;
+    text-decoration: none;
+}
+
+.hamburguer-username {
+    display: flex;
+}
+
+.hamburguer-username-dropdown {
+    display: flex;
+    flex-direction: column;
 }
 
 .hamburguer-logo img {
@@ -159,6 +196,11 @@ i {
     justify-content: center;
     align-items: flex-end;
     height: 100%;
+}
+
+.notificacion-dropdown-main-nav,
+.user-icon {
+    display: none;
 }
 
 /* Media Query Tablet */
@@ -192,13 +234,21 @@ i {
     }
 
     .top-left p {
-        font-size: 25px;
+        font-size: 23px;
         font-weight: bold;
         display: flex;
         justify-content: center;
         padding: 0 2%;
         align-items: center;
         color: whitesmoke;
+    }
+
+    .dropdown-content {
+        gap: 10px;
+    }
+
+    .dropdown-content p {
+        font-size: 18px;
     }
 
     .top-right {
@@ -220,5 +270,10 @@ i {
         height: 100%;
         color: white;
     }    
+
+    .notificacion-dropdown-main-nav,
+    .user-icon {
+    display: flex;
+    }
 
 }
