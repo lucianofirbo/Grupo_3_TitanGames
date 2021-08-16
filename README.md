@@ -8,15 +8,10 @@
 - 23 años
 - Estudiante de Licenciatura en Sistemas en la Universidad Nacional de General Sarmiento, realizando curso de desarrollado web full-stack en Digital House y cuento con un dominio avanzado en ingles.
 
-**Firbo, Luciano**
+**Firbo, Luciano Matias**
 
-- 29 años
+- 30 años
 - Estudiante de una tecnicatura en programación en la universidad de Lomas de Zamora y alumno en Digital House en el curso de desarrolo web full-stack.
-
-**Mungi, Maico Gabriel**
-
-- 22 años
-- Estudiante de programación web.
 
 **Navarro, Evelyn Denise**
 - 22 años

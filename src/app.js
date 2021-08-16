@@ -11,7 +11,7 @@ app.listen(port, () => {
 
 /* Setting up static folders */
 
-app.use(express.static('../public'));
+app.use(express.static('./public'));
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 
@@ -32,7 +32,7 @@ app.use('/privacyPolitics', privacyPoliticsRouter);
 const aboutRouter = require('./routes/aboutRouter');
 app.use('/aboutUs', aboutRouter);
 
-const searchRouter = require('./routes/searchRouter.js');
+const searchRouter = require('./routes/searchRouter');
 app.use('/search', searchRouter);
 
 const productLoadRouter = require('./routes/productLoadRouter');

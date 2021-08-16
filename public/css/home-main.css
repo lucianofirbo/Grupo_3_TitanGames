@@ -5,6 +5,10 @@ main {
     max-width: 1024px;
 }
 
+.carousel-indicators {
+    z-index: 1;
+}
+
 .logReg {
     position: absolute;
     display: flex;
