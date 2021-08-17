@@ -15,10 +15,15 @@ window.onload = () => {
         } else if (idElemento=== 'active') {            
             showHideCategories('active', 'active2', 'active3')
             showHide('discover-games', 'newest', 'top-sales')
+        } else if (idElemento === 'hamburguer-account' || idElemento === 'redirect-login') {
+            document.getElementById('login-card').style.display = 'flex'            
+            document.getElementById('register-card').style.display = 'none'
         } else if (idElemento === 'user-icon') {
             document.getElementById('login-card').style.display = 'flex'
-        } else if (idElemento === 'user-icon') {
-            document.getElementById('login-card').style.display = 'flex'
+        } else if (idElemento === 'store-hamburguer') {
+            document.getElementById('store-hamburguer-dropdown').style.display = 'flex'
+        } else if (idElemento === 'notificacion-hamburguer') {
+            document.getElementById('notificacion-hamburguer-dropdown').style.display = 'flex'
         } else if (idElemento === 'close') {
             document.getElementById('login-card').style.display = 'none'
             document.getElementById('register-card').style.display = 'none'

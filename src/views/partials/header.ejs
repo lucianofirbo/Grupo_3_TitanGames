@@ -15,8 +15,16 @@
             <div class="store-dropdown">
                 <p>Tienda</p>
                 <div class="dropdown-content">
-                    <p>Ofertas</p>
-                    <p>Mas vendido</p>
+                    <a href="http://localhost:3000/">
+                        <p>Inicio</p>
+                    </a>
+                    <a href=""><p>Ofertas</p></a>
+                    <a href=""><p>Mas vendido</p></a>                    
+                    <div class="hamburguer-cart">
+                        <a href="http://localhost:3000/productCart">
+                            <p>Carrito</p>
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -28,18 +36,18 @@
                 <i class="fas fa-search"></i>
             </a>
 
-            <a href="http://localhost:3000/productCart">
-                <i class="fas fa-shopping-cart"></i>
-            </a>
-
-            <div class="notificacion-dropdown">
-                <i class="fas fa-bell"></i>
-                <div class="dropdown-content-notificacion">
+            <div class="notificacion-dropdown-main-nav">
+                <div class="notificacion-icon-main-nav">
+                    <i class="fas fa-bell"></i>
+                </div>
+                <div class="dropdown-content-notificacion-main-nav">
                     <p>No tienes notificaciones nuevas</p>
                 </div>
             </div>
-
-            <i class="fas fa-user-circle" id="user-icon"></i>
+            
+            <div class="user-icon">
+                <i class="fas fa-user-circle hamburguer-account user-icon" id="hamburguer-account"></i>
+            </div>
 
         </div>
 
@@ -47,22 +55,41 @@
 
     <div class="hamburguer slide-right" id="hamburguer">
 
-        <div class="username">
-            <i class="fas fa-user-circle"></i>
-            <h3>Username</h3>
-            <span class="close" id="close">x</span>
+        <div class="username" id="hamburguer-account">
+            <div class="hamburguer-username" id="hamburguer-account">
+                <i class="fas fa-user-circle hamburguer-account"></i>
+                <h3 id="hamburguer-account">Username</h3>
+                <span class="close" id="close">x</span>
+            </div>
+        </div>
+        <hr>
+
+        <div class="store-hamburguer">
+            <div class="store-hamburguer-main" id="store-hamburguer">
+                <h3 id="store-hamburguer">Tienda</h3><i class="fas fa-caret-down"></i>
+            </div>
+            <div class="store-hamburguer-dropdown" id="store-hamburguer-dropdown">
+                <a href="http://localhost:3000/">
+                    <p>Inicio</p>
+                </a>
+                <p>Ofertas</p>
+                <p>Mas vendido</p>
+                <div class="hamburguer-cart">
+                    <a href="http://localhost:3000/productCart">
+                        <p>Carrito</p>
+                    </a>
+                </div>
+            </div>
         </div>
         <hr>
 
 
-
-        <div class="store-hamburguer">
-            <div class="store-hamburguer-main">
-                <h3>Tienda</h3><i class="fas fa-caret-down"></i>
+        <div class="notificacion-dropdown-hamburguer">
+            <div class="notificacion-content-hamburguer" id="notificacion-hamburguer">
+                <p id="notificacion-hamburguer">Notificaciones</p><i class="fas fa-caret-down"></i>
             </div>
-            <div class="store-hamburguer-dropdown">
-                <p>Ofertas</p>
-                <p>Mas vendido</p>
+            <div class="dropdown-content-notificacion-hamburguer" id="notificacion-hamburguer-dropdown">
+                <p>No tienes notificaciones nuevas</p>
             </div>
         </div>
         <hr>
