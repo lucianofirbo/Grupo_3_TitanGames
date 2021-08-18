@@ -27,11 +27,13 @@ window.onload = () => {
         } else if (idElemento === 'close') {
             document.getElementById('login-card').style.display = 'none'
             document.getElementById('register-card').style.display = 'none'
+            document.getElementById('recover-card').style.display = 'none'
             document.getElementById('hamburguer').style.display = 'none'
         } else if (idElemento === 'create-account') {
             document.getElementById('login-card').style.display = 'none'
             document.getElementById('register-card').style.display = 'flex'
         } else if(idElemento === 'recover-pass') {
+            document.getElementById('login-card').style.display = 'none'
             document.getElementById('recover-card').style.display = 'flex'
         } else if(idElemento === 'login') {
             document.getElementById('login-card').style.display = 'flex'
