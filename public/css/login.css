@@ -24,15 +24,12 @@
       transform: translatey(0%);
     }
 }
-  
 
 .form_container {
-    box-sizing: border-box;
     display: none;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    position: absolute;
     z-index: 18;   
     position: fixed;
     animation-name: aparecer;
