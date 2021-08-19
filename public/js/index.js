@@ -43,7 +43,7 @@ window.onload = () => {
 }
 
 function showHideCategories (idShow, idHide, idHide2) {
-    document.getElementById(idShow).style.backgroundColor = '#807c7c36'
+    document.getElementById(idShow).style.backgroundColor = '#807c7c8a'
     document.getElementById(idHide).style.backgroundColor = 'rgba(0, 0, 0, 0)'
     document.getElementById(idHide2).style.backgroundColor = 'rgba(0, 0, 0, 0)'
 }

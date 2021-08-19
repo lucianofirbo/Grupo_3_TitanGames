@@ -54,22 +54,12 @@ main {
 transform: scale(1.1);
 }
 
-/* Image from the event */
-
-.img-evento img {
-    width: 100%;
-    margin-top: 35px;
-    margin-bottom: 5px;
-    min-height: 22vh;
-    box-shadow: 2px 0.7698959708213806px 1.078827142715454px 2px #00000065;
-    max-height: 33vh;
-}
-
 /* Carousel */
 
 .slide img {
     height: 25vh;    
     margin-bottom: 5px;
+    margin-top: 10%;
 }
 
 .carousel {
@@ -86,15 +76,12 @@ transform: scale(1.1);
     height: 40px;
 }
 
-.separator h4 {
-    font-weight: 1000;
-    color: whitesmoke;
-    padding: 10px 0px;
-    margin: 0 0 0 5px;
-    font-size: 1.5rem;
-    display: flex;
-    flex-direction: row;
-    width: 100%;
+.separator p {
+    color: white;
+    font-size: 25px;
+    font-weight: 150;
+    font-family: arial;
+    margin-left: 2.5%;
 }
 
 /* Special Offers */
@@ -107,7 +94,7 @@ transform: scale(1.1);
     width: 100%;
     gap: 15px;
     margin-top: 20px;
-    height: 45vh;
+    height: 34vh;
 }
 
 .special-offer a {
@@ -185,7 +172,7 @@ transform: scale(1.1);
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 3%;
+    margin-top: 5%;
 }
 
 .categories {
@@ -213,7 +200,7 @@ transform: scale(1.1);
 }
 
 #active {    
-    background-color: #807c7c36;
+    background-color: #807c7c8a;
     margin-bottom: 0;
 }
 
@@ -229,7 +216,7 @@ transform: scale(1.1);
 .games {
     display: flex;
     flex-direction: column;
-    background-color: #807c7c36;
+    background-color: #807c7c8a;
     margin-top: 0;
     width: 100%;
     color: whitesmoke;
@@ -294,7 +281,7 @@ transform: scale(1.1);
 
 .see-more-d {
     justify-content: center;
-    background-color: #807c7c36;
+    background-color: #807c7c8a;
     width: 40%;
     margin-bottom: 15px;
     border-radius: 0 0 15px 15px;
@@ -318,7 +305,7 @@ transform: scale(1.1);
 @media screen and (min-width: 480px) {
 
     .special-offer {
-        height: 50vh;
+        height: 37vh;
     }
 
     .special-offer-game {
@@ -329,6 +316,7 @@ transform: scale(1.1);
         box-shadow: 2px 2px rgba(0, 0, 0, 0.548);
         position: relative;
         transition: all .2s ease-in-out;
+        height: 100%;
     }
 
     .see-more-button {
@@ -336,13 +324,34 @@ transform: scale(1.1);
     }
 
     .slide img {
-        height: 30vh;
+        height: 32vh;
         margin-bottom: 5px;
+        margin-top: 5.5%;
+    }
+
+    .discover {
+        margin-top: 3%;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+
+    .special-offer {
+        height: 40%;
+    }
+
+    .discover {
+        margin-top: 2%;
     }
 
 }
 
 @media screen and (min-width: 1024px) {
+
+    .discover {
+        margin-top: 1.7%;
+    }
     
     .games img {
         max-height: 160px;
@@ -354,7 +363,7 @@ transform: scale(1.1);
     }
 
     .slide img {
-        height: 35vh;
+        height: 45vh;
         margin-bottom: 5px;
     }
 

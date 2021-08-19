@@ -1,44 +1,7 @@
 body {
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    font-family: 'Poppins';    
-    background: #161623;
-}
-
-.bolita1 {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;    
-    width: 100vw;
-    height: 100%;
-    background: linear-gradient(#f00,rgb(98, 0, 255));
-    clip-path: circle(30% at right 70%);
-}
-
-.bolita2 {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100%;
-    background: linear-gradient(#2196f3,#69e91e);
-    clip-path: circle(20% at 10% 10%);
-}
-
-.bolita3 {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(#2196f3,#e91e63);
-    clip-path: circle(20% at 40% 110%);
+    background-color: #161623;
+    opacity: 0.9;
+    background-image:  radial-gradient(#9941db 0.65px, transparent 0.65px), radial-gradient(#9941db 0.65px, #161623 0.65px);
+    background-size: 26px 26px;
+    background-position: 0 0,13px 13px;
 }
