@@ -25,7 +25,7 @@ i {
 .top-left {
     display: flex;
     justify-content: flex-start;
-    margin-left: 7%;
+    margin-left: 6%;
     flex-grow: 0.25;
 }
 

@@ -37,3 +37,6 @@ app.use('/search', searchRouter);
 
 const productLoadRouter = require('./routes/productLoadRouter');
 app.use('/productLoad', productLoadRouter);
+
+const profileRouter = require ('./routes/profileRouter');
+app.use('/profile', profileRouter)

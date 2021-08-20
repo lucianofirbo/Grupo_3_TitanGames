@@ -5,6 +5,7 @@
 
 div.top-nav {
     box-shadow: none;
+    border: 0.1px solid;
 }
 
 body .box-shop {
@@ -12,11 +13,24 @@ body .box-shop {
     display: flex;
     width: 100%;
     height: 60px;
-    margin-top: 42px;
+    margin-top: 40px;
+    background-color: #161623
+}
+
+.text-shop2 {
+    display: none;
+}
+
+.dashboard {
+    width: 25%;
+    height: 677px;
+    background-color: #161623;
+    margin-top: 59px;
+    display: none;
+    margin-bottom: 14px;
 }
 
 .box-shop .box-shop1 {
-    background: rgba(255, 255, 255, 0.1);
     height: 100%;
     width: 50%;
     border: 0.1px solid;
@@ -26,8 +40,6 @@ body .box-shop {
 }
 
 .box-shop .box-shop2 {
-    
-    background: rgba(255, 255, 255, 0.1);
     height: 100%;
     width: 50%;
     border: 0.1px solid;
@@ -76,8 +88,8 @@ body .box-shop {
 .game-keys {
     box-sizing: border-box;
     width: 100%;
-    height: 60px;
-    background: rgba(255, 255, 255, 0.1);
+    height: 43px;
+    background-color: #161623;
     border: 0.1px solid;
 }
 
@@ -88,4 +100,184 @@ body .box-shop {
     justify-content: space-around;
     color: white;
     gap: 60%;
+}
+
+.log-reg {
+    display: none;
+    height: 0px;
+}
+
+.img-container {
+    box-sizing: border-box;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 0.1px solid;
+}
+
+.img-card-container {
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+
+.img-container .img-card-container img {
+    width: 48%;
+    max-width: 200px;
+    height: 49%;
+    margin: 1%;
+    border-radius: 10px;
+}
+
+@media screen and (min-width:769px){
+    body .box-shop {
+      margin-top: 60px;
+    }
+
+}
+
+
+@media screen and (min-width:1024px){
+    .img-container .img-card-container img {
+        width: 23%;
+        padding: 13px 0px 0px;
+    }
+    .game-keys,
+    .img-container {
+        width: 100%;
+    }
+
+    .img-container {
+        height: 83%;
+    }
+
+    .store-dropdown {
+        display: none;
+    }
+
+    .top-right {
+        margin-right: 2%;
+    }
+
+    .text-shop {
+        display: none;
+    }
+
+    .text-dashboard {
+        width: 100%;
+        height: 9%;
+        border: 0.1px solid;
+        display: flex;
+        align-items: center;
+    }
+
+    .button-dashboard {
+        width: 100%;
+        height: 9%;
+        border: 0.1px solid;
+        gap: 20%;
+        display: flex;
+        justify-content: space-between;
+        padding: 16px 16px;
+    }
+
+    .button-dashboard a {
+        text-decoration: none;
+        color: white;
+        transition: all 1s ease-out;
+    }
+
+    .text-shop2 {
+        display: block;
+        color: white;
+        margin-left: 16px;
+        font-size: larger;
+    }
+
+    div.box-shop {
+        display: none;
+    }
+
+    .game-keys {
+        margin-top: 60px;
+        background-color: #161623;
+        height: 60px;
+    }
+
+    .complete-dashboard {
+        display: block;
+        display: flex;
+    }
+
+    .dashboard {
+        display: block;
+        border: 0.1px solid;
+    }
+
+    .button-dashboard-dropdown {
+        background-color:rgb(46, 45, 45);
+        margin-top: 39px;
+        height: 18%;
+        width: 19.7%;
+        border: 0.1px solid;
+        display: none;
+        left: 0;
+        position: absolute;
+        z-index: 1;
+    }
+
+    .button-dashboard-dropdown1 {
+        width: 100%;
+        height: 50%;
+        display: flex;
+        align-items: center;
+    }
+
+    .button-dashboard-dropdown h4{
+        text-decoration: none;
+        color: white;
+        margin-left: 16px;
+    }
+
+    .button-dashboard:hover .button-dashboard-dropdown {
+        display: block;
+    }
+
+    .social-box {
+        height: 25%;
+        color: white;
+        display: flex;
+        gap: 5%;
+        margin-left: 8%;
+    }
+
+    .redes-social {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        height: 100%;
+        padding: 12px 3px;
+    }
+
+    .soporte {
+        height: 100%;
+    }
+
+    .soporte-box {
+        width: 100%;
+        height: 33.4%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 12px 16px;
+    }
+
+    .keys-container {
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+
 }

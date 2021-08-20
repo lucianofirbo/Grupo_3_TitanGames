@@ -8,7 +8,6 @@ main {
 .logReg {
     position: absolute;
     display: flex;
-    height: 100vh;
     width: 100vw;
     justify-content: center;
     align-items: center;
