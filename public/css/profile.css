@@ -25,9 +25,10 @@ body .box-shop {
     width: 25%;
     height: 677px;
     background-color: #161623;
-    margin-top: 59px;
+    margin-top: 55px;
     display: none;
     margin-bottom: 14px;
+    z-index: 1;
 }
 
 .box-shop .box-shop1 {
@@ -91,6 +92,7 @@ body .box-shop {
     height: 43px;
     background-color: #161623;
     border: 0.1px solid;
+    z-index: 1;
 }
 
 .game-keys .profile-text {

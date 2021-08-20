@@ -5,6 +5,10 @@ main {
     max-width: 1024px;
 }
 
+.carousel-indicators {
+    z-index: 1;
+}
+
 .logReg {
     position: absolute;
     display: flex;
@@ -49,21 +53,12 @@ main {
 transform: scale(1.1);
 }
 
-/* Image from the event */
-
-.img-evento img {
-    width: 100%;
-    margin-top: 35px;
-    margin-bottom: 5px;
-    min-height: 22vh;
-    box-shadow: 2px 0.7698959708213806px 1.078827142715454px 2px #00000065;
-}
-
 /* Carousel */
 
 .slide img {
     height: 25vh;    
     margin-bottom: 5px;
+    margin-top: 10%;
 }
 
 .carousel {
@@ -80,15 +75,12 @@ transform: scale(1.1);
     height: 40px;
 }
 
-.separator h4 {
-    font-weight: 1000;
-    color: whitesmoke;
-    padding: 10px 0px;
-    margin: 0 0 0 5px;
-    font-size: 1.5rem;
-    display: flex;
-    flex-direction: row;
-    width: 100%;
+.separator p {
+    color: white;
+    font-size: 25px;
+    font-weight: 150;
+    font-family: arial;
+    margin-left: 2.5%;
 }
 
 /* Special Offers */
@@ -101,7 +93,7 @@ transform: scale(1.1);
     width: 100%;
     gap: 15px;
     margin-top: 20px;
-    height: 70vh;
+    height: 34vh;
 }
 
 .special-offer a {
@@ -118,7 +110,7 @@ transform: scale(1.1);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    width: 31%;
+    width: 30%;
     box-shadow: 2px 2px rgba(0, 0, 0, 0.548);
     position: relative;
     transition: all .2s ease-in-out;
@@ -144,15 +136,17 @@ transform: scale(1.1);
 
 .special-offer-details {
     position: absolute;
-    bottom: 0;
+    width: 100%;
+    height: 100%;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
     font-size: 15px;
-    justify-content: space-around;
     color: white;
     font-weight: 600;
-    font-style: bold;
+    text-align: center;
     background-color: #807c7cbd;
-    width: 100%;
 }
 
 .special-offer-details p {  
@@ -177,7 +171,9 @@ transform: scale(1.1);
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 3%;
+    margin-top: 5%;
+    position: relative;
+    z-index: 1;
 }
 
 .categories {
@@ -205,7 +201,7 @@ transform: scale(1.1);
 }
 
 #active {    
-    background-color: #807c7c36;
+    background-color: #807c7c8a;
     margin-bottom: 0;
 }
 
@@ -221,7 +217,7 @@ transform: scale(1.1);
 .games {
     display: flex;
     flex-direction: column;
-    background-color: #807c7c36;
+    background-color: #807c7c8a;
     margin-top: 0;
     width: 100%;
     color: whitesmoke;
@@ -285,12 +281,9 @@ transform: scale(1.1);
 }
 
 .see-more-d {
-    display: flex;
     justify-content: center;
-    align-items: center;
-    background-color: #807c7c36;
+    background-color: #807c7c8a;
     width: 40%;
-    max-height: 60px;
     margin-bottom: 15px;
     border-radius: 0 0 15px 15px;
 }
@@ -301,58 +294,78 @@ transform: scale(1.1);
     align-items: center;
 }
 
-.see-more-d button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: transparent;
-    text-align: center;
-    border-radius: 5px;
+.see-more-d p {
     color: white;
     font-weight: 600;
-    border: none;
+    font-size: 0.7rem;
+    text-align: center;
 }
 
 /* Media Querys */ 
 
 @media screen and (min-width: 480px) {
-    
-    .img-evento img {
-        max-height: 40vh;
+
+    .special-offer {
+        height: 37vh;
+    }
+
+    .special-offer-game {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 30%;
+        box-shadow: 2px 2px rgba(0, 0, 0, 0.548);
+        position: relative;
+        transition: all .2s ease-in-out;
+        height: 100%;
+    }
+
+    .see-more-button {
+        margin-top: 1%;
     }
 
     .slide img {
-        height: 45vh;
+        height: 32vh;
+        margin-bottom: 5px;
+        margin-top: 5.5%;
     }
 
-    .special-offer-details {
-        height: 30%;
+    .discover {
+        margin-top: 3%;
     }
 
-    .special-offer-details p {
-        font-weight: 1200;
-        font-size: 1.3rem;
+}
+
+@media screen and (min-width: 768px) {
+
+    .special-offer {
+        height: 40%;
     }
 
-    .special-offer img {
-        width: 100%;
-    }
-
-    .games p {
-        font-size: 1.3rem;
-    }
-
-    .games {
-        height: 600px;
+    .discover {
+        margin-top: 2%;
     }
 
 }
 
 @media screen and (min-width: 1024px) {
+
+    .discover {
+        margin-top: 1.7%;
+    }
     
     .games img {
         max-height: 160px;
         width: 100%;
+    }
+
+    .see-more-button {
+        margin-top: 10%;
+    }
+
+    .slide img {
+        height: 45vh;
+        margin-bottom: 5px;
     }
 
 }

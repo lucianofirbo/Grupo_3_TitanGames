@@ -23,7 +23,7 @@
                     <span class="error-message">Credenciales inválidas</span>
                     <button type="submit" class="submit-register">Registrarse</button>
                 </div>
-                <div class="redirect-register">
+                <div class="redirect-register" id="redirect-login">
                     <span>
                         <h5>¿tienes una cuenta?</h5>
                     </span>
@@ -58,9 +58,9 @@
                                 <span class="error-message">Credenciales inválidas</span>
                                 <button type="submit" class="submit-login">Ingresar</button>
                             </div>
-                            <div class="last-text">
-                                <span>
-                                    <h5>¿Olvidaste tu contraseña?</h4>
+                            <div class="last-text" id="recover-pass">
+                                <span id="recover-pass">
+                                    <h5 id="recover-pass">¿Olvidaste tu contraseña?</h4>
                                 </span>
                                 <span id="create-account">Aún no tengo cuenta</span>
                             </div>
@@ -70,4 +70,29 @@
             </div>
 
         </div>
+
+        <!-- Recover Password -->
+
+        <div class="recover-container" id="recover-card">
+            <span class="close" id="close">x</span>
+            <div class="img-recover">
+                <img src="/img/logo.png" alt="">
+            </div>
+            <div class="title-recover">
+                <h3>¿Tienes problemas para entrar?</h3>
+                <p>Introduce tu correo electrónico, número de teléfono o nombre de usuario y te enviaremos un enlace para que vuelvas a entrar en tu cuenta.</p>
+            </div>
+            <form class="recover-input-container" action="">
+                <input class="recover-input" type="text" placeholder="Correo electrónico, teléfono o nombre de usuario">
+                <div class="button-container">
+                    <button type="submit" class="btn btn-submit"> <strong>Envíar enlace</strong></button>
+                </div>
+            </form>
+            <div class="recover-option">
+                <p>o</p>
+                <a href="">Crear cuenta</a>
+                <a href="">Volver al Inicio de sesión</a>
+            </div> 
+        </div>
+
 </div>

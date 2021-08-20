@@ -15,24 +15,35 @@ window.onload = () => {
         } else if (idElemento=== 'active') {            
             showHideCategories('active', 'active2', 'active3')
             showHide('discover-games', 'newest', 'top-sales')
+        } else if (idElemento === 'hamburguer-account' || idElemento === 'redirect-login') {
+            document.getElementById('login-card').style.display = 'flex'            
+            document.getElementById('register-card').style.display = 'none'
         } else if (idElemento === 'user-icon') {
             document.getElementById('login-card').style.display = 'flex'
-        } else if (idElemento === 'user-icon') {
-            document.getElementById('login-card').style.display = 'flex'
+        } else if (idElemento === 'store-hamburguer') {
+            document.getElementById('store-hamburguer-dropdown').style.display = 'flex'
+        } else if (idElemento === 'notificacion-hamburguer') {
+            document.getElementById('notificacion-hamburguer-dropdown').style.display = 'flex'
         } else if (idElemento === 'close') {
             document.getElementById('login-card').style.display = 'none'
             document.getElementById('register-card').style.display = 'none'
+            document.getElementById('recover-card').style.display = 'none'
             document.getElementById('hamburguer').style.display = 'none'
         } else if (idElemento === 'create-account') {
             document.getElementById('login-card').style.display = 'none'
             document.getElementById('register-card').style.display = 'flex'
-        }
+        } else if(idElemento === 'recover-pass') {
+            document.getElementById('login-card').style.display = 'none'
+            document.getElementById('recover-card').style.display = 'flex'
+        } else if(idElemento === 'login') {
+            document.getElementById('login-card').style.display = 'flex'
+        }        
     })
 
 }
 
 function showHideCategories (idShow, idHide, idHide2) {
-    document.getElementById(idShow).style.backgroundColor = '#807c7c36'
+    document.getElementById(idShow).style.backgroundColor = '#807c7c8a'
     document.getElementById(idHide).style.backgroundColor = 'rgba(0, 0, 0, 0)'
     document.getElementById(idHide2).style.backgroundColor = 'rgba(0, 0, 0, 0)'
 }
