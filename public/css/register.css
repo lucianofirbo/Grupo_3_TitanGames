@@ -1,6 +1,6 @@
 @keyframes aparecer {
     from {
-      transform: translatey(-100%);
+      transform: translatey(100%);
     }
   
     to {
@@ -9,6 +9,7 @@
 }
 
 div.register-card {
+    margin-top: 54%;
     box-sizing: border-box;
     display: none;
     justify-content: center;
@@ -18,7 +19,6 @@ div.register-card {
     height: 480px;
     border-radius: 12px;
     background-color: #161623;
-    backdrop-filter: blur(5px);
     z-index: 18;
     position: fixed;
     border: 1px solid black;

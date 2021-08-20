@@ -49,12 +49,12 @@ form {
 }
 
 .form_container .card {
+    margin-top: 24%;
     display: flex;
     width: 310px;
     height: 480px;
     border-radius: 15px;
     background-color: #161623;
-    backdrop-filter: blur(5px);
 }
 
 .form_container .card .content {
