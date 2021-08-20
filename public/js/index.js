@@ -36,6 +36,7 @@ window.onload = () => {
             document.getElementById('login-card').style.display = 'none'
             document.getElementById('recover-card').style.display = 'flex'
         } else if(idElemento === 'login') {
+            document.getElementById('register-card').style.display = 'none'
             document.getElementById('login-card').style.display = 'flex'
         }        
     })
