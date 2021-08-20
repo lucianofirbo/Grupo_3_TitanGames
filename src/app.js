@@ -10,7 +10,6 @@ app.listen(port, () => {
 });
 
 /* Setting up static folders */
-
 app.use(express.static('./public'));
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
@@ -20,23 +19,11 @@ app.set('view engine', 'ejs')
 const indexRouter = require('./routes/indexRouter');
 app.use('/', indexRouter);
 
-const productDetailRouter = require('./routes/productDetailRouter');
-app.use('/productDetail', productDetailRouter);
+const productRouter = require('./routes/productRouter');
+app.use('/product', productRouter);
 
-const productCartRouter = require('./routes/productCartRouter');
-app.use('/productCart', productCartRouter);
-
-const privacyPoliticsRouter = require('./routes/privacyPoliticsRouter');
-app.use('/privacyPolitics', privacyPoliticsRouter);
-
-const aboutRouter = require('./routes/aboutRouter');
-app.use('/aboutUs', aboutRouter);
-
-const searchRouter = require('./routes/searchRouter');
-app.use('/search', searchRouter);
-
-const productLoadRouter = require('./routes/productLoadRouter');
-app.use('/productLoad', productLoadRouter);
+const adminRouter = require ('./routes/adminRouter');
+app.use('/admin', adminRouter)
 
 const profileRouter = require ('./routes/profileRouter');
 app.use('/profile', profileRouter)

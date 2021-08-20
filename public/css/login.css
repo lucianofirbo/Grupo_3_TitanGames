@@ -1,3 +1,9 @@
+.logReg {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+}
+
 .card .close {
     text-align: center;
     cursor: pointer;
@@ -33,6 +39,7 @@
     z-index: 18;   
     animation-name: aparecer;
     animation-duration: 1s;
+    position: fixed;
 }
 
 form {
