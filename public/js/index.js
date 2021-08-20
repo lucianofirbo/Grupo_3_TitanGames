@@ -9,7 +9,7 @@ window.onload = () => {
         } else if (idElemento=== 'active2') {       
             showHideCategories('active2', 'active', 'active3')
             showHide('top-sales', 'newest', 'discover-games')
-        } else if (idElemento=== 'active3') {       
+        } else if (idElemento=== 'active3') {
             showHideCategories('active3', 'active2', 'active')
             showHide('newest', 'top-sales', 'discover-games')
         } else if (idElemento=== 'active') {            
@@ -27,8 +27,8 @@ window.onload = () => {
         } else if (idElemento === 'close') {
             document.getElementById('login-card').style.display = 'none'
             document.getElementById('register-card').style.display = 'none'
-            document.getElementById('recover-card').style.display = 'none'
             document.getElementById('hamburguer').style.display = 'none'
+            /*document.getElementById('recover-card').style.display = 'none'*/
         } else if (idElemento === 'create-account') {
             document.getElementById('login-card').style.display = 'none'
             document.getElementById('register-card').style.display = 'flex'
