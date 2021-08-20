@@ -52,9 +52,14 @@ main h3 {
     display: flex;
 }
 
+.price-flex p {
+    font-size: 0.7rem;
+}
+
 .game-name h4 {
     text-transform: uppercase;
     font-weight: normal;
+    font-size: 0.8rem;
     margin-top: 10px;
     margin-left: 10px;
 }
@@ -221,7 +226,7 @@ section {
     position: absolute;
     bottom: -160px;
     width: 100%;
-    height: 100px;
+    height: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -266,6 +271,9 @@ section {
         width: 110px;
         height: 120px;
     }
+    .price-flex p {
+        font-size: 0.9rem;
+    }
 }
 
 @media screen and (min-width: 769px){
@@ -278,7 +286,7 @@ section {
     }
 
     .price-flex p {
-        font-size: 20px;
+        font-size: 1rem;
     }
     section {
         max-width: 80%;
@@ -301,5 +309,8 @@ section {
     section {
         max-width: 90%;
         margin: 50px auto;
-      }
+    }
+    .game-name h4 {
+        font-size: 1rem;
+    }
 }
