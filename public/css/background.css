@@ -5,27 +5,6 @@ body {
     background: radial-gradient(ellipse at bottom, #1b2735 0%,#090a0f 100%);
 }
 
-#title {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    color: #fff;
-    text-align: center;
-    font-family: Lato;
-    font-weight: 300;
-    font-size: 50px;
-    letter-spacing: 10px;
-    margin-top: -60px;
-    padding-left: 10px;
-}
-
-#title span {
-    background: -webkit-linear-gradient(white, #38495a);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
 #stars {
     width: 1px;
     height: 1px;
@@ -211,7 +190,7 @@ body {
 }
 
 #stars:after {
-    content: '';
+    /* content: ''; */
     position: absolute;
     top: 2000px;
     width: 1px;
@@ -455,7 +434,7 @@ body {
 }
 
 #stars2:after {
-    content: '';
+    /* content: ''; */
     position: absolute;
     top: 2000px;
     width: 2px;

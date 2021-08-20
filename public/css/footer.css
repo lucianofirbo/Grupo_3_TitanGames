@@ -6,7 +6,9 @@
     box-sizing: border-box;
 }
 footer {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: #161623;
+    position: relative;
+    z-index: 1;
     display: flex;
     justify-content: space-around;   
     width: 100vw;
