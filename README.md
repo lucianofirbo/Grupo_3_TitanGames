@@ -68,8 +68,6 @@ Nuestra elección se basó principalmente en la temática del marketplace y gene
     - ![#8EBD00](https://via.placeholder.com/15/8EBD00/000000?text=+) `greenTitan`
     - ![#D94969](https://via.placeholder.com/15/D94969/000000?text=+) `pinkTitan`
     - ![#161623](https://via.placeholder.com/15/161623/000000?text=+) `background`
-    - ![#2196f3](https://via.placeholder.com/15/2196f3/000000?text=+) `background`
-    - ![#4F00FF](https://via.placeholder.com/15/4F00FF/000000?text=+) `background`
 
 # SPRINT 2
 ### [TABLERO - Trello](https://trello.com/b/z7Q4GyE1/grupo-3-uwu-c8)
