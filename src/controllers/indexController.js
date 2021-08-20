@@ -3,16 +3,17 @@ const path = require('path');
 module.exports = {
 
     index: (req, res) => {
-        res.render('index');
+        res.render('users/index');
     },
     
     politics: (req, res) => {
-        res.render('privacyPolitics');
+        res.render('users/privacyPolitics');
     },
     about: (req, res) => {
-        res.render('aboutUs');
+        res.render('users/aboutUs');
     },
     search: (req, res) => {
-        res.render('search');
+        res.render('users/search');
     }
+    
 }

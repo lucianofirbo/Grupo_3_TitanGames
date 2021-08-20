@@ -1,5 +1,5 @@
 module.exports = {
     indexProfile: (req, res) => {
-        res.render('profile');
+        res.render('users/profile');
     }
 }
