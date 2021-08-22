@@ -5,7 +5,6 @@ module.exports = {
     index: (req, res) => {
         res.render('users/index');
     },
-    
     politics: (req, res) => {
         res.render('users/privacyPolitics');
     },
