@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 @import url('background.css');
 @import url('header.css');
-@import url('login.css');
-@import url('register.css');
+/* @import url('login.css');
+@import url('register.css'); */
 @import url('footer.css');
 
 .bar-product {
@@ -248,13 +248,34 @@ section.section-2 h2 {
     color: white;
 }
 
-strong#remove {
+.edit-remove {
+    display: flex;
+    flex-direction: column;
+    
+}
+.edit-remove a {
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#edit {
     font-size: 0.8rem;
     cursor: pointer;
     color: var(--greenTitan);
 }
 
-strong#remove:hover {
+#edit:hover {
+    color: rgb(0, 0, 73);
+}
+
+#remove {
+    font-size: 0.8rem;
+    cursor: pointer;
+    color: var(--greenTitan);
+}
+
+#remove:hover {
     color: red;
 }
 
