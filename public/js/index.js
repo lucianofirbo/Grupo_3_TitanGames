@@ -29,7 +29,6 @@ window.onload = () => {
             document.getElementById('register-card').style.display = 'none'
             document.getElementById('recover-card').style.display = 'none'
             document.getElementById('hamburguer').style.display = 'none'
-            /*document.getElementById('recover-card').style.display = 'none'*/
         } else if (idElemento === 'create-account') {
             document.getElementById('login-card').style.display = 'none'
             document.getElementById('register-card').style.display = 'flex'
