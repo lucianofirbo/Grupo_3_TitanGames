@@ -1,6 +1,5 @@
 # TitanGames
 ![](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/public/img/logo.png)
-# SPRINT 1: wireframe + boceto
 
 ## Integrantes :octocat:
 **Berrettoni, Pablo Gregorio**
@@ -16,6 +15,10 @@
 **Navarro, Evelyn Denise**
 - 23 años
 - Estudiante de la tecnicatura en programación informática en la Universidad Nacional de Quilmes y alumna en digital house realizando el curso de desarrollador web full-stack.
+
+### [TABLERO - Trello](https://trello.com/b/z7Q4GyE1/grupo-3-uwu-c8)
+
+# SPRINT 1: wireframe + boceto
 
 ## Temática de web y audencia objetivo
 **TEMÁTICA**
@@ -70,8 +73,6 @@ Nuestra elección se basó principalmente en la temática del marketplace y gene
     - ![#161623](https://via.placeholder.com/15/161623/000000?text=+) `background`
 
 # SPRINT 2: HTML + CSS
-
-### [TABLERO - Trello](https://trello.com/b/z7Q4GyE1/grupo-3-uwu-c8)
 
 - Maquetado de la web con HTML y CSS
 - Implementamos la estructura MVC(Modelo-Vista-Controlador)
