@@ -1,0 +1,10 @@
+[
+    {
+        "product": "Ni No Kuni 2",
+        "price": 600,
+        "description": "Un jueguito",
+        "category": "Rol",
+        "subcategory": "Rol Japones",
+        "image": "../../public/img/ni-no-kuni-2.jpg"
+    }
+]
