@@ -31,14 +31,11 @@ Nuestro sitio web estará orientado a la venta de videojuegos digitales y estar�
     - software y programas para PC
     - componentes e ítems dentro de distintos videojuegos que lo permitan.
  
-Nuestra propuesta es brindar juegos digitales de la forma más rápida y conveniente con ofertas exclusivas no vistas en otras tiendas del nicho para el usuario a través de:
-- Ofertas “relámpago”
+Nuestra propuesta es brindar juegos digitales de la forma más rápida y conveniente a través de:
 - Mercado de la comunidad
-- Sorteos mensuales
 
 Cada usuario de nuestra plataforma va a poder comercializar distintos ítems dentro de algunos juegos permitidos.
 También habrán sorteos mensuales de keys, tienda exclusiva para cada usuario una vez al mes en la que tendrá descuentos para juegos similares a su lista de deseos y navegación.
-
 
 ## Páginas de referencia :link:
 
@@ -62,7 +59,7 @@ Nuestra elección se basó principalmente en la temática del marketplace y gene
 
 ## Logo, colores y fuentes
 
-- [Logo](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/design/Logos/logo.png)
+- [Logo](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/public/img/logo.png)
 - Fuentes:
     - [Alfa Slab One](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/design/Fuente/AlfaSlabOne-Regular.ttf) 
     - [Poppins](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/design/Fuente/Poppins-Light.ttf) 
