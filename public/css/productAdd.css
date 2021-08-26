@@ -93,7 +93,7 @@ label {
 .grid .form-element img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 .grid .form-element div {
     height: 40px;
