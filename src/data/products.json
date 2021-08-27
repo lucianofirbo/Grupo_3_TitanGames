@@ -31,5 +31,41 @@
         "category": "Rol",
         "subcategory": "Rpg",
         "image": "../../public/img/the-elder-scrolls-v-skyrim-special-edition-cover.jpg"
+    },
+    {
+        "id": 5,
+        "product": "The witcher 3: wild hunt",
+        "price": 600,
+        "description": "Un jueguito",
+        "category": "Rol",
+        "subcategory": "Roglite",
+        "image": "../../public/img/The-Witcher-3-Cabecera.jpg"
+    },
+    {
+        "id": 6,
+        "product": "naraka",
+        "price": 600,
+        "description": "Un jueguito",
+        "category": "Rol",
+        "subcategory": "Roglite",
+        "image": "../../public/img/naraka.jpg"
+    },
+    {
+        "id": 7,
+        "product": "battlefield",
+        "price": 600,
+        "description": "Un jueguito",
+        "category": "Rol",
+        "subcategory": "Roglite",
+        "image": "../../public/img/battlefield-cart.jpg"
+    },
+    {
+        "id": 8,
+        "product": "Cyberpunk",
+        "price": 600,
+        "description": "Un jueguito",
+        "category": "Rol",
+        "subcategory": "Roglite",
+        "image": "../../public/img/cyberpunk.jpg"
     }
 ]
