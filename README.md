@@ -1,6 +1,5 @@
 # TitanGames
 ![](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/public/img/logo.png)
-# SPRINT 1
 
 ## Integrantes :octocat:
 **Berrettoni, Pablo Gregorio**
@@ -14,8 +13,12 @@
 - Estudiante de una tecnicatura en programación en la universidad de Lomas de Zamora y alumno en Digital House en el curso de desarrolo web full-stack.
 
 **Navarro, Evelyn Denise**
-- 22 años
+- 23 años
 - Estudiante de la tecnicatura en programación informática en la Universidad Nacional de Quilmes y alumna en digital house realizando el curso de desarrollador web full-stack.
+
+### [TABLERO - Trello](https://trello.com/b/z7Q4GyE1/grupo-3-uwu-c8)
+
+# SPRINT 1: wireframe + boceto
 
 ## Temática de web y audencia objetivo
 **TEMÁTICA**
@@ -28,14 +31,11 @@ Nuestro sitio web estará orientado a la venta de videojuegos digitales y estar�
     - software y programas para PC
     - componentes e ítems dentro de distintos videojuegos que lo permitan.
  
-Nuestra propuesta es brindar juegos digitales de la forma más rápida y conveniente con ofertas exclusivas no vistas en otras tiendas del nicho para el usuario a través de:
-- Ofertas “relámpago”
+Nuestra propuesta es brindar juegos digitales de la forma más rápida y conveniente a través de:
 - Mercado de la comunidad
-- Sorteos mensuales
 
 Cada usuario de nuestra plataforma va a poder comercializar distintos ítems dentro de algunos juegos permitidos.
 También habrán sorteos mensuales de keys, tienda exclusiva para cada usuario una vez al mes en la que tendrá descuentos para juegos similares a su lista de deseos y navegación.
-
 
 ## Páginas de referencia :link:
 
@@ -59,7 +59,7 @@ Nuestra elección se basó principalmente en la temática del marketplace y gene
 
 ## Logo, colores y fuentes
 
-- [Logo](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/design/Logos/logo.png)
+- [Logo](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/public/img/logo.png)
 - Fuentes:
     - [Alfa Slab One](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/design/Fuente/AlfaSlabOne-Regular.ttf) 
     - [Poppins](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/design/Fuente/Poppins-Light.ttf) 
@@ -69,6 +69,43 @@ Nuestra elección se basó principalmente en la temática del marketplace y gene
     - ![#D94969](https://via.placeholder.com/15/D94969/000000?text=+) `pinkTitan`
     - ![#161623](https://via.placeholder.com/15/161623/000000?text=+) `background`
 
-# SPRINT 2
-### [TABLERO - Trello](https://trello.com/b/z7Q4GyE1/grupo-3-uwu-c8)
+# SPRINT 2: HTML + CSS
+
+- Maquetado de la web con HTML y CSS
+- Implementamos la estructura MVC(Modelo-Vista-Controlador)
+- Aplicación Node.js+Express con:
+    - Home (index.html)
+    - Detalle del producto (productDetail.html)
+    - Carrito de compras (productCart.html)
+    - Formulario de registro (register.html)
+    - Formulario de login (login.html)
+
+### Retrospectiva [retro.md](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/retro.md)
+   
+# SPRINT 3: Template engines
+
+ENTREGADO:
+- Aplicación Node.js+Express con:
+- Archivos parciales (background.ejs, footer.ejs, head.ejs, header.ejs, logReg.ejs)
+- Formulario de carga y edición de productos
+        
+### Retrospectiva [retro.md](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/retro.md)
+
+# SPRINT 4: JSON + métodos HTTP
+
+ENTREGADO:
+- Archivos:
+    - productDb.json
+    - users.json
+- Administración completa de productos con:
+    - Listado
+    - Detalle
+    - Creación
+    - Edición
+    - Eliminación
+
+### Retrospectiva [retro.md](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/retro.md)
+
+
+
 
