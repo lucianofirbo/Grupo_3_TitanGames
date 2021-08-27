@@ -1,0 +1,35 @@
+[
+    {
+        "id": 1,
+        "product": "Ni No Kuni 2",
+        "price": 600,
+        "description": "Un jueguito",
+        "category": "Rol",
+        "subcategory": "Rol Japones",
+        "image": "../../public/img/ni-no-kuni-2.jpg"
+    }, {
+        "id": 2,
+        "product": "Dark Souls III",
+        "price": 600,
+        "description": "Un jueguito de god Miyazaki",
+        "category": "Action rpg",
+        "subcategory": "Rol Japones",
+        "image": "../../public/img/dark-souls-3-cover.jpg"
+    }, {
+        "id": 3,
+        "product": "Loop Hero",
+        "price": 600,
+        "description": "Un jueguito adictivo",
+        "category": "Roguelike",
+        "subcategory": "Roglite",
+        "image": "../../public/img/loop-hero.jpg"
+    }, {
+        "id": 4,
+        "product": "The elder Scrolls V: Skyrim",
+        "price": 600,
+        "description": "Un jueguito muy largo",
+        "category": "Rol",
+        "subcategory": "Rpg",
+        "image": "../../public/img/the-elder-scrolls-v-skyrim-special-edition-cover.jpg"
+    }
+]
