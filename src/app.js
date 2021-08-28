@@ -1,7 +1,8 @@
+const methodOverride = require('method-override');
 const express = require('express');
+const path = require('path');
 const app = express();
 const port = 3000;
-const path = require('path');
 
 /* Setting up the server */ 
 
@@ -9,10 +10,14 @@ app.listen(port, () => {
     console.log(`App listening on localhost:${port}`);
 });
 
-/* Setting up static folders */
+/* Middlewares */
+
+app.use(express.json());
+app.use(methodOverride('_method'));
+app.use(express.urlencoded({extended:false}))
 app.use(express.static('./public'));
-app.set('views', path.join(__dirname, 'views'))
-app.set('view engine', 'ejs')
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 
 /* Setting up routes */
 
