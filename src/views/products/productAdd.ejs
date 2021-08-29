@@ -19,64 +19,19 @@
             <div class="bar-product">
                 <p data-target="#section1">Carga de Productos</p>
                 <p data-target="#section2">Stock</p>
-                <p data-target="#section3">Ofertas</p>
             </div>
 
             <section data-content id="section1" class="active">
-                <form class="load-product" method="POST" action="/admin/addProduct" >
-
-                    <div class="desc-product-load">
-                        <div class="field-product">
-                            <label for="">PRODUCTO:</label>
-                            <input class="style-input" type="text" name="product">
-                        </div>
-                        <div class="field-flex">
-                            <div class="field-gen">
-                                <label for="">GÉNERO:</label>
-                                <select class="style-select" name="genero" id="">
-                                    <option value="" hidden selected>Elija el género</option>
-                                    <option value="">género 1</option>
-                                    <option value="">género 2</option>
-                                    <option value="">género 3</option>
-                                </select>
-                            </div>
-                            <div class="field-subgen">
-                                <label for="">SUBGÉNERO:</label>
-                                <select class="style-select" name="sub-genero" id="">
-                                    <option value="" hidden selected>Elija el subgénero</option>
-                                    <option value="">subgénero 1</option>
-                                    <option value="">subgénero 2</option>
-                                    <option value="">subgénero 3</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="display-flex-box">
-                            <div class="desc-flex">
-                                <label for="">DESCRIPCIÓN:</label>
-                                <textarea class="style-textarea" name="descripcion" id="" cols="30"
-                                    rows="20"></textarea>
-                            </div>
-                            <div class="desc-flex">
-                                <label for="">REQUISITOS:</label>
-                                <textarea class="style-textarea" name="" id="" cols="30" rows="20"></textarea>
-                            </div>
-                        </div>
-
-                        <div class="fields">
-                            <div class="field-product">
-                                <label for="">KEY:</label>
-                                <input class="style-input" type="text" name="product">
-                            </div>
-                            <div class="field-product">
-                                <label for="">PRECIO:</label>
-                                <input class="style-input" type="number" name="precio">
-                            </div>
-                        </div>
-                    </div>
-
+                <form class="load-product" method="POST" action="/admin/addProduct">
 
                     <!-- CARGAR IMÁGENES -->
-                    <!--<div class="other-box">
+                    <div class="other-box">
+
+                        <div class="field-product">
+                            <label>PRODUCTO:</label>
+                            <input class="style-input" type="text" name="product">
+                        </div>
+
                         <div class="grid">
                             <p>IMAGENES: </p>
                             <div class="form-element">
@@ -111,196 +66,96 @@
                                     <img src="/img/img-default.png" alt="">
                                 </label>
                             </div>
-                        </div> -->
-
-                        <div class="field-trailer">
-                            <label for="">TRAILER:</label>
-                            <input class="style-input" type="text" name="trailer" placeholder="URL">
+                        </div> 
+                        
+                        <div class="field-product">
+                            <label for="">PRECIO:</label>
+                            <input class="style-input" type="number" name="precio">
                         </div>
 
                         <div class="button-container">
                             <button type="submit" class="btn btn-submit">FINALIZAR</button>
                         </div>
+
+                    </div>
+
+                    <!-- Text Fields -->
+
+                    <div class="desc-product-load">
+        
+                        <div class="field-flex">
+                            <div class="field-gen">
+                                <label>GÉNERO:</label>
+                                <select class="style-select" name="genero">
+                                    <option hidden selected>Elija el género</option>
+                                    <option value="genero1">género 1</option>
+                                    <option value="genero2">género 2</option>
+                                    <option value="genero3">género 3</option>
+                                </select>
+                            </div>
+                            <div class="field-subgen">
+                                <label>SUBGÉNERO:</label>
+                                <select class="style-select" name="subGenero">
+                                    <option hidden selected>Elija el subgénero</option>
+                                    <option value="subgénero1">subgénero 1</option>
+                                    <option value="subgénero2">subgénero 2</option>
+                                    <option value="subgénero3">subgénero 3</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="display-flex-box">
+                            <div class="desc-flex">
+                                <label for="">DESCRIPCIÓN:</label>
+                                <textarea class="style-textarea" name="descripcion" cols="30" rows="20"></textarea>
+                            </div>
+                            <div class="desc-flex">
+                                <label for="">REQUISITOS:</label>
+                                <textarea class="style-textarea" name="" id="" cols="30" rows="20"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="fields">
+                            <div class="field-product">
+                                <label for="">KEY:</label>
+                                <input class="style-input" type="text" name="key">
+                            </div>
+
+                            <div class="field-trailer">
+                                <label for="">TRAILER:</label>
+                                <input class="style-input" type="text" name="trailer" placeholder="URL">
+                            </div>
+
+                        </div>
+
                     </div>
 
                 </form>
             </section>
 
             <section data-content id="section2" class="section-2">
+
                 <h2>STOCK</h2>
+
                 <div class="detail-stock">
-                    <div class="game-stock">
-                        <div class="game-name">
-                            <img src="/img/battlefield-cart.png" alt="">
-                            <h5>Battlefield 2042</h5>
-                        </div>
-                        <div class="price">
-                            <p>$1999.99</p>
-                        </div>
-                        <div class="edit-remove">
-                            <strong id="remove">eliminar</strong>
-                            <a href="http://localhost:3000/admin/editProduct" id="edit">editar</a>
-                        </div>
-                    </div>
 
-                    <div class="game-stock">
-                        <div class="game-name">
-                            <img src="/img/battlefield-cart.png" alt="">
-                            <h5>Battlefield 2042</h5>
+                    <% dataBase.forEach(element => {
+                        %>
+                        <div class="game-stock">
+                            <div class="game-name">
+                                <img src="/img/<%-element.image%>" alt="">
+                                <h5><%- element.product %></h5>
+                            </div>
+                            <div class="price">
+                                <p><%- element.price %></p>
+                            </div>
+                            <div class="edit-remove">
+                                <strong id="remove">eliminar</strong>
+                                <a href="http://localhost:3000/admin/editProduct" id="edit">editar</a>
+                            </div>
                         </div>
-                        <div class="price">
-                            <p>$1999.99</p>
-                        </div>
-                        <div class="edit-remove">
-                            <strong id="remove">eliminar</strong>
-                            <a href="http://localhost:3000/admin/editProduct" id="edit">editar</a>
-                        </div>
-                    </div>
+                        <%
+                    }) %>
 
-                    <div class="game-stock">
-                        <div class="game-name">
-                            <img src="/img/battlefield-cart.png" alt="">
-                            <h5>Battlefield 2042</h5>
-                        </div>
-                        <div class="price">
-                            <p>$1999.99</p>
-                        </div>
-                        <div class="edit-remove">
-                            <strong id="remove">eliminar</strong>
-                            <a href="http://localhost:3000/admin/editProduct" id="edit">editar</a>
-                        </div>
-                    </div>
-
-                    <div class="game-stock">
-                        <div class="game-name">
-                            <img src="/img/battlefield-cart.png" alt="">
-                            <h5>Battlefield 2042</h5>
-                        </div>
-                        <div class="price">
-                            <p>$1999.99</p>
-                        </div>
-                        <div class="edit-remove">
-                            <strong id="remove">eliminar</strong>
-                            <a href="http://localhost:3000/admin/editProduct" id="edit">editar</a>
-                        </div>
-                    </div>
-
-                    <div class="game-stock">
-                        <div class="game-name">
-                            <img src="/img/battlefield-cart.png" alt="">
-                            <h5>Battlefield 2042</h5>
-                        </div>
-                        <div class="price">
-                            <p>$1999.99</p>
-                        </div>
-                        <div class="edit-remove">
-                            <strong id="remove">eliminar</strong>
-                            <a href="http://localhost:3000/admin/editProduct" id="edit">editar</a>
-                        </div>
-                    </div>
-
-                    <div class="game-stock">
-                        <div class="game-name">
-                            <img src="/img/battlefield-cart.png" alt="">
-                            <h5>Battlefield 2042</h5>
-                        </div>
-                        <div class="price">
-                            <p>$1999.99</p>
-                        </div>
-                        <div class="edit-remove">
-                            <strong id="remove">eliminar</strong>
-                            <a href="http://localhost:3000/admin/editProduct" id="edit">editar</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section data-content id="section3">
-                <h2>OFERTAS</h2>
-                <div class="detail-stock">
-                    <div class="game-stock">
-                        <div class="game-name">
-                            <img src="/img/kunismall.png" alt="">
-                            <h5>Ni No Kunni II</h5>
-                        </div>
-                        <div class="price">
-                            <p>$1999.99</p>
-                        </div>
-                        <div class="edit-remove">
-                            <strong id="remove">eliminar</strong>
-                            <a href="http://localhost:3000/admin/editProduct" id="edit">editar</a>
-                        </div>
-                    </div>
-
-                    <div class="game-stock">
-                        <div class="game-name">
-                            <img src="/img/kunismall.png" alt="">
-                            <h5>Ni No Kunni II</h5>
-                        </div>
-                        <div class="price">
-                            <p>$1999.99</p>
-                        </div>
-                        <div class="edit-remove">
-                            <strong id="remove">eliminar</strong>
-                            <a href="http://localhost:3000/admin/editProduct" id="edit">editar</a>
-                        </div>
-                    </div>
-
-                    <div class="game-stock">
-                        <div class="game-name">
-                            <img src="/img/kunismall.png" alt="">
-                            <h5>Ni No Kunni II</h5>
-                        </div>
-                        <div class="price">
-                            <p>$1999.99</p>
-                        </div>
-                        <div class="edit-remove">
-                            <strong id="remove">eliminar</strong>
-                            <a href="http://localhost:3000/admin/editProduct" id="edit">editar</a>
-                        </div>
-                    </div>
-
-                    <div class="game-stock">
-                        <div class="game-name">
-                            <img src="/img/kunismall.png" alt="">
-                            <h5>Ni No Kunni II</h5>
-                        </div>
-                        <div class="price">
-                            <p>$1999.99</p>
-                        </div>
-                        <div class="edit-remove">
-                            <strong id="remove">eliminar</strong>
-                            <a href="http://localhost:3000/admin/editProduct" id="edit">editar</a>
-                        </div>
-                    </div>
-
-                    <div class="game-stock">
-                        <div class="game-name">
-                            <img src="/img/kunismall.png" alt="">
-                            <h5>Ni No Kunni II</h5>
-                        </div>
-                        <div class="price">
-                            <p>$1999.99</p>
-                        </div>
-                        <div class="edit-remove">
-                            <strong id="remove">eliminar</strong>
-                            <a href="http://localhost:3000/admin/editProduct" id="edit">editar</a>
-                        </div>
-                    </div>
-
-                    <div class="game-stock">
-                        <div class="game-name">
-                            <img src="/img/kunismall.png" alt="">
-                            <h5>Ni No Kunni II</h5>
-                        </div>
-                        <div class="price">
-                            <p>$1999.99</p>
-                        </div>
-                        <div class="edit-remove">
-                            <strong id="remove">eliminar</strong>
-                            <a href="http://localhost:3000/admin/editProduct" id="edit">editar</a>
-                        </div>
-                    </div>
                 </div>
             </section>
 

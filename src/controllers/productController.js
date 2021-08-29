@@ -16,7 +16,7 @@ module.exports = {
             }
         });
 
-        res.render('products/productDetail', productF);
+        res.render('products/productDetail', {productF});
 
     },
 

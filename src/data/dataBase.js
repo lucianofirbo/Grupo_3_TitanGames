@@ -6,10 +6,6 @@ module.exports = {
 
     getUsers : JSON.parse(fs.readFileSync('./src/data/users.json', 'utf-8')),
 
-    writeJson: (json, dataBase) => {
-        fs.writeFileSync(`./src/data/${json}.json`, dataBase)
-    },
-
     saveProduct: (product) => {
         
         try {
@@ -17,7 +13,7 @@ module.exports = {
             db.push(product);
             fs.writeFileSync(`./src/data/products.json`, JSON.stringify(db))
             return true;
-        } 
+        }
         catch {
             return false;
         }

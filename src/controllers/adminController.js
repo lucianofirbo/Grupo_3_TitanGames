@@ -3,33 +3,36 @@ const { getProducts, saveProduct } = require('../data/dataBase');
 
 module.exports = {
     addRender: (req, res) => {
-        res.render('products/productAdd');
+        res.render('products/productAdd', {dataBase: getProducts});
     },
     add: (req, res) => {
 
-        console.log(req.body)
+        let lastId = 1;
+        getProducts.forEach(element => {
+            if (element.id > lastId) {
+                lastId = element.id;
+            };
+        })
 
-        let lastIdDb = Object.keys(getProducts)[Object.keys(getProducts).length-1];
-        
         let producto = {
-            id: lastIdDb + 1,
+            id: lastId + 1,
             product: req.body.product,
             price: req.body.precio,
             description: req.body.descripcion,
             category: req.body.genero,
-            subcategory: req.body.subgenero,
+            subcategory: req.body.subGenero,
             image: req.body.imagen ? req.body.imagen : 'naraka.png'
         }
 
         if (saveProduct(producto)) {
-            res.redirect(`http://localhost:3000/product/detail/${producto.id}`);
+            res.redirect(`/product/detail/${producto.id}`);
         } else {
-            res.send('error')
+            res.send('error');
         }
 
     },
     edit: (req, res) => {
-        res.render('products/editProduct')
+        res.render('products/editProduct');
     }
 
 

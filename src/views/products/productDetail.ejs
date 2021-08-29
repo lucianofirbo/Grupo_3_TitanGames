@@ -21,10 +21,10 @@
                 
                  <!--SLIDER-->
                  <div class="container">
-                    <h3>The Witcher 3: Wild Hunt</h4>
+                    <h3><%- productF.product %></h4>
 
                     <div class="mySlides">
-                      
+                        <img src="/img/<%- productF.image %>" style="width:100%">
                     </div>
                   
                     <div class="mySlides">
@@ -53,7 +53,7 @@
                   
                     <div class="row">
                       <div class="column">
-                        <img class="demo cursor" src="/img/1.png" style="width:100%" onclick="currentSlide(1)" alt="theWitcherImg">
+                        <img class="demo cursor" src="/img/<%- productF.image %>" style="width:100%" onclick="currentSlide(1)" alt="theWitcherImg">
                       </div>
                       <div class="column">
                         <img class="demo cursor" src="/img/2.png" style="width:100%" onclick="currentSlide(2)" alt="theWitcherImg">
@@ -73,7 +73,7 @@
             <!-- TERMINA SLIDER-->
             <div class="buy-product">
                 <p id="offer">-90%</p>
-                <p>$1999.99</p>
+                <p> <%- productF.price %> </p>
                 <div class="button-container">
                     <button type="submit" class="btn btn-submit">Añadir al carrito <i class="fas fa-cart-plus"></i></button>
                 </div>
@@ -91,7 +91,7 @@
                         <img src="/img/close.png" class="close" onclick="toggle();">
                     </div>
                     
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa nihil non, numquam sunt assumenda repellendus autem id ullam quod obcaecati deserunt ipsam eligendi dignissimos! Explicabo, repellat minima consequatur eaque cumque tempore a id alias molestiae accusamus. Corrupti similique iste ratione?</p>
+                    <p> <%- productF.description %> </p>
                 </div>
             </div>
             <div class="specs-product">
