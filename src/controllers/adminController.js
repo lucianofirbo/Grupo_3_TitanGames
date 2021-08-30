@@ -26,7 +26,7 @@ module.exports = {
             description: req.body.descripcion,
             category: req.body.genero,
             subcategory: req.body.subGenero,
-            image: req.body.imagen ? req.body.imagen : 'naraka.png'
+            image: req.file ? '/games/' + req.file.filename : '/games/' + 'naraka.png'
         }
 
         if (saveProduct(producto)) {
@@ -61,7 +61,7 @@ module.exports = {
                 element.description = req.body.descripcion,
                 element.category = req.body.genero,
                 element.subcategory = req.body.subGenero,
-                element.image = req.body.imagen ? req.body.imagen : 'naraka.png'
+                element.image = req.file ? '/games/' + req.file.filename : element.image
             }
         })
 
@@ -72,8 +72,6 @@ module.exports = {
     },
 
     deleteProduct: (req, res) => {
-
-        console.log(req.params.id)
 
         getProducts.forEach(element => {
             if (element.id === +req.params.id) {
