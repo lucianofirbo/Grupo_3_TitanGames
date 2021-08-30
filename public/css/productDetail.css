@@ -22,6 +22,7 @@ main {
   margin-left: 10px;
   margin-bottom: 20px;
   margin-right: 10px;
+  position: relative;
 }
 
 /*    */
@@ -235,7 +236,7 @@ main {
 }
 
 /* SECCIÓN : PUEDE QUE TE INTERESE  */
-section {
+.interese {
   margin-top: 50px;
   margin-bottom: 15px;
   margin-right: 10px;
@@ -356,7 +357,7 @@ section h5{
   .row {
     margin-top: 20px;
   }
-  section {
+  .interese {
     max-width: 80%;
     margin: 20px auto;
   }
@@ -401,7 +402,7 @@ section h5{
   #offer {
     width: auto;
   }
-  section {
+  .interese {
     max-width: 90%;
     margin: 50px auto;
   }

@@ -6,7 +6,11 @@ module.exports = {
 
     getUsers : JSON.parse(fs.readFileSync('./src/data/users.json', 'utf-8')),
 
-    saveProduct: (product) => {
+    saveDb: (database) => {
+        fs.writeFileSync(`./src/data/products.json`, JSON.stringify(database));
+    },
+
+    saveProduct: async(product) => {
         
         try {
             let db = JSON.parse(fs.readFileSync('./src/data/products.json', 'utf-8'));

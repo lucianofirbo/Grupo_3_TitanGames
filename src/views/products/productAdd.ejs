@@ -149,10 +149,13 @@
                                 <p><%- element.price %></p>
                             </div>
                             <div class="edit-remove">
-                                <strong id="remove">eliminar</strong>
-                                <a href="http://localhost:3000/admin/editProduct" id="edit">editar</a>
+                                <a href="/admin/editProduct/<%-element.id%>" id="edit">editar</a>
+                                <label id="remove" for="buttonSubmitDelete">eliminar</label>
                             </div>
                         </div>
+                        <form method="POST" action="/admin/deleteProduct/<%- element.id %>?_method=DELETE">
+                            <button type="submit" class="btn btn-submit" style="display: none;" id="buttonSubmitDelete"></button>
+                        </form>
                         <%
                     }) %>
 

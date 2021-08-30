@@ -16,105 +16,113 @@
     <%- include('../partials/header') -%>
 
     <section data-content id="section1" class="active">               
-        <form class="load-product">
-            
-            <div class="desc-product-load">
-                <div class="field-product">
-                    <label for="">PRODUCTO:</label>
-                    <input class="style-input" type="text" name="product" placeholder="Nombre del producto">
-                </div>
-                <div class="field-flex">
-                    <div class="field-gen">
-                        <label for="">GÉNERO:</label>
-                        <select class="style-select" name="genero" id="">
-                            <option value="" hidden selected>Elija el género</option>
-                            <option value="">género 1</option>
-                            <option value="">género 2</option>
-                            <option value="">género 3</option>
-                        </select>
-                    </div>
-                    <div class="field-subgen">   
-                        <label for="">SUBGÉNERO:</label>
-                        <select class="style-select" name="genero" id="">
-                            <option value="" hidden selected>Elija el subgénero</option>
-                            <option value="">subgénero 1</option>
-                            <option value="">subgénero 2</option>
-                            <option value="">subgénero 3</option>
-                        </select>
-                    </div>                     
-                </div>
-                <div class="display-flex-box">
-                    <div class="desc-flex">
-                        <label for="">DESCRIPCIÓN:</label>
-                        <textarea class="style-textarea" name="" id="" cols="30" rows="20"></textarea>
-                    </div>
-                    <div class="desc-flex">
-                        <label for="">REQUISITOS:</label>
-                        <textarea class="style-textarea" name="" id="" cols="30" rows="20"></textarea>
-                    </div>
-                </div>
-                
-                <div class="fields">
-                    <div class="field-product">
-                        <label for="">KEY:</label>
-                        <input class="style-input" type="text" name="product">
-                    </div>
-                    <div class="field-product">
-                        <label for="">PRECIO:</label>
-                        <input class="style-input" type="number" name="product">
-                    </div>  
-                </div>
-            </div>           
-            
+        <form class="load-product" action="/admin/editProduct/<%=product.id%>/?_method=PUT" method="POST">
 
             <!-- CARGAR IMÁGENES -->
             <div class="other-box">
+
+                <div class="field-product">
+                    <label>PRODUCTO:</label>
+                    <input class="style-input" type="text" name="product" value="<%- product.product %> ">
+                </div>
+
                 <div class="grid">
                     <p>IMAGENES: </p>
                     <div class="form-element">
-                        <input type="file" id="file-1" accept="image/*">
+                        <input type="file" id="file-1" accept="image/*" name="imagen">
                         <label for="file-1" id="file-1-preview">
-                            <img src="/img/img-default.png" alt="">
+                            <img src="/img/img-default.png">
                         </label>
                     </div>
-                </div>  
+                </div>
                 <div class="form-elements-flex">
                     <div class="form-elements-ind">
                         <input type="file" id="file-2" accept="image/*">
-                            <label for="file-2" id="file-2-preview">
-                                <img src="/img/img-default.png" alt="">
-                            </label>
+                        <label for="file-2" id="file-2-preview">
+                            <img src="/img/img-default.png">
+                        </label>
                     </div>
                     <div class="form-elements-ind">
                         <input type="file" id="file-3" accept="image/*">
-                            <label for="file-3" id="file-3-preview">
-                                <img src="/img/img-default.png" alt="">
-                            </label>
+                        <label for="file-3" id="file-3-preview">
+                            <img src="/img/img-default.png">
+                        </label>
                     </div>
                     <div class="form-elements-ind">
                         <input type="file" id="file-4" accept="image/*">
-                            <label for="file-4" id="file-4-preview">
-                                <img src="/img/img-default.png" alt="">
-                            </label>
+                        <label for="file-4" id="file-4-preview">
+                            <img src="/img/img-default.png">
+                        </label>
                     </div>
                     <div class="form-elements-ind">
                         <input type="file" id="file-5" accept="image/*">
-                            <label for="file-5" id="file-5-preview">
-                                <img src="/img/img-default.png" alt="">
-                            </label>
+                        <label for="file-5" id="file-5-preview">
+                            <img src="/img/img-default.png">
+                        </label>
                     </div>
+                </div> 
+                
+                <div class="field-product">
+                    <label>PRECIO:</label>
+                    <input class="style-input" type="number" name="precio" value="<%- product.price %>">
                 </div>
-    
-                <div class="field-trailer">
-                    <label for="">TRAILER:</label>
-                    <input class="style-input" type="text" name="trailer" placeholder="URL">
-                </div>
-    
+
                 <div class="button-container">
                     <button type="submit" class="btn btn-submit">FINALIZAR</button>
                 </div>
+
             </div>
-            
+
+            <!-- Text Fields -->
+
+            <div class="desc-product-load">
+
+                <div class="field-flex">
+                    <div class="field-gen">
+                        <label>GÉNERO:</label>
+                        <select class="style-select" name="genero">
+                            <option hidden selected><%- product.category %></option>
+                            <option value="genero1">género 1</option>
+                            <option value="genero2">género 2</option>
+                            <option value="genero3">género 3</option>
+                        </select>
+                    </div>
+                    <div class="field-subgen">
+                        <label>SUBGÉNERO:</label>
+                        <select class="style-select" name="subGenero">
+                            <option hidden selected><%- product.subcategory %></option>
+                            <option value="subgénero1">subgénero 1</option>
+                            <option value="subgénero2">subgénero 2</option>
+                            <option value="subgénero3">subgénero 3</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="display-flex-box">
+                    <div class="desc-flex">
+                        <label>DESCRIPCIÓN:</label>
+                        <textarea class="style-textarea" name="descripcion" cols="30" rows="20"><%- product.description %></textarea>
+                    </div>
+                    <div class="desc-flex">
+                        <label>REQUISITOS:</label>
+                        <textarea class="style-textarea" name="" cols="30" rows="20"></textarea>
+                    </div>
+                </div>
+
+                <div class="fields">
+                    <div class="field-product">
+                        <label>KEY:</label>
+                        <input class="style-input" type="text" name="key">
+                    </div>
+
+                    <div class="field-trailer">
+                        <label>TRAILER:</label>
+                        <input class="style-input" type="text" name="trailer" placeholder="URL">
+                    </div>
+
+                </div>
+
+            </div>
+
         </form>
     </section>
 

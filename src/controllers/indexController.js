@@ -1,9 +1,10 @@
 const path = require('path');
+let {getProducts} = require('../data/dataBase');
 
 module.exports = {
 
     index: (req, res) => {
-        res.render('users/index');
+        res.render('users/index', {dataBase: getProducts});
     },
     politics: (req, res) => {
         res.render('users/privacyPolitics');
