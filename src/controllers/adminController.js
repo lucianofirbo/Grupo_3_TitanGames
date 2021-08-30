@@ -10,7 +10,7 @@ module.exports = {
 
     },
 
-    addProduct: (req, res) => {     
+    addProduct: (req, res) => {
 
         let lastId = 1;
         getProducts.forEach(element => {
@@ -30,7 +30,7 @@ module.exports = {
         }
 
         if (saveProduct(producto)) {
-            res.redirect(`/product/detail/${producto.id}`);
+            res.redirect(`/admin/addProduct`);      /* product/detail/${producto.id} */
         } else {
             res.send('error');
         }
@@ -73,15 +73,18 @@ module.exports = {
 
     deleteProduct: (req, res) => {
 
+        console.log(req.params.id)
+
         getProducts.forEach(element => {
             if (element.id === +req.params.id) {
-                getProducts.splice(element, 1)
+                let productRemove = getProducts.indexOf(element);
+                getProducts.splice(productRemove, 1);
             }
-        })
+        })        
 
         saveDb(getProducts);
 
-        res.redirect(`/admin/addProduct`);
+        res.redirect('/admin/addProduct');
 
     }
 

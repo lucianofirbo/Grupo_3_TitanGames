@@ -140,6 +140,7 @@
 
                     <% dataBase.forEach(element => {
                         %>
+                        <h1><%- element.id %></h1>
                         <div class="game-stock">
                             <div class="game-name">
                                 <img src="/img/<%-element.image%>" alt="">
@@ -150,14 +151,14 @@
                             </div>
                             <div class="edit-remove">
                                 <a href="/admin/editProduct/<%-element.id%>" id="edit">editar</a>
-                                <label id="remove" for="buttonSubmitDelete">eliminar</label>
+                                <form method="POST" action="/admin/deleteProduct/<%-element.id%>?_method=DELETE">
+                                    <button type="submit" id="buttonSubmitDelete">eliminar</button>
+                                </form>
                             </div>
                         </div>
-                        <form method="POST" action="/admin/deleteProduct/<%- element.id %>?_method=DELETE">
-                            <button type="submit" class="btn btn-submit" style="display: none;" id="buttonSubmitDelete"></button>
-                        </form>
-                        <%
-                    }) %>
+                    <% }) %>
+
+                    
 
                 </div>
             </section>
