@@ -26,7 +26,8 @@ module.exports = {
             description: req.body.descripcion,
             category: req.body.genero,
             subcategory: req.body.subGenero,
-            image: req.file ? '/games/' + req.file.filename : '/games/' + 'naraka.png'
+            image: req.file ? '/games/' + req.file.filename : '/games/' + 'naraka.png',
+            trailer: req.body.trailer
         }
 
         if (saveProduct(producto)) {
@@ -61,7 +62,8 @@ module.exports = {
                 element.description = req.body.descripcion,
                 element.category = req.body.genero,
                 element.subcategory = req.body.subGenero,
-                element.image = req.file ? '/games/' + req.file.filename : element.image
+                element.image = req.file ? '/games/' + req.file.filename : element.image,
+                element.trailer = req.body.trailer
             }
         })
 
