@@ -28,8 +28,11 @@ module.exports = {
             description: req.body.descripcion,
             category: req.body.genero,
             subcategory: req.body.subGenero,
-            image: req.files['imagenProducto'] !== undefined ? '/games/' + req.files['imagenProducto'][0].filename : '/games/' + 'naraka.png',
-            image2: req.files['imagenProducto2'] !== undefined ? '/games/' + req.files['imagenProducto2'][0].filename : '/games/' + 'naraka.png'
+            image: req.files['imagenProducto'] ? '/games/' + req.files['imagenProducto'][0].filename : '/games/' + 'naraka.png',
+            image2: req.files['imagenProducto2'] ? '/games/' + req.files['imagenProducto2'][0].filename : '/games/' + 'naraka.png',
+            image3: req.files['imagenProducto3'] ? '/games/' + req.files['imagenProducto3'][0].filename : '/games/' + 'naraka.png',
+            image4: req.files['imagenProducto4'] ? '/games/' + req.files['imagenProducto4'][0].filename : '/games/' + 'naraka.png',
+            image5: req.files['imagenProducto5'] ? '/games/' + req.files['imagenProducto5'][0].filename : '/games/' + 'naraka.png'
         }
 
         saveProduct(producto);
@@ -53,9 +56,7 @@ module.exports = {
 
     editProduct: (req, res) => {
 
-        console.log(req.file[0])
-
-        /* getProducts.forEach(element => {
+        getProducts.forEach(element => {
             if (element.id === +req.params.id) {
                 element.id = element.id,
                 element.product = req.body.product,
@@ -63,14 +64,17 @@ module.exports = {
                 element.description = req.body.descripcion,
                 element.category = req.body.genero,
                 element.subcategory = req.body.subGenero,
-                element.image = req.file['imagenProducto1edit'][0] ? '/games/' + req.files['imagenProducto1edit'][0].filename : element.image,
-                element.image2 = req.file['imagenProducto2edit'][0] ? '/games/' + req.files['imagenProducto1edit'][0].filename : element.image2
+                element.image = req.files['imagenProducto'] ? '/games/' + req.files['imagenProducto'][0].filename : element.image,
+                element.image2 = req.files['imagenProducto2'] ? '/games/' + req.files['imagenProducto2'][0].filename : element.image2,
+                element.image3 = req.files['imagenProducto3'] ? '/games/' + req.files['imagenProducto3'][0].filename : element.image2,
+                element.image4 = req.files['imagenProducto4'] ? '/games/' + req.files['imagenProducto4'][0].filename : element.image2,
+                element.image5 = req.files['imagenProducto5'] ? '/games/' + req.files['imagenProducto5'][0].filename : element.image2
             }
         })
 
         saveDb(getProducts);
 
-        res.redirect(`/product/detail/${req.params.id}`); */
+        res.redirect(`/product/detail/${req.params.id}`);
 
     },
 

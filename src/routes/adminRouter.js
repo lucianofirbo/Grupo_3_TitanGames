@@ -7,11 +7,11 @@ const fileUpload = require('../middlewares/multerMiddleware');
 
 /* Add Product */
 router.get('/addProduct', controller.addRender);
-router.post('/addProduct', fileUpload.fields([{ name: 'imagenProducto', maxCount: 1 },{ name: 'imagenProducto2', maxCount: 1 }]), controller.addProduct);
+router.post('/addProduct', fileUpload.fields([{ name: 'imagenProducto', maxCount: 1 },{ name: 'imagenProducto2', maxCount: 1 },{ name: 'imagenProducto3', maxCount: 1 },{ name: 'imagenProducto4', maxCount: 1 },{ name: 'imagenProducto5', maxCount: 1 }]), controller.addProduct);
 
 /* Edit Producto*/
 router.get('/editProduct/:id', controller.editRender);
-router.put('/editProduct/:id', fileUpload.fields([{ name: 'imagenProducto1edit', maxCount: 1 },{ name: 'imagenProducto2edit', maxCount: 1 }]), controller.editProduct);
+router.put('/editProduct/:id', fileUpload.fields([{ name: 'imagenProducto', maxCount: 1 },{ name: 'imagenProducto2', maxCount: 1 },{ name: 'imagenProducto3', maxCount: 1 },{ name: 'imagenProducto4', maxCount: 1 },{ name: 'imagenProducto5', maxCount: 1 }]), controller.editProduct);
 
 /* Delete Product */
 router.delete('/deleteProduct/:id', controller.deleteProduct);

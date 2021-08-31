@@ -16,7 +16,7 @@
     <%- include('../partials/header') -%>
 
     <section data-content id="section1" class="active">               
-        <form class="load-product" action="/admin/editProduct/<%=product.id%>?_method=PUT" method="POST">
+        <form class="load-product" method="POST" action="/admin/editProduct/<%=product.id%>?_method=PUT" enctype="multipart/form-data">
 
             <!-- CARGAR IMÁGENES -->
             <div class="other-box">
@@ -29,7 +29,7 @@
                 <div class="grid">
                     <p>IMAGENES: </p>
                     <div class="form-element">
-                        <input type="file" id="file-1" accept="image/*" name="imagenProducto1edit">
+                        <input type="file" id="file-1" accept="image/*" name="imagenProducto">
                         <label for="file-1" id="file-1-preview">
                             <img src="/img/<%- product.image %>">
                         </label>
@@ -37,27 +37,27 @@
                 </div>
                 <div class="form-elements-flex">
                     <div class="form-elements-ind">
-                        <input type="file" id="file-2" accept="image/*" name="imagenProducto2edit">
+                        <input type="file" id="file-2" accept="image/*" name="imagenProducto2">
                         <label for="file-2" id="file-2-preview">
                             <img src="/img/<%- product.image2 %>">
                         </label>
                     </div>
                     <div class="form-elements-ind">
-                        <input type="file" id="file-3" accept="image/*">
+                        <input type="file" id="file-3" accept="image/*" name="imagenProducto3">
                         <label for="file-3" id="file-3-preview">
-                            <img src="/img/img-default.png">
+                            <img src="/img/<%- product.image3 %>">
                         </label>
                     </div>
                     <div class="form-elements-ind">
-                        <input type="file" id="file-4" accept="image/*">
+                        <input type="file" id="file-4" accept="image/*" name="imagenProducto4">
                         <label for="file-4" id="file-4-preview">
-                            <img src="/img/img-default.png">
+                            <img src="/img/<%- product.image4 %>">
                         </label>
                     </div>
                     <div class="form-elements-ind">
-                        <input type="file" id="file-5" accept="image/*">
+                        <input type="file" id="file-5" accept="image/*" name="imagenProducto5">
                         <label for="file-5" id="file-5-preview">
-                            <img src="/img/img-default.png">
+                            <img src="/img/<%- product.image5 %>">
                         </label>
                     </div>
                 </div> 
