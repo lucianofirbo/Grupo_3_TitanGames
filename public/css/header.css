@@ -202,6 +202,28 @@ i {
 .user-icon {
     display: none;
 }
+.search-form {
+    display: flex;
+    width: initial;
+}
+.search-form_input {
+    border: none;
+    border-radius: 10px;
+    background: #ffffff1a;
+    padding: 0 25px;
+    color: white;
+    font-size: 0.8rem;
+}
+.search-form_button {
+    background-color: rgba(0, 0, 0, 0.247);
+    border: none;
+    cursor: pointer;
+}
+
+input.search-form_input:focus {
+    outline: none;
+    box-shadow: 0 0 3px rgba(255, 255, 255, 0.438);
+}
 
 /* Media Query Tablet */
 
