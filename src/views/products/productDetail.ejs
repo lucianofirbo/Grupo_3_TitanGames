@@ -84,14 +84,18 @@
         <div class="info-container">
             <div>
                 <div class="img-prod-descrp">
-                    <img src="/img/thewitcher-portada.png" alt="">
+                    <img src="/img/<%- productF.image %>" alt="">
                     <a href="#" onclick="toggle();" >Mirar Trailer</a>
                     <div class="trailer">
-                        <iframe height="200px" src="https://www.youtube.com/embed/c0i88t0Kacs?start=15" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe height="200px" src="<%- productF.trailer %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         <img src="/img/close.png" class="close" onclick="toggle();">
                     </div>
                     
                     <p> <%- productF.description %> </p>
+                    <div class="category-container">
+                        <p id="category"><strong id="strong-category"> Categoria: </strong><%- productF.category %></p>
+                    </div>
+                    
                 </div>
             </div>
             <div class="specs-product">
@@ -124,7 +128,7 @@
         <div class ="interest-container">
             <div class="card-container">
                 <div class="imgBx">
-                    <a href="http://localhost:3000/product/detail"><img src="/img/naraka.png" alt=""></a>
+                    <a href="http://localhost:3000/product/detail/8"><img src="/img/games/naraka.png" alt=""></a>
                 </div>
                 <div class="content-card">
                     <div class="contentBx">
@@ -139,7 +143,7 @@
 
             <div class="card-container">
                 <div class="imgBx">
-                    <a href="http://localhost:3000/product/detail"><img src="/img/kunismall.png" alt=""></a>
+                    <a href="http://localhost:3000/product/detail/6"><img src="/img/kunismall.png" alt=""></a>
                 </div>
                 <div class="content-card">
                     <div class="contentBx">
@@ -153,7 +157,7 @@
             
             <div class="card-container">
                 <div class="imgBx">
-                    <a href="http://localhost:3000/product/detail"><img src="/img/gta.png" alt=""></a>
+                    <a href="http://localhost:3000/product/detail/12"><img src="/img/gta.png" alt=""></a>
                 </div>
                 <div class="content-card">
                     <div class="contentBx">
@@ -167,7 +171,7 @@
 
             <div class="card-container">
                 <div class="imgBx">
-                    <a href="http://localhost:3000/product/detail"><img src="/img/fall.jpg" alt=""></a>
+                    <a href="http://localhost:3000/product/detail/13"><img src="/img/fall.jpg" alt=""></a>
                 </div>
                 <div class="content-card">
                     <div class="contentBx">
