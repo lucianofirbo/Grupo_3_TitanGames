@@ -10,17 +10,11 @@ module.exports = {
         fs.writeFileSync(`./src/data/products.json`, JSON.stringify(database));
     },
 
-    saveProduct: async(product) => {
-        
-        try {
-            let db = JSON.parse(fs.readFileSync('./src/data/products.json', 'utf-8'));
-            db.push(product);
-            fs.writeFileSync(`./src/data/products.json`, JSON.stringify(db))
-            return true;
-        }
-        catch {
-            return false;
-        }
+    saveProduct: (product) => {
+                
+        let db = JSON.parse(fs.readFileSync('./src/data/products.json', 'utf-8'));
+        db.push(product);
+        fs.writeFileSync(`./src/data/products.json`, JSON.stringify(db));
 
     }
 

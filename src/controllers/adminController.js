@@ -26,15 +26,15 @@ module.exports = {
             description: req.body.descripcion,
             category: req.body.genero,
             subcategory: req.body.subGenero,
-            image: req.file ? '/games/' + req.file.filename : '/games/' + 'naraka.png',
-            trailer: req.body.trailer
+            image: req.files['imagenProducto'] ? '/games/' + req.files['imagenProducto'][0].filename : '/games/' + 'naraka.png',
+            image2: req.files['imagenProducto2'] ? '/games/' + req.files['imagenProducto2'][0].filename : '/games/' + 'naraka.png',
+            image3: req.files['imagenProducto3'] ? '/games/' + req.files['imagenProducto3'][0].filename : '/games/' + 'naraka.png',
+            image4: req.files['imagenProducto4'] ? '/games/' + req.files['imagenProducto4'][0].filename : '/games/' + 'naraka.png',
+            image5: req.files['imagenProducto5'] ? '/games/' + req.files['imagenProducto5'][0].filename : '/games/' + 'naraka.png'
         }
 
-        if (saveProduct(producto)) {
-            res.redirect(`/admin/addProduct`);      /* product/detail/${producto.id} */
-        } else {
-            res.send('error');
-        }
+        saveProduct(producto);
+        res.redirect(`/product/detail/${producto.id}`);
 
     },
 
@@ -54,7 +54,7 @@ module.exports = {
 
     editProduct: (req, res) => {
 
-        let editedProduct = getProducts.forEach(element => {
+        getProducts.forEach(element => {
             if (element.id === +req.params.id) {
                 element.id = element.id,
                 element.product = req.body.product,
@@ -62,8 +62,11 @@ module.exports = {
                 element.description = req.body.descripcion,
                 element.category = req.body.genero,
                 element.subcategory = req.body.subGenero,
-                element.image = req.file ? '/games/' + req.file.filename : element.image,
-                element.trailer = req.body.trailer
+                element.image = req.files['imagenProducto'] ? '/games/' + req.files['imagenProducto'][0].filename : element.image,
+                element.image2 = req.files['imagenProducto2'] ? '/games/' + req.files['imagenProducto2'][0].filename : element.image2,
+                element.image3 = req.files['imagenProducto3'] ? '/games/' + req.files['imagenProducto3'][0].filename : element.image3,
+                element.image4 = req.files['imagenProducto4'] ? '/games/' + req.files['imagenProducto4'][0].filename : element.image4,
+                element.image5 = req.files['imagenProducto5'] ? '/games/' + req.files['imagenProducto5'][0].filename : element.image5
             }
         })
 
