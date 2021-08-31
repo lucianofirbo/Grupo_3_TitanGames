@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <%- include('../partials/head') -%>
@@ -16,17 +16,13 @@
     <%- include('../partials/header') -%>
 
     <main>
-
         <div class="search-searchbar">
-            <i class="fas fa-search"></i><input type="text" placeholder="Search for...">
+            <h2>Resultado de la búsqueda: <%= search %></h2>
         </div>
 
         <div class="search-settings">
-
             <div class="filters-hamburguer">
-
                 <p>Filtros  <i class="fas fa-angle-down"></i></p>
-
             </div>
 
             <div class="sort-by-dropdown">
@@ -38,20 +34,38 @@
                     <p>Más jugado</p>
                 </div>
             </div>
-
         </div>
 
         <div class="discover">
-
             <!-- 
             166-219 section1
             221-274 section2
             276-329 section3
             -->
-
             <section class="games" id="discover-games">
 
-                <div class="game">
+                <% if (result.length > 0) { %>
+                    <% result.forEach(product => { %>
+                        <div class="game">
+                            <a href="http://localhost:3000/product/detail/<&= product.id &>">                        
+                                <img src="/img/<%- product.image %>" alt="img del juego" class="games-img-w">
+                            </a>
+                            <div class="game-text">
+                                <p><%= result.product %></p>
+                                <div class="price">
+                                    <p class="sale-box">-10%</p>
+                                    <p><%= product.price %></p>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="game-discover-hr">
+                    <% }) %>
+                <% } else {  %>
+                    <div class="nose">
+                        <h2 class="products-title" style="color: tomato;">No se econtró ningún jueguito que coincida con esa búsqueda</h2>
+                    </div>
+                <% } %>
+                <!-- <div class="game">
 
                     <a href="http://localhost:3000/productDetail">                        
                         <img src="/img/ni-no-kuni-2.jpg" alt="ni no kuni 2" class="games-img-w">
@@ -162,36 +176,13 @@
 
                     </div>
 
-                </div>
-                <hr class="game-discover-hr">
-
-                <div class="game">
-
-                    <a href="http://localhost:3000/productDetail">                        
-                        <img src="/img/ni-no-kuni-2.jpg" alt="ni no kuni 2" class="games-img-w">
-                    </a>
-
-                    <div class="game-text">
-                        <p>Nombre del juego</p>
-
-                        <div class="price">
-                            <p class="sale-box">-10%</p>
-                            <p>1000$</p>
-                        </div>
-
-                    </div>
-
-                </div>
+                </div> -->
 
             </section>
-
         </div>
-
     </main>
-
     
     <%- include('../partials/footer') -%>
 
 </body>
-
 </html>
