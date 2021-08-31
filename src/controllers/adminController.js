@@ -12,6 +12,8 @@ module.exports = {
 
     addProduct: (req, res) => {
 
+        console.log(req.files)
+
         let lastId = 1;
         getProducts.forEach(element => {
             if (element.id > lastId) {
@@ -26,14 +28,12 @@ module.exports = {
             description: req.body.descripcion,
             category: req.body.genero,
             subcategory: req.body.subGenero,
-            image: req.file ? '/games/' + req.file.filename : '/games/' + 'naraka.png'
+            image: req.files['imagenProducto'] !== undefined ? '/games/' + req.files['imagenProducto'][0].filename : '/games/' + 'naraka.png',
+            image2: req.files['imagenProducto2'] !== undefined ? '/games/' + req.files['imagenProducto2'][0].filename : '/games/' + 'naraka.png'
         }
 
-        if (saveProduct(producto)) {
-            res.redirect(`/admin/addProduct`);      /* product/detail/${producto.id} */
-        } else {
-            res.send('error');
-        }
+        saveProduct(producto);
+        res.redirect(`/product/detail/${producto.id}`);
 
     },
 
@@ -53,7 +53,9 @@ module.exports = {
 
     editProduct: (req, res) => {
 
-        let editedProduct = getProducts.forEach(element => {
+        console.log(req.file[0])
+
+        /* getProducts.forEach(element => {
             if (element.id === +req.params.id) {
                 element.id = element.id,
                 element.product = req.body.product,
@@ -61,13 +63,14 @@ module.exports = {
                 element.description = req.body.descripcion,
                 element.category = req.body.genero,
                 element.subcategory = req.body.subGenero,
-                element.image = req.file ? '/games/' + req.file.filename : element.image
+                element.image = req.file['imagenProducto1edit'][0] ? '/games/' + req.files['imagenProducto1edit'][0].filename : element.image,
+                element.image2 = req.file['imagenProducto2edit'][0] ? '/games/' + req.files['imagenProducto1edit'][0].filename : element.image2
             }
         })
 
         saveDb(getProducts);
 
-        res.redirect(`/product/detail/${req.params.id}`);
+        res.redirect(`/product/detail/${req.params.id}`); */
 
     },
 

@@ -16,7 +16,7 @@
     <%- include('../partials/header') -%>
 
     <section data-content id="section1" class="active">               
-        <form class="load-product" action="/admin/editProduct/<%=product.id%>/?_method=PUT" method="POST">
+        <form class="load-product" action="/admin/editProduct/<%=product.id%>?_method=PUT" method="POST">
 
             <!-- CARGAR IMÁGENES -->
             <div class="other-box">
@@ -29,17 +29,17 @@
                 <div class="grid">
                     <p>IMAGENES: </p>
                     <div class="form-element">
-                        <input type="file" id="file-1" accept="image/*" name="imagenProducto">
+                        <input type="file" id="file-1" accept="image/*" name="imagenProducto1edit">
                         <label for="file-1" id="file-1-preview">
-                            <img src="/img/img-default.png">
+                            <img src="/img/<%- product.image %>">
                         </label>
                     </div>
                 </div>
                 <div class="form-elements-flex">
                     <div class="form-elements-ind">
-                        <input type="file" id="file-2" accept="image/*">
+                        <input type="file" id="file-2" accept="image/*" name="imagenProducto2edit">
                         <label for="file-2" id="file-2-preview">
-                            <img src="/img/img-default.png">
+                            <img src="/img/<%- product.image2 %>">
                         </label>
                     </div>
                     <div class="form-elements-ind">
