@@ -12,8 +12,6 @@ module.exports = {
 
     addProduct: (req, res) => {
 
-        console.log(req.files)
-
         let lastId = 1;
         getProducts.forEach(element => {
             if (element.id > lastId) {
@@ -66,9 +64,9 @@ module.exports = {
                 element.subcategory = req.body.subGenero,
                 element.image = req.files['imagenProducto'] ? '/games/' + req.files['imagenProducto'][0].filename : element.image,
                 element.image2 = req.files['imagenProducto2'] ? '/games/' + req.files['imagenProducto2'][0].filename : element.image2,
-                element.image3 = req.files['imagenProducto3'] ? '/games/' + req.files['imagenProducto3'][0].filename : element.image2,
-                element.image4 = req.files['imagenProducto4'] ? '/games/' + req.files['imagenProducto4'][0].filename : element.image2,
-                element.image5 = req.files['imagenProducto5'] ? '/games/' + req.files['imagenProducto5'][0].filename : element.image2
+                element.image3 = req.files['imagenProducto3'] ? '/games/' + req.files['imagenProducto3'][0].filename : element.image3,
+                element.image4 = req.files['imagenProducto4'] ? '/games/' + req.files['imagenProducto4'][0].filename : element.image4,
+                element.image5 = req.files['imagenProducto5'] ? '/games/' + req.files['imagenProducto5'][0].filename : element.image5
             }
         })
 
