@@ -236,6 +236,8 @@ section.section-2 h2 {
     padding-top: 10px;
     text-align: center;
     border-bottom: 1px solid white;
+    display: flex;
+    justify-content: space-between;
 }
 .game-stock img {
     width:100%;
@@ -247,11 +249,23 @@ section.section-2 h2 {
     font-weight: bold;
 }
 
+.game-name img {
+    height: 100px;
+    width: 250px;
+}
+
+.price {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
 .price p {
     color: white;
 }
 
 .edit-remove {
+    justify-content: center;
     display: flex;
     flex-direction: column;
     
@@ -337,9 +351,6 @@ section.section-2 h2 {
         width: 90%;
         margin: 90px auto 30px;
     }
-    .game-stock img {
-        width: 60%;
-    }
     section#section3 {
         width: 90%;
         margin: 90px auto 30px;
@@ -396,7 +407,6 @@ section.section-2 h2 {
         margin: 90px auto 30px;
     }
     .game-stock img {
-        width: 40%;
         box-shadow: 0 0 6px 5px rgba(0, 0, 0, 0.274);
         transition: all .4s ease;
     }

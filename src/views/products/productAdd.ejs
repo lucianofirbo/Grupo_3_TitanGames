@@ -172,14 +172,13 @@
 
                     <% dataBase.forEach(element => {
                         %>
-                        <h1><%- element.id %></h1>
                         <div class="game-stock">
                             <div class="game-name">
-                                <img src="/img/<%-element.image%>" alt="">
-                                <h5><%- element.product %></h5>
+                                <img src="/img/<%-element.image%>" alt="">                                
                             </div>
                             <div class="price">
-                                <p><%- element.price %></p>
+                                <p><%- element.product %></p>
+                                <p><%- element.price %>$</p>
                             </div>
                             <div class="edit-remove">
                                 <a href="/admin/editProduct/<%-element.id%>" id="edit">editar</a>

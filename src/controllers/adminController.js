@@ -61,8 +61,6 @@ module.exports = {
 
     editProduct: (req, res) => {
 
-        console.log(req.body)
-
         getProducts.forEach(element => {
             if (element.id === +req.params.id) {
                 element.id = element.id,
