@@ -4,6 +4,12 @@ const { getProducts, saveProduct, saveDb } = require('../data/dataBase');
 
 module.exports = {
 
+    adminMain: (req, res) => {
+
+        res.render('users/admin')
+
+    },
+
     addRender: (req, res) => {
 
         res.render('products/productAdd', {dataBase: getProducts});

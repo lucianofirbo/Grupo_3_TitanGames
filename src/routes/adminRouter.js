@@ -5,6 +5,9 @@ const fileUpload = require('../middlewares/multerMiddleware');
 
 /* Rutas para añadir, editar stock o eliminar un producto */
 
+/* Main Admin */ 
+router.get('/', controller.adminMain)
+
 /* Add Product */
 router.get('/addProduct', controller.addRender);
 router.post('/addProduct', fileUpload.fields([
