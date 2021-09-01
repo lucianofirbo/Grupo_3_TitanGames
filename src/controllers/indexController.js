@@ -13,7 +13,16 @@ module.exports = {
         res.render('users/aboutUs');
     },
     search: (req, res) => {
-        res.render('users/search');
+        let result = [];
+        getProducts.forEach(product => {
+            if (product.product.toLowerCase().includes(req.query.keywords.toLowerCase())) {
+                result.push(product)
+            }
+        });
+        res.render('users/search', {
+            result,
+            search: req.query.keywords
+        });
     }
     
 }

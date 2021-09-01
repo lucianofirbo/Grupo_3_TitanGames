@@ -54,14 +54,16 @@ module.exports = {
 
     editProduct: (req, res) => {
 
+        console.log(req.body)
+
         getProducts.forEach(element => {
             if (element.id === +req.params.id) {
                 element.id = element.id,
                 element.product = req.body.product,
                 element.price = req.body.precio,
                 element.description = req.body.descripcion,
-                element.category = req.body.genero,
-                element.subcategory = req.body.subGenero,
+                element.category = req.body.genero ? req.body.genero : element.category,
+                element.subcategory = req.body.subGenero ? req.body.subGenero : element.subcategory,
                 element.image = req.files['imagenProducto'] ? '/games/' + req.files['imagenProducto'][0].filename : element.image,
                 element.image2 = req.files['imagenProducto2'] ? '/games/' + req.files['imagenProducto2'][0].filename : element.image2,
                 element.image3 = req.files['imagenProducto3'] ? '/games/' + req.files['imagenProducto3'][0].filename : element.image3,

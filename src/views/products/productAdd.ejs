@@ -85,21 +85,40 @@
         
                         <div class="field-flex">
                             <div class="field-gen">
-                                <label>GÉNERO:</label>
+                                <label>CATEGORÍAS:</label>
                                 <select class="style-select" name="genero">
-                                    <option hidden selected>Elija el género</option>
-                                    <option value="genero1">género 1</option>
-                                    <option value="genero2">género 2</option>
-                                    <option value="genero3">género 3</option>
+                                    <option hidden selected>Elija la categoría</option>
+                                    <option value="Acción">Acción</option>
+                                    <option value="Aventura">Aventura</option>
+                                    <option value="Rol">Rol</option>
+                                    <option value="Simulacion">Simulación</option>
+                                    <option value="Estrategia">Estrategia</option>
+                                    <option value="Deportes">Deportes</option>
                                 </select>
                             </div>
                             <div class="field-subgen">
-                                <label>SUBGÉNERO:</label>
+                                <label>SUBCATEGORÍAS:</label>
                                 <select class="style-select" name="subGenero">
-                                    <option hidden selected>Elija el subgénero</option>
-                                    <option value="subgénero1">subgénero 1</option>
-                                    <option value="subgénero2">subgénero 2</option>
-                                    <option value="subgénero3">subgénero 3</option>
+                                    <option hidden selected>Elija la subcategoría</option>
+                                    <option value="Arcade">Arcade</option>
+                                    <option value="Disparos en primera persona">Disparos en primera persona</option>
+                                    <option value="Disparos en tercera persona">Disparos en tercera persona</option>
+                                    <option value="Lucha">Lucha</option>
+                                    <option value="Pelea">Pelea</option>
+                                    <option value="Buena trama">Buena trama</option>
+                                    <option value="Casuales">Casuales</option>
+                                    <option value="Puzles">Puzles</option>
+                                    <option value="Rol de aventuras">Rol de aventuras</option>
+                                    <option value="En grupo">En grupo</option>
+                                    <option value="Estrategia de rol">Estrategia de rol</option>
+                                    <option value="Por turnos">Por turnos</option>
+                                    <option value="Rol de aventura">Rol de aventura</option>
+                                    <option value="Rol de acción">Rol de acción</option>
+                                    <option value="Rol japonés">Rol japonés</option>
+                                    <option value="Estrategia en tiempo real">Estrategia en tiempo real</option>
+                                    <option value="Militares">Militares</option>
+                                    <option value="Deporte en equipo">Deporte en equipo</option>
+                                    <option value="subgénero3">Deporte individual</option>
                                 </select>
                             </div>
                         </div>
@@ -108,10 +127,21 @@
                                 <label for="">DESCRIPCIÓN:</label>
                                 <textarea class="style-textarea" name="descripcion" cols="30" rows="20"></textarea>
                             </div>
-                            <div class="desc-flex">
-                                <label for="">REQUISITOS:</label>
-                                <textarea class="style-textarea" name="" id="" cols="30" rows="20"></textarea>
+                            <div class="row-req">
+                                <div class="req-container">
+                                    <label for="">REQUISITOS MÍNIMOS:</label>
+                                    <input class="style-input" type="text" name="req"> <br>
+                                    <input class="style-input" type="text" name="req"> <br>
+                                    <input class="style-input" type="text" name="req">
+                                </div>
+                                <div class="req-container">
+                                    <label for="">REQUISITOS RECOMENDADOS:</label>
+                                    <input class="style-input" type="text" name="req"> <br>
+                                    <input class="style-input" type="text" name="req"> <br>
+                                    <input class="style-input" type="text" name="req">
+                                </div>
                             </div>
+                            
                         </div>
 
                         <div class="fields">
@@ -152,7 +182,7 @@
                             <div class="edit-remove">
                                 <a href="/admin/editProduct/<%-element.id%>" id="edit">editar</a>
                                 <form method="POST" action="/admin/deleteProduct/<%-element.id%>?_method=DELETE">
-                                    <button type="submit" id="buttonSubmitDelete">eliminar</button>
+                                    <button id="delete-button" type="submit" id="buttonSubmitDelete">eliminar</button>
                                 </form>
                             </div>
                         </div>

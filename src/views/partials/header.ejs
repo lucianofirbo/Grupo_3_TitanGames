@@ -32,9 +32,10 @@
 
         <div class="top-right">
 
-            <a href="http://localhost:3000/search">
-                <i class="fas fa-search"></i>
-            </a>
+            <form action="/search" method="GET" class="search-form">
+                <input type="text" name="keywords" placeholder="Buscar" class="search-form_input">
+                <button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
+            </form>
 
             <div class="notificacion-dropdown-main-nav">
                 <div class="notificacion-icon-main-nav">
