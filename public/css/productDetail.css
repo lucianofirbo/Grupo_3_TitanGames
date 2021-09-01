@@ -26,6 +26,11 @@ main {
 }
 
 /*    */
+
+.categoriesDetail {
+  display: flex;
+}
+
 .title-product h3 {
   letter-spacing: 2.5px;
   text-transform: uppercase;
@@ -44,8 +49,8 @@ main {
 .buy-product {
   display: flex;
   align-items: center;
-  justify-content: space-around;
   margin-top: 10px;
+  margin-left: 15%;
 }
 #offer {
   background-color: var(--pinkTitan);

@@ -85,18 +85,21 @@
             <div>
                 <div class="img-prod-descrp">
                     <img src="/img/<%- productF.image %>" alt="">
-                    <a href="#" onclick="toggle();" >Mirar Trailer</a>
+                    <a href="" onclick="toggle();" >Mirar Trailer</a>
                     <div class="trailer">
                         <iframe height="200px" src="<%- productF.trailer %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         <img src="/img/close.png" class="close" onclick="toggle();">
                     </div>
                     
                     <p> <%- productF.description %> </p>
-                    <div class="category-container">
-                        <p id="category"><strong id="strong-category"> Categoria: </strong><%- productF.category %></p>
-                    </div>
-                    <div class="category-container">
-                        <p id="category"><strong id="strong-category"> Sub-Categoria: </strong><%- productF.subcategory %></p>
+
+                    <div class="categoriesDetail">
+                        <div class="category-container">
+                            <p id="category"><strong id="strong-category"> Categoria: </strong><%- productF.category %></p>
+                        </div>
+                        <div class="category-container">
+                            <p id="category"><strong id="strong-category"> Sub-Categoria: </strong><%- productF.subcategory %></p>
+                        </div>
                     </div>
                     
                 </div>
@@ -107,9 +110,9 @@
                     <h4>Especificaciones técnicas mínimas</h4>
                 <hr>
                 <ul>
-                    <li>Placa 9999ti rtx</li>
-                    <li>Procesador I80000</li>
-                    <li>Ram 999999gb</li>
+                    <li><%- productF.minimumVideo %></li>
+                    <li><%- productF.minimumProcessor %></li>
+                    <li><%- productF.minimumRam %></li>
                 </ul>
                 </div>
     
@@ -117,9 +120,9 @@
                     <h4>Especificaciones técnicas Recomendadas</h4>
                 <hr>
                 <ul>
-                    <li>Ram 999999gb</li>
-                    <li>Procesador I80000</li>
-                    <li>Placa 9999ti rtx</li>
+                    <li><%- productF.recommendedVideo %></li>
+                    <li><%- productF.recommendedProcessor %></li>
+                    <li><%- productF.recommendedRam %></li>
                 </ul>
                 </div>
             </div>
@@ -129,13 +132,14 @@
     <section class="interese">
         <h5>Puede que te interese</h5>
         <div class ="interest-container">
+
             <div class="card-container">
                 <div class="imgBx">
-                    <a href="http://localhost:3000/product/detail/8"><img src="/img/games/naraka.png" alt=""></a>
+                    <a href="/product/detail/3"><img src="/img/<%- dataBase[1].image %>"></a>
                 </div>
                 <div class="content-card">
                     <div class="contentBx">
-                        <h3>Naraka:Bladepoint<br> <span>$199.99</span> </h3>
+                        <h3><%- dataBase[1].product %><br> <span>$<%- dataBase[1].price %></span> </h3>
                     </div>
                     <div class="icon-cart">
                         <i class="fas fa-cart-plus"></i>
@@ -146,45 +150,49 @@
 
             <div class="card-container">
                 <div class="imgBx">
-                    <a href="http://localhost:3000/product/detail/6"><img src="/img/kunismall.png" alt=""></a>
+                    <a href="/product/detail/4"><img src="/img/<%- dataBase[2].image %>"></a>
                 </div>
                 <div class="content-card">
                     <div class="contentBx">
-                        <h3>Ni no Kuni II <br> <span>$199.99</span> </h3>
+                        <h3><%- dataBase[2].product %><br> <span>$<%- dataBase[2].price %></span> </h3>
                     </div>
                     <div class="icon-cart">
                         <i class="fas fa-cart-plus"></i>
                     </div> 
-                </div>             
-            </div>   
+                </div>
+                               
+            </div>
             
             <div class="card-container">
                 <div class="imgBx">
-                    <a href="http://localhost:3000/product/detail/12"><img src="/img/gta.png" alt=""></a>
+                    <a href="/product/detail/5"><img src="/img/<%- dataBase[3].image %>"></a>
                 </div>
                 <div class="content-card">
                     <div class="contentBx">
-                        <h3>gta<br> <span>$199.99</span> </h3>
+                        <h3><%- dataBase[3].product %><br> <span>$<%- dataBase[3].price %></span> </h3>
                     </div>
                     <div class="icon-cart">
                         <i class="fas fa-cart-plus"></i>
                     </div> 
-                </div>            
-            </div> 
+                </div>
+                               
+            </div>
 
             <div class="card-container">
                 <div class="imgBx">
-                    <a href="http://localhost:3000/product/detail/13"><img src="/img/fall.jpg" alt=""></a>
+                    <a href="/product/detail/6"><img src="/img/<%- dataBase[4].image %>"></a>
                 </div>
                 <div class="content-card">
                     <div class="contentBx">
-                        <h3>Fall Guys<br> <span>$199.99</span> </h3>
+                        <h3><%- dataBase[4].product %><br> <span>$<%- dataBase[4].price %></span> </h3>
                     </div>
                     <div class="icon-cart">
                         <i class="fas fa-cart-plus"></i>
                     </div> 
-                </div>               
-            </div> 
+                </div>
+                               
+            </div>
+
         </div>       
     </section>
 
