@@ -1,12 +1,18 @@
 const { read } = require('fs');
 const path = require('path');
-const { getProducts, saveProduct, saveDb } = require('../data/dataBase');
+const { getProducts, saveProduct, saveDb, getUsers } = require('../data/dataBase');
 
 module.exports = {
 
     adminMain: (req, res) => {
 
-        res.render('users/admin')
+        let admin = getUsers.filter(user => {
+            if (user.category == 'admin') {
+                return user;
+            }
+        })
+
+        res.render('users/admin', {admin})
 
     },
 
@@ -39,14 +45,15 @@ module.exports = {
             recommendedProcessor: req.body.recommendedProcessor,
             recommendedRam: req.body.recommendedRam,
             videoURL: req.body.videoURL ? req.body.videoURL : 'https://youtu.be/dQw4w9WgXcQ',
-            image: req.files['imagenProducto'] ? '/games/' + req.files['imagenProducto'][0].filename : '/games/' + 'naraka.png',
-            image2: req.files['imagenProducto2'] ? '/games/' + req.files['imagenProducto2'][0].filename : '/games/' + 'naraka.png',
-            image3: req.files['imagenProducto3'] ? '/games/' + req.files['imagenProducto3'][0].filename : '/games/' + 'naraka.png',
-            image4: req.files['imagenProducto4'] ? '/games/' + req.files['imagenProducto4'][0].filename : '/games/' + 'naraka.png',
-            image5: req.files['imagenProducto5'] ? '/games/' + req.files['imagenProducto5'][0].filename : '/games/' + 'naraka.png'
+            image: req.files['imagenProducto'] ? '/games/' + req.files['imagenProducto'][0].filename : '/games/' + 'notFound.png',
+            image2: req.files['imagenProducto2'] ? '/games/' + req.files['imagenProducto2'][0].filename : '/games/' + 'notFound.png',
+            image3: req.files['imagenProducto3'] ? '/games/' + req.files['imagenProducto3'][0].filename : '/games/' + 'notFound.png',
+            image4: req.files['imagenProducto4'] ? '/games/' + req.files['imagenProducto4'][0].filename : '/games/' + 'notFound.png',
+            image5: req.files['imagenProducto5'] ? '/games/' + req.files['imagenProducto5'][0].filename : '/games/' + 'notFound.png'
         }
 
         saveProduct(producto);
+        
         res.redirect(`/product/detail/${producto.id}`);
 
     },
