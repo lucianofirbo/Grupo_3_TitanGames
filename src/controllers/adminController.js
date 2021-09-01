@@ -89,6 +89,7 @@ module.exports = {
 
         res.redirect('/admin/addProduct');
 
-    }
+    },
 
+    
 }

@@ -1,1 +1,103 @@
-[{"id":2,"product":"The Witcher 3    ","price":"602","description":"Mientras la guerra se extiende por los Reinos del Norte, aceptarás el contrato de tu vida: encontrar a la niña de la profecía, un arma viviente que puede alterar el mundo tal y como lo conocemos...","category":"Elija la categoría","subcategory":"Elija la subcategoría","image":"/games/product-1630325014022.png","trailer":"https://www.youtube.com/embed/c0i88t0Kacs"},{"id":4,"product":"Cyberpunk 2077 ","price":"1200","description":"Cyberpunk 2077 es una historia de acción y aventura en mundo abierto ambientada en Night City, una megalópolis obsesionada con el poder, el glamur y la modificación corporal. Tu personaje es V, un mercenario que persigue un implante único que permite alcanzar la inmortalidad. ","category":"genero3","subcategory":"subgénero14","image":"/games/product-1630325283180.jpg","trailer":"https://www.youtube.com/embed/8X2kIfS6fb8"},{"id":6,"product":"Ni No Kuni 2 ","price":"699","description":"Únete al viaje que llevará al joven rey Evan en busca de un nuevo reino, además de, con la ayuda de nuevos amigos, unir el mundo y salvar a sus gentes de un mal espantoso.","category":"Elija la categoría","subcategory":"Elija la subcategoría","image":"/games/product-1630331451536.png","trailer":"https://www.youtube.com/embed/2MJs869kavY"},{"id":7,"product":"Dark souls ","price":"400","description":"Dark Souls continúa redefiniendo los límites con el nuevo y ambicioso capítulo de esta serie revolucionaria, tan aclamada por la crítica. ¡Prepárate para sumergirte en la oscuridad! ","category":"Elija la categoría","subcategory":"Elija la subcategoría","image":"/games/product-1630332053692.jpg","trailer":"https://www.youtube.com/embed/cWBwFhUv1-8"},{"id":8,"product":"Naraka: Bladepoint  ","price":"600","description":"battle royale de acción para 60 jugadores que ofrece una movilidad demencial con parkour y un gancho, un enorme arsenal de armas cuerpo a cuerpo y a distancia y un plantel de personajes con poderosas habilidades.","category":"Elija la categoría","subcategory":"Elija la subcategoría","image":"/games/product-1630332278771.jpg","trailer":"https://www.youtube.com/embed/Q_uBBXiqL1s"},{"id":9,"product":"Battlefield  ","price":"456","description":"En un mundo en el futuro cercano transformado por el desorden, adáptate y sobrevive con la ayuda de tu patrulla y un arsenal de vanguardia en campos de batalla en constante","category":"Elija la categoría","subcategory":"Elija la subcategoría","image":"/games/product-1630334192154.jpg","trailer":"https://www.youtube.com/embed/q4qWMcQfOCc"},{"id":10,"product":"Aliens: Fireteam  ","price":"458","description":"Ambientado en el emblemático universo de Alien, Aliens: Fireteam es un juego cooperativo de disparos y supervivencia en tercera persona en el que tu equipo de mar","category":"Elija la categoría","subcategory":"Elija la subcategoría","image":"/games/product-1630378359155.jpg","trailer":"https://www.youtube.com/embed/3e1ldw2pZEI"},{"id":11,"product":"Counter-Strike source  ","price":"999999","description":"¡Actualizado para incluir estadísticas de los jugadores, logros, nuevos marcadores y mucho más!","category":"genero1","subcategory":"subgénero2","image":"/games/product-1630378992411.jpg","trailer":""},{"id":12,"product":"gta v ","price":"254","description":"Grand Theft Auto V para PC ofrece a los jugadores la opción de explorar el galardonado mundo de Los Santos y el condado de Blaine con una resolución de 4K y disfrutar del juego a 60 fotogramas por segundo.\r\n","category":"Elija la categoría","subcategory":"Elija la subcategoría","image":"/games/product-1630379936867.jpg","trailer":"https://www.youtube.com/embed/tbLAWtlvyrA"},{"id":13,"product":"Fall guys ","price":"999","description":"Fall Guys es un juego multijugador masivo tipo party con hasta 60 jugadores online en un enfrentamiento todos contra todos que se desarrolla ronda tras ronda entre un caos creciente hasta que solo queda un único vencedor.","category":"Elija la categoría","subcategory":"Elija la subcategoría","image":"/games/product-1630380267503.jpg","trailer":"https://www.youtube.com/embed/Wj3dUvGLjNQ"}]
+[
+    {
+        "id": 2,
+        "product": "The Witcher 3    ",
+        "price": "602",
+        "enOferta": true,
+        "description": "Mientras la guerra se extiende por los Reinos del Norte, aceptarás el contrato de tu vida: encontrar a la niña de la profecía, un arma viviente que puede alterar el mundo tal y como lo conocemos...",
+        "category": "Elija la categoría",
+        "subcategory": "Elija la subcategoría",
+        "image": "/games/product-1630325014022.png",
+        "trailer": "https://www.youtube.com/embed/c0i88t0Kacs"
+    },
+    {
+        "id": 4,
+        "product": "Cyberpunk 2077 ",
+        "price": "1200",
+        "description": "Cyberpunk 2077 es una historia de acción y aventura en mundo abierto ambientada en Night City, una megalópolis obsesionada con el poder, el glamur y la modificación corporal. Tu personaje es V, un mercenario que persigue un implante único que permite alcanzar la inmortalidad. ",
+        "category": "genero3",
+        "subcategory": "subgénero14",
+        "image": "/games/product-1630325283180.jpg",
+        "trailer": "https://www.youtube.com/embed/8X2kIfS6fb8"
+    },
+    {
+        "id": 6,
+        "product": "Ni No Kuni 2 ",
+        "price": "699",
+        "description": "Únete al viaje que llevará al joven rey Evan en busca de un nuevo reino, además de, con la ayuda de nuevos amigos, unir el mundo y salvar a sus gentes de un mal espantoso.",
+        "category": "Elija la categoría",
+        "subcategory": "Elija la subcategoría",
+        "image": "/games/product-1630331451536.png",
+        "trailer": "https://www.youtube.com/embed/2MJs869kavY"
+    },
+    {
+        "id": 7,
+        "product": "Dark souls ",
+        "price": "400",
+        "description": "Dark Souls continúa redefiniendo los límites con el nuevo y ambicioso capítulo de esta serie revolucionaria, tan aclamada por la crítica. ¡Prepárate para sumergirte en la oscuridad! ",
+        "category": "Elija la categoría",
+        "subcategory": "Elija la subcategoría",
+        "image": "/games/product-1630332053692.jpg",
+        "trailer": "https://www.youtube.com/embed/cWBwFhUv1-8"
+    },
+    {
+        "id": 8,
+        "product": "Naraka: Bladepoint  ",
+        "price": "600",
+        "description": "battle royale de acción para 60 jugadores que ofrece una movilidad demencial con parkour y un gancho, un enorme arsenal de armas cuerpo a cuerpo y a distancia y un plantel de personajes con poderosas habilidades.",
+        "category": "Elija la categoría",
+        "subcategory": "Elija la subcategoría",
+        "image": "/games/product-1630332278771.jpg",
+        "trailer": "https://www.youtube.com/embed/Q_uBBXiqL1s"
+    },
+    {
+        "id": 9,
+        "product": "Battlefield  ",
+        "price": "456",
+        "description": "En un mundo en el futuro cercano transformado por el desorden, adáptate y sobrevive con la ayuda de tu patrulla y un arsenal de vanguardia en campos de batalla en constante",
+        "category": "Elija la categoría",
+        "subcategory": "Elija la subcategoría",
+        "image": "/games/product-1630334192154.jpg",
+        "trailer": "https://www.youtube.com/embed/q4qWMcQfOCc"
+    },
+    {
+        "id": 10,
+        "product": "Aliens: Fireteam  ",
+        "price": "458",
+        "description": "Ambientado en el emblemático universo de Alien, Aliens: Fireteam es un juego cooperativo de disparos y supervivencia en tercera persona en el que tu equipo de mar",
+        "category": "Elija la categoría",
+        "subcategory": "Elija la subcategoría",
+        "image": "/games/product-1630378359155.jpg",
+        "trailer": "https://www.youtube.com/embed/3e1ldw2pZEI"
+    },
+    {
+        "id": 11,
+        "product": "Counter-Strike source  ",
+        "price": "999999",
+        "description": "¡Actualizado para incluir estadísticas de los jugadores, logros, nuevos marcadores y mucho más!",
+        "category": "genero1",
+        "subcategory": "subgénero2",
+        "image": "/games/product-1630378992411.jpg",
+        "trailer": ""
+    },
+    {
+        "id": 12,
+        "product": "gta v ",
+        "price": "254",
+        "description": "Grand Theft Auto V para PC ofrece a los jugadores la opción de explorar el galardonado mundo de Los Santos y el condado de Blaine con una resolución de 4K y disfrutar del juego a 60 fotogramas por segundo.\r\n",
+        "category": "Elija la categoría",
+        "subcategory": "Elija la subcategoría",
+        "image": "/games/product-1630379936867.jpg",
+        "trailer": "https://www.youtube.com/embed/tbLAWtlvyrA"
+    },
+    {
+        "id": 13,
+        "product": "Fall guys ",
+        "price": "999",
+        "description": "Fall Guys es un juego multijugador masivo tipo party con hasta 60 jugadores online en un enfrentamiento todos contra todos que se desarrolla ronda tras ronda entre un caos creciente hasta que solo queda un único vencedor.",
+        "category": "Elija la categoría",
+        "subcategory": "Elija la subcategoría",
+        "image": "/games/product-1630380267503.jpg",
+        "trailer": "https://www.youtube.com/embed/Wj3dUvGLjNQ"
+    }
+]

@@ -1,10 +1,12 @@
 const path = require('path');
 let {getProducts} = require('../data/dataBase');
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 module.exports = {
 
     index: (req, res) => {
-        res.render('users/index', {dataBase: getProducts});
+            let productsInSale = getProducts.filter (product => product.enOferta === true) 
+        res.render('users/index', {dataBase: getProducts, productsInSale});
     },
     politics: (req, res) => {
         res.render('users/privacyPolitics');
@@ -23,6 +25,6 @@ module.exports = {
             result,
             search: req.query.keywords
         });
-    }
+    },
     
 }
