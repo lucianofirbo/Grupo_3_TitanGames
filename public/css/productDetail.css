@@ -63,6 +63,8 @@ main {
 /*--  -- SLIDER --  --*/
 .mySlides img {
   vertical-align: middle;
+  object-fit: contain;
+  height: 200px;
 }
 .container {
   position: relative;
@@ -344,6 +346,9 @@ section h5{
   #category {
     padding-right: 10px;
   }
+  .mySlides img {
+    height: 300px;
+  }
 }
 
 /*Tablets*/
@@ -383,6 +388,9 @@ section h5{
   #category {
     padding-top: 10px;
     padding-bottom: 10px;
+  }
+  .mySlides img {
+    height: 400px;
   }
 }
 
