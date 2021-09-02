@@ -54,7 +54,7 @@ module.exports = {
 
         getProducts.push(producto)
 
-        saveProduct(getProducts);
+        saveDb(getProducts);
         
         res.redirect(`/product/detail/${producto.id}`);
 
