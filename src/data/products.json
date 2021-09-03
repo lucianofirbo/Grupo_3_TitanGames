@@ -14,6 +14,7 @@
         "id": 4,
         "product": "Cyberpunk 2077 ",
         "price": "1200",
+        "enOferta": true,
         "description": "Cyberpunk 2077 es una historia de acción y aventura en mundo abierto ambientada en Night City, una megalópolis obsesionada con el poder, el glamur y la modificación corporal. Tu personaje es V, un mercenario que persigue un implante único que permite alcanzar la inmortalidad. ",
         "category": "genero3",
         "subcategory": "subgénero14",

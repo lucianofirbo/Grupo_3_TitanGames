@@ -57,15 +57,15 @@
     
         <!-- Productos en oferta -->
 
-        <% productsInSale.forEach(product => { %>
+        <% productsInSale.forEach(products => { %>
             <div class="special-offer">
                 <div class="special-offer-game">
         
-                    <a href="/products/productDetail/<%- product.id %>">
-                        <img src="img/games/<%- product.image %>" alt="" class="sale-img3">
+                    <a href="/products/productDetail/<%- products.id %>">
+                        <img src="/img/<%- products.image %>" alt="" class="sale-img3">
                     </a>
                     <div class="special-offer-details">
-                        <p><%- product.name %></p>
+                        <p><%- products.product %></p>
                         <p>Desc</p>
                     </div>
                 </div>
