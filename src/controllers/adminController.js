@@ -1,6 +1,6 @@
 const { read } = require('fs');
 const path = require('path');
-const { getProducts, saveProduct, saveDb, getUsers } = require('../data/dataBase');
+const { getProducts, saveDb, getUsers } = require('../data/dataBase');
 
 module.exports = {
 
@@ -52,7 +52,9 @@ module.exports = {
             image5: req.files['imagenProducto5'] ? '/games/' + req.files['imagenProducto5'][0].filename : '/games/' + 'notFound.png'
         }
 
-        saveProduct(producto);
+        getProducts.push(producto);
+
+        saveDb(getProducts);
         
         res.redirect(`/product/detail/${producto.id}`);
 
@@ -88,7 +90,7 @@ module.exports = {
                 element.recommendedVideo = req.body.recommendedVideo ? req.body.recommendedVideo : element.recommendedVideo,
                 element.recommendedProcessor = req.body.recommendedProcessor ? req.body.recommendedProcessor : element.recommendedProcessor,
                 element.recommendedRam = req.body.recommendedRam ? req.body.recommendedRam : element.recommendedRam,
-                element.videoURL = req.body.videoURL ? req.body.videoURL : element.videoURL
+                element.videoURL = req.body.videoURL ? req.body.videoURL : element.videoURL,
                 element.image = req.files['imagenProducto'] ? '/games/' + req.files['imagenProducto'][0].filename : element.image,
                 element.image2 = req.files['imagenProducto2'] ? '/games/' + req.files['imagenProducto2'][0].filename : element.image2,
                 element.image3 = req.files['imagenProducto3'] ? '/games/' + req.files['imagenProducto3'][0].filename : element.image3,
@@ -110,7 +112,7 @@ module.exports = {
                 let productRemove = getProducts.indexOf(element);
                 getProducts.splice(productRemove, 1);
             }
-        })        
+        })
 
         saveDb(getProducts);
 

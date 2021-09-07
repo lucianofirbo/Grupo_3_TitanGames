@@ -137,6 +137,7 @@ main {
   flex-wrap: wrap;
   align-items: flex-end;
   flex-direction: column;
+  margin-top: 0;
 }
 .button-container .btn-submit {
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 25%);
@@ -441,6 +442,13 @@ section h5{
   .interese {
     max-width: 90%;
     margin: 50px auto;
+  }
+  .img-prod-descrp img {
+    height: 250px;
+  }
+  .buy-product{
+    margin-top: 5%;
+    gap: 20px;
   }
 
 }
