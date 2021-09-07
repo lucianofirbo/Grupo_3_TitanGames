@@ -1,11 +1,17 @@
 const path = require('path');
 const { getProducts } = require('../data/dataBase');
 
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
 module.exports = {
 //vista con una lista de todos los productos?
-    /* indexProduct: (req, res) => {
-        res.render('')
-    }, */
+    index: (req, res) => {
+        res.render('products/products', {
+            products: getProducts,
+            toThousand
+        })
+    }, 
+
     detail: (req, res) => {
 
         let productR = +req.params.id;
@@ -16,11 +22,18 @@ module.exports = {
             }
         });
 
-        res.render('products/productDetail', {productF, dataBase: getProducts});
+        res.render('products/productDetail', {
+            productF, 
+            dataBase: getProducts,
+            toThousand
+        });
 
     },
 
     cart: (req, res) => {
-        res.render('products/productCart')
+        res.render('products/productCart', {
+            dataBase: getProducts,
+            toThousand
+        })
     }
 }
