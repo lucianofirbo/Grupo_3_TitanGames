@@ -5,6 +5,11 @@ body {
     background: radial-gradient(ellipse at bottom, #1b2735 0%,#090a0f 100%);
 }
 
+.backgroundWrapper {
+    z-index: -1;
+    position: relative;
+}
+
 #stars {
     width: 1px;
     height: 1px;
