@@ -73,7 +73,7 @@
             <!-- TERMINA SLIDER-->
             <div class="buy-product">
                 <p id="offer">-90%</p>
-                <p> <%- productF.price %> </p>
+                <p> $<%- toThousand(productF.price) %> </p>
                 <div class="button-container">
                     <button type="submit" class="btn btn-submit">Añadir al carrito <i class="fas fa-cart-plus"></i></button>
                 </div>
@@ -85,9 +85,9 @@
             <div>
                 <div class="img-prod-descrp">
                     <img src="/img/<%- productF.image %>" alt="">
-                    <a href="" onclick="toggle();" >Mirar Trailer</a>
+                    <a href="" onclick="toggle();">Mirar Trailer</a>
                     <div class="trailer">
-                        <iframe height="200px" src="<%- productF.trailer %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe height="200px" src="<%- productF.videoURL %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         <img src="/img/close.png" class="close" onclick="toggle();">
                     </div>
                     
@@ -129,77 +129,12 @@
         </div>    
     </main>
     
-    <section class="interese">
-        <h5>Puede que te interese</h5>
-        <div class ="interest-container">
-
-            <div class="card-container">
-                <div class="imgBx">
-                    <a href="/product/detail/3"><img src="/img/<%- dataBase[1].image %>"></a>
-                </div>
-                <div class="content-card">
-                    <div class="contentBx">
-                        <h3><%- dataBase[1].product %><br> <span>$<%- dataBase[1].price %></span> </h3>
-                    </div>
-                    <div class="icon-cart">
-                        <i class="fas fa-cart-plus"></i>
-                    </div> 
-                </div>
-                               
-            </div>
-
-            <div class="card-container">
-                <div class="imgBx">
-                    <a href="/product/detail/4"><img src="/img/<%- dataBase[2].image %>"></a>
-                </div>
-                <div class="content-card">
-                    <div class="contentBx">
-                        <h3><%- dataBase[2].product %><br> <span>$<%- dataBase[2].price %></span> </h3>
-                    </div>
-                    <div class="icon-cart">
-                        <i class="fas fa-cart-plus"></i>
-                    </div> 
-                </div>
-                               
-            </div>
-            
-            <div class="card-container">
-                <div class="imgBx">
-                    <a href="/product/detail/5"><img src="/img/<%- dataBase[3].image %>"></a>
-                </div>
-                <div class="content-card">
-                    <div class="contentBx">
-                        <h3><%- dataBase[3].product %><br> <span>$<%- dataBase[3].price %></span> </h3>
-                    </div>
-                    <div class="icon-cart">
-                        <i class="fas fa-cart-plus"></i>
-                    </div> 
-                </div>
-                               
-            </div>
-
-            <div class="card-container">
-                <div class="imgBx">
-                    <a href="/product/detail/6"><img src="/img/<%- dataBase[4].image %>"></a>
-                </div>
-                <div class="content-card">
-                    <div class="contentBx">
-                        <h3><%- dataBase[4].product %><br> <span>$<%- dataBase[4].price %></span> </h3>
-                    </div>
-                    <div class="icon-cart">
-                        <i class="fas fa-cart-plus"></i>
-                    </div> 
-                </div>
-                               
-            </div>
-
-        </div>       
-    </section>
+    <%- include('../partials/interestSection') -%>
 
     <%- include('../partials/footer') -%>
-    
-    <script src="/js/index.js"></script>
+
     <script src="/js/productDetail.js"></script>
+    <script src="/js/index.js"></script> 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
