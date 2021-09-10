@@ -1,6 +1,7 @@
 const { read } = require('fs');
 const path = require('path');
 const { getProducts, saveDb, getUsers } = require('../data/dataBase');
+const { validationResult } = require('express-validator');
 
 module.exports = {
 
@@ -24,6 +25,8 @@ module.exports = {
 
     addProduct: (req, res) => {
 
+        let errors = validationResult(req);
+        
         let lastId = 1;
         getProducts.forEach(element => {
             if (element.id > lastId) {

@@ -11,7 +11,7 @@ const formValidator = [
     body('minimumRam').notEmpty().withMessage('Debes introducir requisito del producto'),
     body('recommendedVideo').notEmpty().withMessage('Debes introducir requisito del producto'),
     body('recommendedProcessor').notEmpty().withMessage('Debes introducir requisito del producto'),
-    body('recommendedRam').notEmpty().withMessage('Debes introducir requisito del producto'),
+    body('recommendedRam').notEmpty().withMessage('Debes introducir requisito del producto')
 ]
 
 module.exports = formValidator;
