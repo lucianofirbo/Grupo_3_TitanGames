@@ -4,6 +4,15 @@ let {getProducts} = require('../data/dataBase');
 module.exports = {
 
     index: (req, res) => {
+
+        if (req.session.visits == undefined) {
+            req.session.visits = 0
+        }
+
+        req.session.visits ++;
+
+        console.log(req.session.visits)
+
         res.render('users/index', {dataBase: getProducts});
     },
     politics: (req, res) => {

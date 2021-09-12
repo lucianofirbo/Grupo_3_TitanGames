@@ -8,6 +8,10 @@ module.exports = {
 
     saveDb: (database) => {
         fs.writeFileSync(`./src/data/products.json`, JSON.stringify(database));
+    },
+
+    saveUserDb: (database) => {
+        fs.writeFileSync(`./src/data/users.json`, JSON.stringify(database));
     }
 
 }

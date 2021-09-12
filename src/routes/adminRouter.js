@@ -6,7 +6,7 @@ const fileUpload = require('../middlewares/multerMiddleware');
 
 
 /* Main Admin */ 
-router.get('/', controller.adminMain)
+router.get('/', controller.adminMain);
 
 /* Add Product */
 router.get('/products', controller.addRender);
