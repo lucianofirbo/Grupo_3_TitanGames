@@ -21,15 +21,22 @@
                 <p data-target="#section1">Carga de Productos</p>
             </div>
 
-            <section data-content id="section1">
-                <form class="load-product" method="POST" action="/admin/addProduct" enctype="multipart/form-data">
+            <section data-content id="section1" class="section1">
+                <form class="load-product" method="POST" action="/admin/products" enctype="multipart/form-data">
 
                     <!-- CARGAR IMÁGENES -->
                     <div class="other-box">
 
                         <div class="field-product">
-                            <label>PRODUCTO:</label>
-                            <input class="style-input" type="text" name="product" placeholder="Nombre del producto">
+                            <label>PRODUCTO:</label> 
+                            <% if (locals && locals.errors) { %>
+                                <p> <% errors.forEach(error => { %>
+                                    <% if(error.param == 'product'){ %>
+                                        <%- error.msg %>
+                                    <% } %>
+                                <% }) %> </p>
+                            <% } %> 
+                            <input class="style-input" type="text" name="product" placeholder="Nombre del producto" value="<%= locals.old && old.product ? old.product : '' %>">
                         </div>
 
                         <div class="grid">
@@ -70,7 +77,14 @@
                         
                         <div class="field-product">
                             <label>PRECIO:</label>
-                            <input class="style-input" type="number" name="precio" placeholder="Precio del producto">
+                            <% if (locals && locals.errors) { %>
+                                <p> <% errors.forEach(error => { %>
+                                    <% if(error.param == 'precio'){ %>
+                                        <%- error.msg %>
+                                    <% } %>
+                                <% }) %> </p>
+                            <% } %> 
+                            <input class="style-input" type="number" name="precio" placeholder="Precio del producto" value="<%= locals.old && old.precio ? old.precio : '' %>">
                         </div>
 
 
@@ -122,7 +136,14 @@
                         <div class="display-flex-box">
                             <div class="desc-flex">
                                 <label>DESCRIPCIÓN:</label>
-                                <textarea class="style-textarea" name="descripcion" cols="30" rows="20" placeholder="Ingresa una descripcion para su producto"></textarea>
+                                <% if (locals && locals.errors) { %>
+                                    <p> <% errors.forEach(error => { %>
+                                        <% if(error.param == 'descripcion'){ %>
+                                            <%- error.msg %>
+                                        <% } %>
+                                    <% }) %> </p>
+                                <% } %> 
+                                <textarea class="style-textarea" name="descripcion" cols="30" rows="20" placeholder="Ingresa una descripcion para su producto"><%= locals.old && old.descripcion ? old.descripcion : '' %></textarea>
                             </div>
                             <p id="req-title">REQUISITOS:</p>
                             <div class="row-req">

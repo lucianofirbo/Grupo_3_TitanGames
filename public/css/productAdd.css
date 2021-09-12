@@ -32,6 +32,10 @@
 
 /* SECTION1 */
 
+.section1 {
+    margin-top: 5%;
+}
+
 form.load-product {
     margin-top: 100px;
     width: 100%;
@@ -336,6 +340,7 @@ section.section-2 h2 {
 /* MEDIA QUERIES */
 
 @media screen and (min-width: 768px){
+
     .bar-product {
         margin-top: 60px;
     }
@@ -343,9 +348,9 @@ section.section-2 h2 {
         margin-right: 190px;
     }
     form.load-product {
-        padding-top: 100px;
         width: 90%;
-        margin: 0 auto;
+        margin: auto;
+        margin-top: 3.5%;
     }
     section.section-2 {
         width: 90%;

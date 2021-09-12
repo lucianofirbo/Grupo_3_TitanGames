@@ -10,7 +10,7 @@ router.get('/', controller.adminMain)
 
 /* Add Product */
 router.get('/products', controller.addRender);
-router.post('/addProduct', fileUpload.fields([
+router.post('/products', fileUpload.fields([
     { name: 'imagenProducto', maxCount: 1 },
     { name: 'imagenProducto2', maxCount: 1 },
     { name: 'imagenProducto3', maxCount: 1 },
