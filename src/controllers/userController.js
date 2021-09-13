@@ -3,22 +3,35 @@ const { getUsers, saveUserDb } = require('../data/dataBase');
 module.exports = {
 
     indexProfile: (req, res) => {
+
         res.render('users/profile');
+
     }, 
 
     checkLogin: (req, res) => {
 
-            getUsers.filter(user => {
-                if (user.email == req.body.email) {
-                    if(user.password == req.body.pass) {
-                        console.log('esa');
-                    } else {
-                        console.log('mal la pw')
-                    }
+        let usuerToLog;
+
+        getUsers.filter(user => {
+            if (user.email == req.body.email) {
+                if(user.password == req.body.pass) {
+                    usuerToLog = user;
                 } else {
-                    console.log('no se encontro el email')
+                    console.log('mal la pw')
                 }
-            })
+            } else {
+                console.log('no se encontro el email')
+            }
+        })
+
+        if (usuerToLog == undefined) {
+            return res.render('login', {errors : [
+                {msg: 'credenciales invalidas'}
+            ]})
+        } else {
+            req.session.userLogged = usuerToLog;
+            res.render('users/profile')
+        }
 
     },
 
