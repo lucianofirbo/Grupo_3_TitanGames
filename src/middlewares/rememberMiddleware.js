@@ -1,19 +1,19 @@
 const { getUsers } = require('../data/dataBase');
 
-function rememberMiddleware (req, res, next) {
-    
+function rememberMiddleware(req, res, next) {
+
     try {
-        if (req.cookie.recordar != undefined && req.session.userLogged == undefined) {
-            
+        if (req.cookies.recordar != undefined && req.session.userLogged == undefined) {
+
             getUsers.filter(user => {
-            if (user.email == req.cookie.recordar) {
-                userToLog = user;
-            }
-        })
-        
-        req.session.userLogged = userToLog;
-        
-        } 
+                if (user.email == req.cookies.recordar) {
+                    userToLog = user;
+                }
+            })
+
+            req.session.userLogged = userToLog;
+
+        }
         next();
     }
     catch {

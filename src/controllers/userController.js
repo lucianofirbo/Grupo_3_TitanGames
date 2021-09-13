@@ -1,5 +1,6 @@
 const { getUsers, saveUserDb } = require('../data/dataBase');
-const { validationResult } = require('express-validator');
+const { validationResult, cookie } = require('express-validator');
+const bcrypt = require('bcryptjs');
 
 module.exports = {
 
@@ -11,9 +12,8 @@ module.exports = {
 
     checkLogin: (req, res) => {
 
-        console.log(req.body)
-
         let errors = validationResult(req);
+        console.log(errors)
 
         if (errors.isEmpty()) {
 
@@ -26,10 +26,8 @@ module.exports = {
                     } else {
                         console.log('mal la pw')
                     }
-                } else {
-                    console.log('no se encontro el email')
                 }
-            })
+            })            
 
             if (userToLog == undefined) {
 
@@ -44,7 +42,7 @@ module.exports = {
                 req.session.userLogged = userToLog;
 
                 if (req.body.recordar != undefined) {
-                    res.cookie('recordar', userToLog.email, { maxAge: 60000 });
+                    res.cookie('recordar', userToLog.email);
                 }
 
                 res.render('users/profile');
@@ -55,6 +53,8 @@ module.exports = {
             res.send('xd');
 
         }
+
+        
 
     },
 
@@ -75,7 +75,7 @@ module.exports = {
                 id: lastId + 1,
                 user: req.body.user,
                 email: req.body.email,
-                password: req.body.pass
+                password: bcrypt.hashSync(req.body.pass, 12)
             }
 
             getUsers.push(newUser);
@@ -85,7 +85,7 @@ module.exports = {
             res.redirect('/')
 
         } else {
-
+            
             res.send('xd');
 
         }
