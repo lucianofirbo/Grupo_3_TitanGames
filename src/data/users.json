@@ -1,8 +1,1 @@
-[
-    {
-        "id": 1,
-        "email": "a@b.com",
-        "password": "123",
-        "category": "user"
-    }
-]
+[{"id":1,"email":"a@b.com","password":"123","category":"user"},{"id":2,"user":"jeje","email":"jaja@jaja.com","password":"123"}]

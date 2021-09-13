@@ -11,16 +11,18 @@ module.exports = {
 
     checkLogin: (req, res) => {
 
+        console.log(req.body)
+
         let errors = validationResult(req);
 
         if (errors.isEmpty()) {
 
-            let usuerToLog;
+            let userToLog;
 
             getUsers.filter(user => {
                 if (user.email == req.body.email) {
                     if (user.password == req.body.pass) {
-                        usuerToLog = user;
+                        userToLog = user;
                     } else {
                         console.log('mal la pw')
                     }
@@ -29,7 +31,7 @@ module.exports = {
                 }
             })
 
-            if (usuerToLog == undefined) {
+            if (userToLog == undefined) {
 
                 return res.render('login', {
                     errors: [
@@ -39,10 +41,10 @@ module.exports = {
 
             } else {
 
-                req.session.userLogged = usuerToLog;
+                req.session.userLogged = userToLog;
 
                 if (req.body.recordar != undefined) {
-                    res.cookie('recordar', usuerToLog.email, { maxAge: 60000 });
+                    res.cookie('recordar', userToLog.email, { maxAge: 60000 });
                 }
 
                 res.render('users/profile');

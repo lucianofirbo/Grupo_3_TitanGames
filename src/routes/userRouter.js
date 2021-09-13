@@ -7,7 +7,7 @@ const registerValidator = require('../middlewares/registerMiddleware');
 /* Ruta para perfil */
 router.get('/profile', controller.indexProfile);
 /* Ruta Register */
-router.post('/register', registerValidator, controller.createUser);
+router.post('/register', controller.createUser);
 /* Ruta Post de Login */
 router.post('/login', loginValidator, controller.checkLogin);
 
