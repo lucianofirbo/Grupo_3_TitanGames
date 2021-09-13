@@ -30,11 +30,13 @@ module.exports = {
             })
 
             if (usuerToLog == undefined) {
+
                 return res.render('login', {
                     errors: [
                         { msg: 'credenciales invalidas' }
                     ]
                 })
+
             } else {
 
                 req.session.userLogged = usuerToLog;
@@ -43,12 +45,12 @@ module.exports = {
                     res.cookie('recordar', usuerToLog.email, { maxAge: 60000 });
                 }
 
-                res.render('users/profile')
+                res.render('users/profile');
             }
 
         } else {
 
-            res.send(xd)
+            res.send('xd');
 
         }
 
@@ -56,25 +58,35 @@ module.exports = {
 
     createUser: (req, res) => {
 
-        let lastId = 1;
-        getUsers.forEach(element => {
-            if (element.id > lastId) {
-                lastId = element.id;
-            };
-        })
+        let errors = validationResult(req);
 
-        let newUser = {
-            id: lastId + 1,
-            user: req.body.user,
-            email: req.body.email,
-            password: req.body.pass
+        if (errors.isEmpty()) {
+
+            let lastId = 1;
+            getUsers.forEach(element => {
+                if (element.id > lastId) {
+                    lastId = element.id;
+                };
+            })
+
+            let newUser = {
+                id: lastId + 1,
+                user: req.body.user,
+                email: req.body.email,
+                password: req.body.pass
+            }
+
+            getUsers.push(newUser);
+
+            saveUserDb(getUsers);
+
+            res.redirect('/')
+
+        } else {
+
+            res.send('xd');
+
         }
-
-        getUsers.push(newUser);
-
-        saveUserDb(getUsers);
-
-        res.redirect('/')
 
     }
 
