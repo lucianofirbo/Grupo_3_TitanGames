@@ -21,11 +21,7 @@ module.exports = {
 
             getUsers.filter(user => {
                 if (user.email == req.body.email) {
-                    if (user.password == req.body.pass) {
-                        userToLog = user;
-                    } else {
-                        console.log('mal la pw')
-                    }
+                    userToLog = user;
                 }
             })            
 

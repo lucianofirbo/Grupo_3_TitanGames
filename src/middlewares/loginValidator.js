@@ -16,13 +16,10 @@ const loginValidator = [
 
     body('pass')
     .custom((value, {req}) => {
-        let user = getUsers.find(user => {
-            user.email == req.body.email
-        });
-        return bcrypt.compareSync(value, user.password);
+        let user = getUsers.find(user => user.email === req.body.email)
+        return bcrypt.compareSync(value, user.password)
     })
-    .withMessage('Contraseña invalida')
-
+    .withMessage('Contraseña inválida')
 ]
 
 module.exports = loginValidator;
