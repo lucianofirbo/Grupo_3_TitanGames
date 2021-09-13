@@ -15,9 +15,9 @@ app.listen(port, () => {
 
 app.use(express.json());
 app.use(methodOverride('_method'));
-app.use(express.urlencoded({extended:false}))
+app.use(express.urlencoded({extended:false}));
 app.use(express.static('./public'));
-app.use(session({secret: 'TitanGames'}))
+app.use(session({secret: 'TitanGames'}));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
