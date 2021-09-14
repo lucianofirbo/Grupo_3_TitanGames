@@ -13,7 +13,6 @@ module.exports = {
     checkLogin: (req, res) => {
 
         let errors = validationResult(req);
-        console.log(errors)
 
         if (errors.isEmpty()) {
 
@@ -23,22 +22,18 @@ module.exports = {
                 if (user.email == req.body.email) {
                     userToLog = user;
                 }
-            })            
+            })     
 
             if (userToLog == undefined) {
 
-                return res.render('login', {
-                    errors: [
-                        { msg: 'credenciales invalidas' }
-                    ]
-                })
+                res.send('no existe ese usuario')
 
             } else {
 
                 req.session.userLogged = userToLog;
 
                 if (req.body.recordar != undefined) {
-                    res.cookie('recordar', userToLog.email);
+                    res.cookie('recordar', userToLog.email, {maxAge: 1000 * 60});
                 }
 
                 res.render('users/profile');
