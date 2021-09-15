@@ -1,6 +1,7 @@
 const { write } = require('fs');
 const path = require('path');
-const { getUsers } = require('../data/dataBase');
+const { getUsers, writeUsersJSON } = require('../data/dataBase');
+const { validationResult } = require('express-validator');
 
 
 module.exports = {
@@ -57,9 +58,25 @@ renderRegister: (req, res) => {
     res.render('users/register')
 },
 
-indexProfile: (req, res) => {
-    res.render('users/profile');
-}
+    indexProfile: (req, res) => {
+        res.render('users/profile');
+    },
 
+    renderLogin: (req, res) => {
+        res.render('users/login');
+    },
+    processLogin: (req, res) => {
+        let errors = validationResult(req)
+
+        if(errors.isEmpty()) {
+            /* res.render('/users/login', {
+                dataBase: getProducts
+            }) */
+        } else {
+            res.render('users/login', {
+                errors: errors.mapped(),
+            })
+        }
+    }
 
 }
