@@ -1,6 +1,6 @@
 const { read } = require('fs');
 const path = require('path');
-const { getProducts, saveProduct, saveDb, getUsers } = require('../data/dataBase');
+const { getProducts, saveDb, getUsers } = require('../data/dataBase');
 
 module.exports = {
 
@@ -52,7 +52,7 @@ module.exports = {
             image5: req.files['imagenProducto5'] ? '/games/' + req.files['imagenProducto5'][0].filename : '/games/' + 'notFound.png'
         }
 
-        getProducts.push(producto)
+        getProducts.push(producto);
 
         saveDb(getProducts);
         
@@ -112,7 +112,7 @@ module.exports = {
                 let productRemove = getProducts.indexOf(element);
                 getProducts.splice(productRemove, 1);
             }
-        })        
+        })
 
         saveDb(getProducts);
 

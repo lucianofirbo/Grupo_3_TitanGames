@@ -137,6 +137,7 @@ main {
   flex-wrap: wrap;
   align-items: flex-end;
   flex-direction: column;
+  margin-top: 0;
 }
 .button-container .btn-submit {
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 25%);
@@ -275,6 +276,7 @@ section h5{
   border-bottom: 1px solid rgba(255, 247, 247, 0.308);
   width: 80%;
   padding-bottom: 10px;
+  text-align: center;
 }
 .imgBx img {
   width: 100%;
@@ -315,7 +317,8 @@ section h5{
   cursor: pointer;
 }
 .interest-container .card-container:hover .content-card {
-  bottom: 0px;
+  bottom: 0px;  
+  height: 100%;
 }
 .interest-container .card-container .content-card .contentBx h3 {
   color: black;
@@ -441,6 +444,17 @@ section h5{
   .interese {
     max-width: 90%;
     margin: 50px auto;
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  }
+  .img-prod-descrp img {
+    height: 250px;
+  }
+  .buy-product{
+    margin-top: 5%;
+    gap: 20px;
   }
 
 }
