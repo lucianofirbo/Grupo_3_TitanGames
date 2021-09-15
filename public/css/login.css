@@ -1,5 +1,5 @@
 .logReg {
-    position: fixed;
+/*     position: fixed; */
     height: 100vh;
     width: 100vw;
     justify-content: center;
@@ -7,7 +7,7 @@
     display: flex;
 }
 
-.card .close {
+/* .card .close {
     text-align: center;
     cursor: pointer;
     position: absolute;
@@ -18,11 +18,11 @@
     z-index: 1;
     font-size: 18px;
 }
-  
-.close:hover {
+   */
+/* .close:hover {
       background: rgba(0, 0, 0, 0.95);
       border-radius: 50%;
-}
+} */
 
 @keyframes aparecer {
     from {
@@ -35,14 +35,15 @@
 }
 
 .form_container {
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    z-index: 18;   
-    animation-name: aparecer;
-    animation-duration: 1s;
-    position: fixed;
+    /* z-index: 18;   */ 
+    /* animation-name: aparecer; */
+    /* animation-duration: 1s;
+    position: fixed; */
+    height: 100vh;
 }
 
 form {
@@ -63,7 +64,7 @@ form {
     width: 310px;
     height: 480px;
     border-radius: 15px;
-    background-color: #161623;
+    background-color: #161623b4;
 }
 
 .form_container .card .content {
@@ -75,6 +76,9 @@ form {
     height: 100%;
     border: 1px solid black;
     border-radius: 12px;
+    box-shadow: 4px 1px 37px 1px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 4px 1px 37px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 4px 1px 37px 1px rgba(0,0,0,0.75);
 }
 
 .logo-login {
@@ -106,9 +110,9 @@ form {
     font-weight: bold;
 }
 
-.error-message {
+/* .error-message {
     display: none;
-}
+} */
 
 .check {
     display: flex;
@@ -130,11 +134,11 @@ label.recordar {
     margin: 0;
 }
 
-span.error-message {
+/* small .text-danger {
     color:red;
     font-size: 0.8rem;
     margin: 5px auto 0;
-}
+} */
 
 button.submit-login {
     display: flex;
@@ -142,7 +146,7 @@ button.submit-login {
     align-items: center;
     background: #fff;
     color:black;
-    font-size: 21px;
+    font-size: 18px;
     font-weight: bold;
     border-radius: 25px;
     text-decoration: none;
@@ -162,16 +166,16 @@ button.submit-login {
     align-items: center;
     flex-direction: column;
     cursor: pointer;
-}
-
-.last-text h5 {
-    font-size: 14px;
-    margin-top: 20px;
-    cursor: pointer;
+    margin-top: 15px;
 }
 
 .last-text #create-account {
     margin-top: 10px;
+}
+
+.last-text a {
+    text-decoration: none;
+    color: white;
 }
 
 .redirect-log-reg a{
