@@ -2,14 +2,11 @@ const { check, body } = require('express-validator')
 const { users } = require('../data/dataBase')
 
 module.exports = [
-    check('name')
+    check('userName')
     .notEmpty()
-    .withMessage('Debes escribir un email'),
+    .withMessage('Debes escribir un nombre de usuario'),
 
-    check('last_name')
-    .notEmpty()
-    .withMessage('Debes escribir un email'),
-
+    
     check('email')
     .notEmpty()
     .withMessage('Debes escribir un email').bail()

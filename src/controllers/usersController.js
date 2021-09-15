@@ -2,6 +2,7 @@ const { write } = require('fs');
 const path = require('path');
 const { getUsers } = require('../data/dataBase');
 
+
 module.exports = {
     //Creacion de usuarios
 
@@ -41,7 +42,7 @@ module.exports = {
         writeUsersJSON(users)
 
         res.redirect('/users/login')
-        
+
     } else {
         res.render('register', {
             categories,
@@ -50,6 +51,14 @@ module.exports = {
         })
     }
 
+},
+
+renderRegister: (req, res) => {
+    res.render('users/register')
+},
+
+indexProfile: (req, res) => {
+    res.render('users/profile');
 }
 
 
