@@ -5,7 +5,7 @@ module.exports = {
 
     index: (req, res) => {
         
-        res.render('users/index', {dataBase: getProducts, latestGame});
+        res.render('users/index', {dataBase: getProducts});
     },
     politics: (req, res) => {
         res.render('users/privacyPolitics');
