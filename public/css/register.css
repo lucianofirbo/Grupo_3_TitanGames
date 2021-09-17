@@ -1,45 +1,11 @@
-@keyframes aparecer {
-    from {
-      transform: translatey(100%);
-    }
-  
-    to {
-      transform: translatey(0%);
-    }
-}
-
 div.register-card {
     box-sizing: border-box;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 310px;
-    height: 480px;
-    border-radius: 12px;
-    background-color: #161623;
-    z-index: 18;
+    width: 100%;
+    height: 100%;
     position: fixed;
-    border: 1px solid black;
-    animation-name: aparecer;
-    animation-duration: 1s;
 }
 
-.close {
-    text-align: center;
-    cursor: pointer;
-    position: absolute;
-    top: 2%;
-    right: 2%;
-    padding: 0px 7px;
-    font-size: 18px;
-    color: white;
-  }
-  
-  .close:hover {
-      background: rgba(0, 0, 0, 0.1);
-      border-radius: 50%;
-    }
+
 
 div.register-container {
     display: flex;
@@ -52,6 +18,7 @@ div.register-container {
 .logo-register {
     max-width: 150px;
     max-height: 130px;
+    margin-bottom: -15px;
 }
 
 .form-container {
@@ -60,10 +27,10 @@ div.register-container {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 40vh;
+    margin-top: 30px;
 }
 
-.input-container,
+.input-container-reg,
 .input-style {
     border-radius: 20px;
     display: flex;
@@ -80,6 +47,7 @@ div.register-container {
 input.input-style{
     border: 1px solid black;
     padding-left: 15px;
+    height: 36px;
 }
 
 .error-message {
@@ -90,8 +58,7 @@ button.submit-register {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 25px;
-    margin-bottom: 25px;
+    margin-top: 15px;
     background: #fff;
     color:black;
     border-radius: 25px;
@@ -106,6 +73,10 @@ button.submit-register {
     font-weight: bold;
 }
 
+.button-container-reg {
+    height: 48px;
+}
+
 .redirect-register h5{
     display: flex;
     justify-content: center;
@@ -113,7 +84,7 @@ button.submit-register {
     text-decoration: none;
     color: white;
     font-size: 16px;
-    margin-top: 18px;
+    margin-top: 25px;
     cursor: pointer;
 }
 
