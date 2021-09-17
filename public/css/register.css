@@ -16,9 +16,17 @@ div.register-container {
 }
 
 .logo-register {
-    max-width: 150px;
-    max-height: 130px;
-    margin-bottom: -15px;
+    max-width: 100px;
+    max-height: 85px;
+    margin-bottom: 27px;
+    margin-top: 12px;
+
+}
+
+div .registrate p{
+    color: white;
+    margin-top: -22px;
+    font-weight: bold;
 }
 
 .form-container {
@@ -30,24 +38,17 @@ div.register-container {
     margin-top: 30px;
 }
 
-.input-container-reg,
-.input-style {
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 3px;
-    margin-top: 7px;
-    max-height: 53px;
-    width: 250px;
-    outline: none;
-}
-
 input.input-style{
     border: 1px solid black;
     padding-left: 15px;
     height: 36px;
+    border-radius: 20px;
+    margin-bottom: 3px;
+    margin-top: 17px;
+    max-height: 53px;
+    width: 250px;
+    outline: none;
+
 }
 
 .error-message {
