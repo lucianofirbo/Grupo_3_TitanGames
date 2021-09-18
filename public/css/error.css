@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+:root {
+    --font-alfa: 'Alfa Slab One', cursive;
+    --greenTitan: #8EBD00;
+    --greenLightTitan: #bbe932;
+}
+
+body {
+    margin-top: 120px;
+}
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+span {
+    color: white;
+    font-size: 8rem;
+    text-shadow: 2px 1px 15px #FFFFFF;
+    font-family: var(--font-alfa);
+    opacity: 0.5;
+    animation: saltar 1s infinite;
+    animation-timing-function: ease-in;
+    display: inline-block;
+    transform: translateY(0);
+}
+
+span:nth-child(1){
+    animation-delay: 0;
+}
+span:nth-child(2){
+    animation-delay: 0.2s;
+}
+span:nth-child(3){
+    animation-delay: 0.4s;
+}
+
+@keyframes saltar {
+    0% {
+        transform: translateY(0);
+    }
+    10% {
+        transform: translateY(-10PX);
+    }
+    50% {
+        transform: translatey(100px);
+    }
+    80% {
+        transform: translatey(110px);
+    }
+}
+
+.not-found {
+    color: white;
+    text-shadow: 2px 1px 15px #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    text-transform: uppercase;
+    opacity: 0.5;
+    margin-top: 100px;
+}
+
+.home-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.home-button a{
+    text-decoration: none;
+    color: white;
+    background-color: var(--greenTitan);
+    padding: 8px 15px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all .4s ease;
+}
+
+.home-button a:hover {
+    transform: scale(1.1);
+    box-shadow: 2px 1px 15px #FFFFFF;
+}
