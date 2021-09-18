@@ -12,6 +12,6 @@ const registerValidator = require('../validations/registerValidator');
 router.get('/profile', indexProfile);
 /* Ruta del registro */
 router.get('/register', renderRegister);
-router.post('/register', registerValidator, uploadAvatar.single('avatar'), processRegister)
+router.post('/register', registerValidator, processRegister)
 
 module.exports = router;

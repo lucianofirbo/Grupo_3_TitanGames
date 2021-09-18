@@ -12,7 +12,7 @@
 
     <div class="register-card" id="register-card">
         <div class="register-container">
-            <form class="form-container" action="/users/register" method="POST" enctype="multipart/form-data">
+            <form class="form-container" action="/user/register" method="POST">
                 <img src="/img/logo-footer.png" alt="logotipo" class="logo-register">
                 <div class="registrate"><p>Registrate</p></div>
                 <div class="input-container-reg">
@@ -29,14 +29,14 @@
                     <% } %>
                 </div>
                 <div class="input-container-reg">
-                    <input class="input-style" type="password" name="pass" placeholder="Contraseña">
+                    <input class="input-style" type="password" name="pass1" placeholder="Contraseña">
                     <% if (locals.errors && errors.pass1) { %>
                         <small class="text-danger"><%= errors.pass1.msg %> </small>
                     <% } %>
                 </div>
 
                 <div class="input-container-reg">
-                    <input class="input-style" type="password" name="pass" placeholder="Contraseña">
+                    <input class="input-style" type="password" name="pass2" placeholder="Contraseña">
                     <% if (locals.errors && errors.pass2) { %>
                         <small class="text-danger"><%= errors.pass2.msg %> </small>
                     <% } %>
@@ -54,6 +54,9 @@
             </form>
         </div>
     </div>
+    <%- include('../partials/footer') -%>
+
     
 </body>
+
 </html>

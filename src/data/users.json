@@ -1,3 +1,50 @@
 [
-    
+    {
+        "id": 1,
+        "userName": "luciano",
+        "email": "luciano@mail.com",
+        "pass": "$2a$10$ASUiP7fqR2JhAUBeHTAxuOnQEvTDYkmYjhGWWFZBIgeIQ0ndVyGli",
+        "category": "user",
+        "avatar": "logo-footer.png",
+        "address": "",
+        "postalCode": "",
+        "province": "",
+        "city": ""
+    },
+    {
+        "id": 2,
+        "userName": "fdsfdsfds",
+        "email": "ddsfdsf@mail.com",
+        "pass": "$2a$10$sN94VVlMztC8uwZlvrf4OOzam6YjQ468yh1He5XHa1FI/XMOuS5wG",
+        "category": "user",
+        "avatar": "logo-footer.png",
+        "address": "",
+        "postalCode": "",
+        "province": "",
+        "city": ""
+    },
+    {
+        "id": 3,
+        "userName": "fdgfdgfg",
+        "email": "gfdgfdg@mail.com",
+        "pass": "$2a$10$5cp9T3YJ5nRs6cqyYRwaDuL5CLjFlnSolH8fGy9Y5MJ.gsszJ/Q6u",
+        "category": "user",
+        "avatar": "logo-footer.png",
+        "address": "",
+        "postalCode": "",
+        "province": "",
+        "city": ""
+    },
+    {
+        "id": 4,
+        "userName": "matias",
+        "email": "matias@mail.com",
+        "pass": "$2a$10$18pEJdHQiBZqZ6GzxPCqweZuQgd8BurmsHPUOcVF62Jfj/j1TDMJa",
+        "category": "user",
+        "avatar": "logo-footer.png",
+        "address": "",
+        "postalCode": "",
+        "province": "",
+        "city": ""
+    }
 ]

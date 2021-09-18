@@ -1,8 +1,7 @@
 div.register-card {
     box-sizing: border-box;
     width: 100%;
-    height: 100%;
-    position: fixed;
+    height: 100vh;
 }
 
 
@@ -48,7 +47,7 @@ input.input-style{
     max-height: 53px;
     width: 250px;
     outline: none;
-
+    font-size: smaller;
 }
 
 .error-message {
@@ -70,8 +69,8 @@ button.submit-register {
     width: 120px;
     cursor: pointer;
     outline: none;
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 16px;
+    
 }
 
 .button-container-reg {
@@ -87,88 +86,17 @@ button.submit-register {
     font-size: 16px;
     margin-top: 25px;
     cursor: pointer;
-}
-
-
-@media (min-width:481px) {
-    div.register-card {
-        max-width: 70vw;
-    }
+    margin-bottom: 11px;
 }
 
 @media (min-width:768px) {
     div.register-card {
-        max-width: 360px;
+        align-items: center;
+        justify-content: center;
+        margin-top: 6%;
         
     }
 }
 
-@media (min-width:1024px) {
-
-    .form-container {
-        margin-top: 0%;
-    }
-    div.register-card {
-        max-width: 360px;
-        align-items: center;
-    }
-
-    .input-container,
-    .input-style {
-        border-radius: 20px;
-        height: 7vh;
-        width: 250px;
-        outline: none;
-    }
-
-    button.submit {
-        height: 7vh;
-    }
-
-}
-
-@media (min-width:1280px) {
 
 
-    div.register-card {
-        max-width: 360px;
-        align-items: center;
-        max-height: 80vh;
-    }
-
-    .input-container,
-    .input-style {
-        border-radius: 20px;
-        height: 7vh;
-        width: 250px;
-        outline: none;
-    }
-
-    button.submit {
-        height: 7vh;
-    }
-
-}
-
-@media (min-width:1440px) {
-
-
-    div.register-card {
-        max-width: 360px;
-        align-items: center;
-        max-height: 80vh;
-    }
-
-    .input-container,
-    .input-style {
-        border-radius: 20px;
-        height: 7vh;
-        width: 250px;
-        outline: none;
-    }
-
-    button.submit {
-        height: 7vh;
-    }
-
-}
