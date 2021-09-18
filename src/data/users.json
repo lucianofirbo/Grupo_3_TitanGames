@@ -34,17 +34,6 @@
         "postalCode": "",
         "province": "",
         "city": ""
-    },
-    {
-        "id": 4,
-        "userName": "matias",
-        "email": "matias@mail.com",
-        "pass": "$2a$10$18pEJdHQiBZqZ6GzxPCqweZuQgd8BurmsHPUOcVF62Jfj/j1TDMJa",
-        "category": "user",
-        "avatar": "logo-footer.png",
-        "address": "",
-        "postalCode": "",
-        "province": "",
-        "city": ""
     }
+    
 ]
