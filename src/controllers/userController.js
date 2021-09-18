@@ -1,7 +1,6 @@
-const { write } = require('fs');
-const path = require('path');
-const { getUsers, writeUsersJSON } = require('../data/dataBase');
-const { validationResult } = require('express-validator');
+const { validationResult } = require('express-validator')
+const { users, writeUsersJSON } = require('../data/dataBase');
+const bcrypt = require ('bcryptjs')
 
 
 module.exports = {
@@ -22,14 +21,14 @@ module.exports = {
         let {
             userName,
             email,
-            pass
+            pass1
         } = req.body
 
         let newUser = {
             id : lastId +1,
             userName,
             email,
-            pass,
+            pass : bcrypt.hashSync(pass1, 10),
             category: "user",
             avatar: req.file ? req.file.filename : "logo-footer.png",
             address: "",
@@ -43,25 +42,23 @@ module.exports = {
         writeUsersJSON(users)
 
         res.redirect('/users/login')
-
     } else {
-        res.render('register', {
-            categories,
+        res.render('users/register', {
             errors: errors.mapped(),
             old: req.body
         })
     }
 
-},
+    },
 
-renderRegister: (req, res) => {
-    res.render('users/register')
-},
+    renderRegister: (req, res) => {
+        res.render('users/register')
+    },
 
     indexProfile: (req, res) => {
         res.render('users/profile');
     },
-
+    
     renderLogin: (req, res) => {
         res.render('users/login', {
             session: req.session

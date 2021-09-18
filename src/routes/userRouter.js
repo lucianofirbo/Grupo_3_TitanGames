@@ -1,14 +1,19 @@
 const express = require ('express');
 const router = express.Router();
-const { processRegister, indexProfile, renderRegister, renderLogin, processLogin } = require('../controllers/usersController');
+const { processRegister,
+        indexProfile, 
+        renderRegister } = require('../controllers/userController');
 const uploadAvatar = require ('../middlewares/uploadAvatar');
-const loginValidator = require('../validations/loginValidator');
+const registerValidator = require('../validations/registerValidator');
+
+
 
 /* Ruta del perfil */
 router.get('/profile', indexProfile);
 /* Ruta del registro */
 router.get('/register', renderRegister);
-//router.post('/register',uploadAvatar.single('avatar'), registerValidator, processRegister)
+router.post('/register', registerValidator, processRegister);
+
 /* Ruta para login */
 router.get('/login', renderLogin);
 router.post('/login', loginValidator ,processLogin);
