@@ -34,6 +34,17 @@
         "postalCode": "",
         "province": "",
         "city": ""
+    },
+    {
+        "id": 4,
+        "userName": "firbo",
+        "email": "dsfdsf@mail.com",
+        "pass": "$2a$10$5G77XHlrjjIAc4p0s1IuAeWH85qWuVByWG3y7aMGOsZnME.cJG4uO",
+        "category": "user",
+        "avatar": "logo-footer.png",
+        "address": "",
+        "postalCode": "",
+        "province": "",
+        "city": ""
     }
-    
 ]
