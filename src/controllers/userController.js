@@ -103,6 +103,15 @@ module.exports = {
                 userInSession : req.session.userLogged ? req.session.userLogged : ''
             })
         }
+    },
+
+    logout: (req, res) => {
+        req.session.destroy()
+        if(req.cookies.TitanGamesUser){
+            res.cookie('TitanGamesUser', '', {maxAge: -1})
+        }
+
+        res.redirect('/')
     }
 
 }

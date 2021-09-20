@@ -4,7 +4,8 @@ const { processRegister,
         indexProfile, 
         renderRegister,
         renderLogin,
-        processLogin } = require('../controllers/userController');
+        processLogin,
+        logout } = require('../controllers/userController');
 const registerValidator = require('../validations/registerValidator');
 const loginValidator = require('../validations/loginValidator');
 const userCheck = require('../middlewares/userCheck');
@@ -19,5 +20,8 @@ router.post('/register', registerValidator, processRegister);
 /* Ruta para login */
 router.get('/login', userLoginCheck, renderLogin);
 router.post('/login', loginValidator ,processLogin);
+
+/* Ruta Logout */
+router.get('/logout', userLoginCheck, logout);
 
 module.exports = router;
