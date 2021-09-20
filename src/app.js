@@ -1,9 +1,9 @@
+const methodOverride = require('method-override');
 const express = require('express');
 const path = require('path');
-const methodOverride = require('method-override');
-const session = require('express-session');
 const app = express();
 const port = 3000;
+const session = require('express-session');
 const cookieParser = require('cookie-parser');
 
 /* Setting up the server */ 
@@ -16,12 +16,17 @@ app.listen(port, () => {
 
 app.use(express.json());
 app.use(methodOverride('_method'));
-app.use(express.urlencoded({extended:false}));
+app.use(express.urlencoded({extended:false}))
 app.use(express.static('./public'));
-app.use(cookieParser())
-app.use(session({secret: 'TitanGames', resave: false, saveUninitialized: true, cookie: {maxAge: 60000}}));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.use(cookieParser());
+app.use(session({
+    secret: "titanGames",
+    resave: false,
+    saveUninitialized: true,
+    cookie: { maxAge: 60000 }
+}));
 
 /* Setting up routes */
 
@@ -32,7 +37,8 @@ const productRouter = require('./routes/productRouter');
 app.use('/product', productRouter);
 
 const adminRouter = require ('./routes/adminRouter');
-app.use('/admin', adminRouter);
+app.use('/admin', adminRouter)
 
-const userRouter = require('./routes/userRouter');
-app.use('/user', userRouter);
+const userRouter = require ('./routes/userRouter');
+app.use('/user', userRouter)
+

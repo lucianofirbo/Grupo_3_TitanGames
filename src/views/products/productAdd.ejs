@@ -17,26 +17,19 @@
 
             <!-- FORMULARIO DE CARGA DE PRODDUCTOS -->
             <div class="bar-product">
-                <p data-target="#section2">Stock</p>
                 <p data-target="#section1">Carga de Productos</p>
+                <p data-target="#section2">Stock</p>
             </div>
 
-            <section data-content id="section1" class="section1">
-                <form class="load-product" method="POST" action="/admin/products" enctype="multipart/form-data">
+            <section data-content id="section1" class="active">
+                <form class="load-product" method="POST" action="/admin/addProduct" enctype="multipart/form-data">
 
                     <!-- CARGAR IMÁGENES -->
                     <div class="other-box">
 
                         <div class="field-product">
-                            <label>PRODUCTO:</label> 
-                            <% if (locals && locals.errors) { %>
-                                <p> <% errors.forEach(error => { %>
-                                    <% if(error.param == 'product'){ %>
-                                        <%- error.msg %>
-                                    <% } %>
-                                <% }) %> </p>
-                            <% } %> 
-                            <input class="style-input" type="text" name="product" placeholder="Nombre del producto" value="<%= locals.old && old.product ? old.product : '' %>">
+                            <label>PRODUCTO:</label>
+                            <input class="style-input" type="text" name="product" placeholder="Nombre del producto">
                         </div>
 
                         <div class="grid">
@@ -73,18 +66,11 @@
                                     <img src="/img/img-default.png">
                                 </label>
                             </div>
-                        </div> 
-                        
+                        </div>
+
                         <div class="field-product">
                             <label>PRECIO:</label>
-                            <% if (locals && locals.errors) { %>
-                                <p> <% errors.forEach(error => { %>
-                                    <% if(error.param == 'precio'){ %>
-                                        <%- error.msg %>
-                                    <% } %>
-                                <% }) %> </p>
-                            <% } %> 
-                            <input class="style-input" type="number" name="precio" placeholder="Precio del producto" value="<%= locals.old && old.precio ? old.precio : '' %>">
+                            <input class="style-input" type="number" name="precio" placeholder="Precio del producto">
                         </div>
 
 
@@ -93,7 +79,7 @@
                     <!-- Text Fields -->
 
                     <div class="desc-product-load">
-        
+
                         <div class="field-flex">
                             <div class="field-gen">
                                 <label>CATEGORÍAS:</label>
@@ -136,31 +122,31 @@
                         <div class="display-flex-box">
                             <div class="desc-flex">
                                 <label>DESCRIPCIÓN:</label>
-                                <% if (locals && locals.errors) { %>
-                                    <p> <% errors.forEach(error => { %>
-                                        <% if(error.param == 'descripcion'){ %>
-                                            <%- error.msg %>
-                                        <% } %>
-                                    <% }) %> </p>
-                                <% } %> 
-                                <textarea class="style-textarea" name="descripcion" cols="30" rows="20" placeholder="Ingresa una descripcion para su producto"><%= locals.old && old.descripcion ? old.descripcion : '' %></textarea>
+                                <textarea class="style-textarea" name="descripcion" cols="30" rows="20"
+                                    placeholder="Ingresa una descripcion para su producto"></textarea>
                             </div>
                             <p id="req-title">REQUISITOS:</p>
                             <div class="row-req">
                                 <div class="req-container">
                                     <label> MÍNIMOS:</label>
-                                    <input class="style-input" type="text" name="minimumVideo" placeholder="Minimum Video Requirements"> <br>
-                                    <input class="style-input" type="text" name="minimumProcessor" placeholder="Minimum Processor Requirements"> <br>
-                                    <input class="style-input" type="text" name="minimumRam" placeholder="Minimum Ram Requirements">
+                                    <input class="style-input" type="text" name="minimumVideo"
+                                        placeholder="Minimum Video Requirements"> <br>
+                                    <input class="style-input" type="text" name="minimumProcessor"
+                                        placeholder="Minimum Processor Requirements"> <br>
+                                    <input class="style-input" type="text" name="minimumRam"
+                                        placeholder="Minimum Ram Requirements">
                                 </div>
                                 <div class="req-container">
                                     <label> RECOMENDADOS:</label>
-                                    <input class="style-input" type="text" name="recommendedVideo" placeholder="Recommended Video"> <br>
-                                    <input class="style-input" type="text" name="recommendedProcessor" placeholder="Recommended Processor"> <br>
-                                    <input class="style-input" type="text" name="recommendedRam" placeholder="Recommended Ram">
+                                    <input class="style-input" type="text" name="recommendedVideo"
+                                        placeholder="Recommended Video"> <br>
+                                    <input class="style-input" type="text" name="recommendedProcessor"
+                                        placeholder="Recommended Processor"> <br>
+                                    <input class="style-input" type="text" name="recommendedRam"
+                                        placeholder="Recommended Ram">
                                 </div>
                             </div>
-                            
+
                         </div>
 
                         <div class="fields">
@@ -175,7 +161,7 @@
                             </div>
 
                         </div>
-                        
+
                         <div class="button-container">
                             <button type="submit" class="btn btn-submit">FINALIZAR</button>
                         </div>
@@ -185,21 +171,25 @@
                 </form>
             </section>
 
-            <section data-content id="section2" class="section-2 active">
+            <section data-content id="section2" class="section-2">
 
                 <h2>STOCK</h2>
 
                 <div class="detail-stock">
 
-                    <% dataBase.forEach(element => {
+                    <% dataBase.forEach(element=> {
                         %>
                         <div class="game-stock">
                             <div class="game-name">
-                                <img src="/img/<%-element.image%>" alt="">                                
+                                <img src="/img/<%-element.image%>" alt="">
                             </div>
                             <div class="price">
-                                <p><%- element.product %></p>
-                                <p><%- element.price %>$</p>
+                                <p>
+                                    <%- element.product %>
+                                </p>
+                                <p>
+                                    <%- element.price %>$
+                                </p>
                             </div>
                             <div class="edit-remove">
                                 <a href="/admin/editProduct/<%-element.id%>" id="edit">editar</a>
@@ -208,7 +198,7 @@
                                 </form>
                             </div>
                         </div>
-                    <% }) %>
+                        <% }) %>
                 </div>
             </section>
 

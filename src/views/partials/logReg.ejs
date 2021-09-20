@@ -1,103 +1,95 @@
 <div class="logReg">
 
-    <!-- Registro popUp -->
+    <!-- Registro popUp 
 
     <div class="register-card" id="register-card">
         <span class="close" id="close">x</span>
         <div class="register-container">
-            <div class="form-container">
+            <form class="form-container">
                 <img src="/img/logo.png" alt="logotipo" class="logo-register">
-                <form action="/user/register" method="POST">
-                    <div class="input-container">
-                        <input class="input-style" type="text" name="userName" placeholder="Ingrese su usuario">
-                        <span class="error-message">Debe ingresar su usuario</span>
-                    </div>
-                    <div class="input-container">
-                        <input class="input-style" type="email" name="email" placeholder="Ingrese su email">
-                        <span class="error-message">Debe ingresar su email</span>
-                    </div>
-                    <div class="input-container">
-                        <input class="input-style" type="password" name="pass" placeholder="Contraseña">
-                        <span class="error-message">Debe ingresar su contraseña</span>
-                    </div>
-                    <div class="input-container">
-                        <input class="input-style" type="password" name="pass2" placeholder="Contraseña">
-                        <span class="error-message">Debe ingresar su contraseña</span>
-                    </div>
-                    <div class="button-container">
-                        <span class="error-message">Credenciales inválidas</span>
-                        <button type="submit" class="submit-register">Registrarse</button>
-                    </div>
-                    <div class="redirect-register" id="redirect-login">
-                        <span>
-                            <h5 id="login">¿tienes una cuenta?</h5>
-                        </span>
-                    </div>
-                </form>
-            </div>
+                <div class="input-container">
+                    <input class="input-style" type="email" name="userName" placeholder="Ingrese su usuario">
+                    <span class="error-message">Debe ingresar su usuario</span>
+                </div>
+                <div class="input-container">
+                    <input class="input-style" type="email" name="email" placeholder="Ingrese su email">
+                    <span class="error-message">Debe ingresar su email</span>
+                </div>
+                <div class="input-container">
+                    <input class="input-style" type="password" name="pass" placeholder="Contraseña">
+                    <span class="error-message">Debe ingresar su contraseña</span>
+                </div>
+                <div class="button-container">
+                    <span class="error-message">Credenciales inválidas</span>
+                    <button type="submit" class="submit-register">Registrarse</button>
+                </div>
+                <div class="redirect-register" id="redirect-login">
+                    <span>
+                        <h5 id="login">¿tienes una cuenta?</h5>
+                    </span>
+                </div>
+            </form>
         </div>
-    </div>
+    </div> -->
 
-    <!-- Login Popup -->
 
-    <div class="form_container" id="login-card">
-        <div class="card">
+        <!-- Login Popup -->
+
+        <div class="form_container" id="login-card">
+            <div class="card">
+                <span class="close" id="close">x</span>
+                <div class="content">
+                    <img src="/img/logo.png" alt="logotipo" class="logo-login">
+                    <form>
+                        <div class="form">
+                            <div class="input-container">
+                                <input class="input-style" type="email" name="email" placeholder="Ingrese su email">
+                                <span class="error-message">Debe ingresar su email</span>
+                            </div>
+                            <div class="input-container">
+                                <input class="input-style" type="password" name="pass" placeholder="Contraseña">
+                                <span class="error-message">Debe ingresar su contraseña</span>
+                            </div>
+                            <div class="check">
+                                <label class="recordar" for="recordar">Recordarme</label>
+                                <input type="checkbox" name="recordar" id="recordar">
+                            </div>
+                            <div class="button-container">
+                                <span class="error-message">Credenciales inválidas</span>
+                                <button type="submit" class="submit-login">Ingresar</button>
+                            </div>
+                            <div class="last-text" id="recover-pass">
+                                <span id="recover-pass">
+                                    <h5 id="recover-pass">¿Olvidaste tu contraseña?</h4>
+                                </span>
+                                <span id="create-account">Aún no tengo cuenta</span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="recover-container" id="recover-card">
             <span class="close" id="close">x</span>
-            <div class="content">
-                <img src="/img/logo.png" alt="logotipo" class="logo-login">
-                <form action="/user/login" method="POST">
-                    <div class="form">
-                        <div class="input-container">
-                            <input class="input-style" type="email" name="email" placeholder="Ingrese su email">
-                            <span class="error-message">Debe ingresar su email</span>
-                        </div>
-                        <div class="input-container">
-                            <input class="input-style" type="password" name="pass" placeholder="Contraseña">
-                            <span class="error-message">Debe ingresar su contraseña</span>
-                        </div>
-                        <div class="check">
-                            <label class="recordar" for="recordar">Recordarme</label>
-                            <input type="checkbox" name="recordar" id="recordar">
-                        </div>
-                        <div class="button-container">
-                            <span class="error-message">Credenciales inválidas</span>
-                            <button type="submit" class="submit-login">Ingresar</button>
-                        </div>
-                        <div class="last-text" id="recover-pass">
-                            <span id="recover-pass">
-                                <h5 id="recover-pass">¿Olvidaste tu contraseña?</h4>
-                            </span>
-                            <span id="create-account">Aún no tengo cuenta</span>
-                        </div>
-                    </div>
-                </form>
+            <div class="img-recover">
+                <img src="/img/logo.png" alt="">
             </div>
-        </div>
-
-    </div>
-
-    <!-- Recuperar contraseña popup -->
-
-    <div class="recover-container" id="recover-card">
-        <span class="close" id="close">x</span>
-        <div class="img-recover">
-            <img src="/img/logo.png" alt="">
-        </div>
-        <div class="title-recover">
-            <h3>¿Tienes problemas para entrar?</h3>
-            <p>Introduce tu correo electrónico, número de teléfono o nombre de usuario y te enviaremos un enlace para
-                que vuelvas a entrar en tu cuenta.</p>
-        </div>
-        <form class="recover-input-container" action="">
-            <input class="recover-input" type="text" placeholder="Correo electrónico, teléfono o nombre de usuario">
-            <div class="button-container">
-                <button type="submit" class="btn btn-submit"> <strong>Envíar enlace</strong></button>
+            <div class="title-recover">
+                <h3>¿Tienes problemas para entrar?</h3>
+                <p>Introduce tu correo electrónico, número de teléfono o nombre de usuario y te enviaremos un enlace para que vuelvas a entrar en tu cuenta.</p>
             </div>
-        </form>
-        <div class="recover-option">
-            <p id="recover-register">Crear cuenta</p>
-            <p id="recover-login">Volver al Inicio de sesión</p>
-        </div>
-    </div>
+            <form class="recover-input-container" action="">
+                <input class="recover-input" type="text" placeholder="Correo electrónico, teléfono o nombre de usuario">
+                <div class="button-container">
+                    <button type="submit" class="btn btn-submit"> <strong>Envíar enlace</strong></button>
+                </div>
+            </form>
+            <div class="recover-option">
+                <p id="recover-register">Crear cuenta</p>
+                <p id="recover-login">Volver al Inicio de sesión</p>
+            </div> 
+        </div> 
 
 </div>

@@ -8,8 +8,7 @@ module.exports = {
     index: (req, res) => {
         res.render('products/products', {
             products: getProducts,
-            toThousand,
-            userInSession : req.session.userLogged ? req.session.userLogged : ''
+            toThousand
         })
     }, 
 
@@ -26,8 +25,7 @@ module.exports = {
         res.render('products/productDetail', {
             productF, 
             dataBase: getProducts,
-            toThousand,
-            userInSession : req.session.userLogged ? req.session.userLogged : ''
+            toThousand
         });
 
     },
@@ -35,8 +33,7 @@ module.exports = {
     cart: (req, res) => {
         res.render('products/productCart', {
             dataBase: getProducts,
-            toThousand,
-            userInSession : req.session.userLogged ? req.session.userLogged : ''
+            toThousand
         })
     }
 }

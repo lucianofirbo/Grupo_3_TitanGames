@@ -4,22 +4,14 @@ let {getProducts} = require('../data/dataBase');
 module.exports = {
 
     index: (req, res) => {
-
-        if (req.session.visits == undefined) {
-            req.session.visits = 0
-        }
-
-        req.session.visits ++;
-
-        console.log(req.session.visits)
-
-        res.render('users/index', {dataBase: getProducts, userInSession : req.session.userLogged ? req.session.userLogged : ''});
+        
+        res.render('users/index', {dataBase: getProducts});
     },
     politics: (req, res) => {
-        res.render('users/privacyPolitics', {userInSession : req.session.userLogged ? req.session.userLogged : ''});
+        res.render('users/privacyPolitics');
     },
     about: (req, res) => {
-        res.render('users/aboutUs', {userInSession : req.session.userLogged ? req.session.userLogged : ''});
+        res.render('users/aboutUs');
     },
     search: (req, res) => {
         let result = [];
@@ -30,8 +22,7 @@ module.exports = {
         });
         res.render('users/search', {
             result,
-            search: req.query.keywords, 
-            userInSession : req.session.userLogged ? req.session.userLogged : ''
+            search: req.query.keywords
         });
     }
     

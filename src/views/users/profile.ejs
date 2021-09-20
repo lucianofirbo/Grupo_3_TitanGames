@@ -1,143 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-    <%- include('../partials/head') -%>
-        <title>Perfil</title>
-        <link rel="stylesheet" href="/css/index.css">
-        <link rel="stylesheet" href="/css/profile.css">
+    <%- include('../partials/head') -%>    
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <title>Perfil</title>
 </head>
 
 <body>
     <%- include('../partials/background') -%>
 
-        <%- include('../partials/logReg') -%>
-
-            <%- include('../partials/header') -%>
-                <div class="complete-dashboard">
-                    <div class="dashboard">
-                        <div class="text-dashboard">
-                            <div class="text-shop2">
-                                <h4>MI TABLERO</h4>
-                            </div>
-                        </div>
-                        <div class="button-dashboard"><a href="">MI CUENTA</a><i class="fas fa-caret-down"></i>
-                            <div class="button-dashboard-dropdown">
-                                <div class="button-dashboard-dropdown1"><a href=""></a>
-                                    <h4>Editar cuenta</h4>
-                                </div>
-                                <div class="button-dashboard-dropdown1"><a href=""></a>
-                                    <h4>Historial</h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="button-dashboard"><a href="">REDES SOCIALES</a><i class="fas fa-caret-down"></i>
-                            <div class="button-dashboard-dropdown">
-                                <div class="redes-social">
-                                    <div class="social-box"><a href="https://www.instagram.com/_titan_games_/"
-                                            target="_blank"><i class="fab fa-instagram"></i></a>
-                                        <div>
-                                            <h4>INTAGRAM</h4>
-                                        </div>
-                                    </div>
-                                    <div class="social-box"><a
-                                            href="https://www.facebook.com/Titan-Games-markteplace-109552258094094"
-                                            target="_blank"><i class="fab fa-facebook"></i></a>
-                                        <div>
-                                            <h4>FACEBOOK</h4>
-                                        </div>
-                                    </div>
-                                    <div class="social-box"><a href="https://www.twitch.tv/titangamesmarket"
-                                            target="_blank"><i class="fab fa-twitch"></i></a>
-                                        <div>
-                                            <h4>TWITCH</h4>
-                                        </div>
-                                    </div>
-                                    <div class="social-box"><a href="https://twitter.com/_Titan_Games_"
-                                            target="_blank"><i class="fab fa-twitter"></i></a>
-                                        <div>
-                                            <h4>TWITTER</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="button-dashboard"><a href="">SOPORTE</a><i class="fas fa-caret-down"></i>
-                            <div class="button-dashboard-dropdown">
-                                <div class="soporte">
-                                    <div class="soporte-box"><a href="http://localhost:3000/aboutUs"
-                                            target="_blank">Sobre nosotros</a></div>
-                                    <div class="soporte-box"><a href="http://localhost:3000/privacyPolitics"
-                                            target="_blank">Politicas de privacidad</a></div>
-                                    <div class="soporte-box"><a href="" target="_blank">Contactanos</a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box-shop">
-                        <div class="box-shop1">
-                            <div class="circle1">
-                                <i id="icon-shop" class="fas fa-shopping-cart"></i>
-                            </div>
-                            <div class="text-shop">
-                                <h4>TIENDA</h4>
-                            </div>
-                        </div>
-                        <div class="box-shop2">
-                            <div class="circle2">
-                                <div>
-                                    <i id="shop-icon2" class="fas fa-bolt"></i>
-                                </div>
-                            </div>
-
-                            <div class="text-shop">
-                                <h4>OFERTAS</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="keys-container">
-                        <div class="game-keys">
-                            <div class="profile-text">
-                                <h4>MIS DATOS</h4>
-                                <h4>+</h4>
-                            </div>
-                        </div>
-                        <div class="img-container">
-                            
-                            <div class="profile-image-user">
-                                <img src="/img/default_user.jpg" alt="Profile Image">
-                            </div>
-
-                            <div class="userInformation">
-
-                                <div class="userName">
-                                    <p>Username: </p>
-                                    <p> <%- userInSession.user %> </p>
-                                </div>
-
-                                <div class="userEmail">
-                                    <p>Email: </p>
-                                    <p> <%- userInSession.email %> </p>
-                                </div>
-
-                                <div class="userName">
-                                    <p>Rol: </p>
-                                    <% if (userInSession.rol == 0) { %> 
-                                        <p>Admin</p>
-                                    <% } else { %> 
-                                        <p>Usuario</p>
-                                    <% } %>
-                                </div>
-
-                            </div>
-
-                            <a href="/user/logout" style="position: relative; z-index: 2;">Cerrar Sesión</a>
-
-                        </div>                        
-
-                    </div>
+    <%- include('../partials/header') -%>
+    <div class="complete-dashboard">
+    <div class="dashboard">
+        <div class="text-dashboard"><div class="text-shop2"><h4>MI TABLERO</h4></div></div>
+        <div class="button-dashboard"><a href="">MI CUENTA</a><i class="fas fa-caret-down"></i>
+        <div class="button-dashboard-dropdown">
+            <div class="button-dashboard-dropdown1"><a href=""></a><h4>Editar cuenta</h4></div>
+            <div class="button-dashboard-dropdown1"><a href=""></a><h4>Historial</h4></div>
+        </div>
+    </div>
+    <div class="button-dashboard"><a href="">REDES SOCIALES</a><i class="fas fa-caret-down"></i>
+        <div class="button-dashboard-dropdown">
+            <div class="redes-social">
+                <div class="social-box"><a href="https://www.instagram.com/_titan_games_/" target="_blank"><i class="fab fa-instagram"></i></a><div><h4>INTAGRAM</h4></div></div>
+                <div class="social-box"><a href="https://www.facebook.com/Titan-Games-markteplace-109552258094094" target="_blank"><i
+                        class="fab fa-facebook"></i></a><div><h4>FACEBOOK</h4></div></div>
+                        <div class="social-box"><a href="https://www.twitch.tv/titangamesmarket" target="_blank"><i class="fab fa-twitch"></i></a><div><h4>TWITCH</h4></div></div>
+                            <div class="social-box"><a href="https://twitter.com/_Titan_Games_" target="_blank"><i class="fab fa-twitter"></i></a><div><h4>TWITTER</h4></div></div>
+            </div>
+        </div>
+    </div>
+    <div class="button-dashboard"><a href="">SOPORTE</a><i class="fas fa-caret-down"></i>
+        <div class="button-dashboard-dropdown">
+            <div class="soporte">
+                <div class="soporte-box"><a href="http://localhost:3000/aboutUs" target="_blank">Sobre nosotros</a></div>
+                <div class="soporte-box"><a href="http://localhost:3000/privacyPolitics" target="_blank">Politicas de privacidad</a></div>
+                <div class="soporte-box"><a href="" target="_blank">Contactanos</a></div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="box-shop">
+        <div class="box-shop1">
+            <div class="circle1">
+                <i id="icon-shop" class="fas fa-shopping-cart"></i>
+            </div>
+            <div class="text-shop"><h4>TIENDA</h4></div>
+        </div>
+        <div class="box-shop2">
+            <div class="circle2">
+                <div>
+                    <i id="shop-icon2" class="fas fa-bolt"></i>
                 </div>
-                <%- include('../partials/footer') -%>
+            </div>
+        
+            <div class="text-shop"><h4>OFERTAS</h4></div>
+        </div>
+    </div>
+    <div class="keys-container">
+    <div class="game-keys">
+        <div class="profile-text">
+            <h4>MIS LLAVES</h4>
+            <h4>+</h4>
+        </div>
+    </div>
+    <div class="img-container">
+        <div class="img-card-container">
+            <img src="img/dark-souls-3-cover.jpg" alt="">
+            <img src="img/loop-hero.jpg" alt="">
+            <img src="img/shin-megami-tensei.jpg" alt="">
+            <img src="img/the-elder-scrolls-v-skyrim-special-edition-cover.jpg" alt="">
+            <img src="img/dark-souls-ii-scholar-of-the-first-sin.jpg" alt="">
+        </div>
+    </div>
+</div>
+</div>
+    <%- include('../partials/footer') -%>
 </body>
-
 </html>

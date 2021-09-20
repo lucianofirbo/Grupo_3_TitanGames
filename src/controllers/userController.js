@@ -1,30 +1,74 @@
-const { getUsers, saveUserDb } = require('../data/dataBase');
-const { validationResult, cookie } = require('express-validator');
-const bcrypt = require('bcryptjs');
+const { validationResult } = require('express-validator')
+const { getUsers, writeUsersJSON } = require('../data/dataBase');
+const bcrypt = require('bcryptjs')
+
 
 module.exports = {
+    //Creacion de usuarios
+
+    processRegister: (req, res) => {
+        let errors = validationResult(req)
+
+        if (errors.isEmpty()) {
+            let lastId = 0;
+
+            getUsers.forEach(user => {
+                if (user.id > lastId) {
+                    lastId = user.id
+                }
+            })
+
+            let {
+                userName,
+                email,
+                pass1
+            } = req.body
+
+            let newUser = {
+                id: lastId + 1,
+                userName,
+                email,
+                pass: bcrypt.hashSync(pass1, 10),
+                category: "user",
+                avatar: req.file ? req.file.filename : "logo-footer.png",
+                address: "",
+                postalCode: "",
+                province: "",
+                city: "",
+                rol: 0
+            }
+
+            getUsers.push(newUser)
+
+            writeUsersJSON(getUsers)
+
+            res.redirect('/user/login')
+        } else {
+            res.render('users/register', {
+                errors: errors.mapped(),
+                old: req.body
+            })
+        }
+
+    },
+
+    renderRegister: (req, res) => {
+        res.render('users/register')
+    },
 
     indexProfile: (req, res) => {
-
-        res.render('users/profile', {userInSession : req.session.userLogged ? req.session.userLogged : '', getUsers});
-
+        res.render('users/profile');
     },
 
-    indexRegister: (req, res) => {
-
-        res.render('users/register', {userInSession : req.session.userLogged ? req.session.userLogged : ''});
-
+    renderLogin: (req, res) => {
+        res.render('users/login', {
+            session: req.session
+        });
     },
-
-    indexLogin: (req, res) => {
-
-        res.render('users/login', {userInSession : req.session.userLogged ? req.session.userLogged : ''});
-
-    },
-
-    checkLogin: (req, res) => {
-
-        let errors = validationResult(req);
+    
+    processLogin: (req, res) => {
+        let errors = validationResult(req)
+        console.log(errors)
 
         if (errors.isEmpty()) {
 
@@ -45,63 +89,18 @@ module.exports = {
                 req.session.userLogged = userToLog;
 
                 if (req.body.recordar != undefined) {
-                    res.cookie('recordar', userToLog.email, {maxAge: 1000 * 60});
+                    res.cookie('TitanGamesUser', userToLog.email, { expires: new Date(Date.now() + 900000), httpOnly: true });
                 }
 
                 res.redirect('/');
-            }
+            } 
 
         } else {
-
-            res.render('users/login', { dataBase: getUsers, errors: errors.array(), old: req.body, userInSession : req.session.userLogged ? req.session.userLogged : '' });
-
-        }        
-
-    },
-
-    createUser: (req, res) => {
-
-        let errors = validationResult(req);
-
-        if (errors.isEmpty()) {
-
-            let lastId = 1;
-            getUsers.forEach(element => {
-                if (element.id > lastId) {
-                    lastId = element.id;
-                };
+            res.render('users/login', {
+                errors: errors.mapped(),
+                session: req.session
             })
-
-            let newUser = {
-                id: lastId + 1,
-                user: req.body.userName,
-                email: req.body.email,
-                password: bcrypt.hashSync(req.body.pass, 12),
-                rol: 1
-            }
-
-            getUsers.push(newUser);
-
-            saveUserDb(getUsers);
-
-            res.redirect('/user/login');
-
-        } else {
-
-            res.render('users/register', { dataBase: getUsers, errors: errors.array(), old: req.body, userInSession : req.session.userLogged ? req.session.userLogged : '' });
-
         }
-
-    },
-
-    logout: (req, res) => {
-        
-        req.session.destroy()
-        if(req.cookies.userLogged){
-            res.cookie('recordar', '', {maxAge: -1})
-        }
-
-        res.redirect('/')
     }
-    
+
 }

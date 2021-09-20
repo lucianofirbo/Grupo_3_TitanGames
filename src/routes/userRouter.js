@@ -1,22 +1,21 @@
-const express = require('express');
+const express = require ('express');
 const router = express.Router();
-const controller = require('../controllers/userController');
-const loginValidator = require('../middlewares/loginValidator');
-const registerValidator = require('../middlewares/registerMiddleware');
-const sessionCheck = require('../middlewares/userCheck');
-const userLoginCheck = require('../middlewares/userLoginCheck');
+const { processRegister,
+        indexProfile, 
+        renderRegister,
+        renderLogin,
+        processLogin } = require('../controllers/userController');
+const registerValidator = require('../validations/registerValidator');
+const loginValidator = require('../validations/loginValidator');
 
-/* Ruta para perfil */
-router.get('/profile', sessionCheck, controller.indexProfile);
-/* Ruta Get Register */
-router.get('/register', userLoginCheck, controller.indexRegister);
-/* Ruta Get Login */
-router.get('/login', userLoginCheck, controller.indexLogin);
-/* Ruta Post Register */
-router.post('/register', registerValidator, controller.createUser);
-/* Ruta Post de Login */
-router.post('/login', loginValidator, controller.checkLogin);
-/* Ruta Logout */
-router.get('/logout', userLoginCheck, controller.logout);
+/* Ruta del perfil */
+router.get('/profile', indexProfile);
+/* Ruta del registro */
+router.get('/register', renderRegister);
+router.post('/register', registerValidator, processRegister);
+
+/* Ruta para login */
+router.get('/login', renderLogin);
+router.post('/login', loginValidator ,processLogin);
 
 module.exports = router;

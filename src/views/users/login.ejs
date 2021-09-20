@@ -1,40 +1,33 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <%- include('../partials/head') -%>    
-    <link rel="stylesheet" href="/css/loginView.css">
+    <%- include('../partials/head') -%>
+    <title>Iniciar sesión</title>    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/index.css">
+    
 </head>
 <body>
     <%- include('../partials/background') -%>
-    <%- include('../partials/header') -%>
-    
+    <%- include('../partials/header') -%> 
+
     <div class="form_container" id="login-card">
         <div class="card">
-            <span class="close" id="close">x</span>
+            <!-- <span class="close" id="close">x</span> -->
             <div class="content">
                 <img src="/img/logo.png" alt="logotipo" class="logo-login">
                 <form action="/user/login" method="POST">
                     <div class="form">
                         <div class="input-container">
-                            <input class="input-style" type="email" name="email" placeholder="Ingrese su email" value="<%= locals.old && old.email ? old.email : '' %>">
-                            <span class="error-message">Debe ingresar su email</span>
-                            <% if (locals && locals.errors) { %>
-                                <p> <% errors.forEach(error => { %>
-                                    <% if(error.param == 'email'){ %>
-                                        <%- error.msg %>
-                                    <% } %>
-                                <% }) %> </p>
+                            <input class="input-style" type="email" name="email" placeholder="Ingrese su email">
+                            <% if(locals.errors && errors.email) { %>
+                                <strong class="text-danger"><%= errors.email.msg %></strong>
                             <% } %>
                         </div>
                         <div class="input-container">
-                            <input class="input-style" type="password" name="pass" placeholder="Contraseña" value="<%= locals.old && old.pass ? old.pass : '' %>">
-                            <span class="error-message">Debe ingresar su contraseña</span>
-                            <% if (locals && locals.errors) { %>
-                                <p> <% errors.forEach(error => { %>
-                                    <% if(error.param == 'pass'){ %>
-                                        <%- error.msg %>
-                                    <% } %>
-                                <% }) %> </p>
+                            <input class="input-style" type="password" name="pass" placeholder="Contraseña">
+                            <% if(locals.errors && errors.pass) { %>
+                                <strong class="text-danger"><%= errors.pass.msg %></strong>
                             <% } %>
                         </div>
                         <div class="check">
@@ -45,13 +38,15 @@
                             <span class="error-message">Credenciales inválidas</span>
                             <button type="submit" class="submit-login">Ingresar</button>
                         </div>
+                        <div class="last-text" id="recover-pass">
+                            <span id="recover-pass">¿Olvidaste tu contraseña?</span>
+                            <a href="http://localhost:3000/user/register"><span id="create-account">Aún no tengo cuenta</span></a>
+                        </div>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-        
-        <%- include('../partials/footer') -%>
+    <%- include('../partials/footer') -%>
 
 </body>
-</html>

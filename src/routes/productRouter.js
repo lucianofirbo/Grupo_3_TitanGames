@@ -10,4 +10,6 @@ router.get('/detail/:id', controller.detail);
 /* Ruta para el carrito de compras */
 router.get('/cart', controller.cart);
 
+
+
 module.exports = router;

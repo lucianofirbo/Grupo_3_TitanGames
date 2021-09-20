@@ -1,16 +1,28 @@
 [
     {
         "id": 1,
-        "user": "Jorgito",
+        "userName": "pepito",
         "email": "a@b.com",
-        "password": "$2a$12$kbgZdQ5vIduNNHxYMJOUI.znDfAgr4ZNe0AUxyMRhbE3eAkZ.6k1m",
+        "pass": "$2a$10$jahihLmn4Zk1rVjNBEJfHOsYQujIVcy1EiWRqMMLKI219XVSaFwIS",
+        "category": "user",
+        "avatar": "logo-footer.png",
+        "address": "",
+        "postalCode": "",
+        "province": "",
+        "city": "",
         "rol": 0
     },
     {
         "id": 2,
-        "user": "pepito",
+        "userName": "jorgito",
         "email": "1@2.com",
-        "password": "$2a$12$Ps1FS9ZsluS25pcJ8nMQhOhzefNlTtL2qwswdC7mixIpw3s.Y9bni",
+        "pass": "$2a$10$1NJhT/g/BI97zfbJ16bGWedmdEHbtjUDByr.B4nP3/zssYGUNTmZC",
+        "category": "user",
+        "avatar": "logo-footer.png",
+        "address": "",
+        "postalCode": "",
+        "province": "",
+        "city": "",
         "rol": 1
     }
 ]
