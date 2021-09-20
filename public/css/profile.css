@@ -113,6 +113,8 @@ body .box-shop {
     width: 100%;
     background: rgba(255, 255, 255, 0.1);
     border: 0.1px solid;
+    display: flex;
+    flex-direction: column;
 }
 
 .img-card-container {
@@ -123,12 +125,37 @@ body .box-shop {
     justify-content: start;
 }
 
-.img-container .img-card-container img {
-    width: 48%;
-    max-width: 200px;
-    height: 49%;
-    margin: 1%;
-    border-radius: 10px;
+.profile-image-user {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+}
+
+.profile-image-user img {
+    height: 100%;
+    width: auto;
+}
+
+.userInformation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10%;
+}
+
+.userInformation p {
+    font-weight: bold;
+    color: white;
+    font-size: 25px;
+    text-align: center;
+}
+
+form {
+    position: relative;
+    z-index: 2;
 }
 
 @media screen and (min-width:769px){

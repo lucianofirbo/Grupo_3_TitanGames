@@ -13,13 +13,13 @@ module.exports = {
 
         console.log(req.session.visits)
 
-        res.render('users/index', {dataBase: getProducts});
+        res.render('users/index', {dataBase: getProducts, userInSession : req.session.userLogged ? req.session.userLogged : ''});
     },
     politics: (req, res) => {
-        res.render('users/privacyPolitics');
+        res.render('users/privacyPolitics', {userInSession : req.session.userLogged ? req.session.userLogged : ''});
     },
     about: (req, res) => {
-        res.render('users/aboutUs');
+        res.render('users/aboutUs', {userInSession : req.session.userLogged ? req.session.userLogged : ''});
     },
     search: (req, res) => {
         let result = [];
@@ -30,7 +30,8 @@ module.exports = {
         });
         res.render('users/search', {
             result,
-            search: req.query.keywords
+            search: req.query.keywords, 
+            userInSession : req.session.userLogged ? req.session.userLogged : ''
         });
     }
     

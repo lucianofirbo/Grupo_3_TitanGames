@@ -13,13 +13,13 @@ module.exports = {
             }
         })
 
-        res.render('users/admin', {admin})
+        res.render('users/admin', {admin, userInSession : req.session.userLogged ? req.session.userLogged : ''})
 
     },
 
     addRender: (req, res) => {
 
-        res.render('products/productAdd', {dataBase: getProducts});
+        res.render('products/productAdd', {dataBase: getProducts, userInSession : req.session.userLogged ? req.session.userLogged : ''});
 
     },
 
@@ -60,9 +60,9 @@ module.exports = {
 
             saveDb(getProducts);
             
-            res.redirect(`/product/detail/${producto.id}`,);
+            res.redirect(`/product/detail/${producto.id}`);
         } else {
-            res.render('products/productAdd', { dataBase: getProducts, errors: errors.array(), old: req.body });
+            res.render('products/productAdd', { dataBase: getProducts, errors: errors.array(), old: req.body, userInSession : req.session.userLogged ? req.session.userLogged : '' });
         }
 
         
@@ -78,7 +78,7 @@ module.exports = {
             }
         });
 
-        res.render('products/editProduct', {product: productRequiredFind});
+        res.render('products/editProduct', {product: productRequiredFind, userInSession : req.session.userLogged ? req.session.userLogged : ''});
 
     },
 

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('../partials/head') -%>    
+    <link rel="stylesheet" href="/css/loginView.css">
+</head>
+<body>
+    <%- include('../partials/background') -%>
+    <%- include('../partials/header') -%>
+    
+    <div class="form_container" id="login-card">
+        <div class="card">
+            <span class="close" id="close">x</span>
+            <div class="content">
+                <img src="/img/logo.png" alt="logotipo" class="logo-login">
+                <form action="/user/login" method="POST">
+                    <div class="form">
+                        <div class="input-container">
+                            <input class="input-style" type="email" name="email" placeholder="Ingrese su email">
+                            <span class="error-message">Debe ingresar su email</span>
+                            <% if (locals && locals.errors) { %>
+                                <p> <% errors.forEach(error => { %>
+                                    <% if(error.param == 'email'){ %>
+                                        <%- error.msg %>
+                                    <% } %>
+                                <% }) %> </p>
+                            <% } %>
+                        </div>
+                        <div class="input-container">
+                            <input class="input-style" type="password" name="pass" placeholder="Contraseña">
+                            <span class="error-message">Debe ingresar su contraseña</span>
+                            <% if (locals && locals.errors) { %>
+                                <p> <% errors.forEach(error => { %>
+                                    <% if(error.param == 'pass'){ %>
+                                        <%- error.msg %>
+                                    <% } %>
+                                <% }) %> </p>
+                            <% } %>
+                        </div>
+                        <div class="check">
+                            <label class="recordar" for="recordar">Recordarme</label>
+                            <input type="checkbox" name="recordar" id="recordar">
+                        </div>
+                        <div class="button-container">
+                            <span class="error-message">Credenciales inválidas</span>
+                            <button type="submit" class="submit-login">Ingresar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+        
+        <%- include('../partials/footer') -%>
+
+</body>
+</html>

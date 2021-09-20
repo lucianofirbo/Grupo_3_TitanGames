@@ -9,7 +9,7 @@
                 <img src="/img/logo.png" alt="logotipo" class="logo-register">
                 <form action="/user/register" method="POST">
                     <div class="input-container">
-                        <input class="input-style" type="text" name="user" placeholder="Ingrese su usuario">
+                        <input class="input-style" type="text" name="userName" placeholder="Ingrese su usuario">
                         <span class="error-message">Debe ingresar su usuario</span>
                     </div>
                     <div class="input-container">
@@ -18,6 +18,10 @@
                     </div>
                     <div class="input-container">
                         <input class="input-style" type="password" name="pass" placeholder="Contraseña">
+                        <span class="error-message">Debe ingresar su contraseña</span>
+                    </div>
+                    <div class="input-container">
+                        <input class="input-style" type="password" name="pass2" placeholder="Contraseña">
                         <span class="error-message">Debe ingresar su contraseña</span>
                     </div>
                     <div class="button-container">
@@ -33,7 +37,6 @@
             </div>
         </div>
     </div>
-
 
     <!-- Login Popup -->
 

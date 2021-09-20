@@ -1,1 +1,16 @@
-[{"id":2,"user":"asd","email":"a@b.com","password":"$2a$12$kbgZdQ5vIduNNHxYMJOUI.znDfAgr4ZNe0AUxyMRhbE3eAkZ.6k1m"},{"id":3,"user":"jaja","email":"1@2.com","password":"$2a$12$NSQfLxDxxyC324uErAlrAuo.e8yMwmYVkGzAEKlWJM5O/ELb3CIKG"}]
+[
+    {
+        "id": 1,
+        "user": "Jorgito",
+        "email": "a@b.com",
+        "password": "$2a$12$kbgZdQ5vIduNNHxYMJOUI.znDfAgr4ZNe0AUxyMRhbE3eAkZ.6k1m",
+        "rol": 0
+    },
+    {
+        "id": 2,
+        "user": "pepito",
+        "email": "1@2.com",
+        "password": "$2a$12$Ps1FS9ZsluS25pcJ8nMQhOhzefNlTtL2qwswdC7mixIpw3s.Y9bni",
+        "rol": 1
+    }
+]

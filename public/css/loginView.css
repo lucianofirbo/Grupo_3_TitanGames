@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+@import url('background.css');
+@import url('header.css');
+@import url('home-main.css');
+@import url('footer.css');
+
+.logReg {
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.card .close {
+    text-align: center;
+    cursor: pointer;
+    position: absolute;
+    color: white;
+    top: 1%;
+    right: 2%;
+    padding: 0px 7px;
+    z-index: 1;
+    font-size: 18px;
+}
+  
+.close:hover {
+      background: rgba(0, 0, 0, 0.95);
+      border-radius: 50%;
+}
+
+.form_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+    margin: 10% auto 5%;
+}
+
+form {
+    width: 90%;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    bottom: 5px;
+    width: 100%;
+}
+
+.form_container .card {
+    display: flex;
+    width: 310px;
+    height: 480px;
+    border-radius: 15px;
+    background-color: #161623;
+}
+
+.form_container .card .content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    border-radius: 12px;
+}
+
+.logo-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 150px;
+    max-height: 130px;
+}
+
+.input-container,
+.input-style {
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 3px;
+    margin-top: 7px;
+    height: 100%;
+    outline: none;
+}
+
+.input-style {
+    border: 1px solid black;
+    padding-left: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.error-message {
+    display: none;
+}
+
+.check {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    margin-top: 10px;
+}
+
+.recordar {
+    display: flex;
+    align-items: center;
+    height: 5vh;
+    color: white;
+}
+
+label.recordar {
+    margin: 0;
+}
+
+span.error-message {
+    color:red;
+    font-size: 0.8rem;
+    margin: 5px auto 0;
+}
+
+button.submit-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    color:black;
+    font-size: 21px;
+    font-weight: bold;
+    border-radius: 25px;
+    text-decoration: none;
+    border: 1px solid black;
+    width: 120px;
+    cursor: pointer;
+    outline: none;
+    height: 48px;
+    margin-top: 21px;
+}
+
+
+.last-text {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.last-text h5 {
+    font-size: 14px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.last-text #create-account {
+    margin-top: 10px;
+}
+
+.redirect-log-reg a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    margin-top: 30px;
+} 
+
+@keyframes aparecer {
+    from {
+      transform: translatey(-50%);
+    }
+  
+    to {
+      transform: translatey(100%);
+    }
+  }
+  
+
+@media (min-width:481px) {
+
+    div.input-container {
+        width: 300px;
+    }
+}
+
+@media (min-width:768px) {
+    .form_container .card {
+        max-width: 360px;
+        
+    }
+
+    div.input-container {
+        width: 290px;
+    }
+
+    .input-container,
+    .input-style {
+        height: 8vh;
+        border-radius: 50px;
+    }
+
+}
+
+@media (min-width:1280px) {
+
+    .form_container .card {
+        width: 120vw;
+    }
+    
+    .input-container,
+    .input-style {
+        height: 8vh;
+    }
+
+    button.submit {
+        height: 8vh;
+        border-radius: 30px;
+    }
+}

@@ -202,6 +202,7 @@ i {
 .user-icon {
     display: none;
 }
+
 .search-form {
     display: flex;
     width: initial;
@@ -296,6 +297,10 @@ input.search-form_input:focus {
     .notificacion-dropdown-main-nav,
     .user-icon {
     display: flex;
+    }
+
+    .user-icon-logged i {
+        color: green;
     }
 
 }

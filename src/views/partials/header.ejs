@@ -45,10 +45,16 @@
                     <p>No tienes notificaciones nuevas</p>
                 </div>
             </div>
-            
-            <div class="user-icon">
-                <i class="fas fa-user-circle hamburguer-account user-icon" id="hamburguer-account"></i>
-            </div>
+
+            <% if (userInSession) { %>
+                <div class="user-icon-logged">
+                    <a href="/user/profile"><i class="fas fa-user-circle hamburguer-account user-icon"></i></a>                    
+                </div>  
+            <% } else { %>        
+                <div class="user-icon">
+                    <i class="fas fa-user-circle hamburguer-account user-icon" id="hamburguer-account"></i>
+                </div>
+            <% } %>
 
         </div>
 
