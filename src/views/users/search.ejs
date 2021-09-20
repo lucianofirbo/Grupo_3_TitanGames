@@ -15,7 +15,7 @@
 
     <%- include('../partials/header') -%>
 
-    <main>
+    <main class="main-search">
         <div class="search-searchbar">
             <h2>Resultado de la búsqueda: <%= search %></h2>
         </div>
@@ -47,11 +47,11 @@
                 <% if (result.length > 0) { %>
                     <% result.forEach(product => { %>
                         <div class="game">
-                            <a href="http://localhost:3000/product/detail/<&= product.id &>">                        
+                            <a href="http://localhost:3000/product/detail/<&- product.id &>">                        
                                 <img src="/img/<%- product.image %>" alt="img del juego" class="games-img-w">
                             </a>
                             <div class="game-text">
-                                <p><%= result.product %></p>
+                                <p><%= product.product %></p>
                                 <div class="price">
                                     <p class="sale-box">-10%</p>
                                     <p><%= product.price %></p>
@@ -62,7 +62,7 @@
                     <% }) %>
                 <% } else {  %>
                     <div class="nose">
-                        <h2 class="products-title" style="color: tomato;">No se econtró ningún jueguito que coincida con esa búsqueda</h2>
+                        <h2 class="products-title" style="color: tomato;">No se encontró ningún jueguito que coincida con esa búsqueda</h2>
                     </div>
                 <% } %>
                 <!-- <div class="game">

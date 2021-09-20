@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+@import url('login.css');
+@import url('register.css');
+@import url('background.css');
+@import url('header.css');
+@import url('footer.css');
+
+:root {
+  --pinkTitan: #D94969;
+}
+
+.games-container {   
+    margin: 50px auto 0;
+    background-color: #0000006b;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.438);
+}
+
+.discover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.games {
+    display: flex;
+    flex-direction: column;
+    background-color: #00000052;
+    margin-top: 0;
+    color: whitesmoke;
+    font-weight: 600;
+    justify-content: space-around;
+    width: 95%;
+    text-align: center;
+    border-radius: 0 0px 10px 10px;
+    border: 1px solid black;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.308);
+}
+
+.game img {
+    width: 60%;
+    max-height: 150px;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.144);
+}
+
+.game {
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    max-height: 200px;
+}
+
+.game-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 65%;
+}
+
+.game-text p {
+    display: flex;
+    padding: 0;
+    font-size: 0.5rem;
+    justify-content: center;
+}
+
+.price {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.sale-box {
+    background-color: var(--pinkTitan);
+}
+
+.game-discover-hr {
+    margin: 0;
+    width: 100%;
+    background-color: black;
+    border: 1px solid black;
+}
+
+/* Media querys */
+
+@media screen and (min-width: 768px) {
+
+    .games-container {
+        width: 80%;
+        margin: 60px auto 0;
+    }
+
+    .game-text {
+        width: 25%;
+    }
+
+    .game-text p {
+        font-size: 0.7rem;
+    }
+    .game img {
+        max-width: 200px;
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+    .game-text p {
+        font-size: 1rem;
+    }
+
+    .game img {
+        max-width: 200px;
+    }
+
+    .game img:hover{
+        transform: scale(1);
+    }
+}

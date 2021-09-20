@@ -1,62 +1,62 @@
 [
     {
         "id": 1,
-        "email": "dshobbrook0@wiley.com",
-        "password": "9mxdzVlhx",
-        "category": "user"
+        "userName": "luciano",
+        "email": "luciano@mail.com",
+        "pass": "$2a$10$ASUiP7fqR2JhAUBeHTAxuOnQEvTDYkmYjhGWWFZBIgeIQ0ndVyGli",
+        "category": "user",
+        "avatar": "logo-footer.png",
+        "address": "",
+        "postalCode": "",
+        "province": "",
+        "city": ""
     },
     {
         "id": 2,
-        "email": "tdocharty1@last.fm",
-        "password": "O9SbBPn7t",
-        "category": "user"
+        "userName": "fdsfdsfds",
+        "email": "ddsfdsf@mail.com",
+        "pass": "$2a$10$sN94VVlMztC8uwZlvrf4OOzam6YjQ468yh1He5XHa1FI/XMOuS5wG",
+        "category": "user",
+        "avatar": "logo-footer.png",
+        "address": "",
+        "postalCode": "",
+        "province": "",
+        "city": ""
     },
     {
         "id": 3,
-        "email": "prudd2@tripadvisor.com",
-        "password": "21mG6GgIz",
-        "category": "user"
+        "userName": "fdgfdgfg",
+        "email": "gfdgfdg@mail.com",
+        "pass": "$2a$10$5cp9T3YJ5nRs6cqyYRwaDuL5CLjFlnSolH8fGy9Y5MJ.gsszJ/Q6u",
+        "category": "user",
+        "avatar": "logo-footer.png",
+        "address": "",
+        "postalCode": "",
+        "province": "",
+        "city": ""
     },
     {
         "id": 4,
-        "email": "tshrubb3@tripadvisor.com",
-        "password": "aTrLnypN5s",
-        "category": "user"
+        "userName": "firbo",
+        "email": "dsfdsf@mail.com",
+        "pass": "$2a$10$dLe6eJ6E7sfk74OC.MBc1e3HbqiMrlUt0EObeC0Fw9v1Htmu2yC9G",
+        "category": "user",
+        "avatar": "logo-footer.png",
+        "address": "",
+        "postalCode": "",
+        "province": "",
+        "city": ""
     },
     {
         "id": 5,
-        "email": "olathy4@nymag.com",
-        "password": "qWy11B",
-        "category": "user"
-    },
-    {
-        "id": 6,
-        "email": "rdenver5@smh.com.au",
-        "password": "ML8Wl3NqY9",
-        "category": "user"
-    },
-    {
-        "id": 7,
-        "email": "dboyle6@ameblo.jp",
-        "password": "XqxpI2AL",
-        "category": "user"
-    },
-    {
-        "id": 8,
-        "email": "tharme7@themeforest.net",
-        "password": "aWMOhofUWG",
-        "category": "user"
-    },
-    {
-        "id": 9,
-        "email": "abrideaux8@posterous.com",
-        "password": "jZVKVvatwu",
-        "category": "user"
-    },
-    {
-        "id": 10,
-        "email": "jtarn9@g.co",
-        "password": "bCxHQK",
-        "category": "user"
+        "userName": "dfsdfdsf",
+        "email": "dfddddddd@mail.com",
+        "pass": "$2a$10$6NGfQjS.ltut5k8byOc5YOgsSDBY4O9jNJdi0HYm3.1F48Qtb3dRS",
+        "category": "user",
+        "avatar": "logo-footer.png",
+        "address": "",
+        "postalCode": "",
+        "province": "",
+        "city": ""
     }
 ]

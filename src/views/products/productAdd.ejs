@@ -29,7 +29,7 @@
 
                         <div class="field-product">
                             <label>PRODUCTO:</label>
-                            <input class="style-input" type="text" name="product">
+                            <input class="style-input" type="text" name="product" placeholder="Nombre del producto">
                         </div>
 
                         <div class="grid">
@@ -69,13 +69,10 @@
                         </div> 
                         
                         <div class="field-product">
-                            <label for="">PRECIO:</label>
-                            <input class="style-input" type="number" name="precio">
+                            <label>PRECIO:</label>
+                            <input class="style-input" type="number" name="precio" placeholder="Precio del producto">
                         </div>
 
-                        <div class="button-container">
-                            <button type="submit" class="btn btn-submit">FINALIZAR</button>
-                        </div>
 
                     </div>
 
@@ -88,7 +85,7 @@
                                 <label>CATEGORÍAS:</label>
                                 <select class="style-select" name="genero">
                                     <option hidden selected>Elija la categoría</option>
-                                    <option value="Accion">Acción</option>
+                                    <option value="Acción">Acción</option>
                                     <option value="Aventura">Aventura</option>
                                     <option value="Rol">Rol</option>
                                     <option value="Simulacion">Simulación</option>
@@ -100,7 +97,7 @@
                                 <label>SUBCATEGORÍAS:</label>
                                 <select class="style-select" name="subGenero">
                                     <option hidden selected>Elija la subcategoría</option>
-                                    <option value="Arace">Arcade</option>
+                                    <option value="Arcade">Arcade</option>
                                     <option value="Disparos en primera persona">Disparos en primera persona</option>
                                     <option value="Disparos en tercera persona">Disparos en tercera persona</option>
                                     <option value="Lucha">Lucha</option>
@@ -124,21 +121,22 @@
                         </div>
                         <div class="display-flex-box">
                             <div class="desc-flex">
-                                <label for="">DESCRIPCIÓN:</label>
-                                <textarea class="style-textarea" name="descripcion" cols="30" rows="20"></textarea>
+                                <label>DESCRIPCIÓN:</label>
+                                <textarea class="style-textarea" name="descripcion" cols="30" rows="20" placeholder="Ingresa una descripcion para su producto"></textarea>
                             </div>
+                            <p id="req-title">REQUISITOS:</p>
                             <div class="row-req">
                                 <div class="req-container">
-                                    <label for="">REQUISITOS MÍNIMOS:</label>
-                                    <input class="style-input" type="text" name="req"> <br>
-                                    <input class="style-input" type="text" name="req"> <br>
-                                    <input class="style-input" type="text" name="req">
+                                    <label> MÍNIMOS:</label>
+                                    <input class="style-input" type="text" name="minimumVideo" placeholder="Minimum Video Requirements"> <br>
+                                    <input class="style-input" type="text" name="minimumProcessor" placeholder="Minimum Processor Requirements"> <br>
+                                    <input class="style-input" type="text" name="minimumRam" placeholder="Minimum Ram Requirements">
                                 </div>
                                 <div class="req-container">
-                                    <label for="">REQUISITOS RECOMENDADOS:</label>
-                                    <input class="style-input" type="text" name="req"> <br>
-                                    <input class="style-input" type="text" name="req"> <br>
-                                    <input class="style-input" type="text" name="req">
+                                    <label> RECOMENDADOS:</label>
+                                    <input class="style-input" type="text" name="recommendedVideo" placeholder="Recommended Video"> <br>
+                                    <input class="style-input" type="text" name="recommendedProcessor" placeholder="Recommended Processor"> <br>
+                                    <input class="style-input" type="text" name="recommendedRam" placeholder="Recommended Ram">
                                 </div>
                             </div>
                             
@@ -146,15 +144,19 @@
 
                         <div class="fields">
                             <div class="field-product">
-                                <label for="">KEY:</label>
+                                <label>KEY:</label>
                                 <input class="style-input" type="text" name="key">
                             </div>
 
                             <div class="field-trailer">
-                                <label for="">TRAILER:</label>
-                                <input class="style-input" type="text" name="trailer" placeholder="URL">
+                                <label>TRAILER:</label>
+                                <input class="style-input" type="text" name="videoURL" placeholder="URL">
                             </div>
 
+                        </div>
+                        
+                        <div class="button-container">
+                            <button type="submit" class="btn btn-submit">FINALIZAR</button>
                         </div>
 
                     </div>
@@ -170,14 +172,13 @@
 
                     <% dataBase.forEach(element => {
                         %>
-                        <h1><%- element.id %></h1>
                         <div class="game-stock">
                             <div class="game-name">
-                                <img src="/img/<%-element.image%>" alt="">
-                                <h5><%- element.product %></h5>
+                                <img src="/img/<%-element.image%>" alt="">                                
                             </div>
                             <div class="price">
-                                <p><%- element.price %></p>
+                                <p><%- element.product %></p>
+                                <p><%- element.price %>$</p>
                             </div>
                             <div class="edit-remove">
                                 <a href="/admin/editProduct/<%-element.id%>" id="edit">editar</a>
@@ -187,7 +188,6 @@
                             </div>
                         </div>
                     <% }) %>
-
                 </div>
             </section>
 

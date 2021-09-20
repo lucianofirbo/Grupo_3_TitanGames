@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') -%>
+    <link rel="stylesheet" href="/css/admin.css">
+    <title>Admin</title>
+</head>
+<body>
+
+    <%- include('../partials/background') -%>
+
+    <%- include('../partials/logReg') -%>
+
+    <%- include('../partials/header') -%>
+
+    <main>
+
+        <h1>Bienvenido de nuevo <% admin.userName %></h1>
+
+        <div class="cajas">
+
+            <a href="/admin/addProduct">
+                <p>Maneje sus productos</p>
+            </a>
+    
+            <a href="/admin/addProduct">
+                <p>Maneje sus usuarios</p>
+            </a>
+
+        </div>
+
+        
+
+    </main>
+
+    
+</body>
+</html>

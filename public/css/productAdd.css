@@ -46,11 +46,13 @@ form.load-product {
 .field-flex {
     display: flex;
     margin: 10px;
+    width: fit-content;
+    flex-direction: column;
 }
 .field-flex .field-gen {
-    width: 100%;
+    /* width: 100%; */
     display: grid;
-    justify-content: start;
+    /* justify-content: start; */
 }
 
 .field-flex .field-subgen {
@@ -234,6 +236,8 @@ section.section-2 h2 {
     padding-top: 10px;
     text-align: center;
     border-bottom: 1px solid white;
+    display: flex;
+    justify-content: space-between;
 }
 .game-stock img {
     width:100%;
@@ -245,11 +249,23 @@ section.section-2 h2 {
     font-weight: bold;
 }
 
+.game-name img {
+    height: 100px;
+    width: 250px;
+}
+
+.price {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
 .price p {
     color: white;
 }
 
 .edit-remove {
+    justify-content: center;
     display: flex;
     flex-direction: column;
     
@@ -291,6 +307,7 @@ section.section-2 h2 {
 .row-req {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 .req-container {
     display: flex;
@@ -298,6 +315,12 @@ section.section-2 h2 {
     margin: 0 5px;
     width: 45%;
     margin-bottom: 15px;
+    justify-content: flex-end;
+}
+#req-title {
+    color: white;
+    text-align: center;
+    margin: 15px 0;
 }
 
 #delete-button {
@@ -316,6 +339,9 @@ section.section-2 h2 {
     .bar-product {
         margin-top: 60px;
     }
+    .field-flex .field-gen {
+        margin-right: 190px;
+    }
     form.load-product {
         padding-top: 100px;
         width: 90%;
@@ -325,12 +351,12 @@ section.section-2 h2 {
         width: 90%;
         margin: 90px auto 30px;
     }
-    .game-stock img {
-        width: 60%;
-    }
     section#section3 {
         width: 90%;
         margin: 90px auto 30px;
+    }
+    .field-flex {
+        flex-direction: row;
     }
 }
 
@@ -341,10 +367,12 @@ section.section-2 h2 {
     .desc-product-load {
         width: 60%;
         margin-bottom: 40px;
+        margin-left: 20px;
+        margin-top: 10px;
     }
     .other-box {
         width: 50%;
-        margin-left: 50px;
+        margin-top: 10px;
     }
     .display-flex-box {
         display: flex;
@@ -352,7 +380,7 @@ section.section-2 h2 {
     }
     .grid {
         justify-content: center;
-        margin-top: 0;
+        margin-top: 22px;
     }
     .grid .form-element {
         width: 400px;
@@ -367,7 +395,7 @@ section.section-2 h2 {
         height: 100px;
     }
     .button-container {
-        justify-content: flex-end;
+        justify-content: flex-start;
         flex-direction: row;
     }
     .bar-product p {
@@ -379,7 +407,6 @@ section.section-2 h2 {
         margin: 90px auto 30px;
     }
     .game-stock img {
-        width: 40%;
         box-shadow: 0 0 6px 5px rgba(0, 0, 0, 0.274);
         transition: all .4s ease;
     }
@@ -389,5 +416,12 @@ section.section-2 h2 {
     section#section3 {
         width: 80%;
         margin: 90px auto 30px;
+    }
+    .field-product label {
+        margin-top: 10px;
+    }
+
+    .field-flex .field-gen {
+        margin-right: 120px;
     }
 }

@@ -23,7 +23,7 @@
 
                 <div class="field-product">
                     <label>PRODUCTO:</label>
-                    <input class="style-input" type="text" name="product" value="<%- product.product %> ">
+                    <input class="style-input" type="text" name="product" value="<%- product.product %>" placeholder="Nombre del producto">
                 </div>
 
                 <div class="grid">
@@ -64,7 +64,7 @@
                 
                 <div class="field-product">
                     <label>PRECIO:</label>
-                    <input class="style-input" type="number" name="precio" value="<%- product.price %>">
+                    <input class="style-input" type="number" name="precio" value="<%- product.price %>" placeholder="Precio del producto">
                 </div>
 
                 <div class="button-container">
@@ -81,50 +81,62 @@
                     <div class="field-gen">
                         <label>CATEGORÍAS:</label>
                             <select class="style-select" name="genero">
-                                <option hidden selected>Elija la categoría</option>
-                                <option value="genero1">Acción</option>
-                                <option value="genero2">Aventura</option>
-                                <option value="genero3">Rol</option>
-                                <option value="genero4">Simulación</option>
-                                <option value="genero5">Estrategia</option>
-                                <option value="genero6">Deportes</option>
+                                <option hidden selected><%- product.category %></option>
+                                <option value="Acción">Acción</option>
+                                <option value="Aventura">Aventura</option>
+                                <option value="Rol">Rol</option>
+                                <option value="Simulación">Simulación</option>
+                                <option value="Estrategia">Estrategia</option>
+                                <option value="Deportes">Deportes</option>
                             </select>
                     </div>
                     <div class="field-subgen">
                         <label>SUBCATEGORÍAS:</label>
                             <select class="style-select" name="subGenero">
-                                <option hidden selected>Elija la subcategoría</option>
+                                <option hidden selected><%- product.subcategory %></option>
                                 <option value="subgénero1">Arcade</option>
-                                <option value="subgénero2">Disparos en primera persona</option>
-                                <option value="subgénero3">Disparos en tercera persona</option>
-                                <option value="subgénero4">Lucha</option>
-                                <option value="subgénero5">Pelea</option>
-                                <option value="subgénero6">Buena trama</option>
-                                <option value="subgénero7">Casuales</option>
-                                <option value="subgénero8">Puzles</option>
-                                <option value="subgénero9">Rol de aventuras</option>
-                                <option value="subgénero10">En grupo</option>
-                                <option value="subgénero11">Estrategia de rol</option>
-                                <option value="subgénero12">Por turnos</option>
-                                <option value="subgénero13">Rol de aventura</option>
-                                <option value="subgénero14">Rol de acción</option>
-                                <option value="subgénero15">Rol japonés</option>
-                                <option value="subgénero16">Estrategia en tiempo real</option>
-                                <option value="subgénero17">Militares</option>
-                                <option value="subgénero18">Deporte en equipo</option>
-                                <option value="subgénero19">Deporte individual</option>
+                                <option value="FPS">Disparos en primera persona</option>
+                                <option value="TPS">Disparos en tercera persona</option>
+                                <option value="Lucha">Lucha</option>
+                                <option value="Pelea">Pelea</option>
+                                <option value="Buena trama">Buena trama</option>
+                                <option value="Casuales">Casuales</option>
+                                <option value="Puzzles">Puzzles</option>
+                                <option value="Rol de aventuras">Rol de aventuras</option>
+                                <option value="En grupo">En grupo</option>
+                                <option value="Estrategia de rol">Estrategia de rol</option>
+                                <option value="Por turnos">Por turnos</option>
+                                <option value="Rol de aventura">Rol de aventura</option>
+                                <option value="Rol de acción">Rol de acción</option>
+                                <option value="Rol japonés">Rol japonés</option>
+                                <option value="Estrategia en tiempo real">Estrategia en tiempo real</option>
+                                <option value="Militares">Militares</option>
+                                <option value="Deporte en equipo">Deporte en equipo</option>
+                                <option value="Deporte individual">Deporte individual</option>
                             </select>
                     </div>
                 </div>
                 <div class="display-flex-box">
                     <div class="desc-flex">
-                        <label>DESCRIPCIÓN:</label>
-                        <textarea class="style-textarea" name="descripcion" cols="30" rows="20"><%- product.description %></textarea>
+                        <label for="">DESCRIPCIÓN:</label>
+                        <textarea class="style-textarea" name="descripcion" cols="30" rows="20" placeholder="Ingresa una descripcion para su producto"><%- product.description %></textarea>
                     </div>
-                    <div class="desc-flex">
-                        <label>REQUISITOS:</label>
-                        <textarea class="style-textarea" name="" cols="30" rows="20"></textarea>
+                    <p id="req-title">REQUISITOS:</p>
+                    <div class="row-req">
+                        <div class="req-container">
+                            <label for=""> MÍNIMOS:</label>
+                            <input class="style-input" type="text" name="minimumVideo" value="<%- product.minimumVideo %>" placeholder="Minimum Video Requirements"> <br>
+                            <input class="style-input" type="text" name="minimumProcessor" value="<%- product.minimumProcessor %>" placeholder="Minimum Processor Requirements"> <br>
+                            <input class="style-input" type="text" name="minimumRam" value="<%- product.minimumRam %>" placeholder="Minimum Ram Requirements">
+                        </div>
+                        <div class="req-container">
+                            <label for=""> RECOMENDADOS:</label>
+                            <input class="style-input" type="text" name="recommendedVideo" value="<%- product.recommendedVideo %>" placeholder="Recommended Video"> <br>
+                            <input class="style-input" type="text" name="recommendedProcessor" value="<%- product.recommendedProcessor %>" placeholder="Recommended Processor"> <br>
+                            <input class="style-input" type="text" name="recommendedRam" value="<%- product.recommendedRam %>" placeholder="Recommended Ram">
+                        </div>
                     </div>
+                    
                 </div>
 
                 <div class="fields">
@@ -135,7 +147,7 @@
 
                     <div class="field-trailer">
                         <label>TRAILER:</label>
-                        <input class="style-input" type="text" name="trailer" placeholder="URL">
+                        <input class="style-input" type="text" name="videoURL" placeholder="URL">
                     </div>
 
                 </div>

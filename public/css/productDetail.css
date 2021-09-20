@@ -26,6 +26,11 @@ main {
 }
 
 /*    */
+
+.categoriesDetail {
+  display: flex;
+}
+
 .title-product h3 {
   letter-spacing: 2.5px;
   text-transform: uppercase;
@@ -44,8 +49,8 @@ main {
 .buy-product {
   display: flex;
   align-items: center;
-  justify-content: space-around;
   margin-top: 10px;
+  margin-left: 15%;
 }
 #offer {
   background-color: var(--pinkTitan);
@@ -63,6 +68,8 @@ main {
 /*--  -- SLIDER --  --*/
 .mySlides img {
   vertical-align: middle;
+  object-fit: contain;
+  height: 200px;
 }
 .container {
   position: relative;
@@ -130,6 +137,7 @@ main {
   flex-wrap: wrap;
   align-items: flex-end;
   flex-direction: column;
+  margin-top: 0;
 }
 .button-container .btn-submit {
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 25%);
@@ -268,6 +276,7 @@ section h5{
   border-bottom: 1px solid rgba(255, 247, 247, 0.308);
   width: 80%;
   padding-bottom: 10px;
+  text-align: center;
 }
 .imgBx img {
   width: 100%;
@@ -308,7 +317,8 @@ section h5{
   cursor: pointer;
 }
 .interest-container .card-container:hover .content-card {
-  bottom: 0px;
+  bottom: 0px;  
+  height: 100%;
 }
 .interest-container .card-container .content-card .contentBx h3 {
   color: black;
@@ -343,6 +353,9 @@ section h5{
   }
   #category {
     padding-right: 10px;
+  }
+  .mySlides img {
+    height: 300px;
   }
 }
 
@@ -383,6 +396,9 @@ section h5{
   #category {
     padding-top: 10px;
     padding-bottom: 10px;
+  }
+  .mySlides img {
+    height: 400px;
   }
 }
 
@@ -428,6 +444,17 @@ section h5{
   .interese {
     max-width: 90%;
     margin: 50px auto;
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  }
+  .img-prod-descrp img {
+    height: 250px;
+  }
+  .buy-product{
+    margin-top: 5%;
+    gap: 20px;
   }
 
 }

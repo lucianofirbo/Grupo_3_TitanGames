@@ -5,8 +5,8 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 module.exports = {
 
     index: (req, res) => {
-            let productsInSale = getProducts.filter (products => products.enOferta === true) 
-        res.render('users/index', {dataBase: getProducts, productsInSale});
+        
+        res.render('users/index', {dataBase: getProducts});
     },
     politics: (req, res) => {
         res.render('users/privacyPolitics');

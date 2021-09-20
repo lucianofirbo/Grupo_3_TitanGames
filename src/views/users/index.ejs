@@ -26,18 +26,18 @@
             </ol>
             <div class="carousel-inner" style="margin-top: 0;">
                 <div class="carousel-item">
-                    <a href="http://localhost:3000/product/detail">
+                    <a href="http://localhost:3000/product/detail/3">
                         <img src="img/<%- dataBase[1].image %>" class="d-block w-100" alt="Ni no kuni 2">
                     </a>
                 </div>
                 <div class="carousel-item">
-                    <a href="http://localhost:3000/product/detail">
-                        <img src="img/ni-no-kuni-2.jpg" class="d-block w-100" alt="Ni no kuni 2">
+                    <a href="http://localhost:3000/product/detail/4">
+                        <img src="img/<%- dataBase[2].image %>" class="d-block w-100" alt="Ni no kuni 2">
                     </a>
                 </div>
                 <div class="carousel-item active">
-                    <a href="http://localhost:3000/product/detail">
-                        <img src="img/ni-no-kuni-2.jpg" class="d-block w-100" alt="Ni no kuni 2">
+                    <a href="http://localhost:3000/product/detail/2">
+                        <img src="img/<%- dataBase[0].image %>" class="d-block w-100" alt="Ni no kuni 2">
                     </a>
                 </div>
             </div>
@@ -123,16 +123,16 @@
     
                 <div class="game">
     
-                    <a href="http://localhost:3000/product/detail">
-                        <img src="img/ni-no-kuni-2.jpg" alt="ni no kuni 2" class="games-img-w">
+                    <a href="http://localhost:3000/product/detail/2">
+                        <img src="img/<%- dataBase[0].image %>" alt="ni no kuni 2" class="games-img-w">
                     </a>
     
                     <div class="game-text">
-                        <p>Nombre del juego</p>
+                        <p><%- dataBase[0].product %></p>
     
                         <div class="price">
                             <p class="sale-box">-10%</p>
-                            <p>1000$</p>
+                            <p><%- dataBase[0].price %></p>
                         </div>
     
                     </div>
@@ -142,16 +142,16 @@
     
                 <div class="game">
     
-                    <a href="http://localhost:3000/product/detail">
-                        <img src="img/ni-no-kuni-2.jpg" alt="ni no kuni 2" class="games-img-w">
+                    <a href="http://localhost:3000/product/detail/3">
+                        <img src="img/<%- dataBase[1].image %>" alt="ni no kuni 2" class="games-img-w">
                     </a>
     
                     <div class="game-text">
-                        <p>Nombre del juego</p>
+                        <p><%- dataBase[1].product %></p>
     
                         <div class="price">
                             <p class="sale-box">-10%</p>
-                            <p>1000$</p>
+                            <p><%- dataBase[1].price %></p>
                         </div>
     
                     </div>
@@ -161,16 +161,16 @@
     
                 <div class="game">
     
-                    <a href="http://localhost:3000/product/detail">
-                        <img src="img/ni-no-kuni-2.jpg" alt="ni no kuni 2" class="games-img-w">
+                    <a href="http://localhost:3000/product/detail/4">
+                        <img src="img/<%- dataBase[2].image %>" alt="ni no kuni 2" class="games-img-w">
                     </a>
     
                     <div class="game-text">
-                        <p>Nombre del juego</p>
+                        <p><%- dataBase[2].product %></p>
     
                         <div class="price">
                             <p class="sale-box">-10%</p>
-                            <p>1000$</p>
+                            <p><%- dataBase[2].price %></p>
                         </div>
     
                     </div>
@@ -183,16 +183,35 @@
     
                 <div class="game">
     
-                    <a href="http://localhost:3000/product/detail">
-                        <img src="img/ni-no-kuni-2.jpg" alt="ni no kuni 2" class="games-img-w">
+                    <a href="http://localhost:3000/product/detail/3">
+                        <img src="img/<%- dataBase[1].image %>" alt="ni no kuni 2" class="games-img-w">
                     </a>
     
                     <div class="game-text">
-                        <p>Nombre del juego</p>
+                        <p><%- dataBase[1].product %></p>
     
                         <div class="price">
                             <p class="sale-box">-10%</p>
-                            <p>1000$</p>
+                            <p><%- dataBase[1].price %></p>
+                        </div>
+    
+                    </div>
+    
+                </div>
+                <hr class="game-discover-hr">
+
+                <div class="game">
+    
+                    <a href="http://localhost:3000/product/detail/2">
+                        <img src="img/<%- dataBase[0].image %>" alt="ni no kuni 2" class="games-img-w">
+                    </a>
+    
+                    <div class="game-text">
+                        <p><%- dataBase[0].product %></p>
+    
+                        <div class="price">
+                            <p class="sale-box">-10%</p>
+                            <p><%- dataBase[0].price %></p>
                         </div>
     
                     </div>
@@ -200,97 +219,29 @@
                 </div>
                 <hr class="game-discover-hr">
     
-                <div class="game">
-    
-                    <a href="http://localhost:3000/product/detail">
-                        <img src="img/cyberpunk.jpg" alt="ni no kuni 2" class="games-img-w">
-                    </a>
-    
-                    <div class="game-text">
-                        <p>Nombre del juego</p>
-    
-                        <div class="price">
-                            <p class="sale-box">-10%</p>
-                            <p>1000$</p>
-                        </div>
-    
-                    </div>
-    
-                </div>
-                <hr class="game-discover-hr">
-    
-                <div class="game">
-    
-                    <a href="http://localhost:3000/product/detail">
-                        <img src="img/ni-no-kuni-2.jpg" alt="ni no kuni 2" class="games-img-w">
-                    </a>
-    
-                    <div class="game-text">
-                        <p>Nombre del juego</p>
-    
-                        <div class="price">
-                            <p class="sale-box">-10%</p>
-                            <p>1000$</p>
-                        </div>
-    
-                    </div>
-    
-                </div>
-    
+                
             </section>
     
             <section class="games" id="newest">
-    
-                <div class="game">
-    
-                    <a href="http://localhost:3000/product/detail">
-                        <img src="img/cyberpunk.jpg" alt="ni no kuni 2" class="games-img-w">
-                    </a>
-    
-                    <div class="game-text">
-                        <p>Nombre del juego</p>
-    
-                        <div class="price">
-                            <p class="sale-box">-10%</p>
-                            <p>1000$</p>
-                        </div>
-    
-                    </div>
-    
-                </div>
+
+                
                 <hr class="game-discover-hr">
     
-                <div class="game">
-    
-                    <a href="http://localhost:3000/product/detail">
-                        <img src="img/cyberpunk.jpg" alt="ni no kuni 2" class="games-img-w">
-                    </a>
-    
-                    <div class="game-text">
-                        <p>Nombre del juego</p>
-    
-                        <div class="price">
-                            <p class="sale-box">-10%</p>
-                            <p>1000$</p>
-                        </div>
-    
-                    </div>
-    
-                </div>
-                <hr class="game-discover-hr">
+               
+                
     
                 <div class="game">
     
-                    <a href="http://localhost:3000/product/detail">
-                        <img src="img/cyberpunk.jpg" alt="ni no kuni 2" class="games-img-w">
+                    <a href="http://localhost:3000/product/detail/3">
+                        <img src="img/<%- dataBase[1].image %>" alt="ni no kuni 2" class="games-img-w">
                     </a>
     
                     <div class="game-text">
-                        <p>Nombre del juego</p>
+                        <p><%- dataBase[1].product %></p>
     
                         <div class="price">
                             <p class="sale-box">-10%</p>
-                            <p>1000$</p>
+                            <p><%- dataBase[1].price %></p>
                         </div>
     
                     </div>
@@ -300,7 +251,7 @@
             </section>
     
             <div class="game see-more-d">
-                <a href="http://localhost:3000/search"><p>Ver más</p></a>
+                <a href="http://localhost:3000/product"><p>Ver más</p></a>
             </div>
     
         </div>
