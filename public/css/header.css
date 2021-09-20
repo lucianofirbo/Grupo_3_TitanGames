@@ -79,6 +79,10 @@ i {
     top: 30px;
 }
 
+.userLoggedIcon i {
+    color: green;
+}
+
 .dropdown-content-notificacion-main-nav p {
     font-size: 18px;
 }

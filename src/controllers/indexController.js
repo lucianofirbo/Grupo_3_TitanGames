@@ -5,7 +5,8 @@ module.exports = {
 
     index: (req, res) => {
         
-        res.render('users/index', {dataBase: getProducts});
+        res.render('users/index', {dataBase: getProducts, userInSession : req.session.userLogged ? req.session.userLogged : ''});
+        
     },
     politics: (req, res) => {
         res.render('users/privacyPolitics');

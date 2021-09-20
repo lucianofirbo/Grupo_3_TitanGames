@@ -47,7 +47,13 @@
             </div>
             
             <div class="user-icon">
-                <a href="http://localhost:3000/user/login"><i class="fas fa-user-circle hamburguer-account user-icon" id="hamburguer-account"></i></a>
+                <% if (userInSession) { %>
+                    <div class="userLoggedIcon">
+                        <a href="/user/profile"><i class="fas fa-user-circle hamburguer-account user-icon"></i></a>
+                    </div>
+                <% } else { %>
+                    <a href="user/login"><i class="fas fa-user-circle hamburguer-account user-icon"></i></a>
+                <% } %>                
             </div>
 
         </div>

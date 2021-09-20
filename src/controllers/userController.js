@@ -4,7 +4,21 @@ const bcrypt = require('bcryptjs')
 
 
 module.exports = {
-    //Creacion de usuarios
+    
+    renderRegister: (req, res) => {
+        res.render('users/register', {userInSession : req.session.userLogged ? req.session.userLogged : ''})
+    },
+
+    indexProfile: (req, res) => {
+        res.render('users/profile', {userInSession : req.session.userLogged ? req.session.userLogged : ''});
+    },
+
+    renderLogin: (req, res) => {
+        res.render('users/login', {
+            session: req.session,
+            userInSession : req.session.userLogged ? req.session.userLogged : ''
+        });
+    },
 
     processRegister: (req, res) => {
         let errors = validationResult(req)
@@ -46,24 +60,11 @@ module.exports = {
         } else {
             res.render('users/register', {
                 errors: errors.mapped(),
-                old: req.body
+                old: req.body,
+                userInSession : req.session.userLogged ? req.session.userLogged : ''
             })
         }
 
-    },
-
-    renderRegister: (req, res) => {
-        res.render('users/register')
-    },
-
-    indexProfile: (req, res) => {
-        res.render('users/profile');
-    },
-
-    renderLogin: (req, res) => {
-        res.render('users/login', {
-            session: req.session
-        });
     },
     
     processLogin: (req, res) => {
@@ -98,7 +99,8 @@ module.exports = {
         } else {
             res.render('users/login', {
                 errors: errors.mapped(),
-                session: req.session
+                session: req.session,
+                userInSession : req.session.userLogged ? req.session.userLogged : ''
             })
         }
     }

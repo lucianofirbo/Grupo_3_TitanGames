@@ -12,13 +12,13 @@ module.exports = {
             }
         })
 
-        res.render('users/admin', {admin})
+        res.render('users/admin', {admin, userInSession : req.session.userLogged ? req.session.userLogged : ''})
 
     },
 
     addRender: (req, res) => {
 
-        res.render('products/productAdd', {dataBase: getProducts});
+        res.render('products/productAdd', {dataBase: getProducts, userInSession : req.session.userLogged ? req.session.userLogged : ''});
 
     },
 
@@ -70,7 +70,7 @@ module.exports = {
             }
         });
 
-        res.render('products/editProduct', {product: productRequiredFind});
+        res.render('products/editProduct', {product: productRequiredFind, userInSession : req.session.userLogged ? req.session.userLogged : ''});
 
     },
 
