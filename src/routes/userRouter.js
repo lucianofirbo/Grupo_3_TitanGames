@@ -2,11 +2,12 @@ const express = require ('express');
 const router = express.Router();
 const { processRegister,
         indexProfile, 
-        renderRegister } = require('../controllers/userController');
+        renderRegister,
+        renderLogin,
+        processLogin } = require('../controllers/userController');
 const uploadAvatar = require ('../middlewares/uploadAvatar');
 const registerValidator = require('../validations/registerValidator');
-
-
+const loginValidator = require('../validations/loginValidator');
 
 /* Ruta del perfil */
 router.get('/profile', indexProfile);

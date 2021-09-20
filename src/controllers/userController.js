@@ -68,22 +68,23 @@ module.exports = {
         let errors = validationResult(req)
 
         if(errors.isEmpty()) {
-            let user = getUsers.find(user => user.email === req.body.email)
+            
+            users.find(user => user.email === req.body.email)
 
-            req.session.user = {
-                id: user.id,
-                userName: user.userName,
-                email: user.email,
-                avatar: user.avatar,
-                rol: user.rol
+            req.session.users = {
+                id: users.id,
+                userName: users.userName,
+                email: users.email,
+                avatar: users.avatar,
+                rol: users.rol
             }
 
             if (req.body.recordar) {
-                res.cookie("userTitanGames", req.session.user, {expires: new Date(Date.now() + 900000), httpOnly: true});
+                res.cookie("userTitanGames", req.session.users, {expires: new Date(Date.now() + 900000), httpOnly: true});
             }
 
-            res.locals.user = req.session.user
-            res.redirect('/users/index');
+            res.locals.users = req.session.users
+            res.redirect('/user/index');
 
         } else {
             res.render('users/login', {
