@@ -48,7 +48,7 @@ module.exports = {
                     res.cookie('recordar', userToLog.email, {maxAge: 1000 * 60});
                 }
 
-                res.redirect('/user/profile');
+                res.redirect('/');
             }
 
         } else {
@@ -95,6 +95,7 @@ module.exports = {
     },
 
     logout: (req, res) => {
+        
         req.session.destroy()
         if(req.cookies.userLogged){
             res.cookie('recordar', '', {maxAge: -1})
