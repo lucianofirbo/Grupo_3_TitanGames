@@ -49,14 +49,49 @@ module.exports = {
         })
     }
 
-},
+    },
 
-renderRegister: (req, res) => {
-    res.render('users/register')
-},
+    renderRegister: (req, res) => {
+        res.render('users/register')
+    },
 
-indexProfile: (req, res) => {
-    res.render('users/profile');
-}
+    indexProfile: (req, res) => {
+        res.render('users/profile');
+    },
+    
+    renderLogin: (req, res) => {
+        res.render('users/login', {
+            session: req.session
+        });
+    },
+    processLogin: (req, res) => {
+        let errors = validationResult(req)
+
+        if(errors.isEmpty()) {
+            
+            users.find(user => user.email === req.body.email)
+
+            req.session.users = {
+                id: users.id,
+                userName: users.userName,
+                email: users.email,
+                avatar: users.avatar,
+                rol: users.rol
+            }
+
+            if (req.body.recordar) {
+                res.cookie("userTitanGames", req.session.users, {expires: new Date(Date.now() + 900000), httpOnly: true});
+            }
+
+            res.locals.users = req.session.users
+            res.redirect('/user/index');
+
+        } else {
+            res.render('users/login', {
+                errors: errors.mapped(),
+                session: req.session
+            })
+        }
+    }
 
 }

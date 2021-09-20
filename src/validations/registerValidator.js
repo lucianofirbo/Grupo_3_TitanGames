@@ -35,7 +35,6 @@ module.exports = [
 
     body('pass2')
     .custom((value, {req}) => value !== req.body.pass1 ? false : true)
-    .withMessage('ESCRIBÍ BIEN LA CONTRASEÑAAAAAAA'),
+    .withMessage('Las contraseñas no coinciden'),
 
 ]
-
