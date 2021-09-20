@@ -41,7 +41,7 @@ module.exports = {
 
         writeUsersJSON(users)
 
-        res.redirect('/users/login')
+        res.redirect('/user/login')
     } else {
         res.render('users/register', {
             errors: errors.mapped(),

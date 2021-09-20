@@ -3,7 +3,6 @@ const router = express.Router();
 const { processRegister,
         indexProfile, 
         renderRegister } = require('../controllers/userController');
-const uploadAvatar = require ('../middlewares/uploadAvatar');
 const registerValidator = require('../validations/registerValidator');
 
 

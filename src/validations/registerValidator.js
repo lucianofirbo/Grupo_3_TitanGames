@@ -38,3 +38,4 @@ module.exports = [
     .withMessage('ESCRIBÍ BIEN LA CONTRASEÑAAAAAAA'),
 
 ]
+
