@@ -4,10 +4,9 @@
 @import url('home-main.css');
 @import url('footer.css');
 
-body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+.input-container-reg p {
+    color: red;
+    font-weight: bold;
 }
 
 div.register-card {

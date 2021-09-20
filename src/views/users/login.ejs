@@ -16,7 +16,7 @@
                 <form action="/user/login" method="POST">
                     <div class="form">
                         <div class="input-container">
-                            <input class="input-style" type="email" name="email" placeholder="Ingrese su email">
+                            <input class="input-style" type="email" name="email" placeholder="Ingrese su email" value="<%= locals.old && old.email ? old.email : '' %>">
                             <span class="error-message">Debe ingresar su email</span>
                             <% if (locals && locals.errors) { %>
                                 <p> <% errors.forEach(error => { %>
@@ -27,7 +27,7 @@
                             <% } %>
                         </div>
                         <div class="input-container">
-                            <input class="input-style" type="password" name="pass" placeholder="Contraseña">
+                            <input class="input-style" type="password" name="pass" placeholder="Contraseña" value="<%= locals.old && old.pass ? old.pass : '' %>">
                             <span class="error-message">Debe ingresar su contraseña</span>
                             <% if (locals && locals.errors) { %>
                                 <p> <% errors.forEach(error => { %>

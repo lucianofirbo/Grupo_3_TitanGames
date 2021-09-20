@@ -12,6 +12,11 @@
     display: flex;
 }
 
+.input-container p {
+    color: red;
+    font-weight: bold;
+}
+
 .card .close {
     text-align: center;
     cursor: pointer;
