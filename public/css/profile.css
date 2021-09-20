@@ -1,13 +1,10 @@
-
 * {
     margin: 0;
 }
-
 div.top-nav {
     box-shadow: none;
     border: 0.1px solid;
 }
-
 body .box-shop {
     box-sizing: border-box;
     display: flex;
@@ -16,11 +13,9 @@ body .box-shop {
     margin-top: 40px;
     background-color: #161623
 }
-
 .text-shop2 {
     display: none;
 }
-
 .dashboard {
     width: 25%;
     height: 677px;
@@ -30,7 +25,6 @@ body .box-shop {
     margin-bottom: 14px;
     z-index: 1;
 }
-
 .box-shop .box-shop1 {
     height: 100%;
     width: 50%;
@@ -39,7 +33,6 @@ body .box-shop {
     align-items: center;
     justify-content: start;
 }
-
 .box-shop .box-shop2 {
     height: 100%;
     width: 50%;
@@ -49,7 +42,6 @@ body .box-shop {
     align-items: center;
     justify-content: start;
 }
-
 .box-shop .box-shop1 .circle1 {
     height: 80%;
     border-radius: 50%;
@@ -57,7 +49,6 @@ body .box-shop {
     width: 45px;
     margin-left: 10px;
 }
-
 .box-shop .box-shop2 .circle2 {
     height: 80%;
     border-radius: 50%;
@@ -65,19 +56,16 @@ body .box-shop {
     width: 45px;
     margin-left: 10px;
 }
-
 .box-shop .box-shop1 .circle1 #icon-shop {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 15px;
 }
-
 .text-shop h4 {
     color: white;
     margin-left: 14px;
 }
-
 .box-shop .box-shop2 .circle2 #shop-icon2 {
     display: flex;
     align-items: center;
@@ -85,7 +73,6 @@ body .box-shop {
     margin-top: 15px;
     font-size: 20px;
 }
-
 .game-keys {
     box-sizing: border-box;
     width: 100%;
@@ -94,7 +81,6 @@ body .box-shop {
     border: 0.1px solid;
     z-index: 1;
 }
-
 .game-keys .profile-text {
     display: flex;
     align-items: center;
@@ -103,17 +89,17 @@ body .box-shop {
     color: white;
     gap: 60%;
 }
-
 .log-reg {
     display: none;
     height: 0px;
 }
-
 .img-container {
     box-sizing: border-box;
     width: 100%;
     background: rgba(255, 255, 255, 0.1);
     border: 0.1px solid;
+    display: flex;
+    flex-direction: column;
 }
 
 .img-card-container {
@@ -124,22 +110,44 @@ body .box-shop {
     justify-content: start;
 }
 
-.img-container .img-card-container img {
-    width: 48%;
-    max-width: 200px;
-    height: 49%;
-    margin: 1%;
-    border-radius: 10px;
+.profile-image-user {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+}
+
+.profile-image-user img {
+    height: 100%;
+    width: auto;
+}
+
+.userInformation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10%;
+}
+
+.userInformation p {
+    font-weight: bold;
+    color: white;
+    font-size: 25px;
+    text-align: center;
+}
+
+form {
+    position: relative;
+    z-index: 2;
 }
 
 @media screen and (min-width:769px){
     body .box-shop {
       margin-top: 60px;
     }
-
 }
-
-
 @media screen and (min-width:1024px){
     .img-container .img-card-container img {
         width: 23%;
@@ -149,23 +157,18 @@ body .box-shop {
     .img-container {
         width: 100%;
     }
-
     .img-container {
         height: 83%;
     }
-
     .store-dropdown {
         display: none;
     }
-
     .top-right {
         margin-right: 2%;
     }
-
     .text-shop {
         display: none;
     }
-
     .text-dashboard {
         width: 100%;
         height: 9%;
@@ -173,7 +176,6 @@ body .box-shop {
         display: flex;
         align-items: center;
     }
-
     .button-dashboard {
         width: 100%;
         height: 9%;
@@ -183,40 +185,33 @@ body .box-shop {
         justify-content: space-between;
         padding: 16px 16px;
     }
-
     .button-dashboard a {
         text-decoration: none;
         color: white;
         transition: all 1s ease-out;
     }
-
     .text-shop2 {
         display: block;
         color: white;
         margin-left: 16px;
         font-size: larger;
     }
-
     div.box-shop {
         display: none;
     }
-
     .game-keys {
         margin-top: 60px;
         background-color: #161623;
         height: 60px;
     }
-
     .complete-dashboard {
         display: block;
         display: flex;
     }
-
     .dashboard {
         display: block;
         border: 0.1px solid;
     }
-
     .button-dashboard-dropdown {
         background-color:rgb(46, 45, 45);
         margin-top: 39px;
@@ -228,24 +223,20 @@ body .box-shop {
         position: absolute;
         z-index: 1;
     }
-
     .button-dashboard-dropdown1 {
         width: 100%;
         height: 50%;
         display: flex;
         align-items: center;
     }
-
     .button-dashboard-dropdown h4{
         text-decoration: none;
         color: white;
         margin-left: 16px;
     }
-
     .button-dashboard:hover .button-dashboard-dropdown {
         display: block;
     }
-
     .social-box {
         height: 25%;
         color: white;
@@ -253,7 +244,6 @@ body .box-shop {
         gap: 5%;
         margin-left: 8%;
     }
-
     .redes-social {
         display: flex;
         justify-content: flex-start;
@@ -261,11 +251,9 @@ body .box-shop {
         height: 100%;
         padding: 12px 3px;
     }
-
     .soporte {
         height: 100%;
     }
-
     .soporte-box {
         width: 100%;
         height: 33.4%;
@@ -274,12 +262,10 @@ body .box-shop {
         align-items: center;
         padding: 12px 16px;
     }
-
     .keys-container {
         width: 100%;
         padding: 10px;
         display: flex;
         flex-direction: column;
     }
-
 }
