@@ -10,7 +10,7 @@
         "postalCode": "",
         "province": "",
         "city": "",
-        "rol": 0
+        "rol": 1
     },
     {
         "id": 2,
@@ -23,6 +23,6 @@
         "postalCode": "",
         "province": "",
         "city": "",
-        "rol": 1
+        "rol": 0
     }
 ]

@@ -69,7 +69,6 @@ module.exports = {
     
     processLogin: (req, res) => {
         let errors = validationResult(req)
-        console.log(errors)
 
         if (errors.isEmpty()) {
 
