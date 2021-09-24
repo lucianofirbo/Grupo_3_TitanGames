@@ -10,6 +10,7 @@ const registerValidator = require('../validations/registerValidator');
 const loginValidator = require('../validations/loginValidator');
 const userCheck = require('../middlewares/userCheck');
 const userLoginCheck = require('../middlewares/userLoginCheck');
+const cookieCheck = require('../middlewares/cookieCheck');
 
 /* Ruta del perfil */
 router.get('/profile', userCheck, indexProfile);
@@ -19,7 +20,7 @@ router.post('/register', registerValidator, processRegister);
 
 /* Ruta para login */
 router.get('/login', userLoginCheck, renderLogin);
-router.post('/login', loginValidator ,processLogin);
+router.post('/login', loginValidator, cookieCheck,processLogin);
 
 /* Ruta Logout */
 router.get('/logout', userLoginCheck, logout);

@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const controller = require('../controllers/indexController');
-
+let cookieCheck = require('../middlewares/cookieCheck');
 /* Ruta para el home */
-router.get('/', controller.index);
+router.get('/', cookieCheck,controller.index);
 /* Ruta para políticas de privacidad */
 router.get('/politics', controller.politics);
 /* Ruta para Acerca de */
