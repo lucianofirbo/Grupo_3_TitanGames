@@ -88,7 +88,7 @@ module.exports = {
 
                 req.session.userLogged = userToLog;
 
-                if (req.body.recordar != undefined) {
+                if (req.body.recordar) {
                     res.cookie('TitanGamesUser', userToLog.email, { expires: new Date(Date.now() + 900000), httpOnly: true });
                 }
 
@@ -109,7 +109,6 @@ module.exports = {
         if(req.cookies.TitanGamesUser){
             res.cookie('TitanGamesUser', '', {maxAge: -1})
         }
-
         res.redirect('/')
     }
 
