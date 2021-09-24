@@ -78,7 +78,7 @@ module.exports = {
                 if (user.email == req.body.email) {
                     userToLog = user;
                 }
-            })     
+            })
 
             if (userToLog == undefined) {
 
