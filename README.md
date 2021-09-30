@@ -95,7 +95,7 @@ ENTREGADO:
 
 ENTREGADO:
 - Archivos:
-    - productDb.json
+    - product.json
     - users.json
 - Administración completa de productos con:
     - Listado
