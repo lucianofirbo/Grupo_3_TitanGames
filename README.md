@@ -106,6 +106,18 @@ ENTREGADO:
 
 ### Retrospectiva [retro.md](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/retro.md)
 
+# SPRINT 5: MIDDLEWARES + Auth
+
+ENTREGADO:
+- Formulario de registro con:
+    - Los campos necesarios
+    - Guardado en JSON con encriptación de contraseña
+- Formulario de login con:
+    - Campo de email y password
+    - Función de recordar al usuario
+- Rutas de huéspedes y usuarios
+
+### Retrospectiva [retro.md](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/retro.md)
 
 
 
