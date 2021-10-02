@@ -44,7 +44,7 @@ module.exports = {
                 email,
                 pass: bcrypt.hashSync(pass1, 10),
                 category: "user",
-                avatar: req.file ? req.file.filename : "logo-footer.png",
+                avatar: req.file ? req.file.filename : "default_user.jpg",
                 address: "",
                 postalCode: "",
                 province: "",
@@ -72,28 +72,20 @@ module.exports = {
 
         if (errors.isEmpty()) {
 
-            let userToLog;
+            let userToLog = getUsers.find(user => user.email === req.body.email);   
 
-            getUsers.filter(user => {
-                if (user.email == req.body.email) {
-                    userToLog = user;
-                }
-            })     
-
-            if (userToLog == undefined) {
-
-                res.send('no existe ese usuario')
-
-            } else {
-
-                req.session.userLogged = userToLog;
-
+            req.session.userLogged = {
+                id: userToLog.id,
+                userName: userToLog.userName,
+                email: userToLog.email,
+                avatar: userToLog.avatar,
+                rol: userToLog.rol
+            }
                 if (req.body.recordar) {
-                    res.cookie('TitanGamesUser', userToLog.email, { expires: new Date(Date.now() + 900000), httpOnly: true });
+                    res.cookie('TitanGamesUser', req.session.userLogged, { expires: new Date(Date.now() + 900000), httpOnly: true });
                 }
 
                 res.redirect('/');
-            } 
 
         } else {
             res.render('users/login', {
@@ -104,12 +96,60 @@ module.exports = {
         }
     },
 
+    profileEdit: (req, res) => {
+        let user = getUsers.find(user => user.id === +req.params.id)
+        res.render('users/profileEdit', {
+            user,
+            userInSession : req.session.userLogged ? req.session.userLogged : ''
+        })
+    },
+
+    updateProfile: (req, res) => {
+        let errors = validationResult(req)
+
+        if (errors.isEmpty()) {
+            let user = getUsers.find(user => user.id === +req.params.id)
+
+            let {
+                userName,
+                email,
+                address,
+                postalCode,
+                province,
+                city,
+            } = req.body
+
+            user.userName = userName
+            user.email = email
+            user.address = address
+            user.postalCode = postalCode
+            user.province = province
+            user.city = city
+            user.avatar = req.file ? req.file.filename : user.avatar
+
+            writeUsersJSON(getUsers)
+
+            delete user.pass
+
+            req.session.user = user
+
+            res.redirect('/user/profile')
+
+        }else{
+            res.render('users/profileEdit', {
+                errors: errors.mapped(),
+                old: req.body, 
+                userInSession : req.session.userLogged ? req.session.userLogged : ''
+            })
+        }
+    },
+
     logout: (req, res) => {
         req.session.destroy()
         if(req.cookies.TitanGamesUser){
             res.cookie('TitanGamesUser', '', {maxAge: -1})
         }
-        res.redirect('/')
+        res.redirect('/user/login')
     }
 
 }
