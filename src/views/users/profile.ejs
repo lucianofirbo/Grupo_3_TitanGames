@@ -19,10 +19,10 @@
                         <div class="button-dashboard"><a href="">MI CUENTA</a><i class="fas fa-caret-down"></i>
                             <div class="button-dashboard-dropdown">
                                 <div class="button-dashboard-dropdown1"><a href=""></a>
-                                    <h4>Editar cuenta</h4>
+                                    <a href="/user/profile/edit/<%= userInSession.id %>"><h4>Editar cuenta</h4></a>
                                 </div>
                                 <div class="button-dashboard-dropdown1"><a href=""></a>
-                                    <h4>Historial</h4>
+                                    <a href="/user/logout"><h4>Cerrar sesión</h4></a>
                                 </div>
                             </div>
                         </div>
@@ -60,11 +60,11 @@
                         <div class="button-dashboard"><a href="">SOPORTE</a><i class="fas fa-caret-down"></i>
                             <div class="button-dashboard-dropdown">
                                 <div class="soporte">
-                                    <div class="soporte-box"><a href="http://localhost:3000/aboutUs"
-                                            target="_blank">Sobre nosotros</a></div>
-                                    <div class="soporte-box"><a href="http://localhost:3000/privacyPolitics"
-                                            target="_blank">Politicas de privacidad</a></div>
-                                    <div class="soporte-box"><a href="" target="_blank">Contactanos</a></div>
+                                    <div class="button-dashboard-dropdown1 soporte-box"><a href="http://localhost:3000/about"
+                                            target="_blank"><h4>Sobre nosotros</h4></a></div>
+                                    <div class="button-dashboard-dropdown1 soporte-box"><a href="http://localhost:3000/politics"
+                                            target="_blank"><h4>Politicas de privacidad</h4></a></div>
+                                    <div class="button-dashboard-dropdown1 soporte-box"><a href="#" target="_blank"><h4>Contactanos</h4></a></div>
                                 </div>
                             </div>
                         </div>
@@ -99,33 +99,23 @@
                         <div class="img-container">
                                 
                             <div class="profile-image-user">
-                                <img src="/img/default_user.jpg" alt="Profile Image">
+                                <img src="/img/users/<%= userInSession.avatar %>" alt="Profile Image">
                             </div>
 
-                            <div class="userInformation">
-
-                                <div class="userName">
-                                    <p>Username: </p>
-                                    <p> <%- userInSession.userName %> </p>
+                            <div class="userInformationContainer">
+                                <div class="userInformation">
+                                    <h3>Datos del usuario</h3>
+                                        <p>Username: <%- userInSession.userName %></p>
+                                        <p>Email: <%- userInSession.email %></p>
+                                        <p>Rol: <% if (userInSession.rol === 1) { %> 
+                                                Admin
+                                            <% } else { %> 
+                                                Usuario
+                                            <% } %>
+                                        </p>                        
+                                    </div>
                                 </div>
-
-                                <div class="userEmail">
-                                    <p>Email: </p>
-                                    <p> <%- userInSession.email %> </p>
-                                </div>
-
-                                <div class="userName">
-                                    <p>Rol: </p>
-                                    <% if (userInSession.rol == 1) { %> 
-                                        <p>Admin</p>
-                                    <% } else { %> 
-                                        <p>Usuario</p>
-                                    <% } %>
-                                </div>
-
-                            </div>
-
-                            <a href="/user/logout" style="position: relative; z-index: 2;">Cerrar Sesión</a>
+                            </div>                            
 
                         </div>                        
 
