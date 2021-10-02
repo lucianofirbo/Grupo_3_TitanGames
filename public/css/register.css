@@ -7,8 +7,6 @@ div.register-card {
     height: 100vh;
 }
 
-
-
 div.register-container {
     display: flex;
     align-items: center;
@@ -29,6 +27,10 @@ div .registrate p{
     color: white;
     margin-top: -22px;
     font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    /* font-size: 1.5rem; */
+    text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #ffffff 0px 0px 20px, #f7f7f7 0px 0px 30px, #ffffff 0px 0px 40px, #ffffff 0px 0px 50px, #ffffff 0px 0px 75px;
 }
 
 .form-container {
@@ -89,19 +91,64 @@ button.submit-register:hover {
     color: red;
     font-weight: bold;
     font-size: 11px;
-    padding: 17px;
 }
 
-.redirect-register h5{
+.input-container-reg {
+    display: flex;
+    flex-direction: column;
+}
+
+.redirect-register span{
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
     color: white;
-    font-size: 16px;
     margin-top: 25px;
     cursor: pointer;
     margin-bottom: 11px;
+    transition: all .4s ease;
+}
+
+.redirect-register span:hover {
+    color: #161623;
+    font-weight: bold;
+}
+
+/* EDICIÓN DE PERFIL */
+.form-ad-input select {
+    border-radius: 50px;
+    padding: 5px 90px;
+    margin-top: 10px;
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.37);
+    opacity: 0.8;
+}
+
+
+.input-file {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 300px;
+    position: relative;
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.37);
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    padding: 0 1rem;
+    border-radius: .9rem;
+    width: 65%;
+    height: 2rem;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.input-file input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
 }
 
 @media (min-width:768px) {
