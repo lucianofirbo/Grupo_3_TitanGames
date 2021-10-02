@@ -27,13 +27,13 @@
     },
     {
         "id": 3,
-        "userName": "eve",
+        "userName": "hebe",
         "email": "eve6@mail.com",
         "pass": "$2a$10$w2/rAdvN0EZFze3tutQ82OBeN3RVZ/X6k6zGTitdI8UNXDtXwbTf6",
         "category": "user",
-        "avatar": "logo-footer.png",
-        "address": "",
-        "postalCode": "",
+        "avatar": "default_user.jpg",
+        "address": "125 nose",
+        "postalCode": "1856",
         "province": "",
         "city": "",
         "rol": 1
