@@ -96,7 +96,7 @@ body .box-shop {
 .img-container {
     box-sizing: border-box;
     width: 100%;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(15, 15, 15, 0.322);
     border: 0.1px solid;
     display: flex;
     flex-direction: column;
@@ -121,21 +121,44 @@ body .box-shop {
 .profile-image-user img {
     height: 100%;
     width: auto;
+    border-radius: 50%;
 }
 
-.userInformation {
+/* .userInformation {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     margin-top: 10%;
+} */
+
+.userInformationContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 5px 5px 5px #0a0a0a;
+    padding: 1rem;
+    border-radius: .8rem;
+    margin: 20px;
+    background-color: #0000001a;
+    border: 1px solid #00000040;
+    text-align: center;
+}
+
+.userInformation h3 {
+    color: white;
+    font-weight: bold;
+    font-size: 2rem;
 }
 
 .userInformation p {
-    font-weight: bold;
+    margin: 1rem 0;
     color: white;
-    font-size: 25px;
-    text-align: center;
+}
+
+.userInformation p:hover {
+    text-shadow: 5px 3px 8px rgb(255, 255, 255);
+    transform: scale(1.1);
 }
 
 form {
@@ -213,7 +236,7 @@ form {
         border: 0.1px solid;
     }
     .button-dashboard-dropdown {
-        background-color:rgb(46, 45, 45);
+        background-color:#0b0b11c5;
         margin-top: 39px;
         height: 18%;
         width: 19.7%;
@@ -222,6 +245,9 @@ form {
         left: 0;
         position: absolute;
         z-index: 1;
+        -webkit-box-shadow: inset -2px -1px 7px 4px rgba(0,0,0,0.57);
+-moz-box-shadow: inset -2px -1px 7px 4px rgba(0,0,0,0.57);
+box-shadow: inset -2px -1px 7px 4px rgba(0,0,0,0.57);
     }
     .button-dashboard-dropdown1 {
         width: 100%;
@@ -233,7 +259,13 @@ form {
         text-decoration: none;
         color: white;
         margin-left: 16px;
+        transition: all .4s ease;
     }
+
+    .button-dashboard-dropdown h4:hover {
+        transform: scale(1.1);
+    }
+
     .button-dashboard:hover .button-dashboard-dropdown {
         display: block;
     }
