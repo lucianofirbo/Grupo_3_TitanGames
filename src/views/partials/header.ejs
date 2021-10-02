@@ -49,7 +49,14 @@
             <div class="user-icon">
                 <% if (userInSession) { %>
                     <div class="userLoggedIcon">
-                        <a href="/user/profile"><i class="fas fa-user-circle hamburguer-account user-icon"></i></a>
+                        <i class="fas fa-user-circle hamburguer-account user-icon"></i><span class="session"></span></a>
+                    </div>
+                    <div class="dropdown-content-user-main-nav">
+                        <a href="/user/profile">Perfil</a>
+                        <a href="/user/logout">Cerrar sesión</a>
+                        <% if (userInSession.rol === 1) { %>
+                            <a href="/admin">ADMIN</a>
+                        <% } %>
                     </div>
                 <% } else { %>
                     <a href="user/login"><i class="fas fa-user-circle hamburguer-account user-icon"></i></a>
