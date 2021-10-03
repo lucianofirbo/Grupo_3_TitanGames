@@ -128,7 +128,7 @@ module.exports = {
 
         saveDb(getProducts);
 
-        res.redirect('/admin/addProduct');
+        res.redirect('/admin/products');
 
     }
 
