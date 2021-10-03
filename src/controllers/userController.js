@@ -84,7 +84,7 @@ module.exports = {
             }
 
             res.locals.users = req.session.users
-            res.redirect('/user/index');
+            res.redirect('/');
 
         } else {
             res.render('users/login', {

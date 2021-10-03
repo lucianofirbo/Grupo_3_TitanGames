@@ -25,7 +25,6 @@ app.use(session({
     secret: "titanGames",
     resave: false,
     saveUninitialized: true,
-    cookie: { maxAge: 60000 }
 }));
 
 /* Setting up routes */
