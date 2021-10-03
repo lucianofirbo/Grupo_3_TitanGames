@@ -5,6 +5,7 @@ const app = express();
 const port = 3000;
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
+const localsCheck = require('./middlewares/localsCheck');
 
 /* Setting up the server */ 
 
@@ -24,8 +25,9 @@ app.use(cookieParser());
 app.use(session({
     secret: "titanGames",
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: true
 }));
+app.use(localsCheck);
 
 /* Setting up routes */
 
