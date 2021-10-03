@@ -1,62 +1,41 @@
 [
     {
         "id": 1,
-        "userName": "luciano",
-        "email": "luciano@mail.com",
-        "pass": "$2a$10$ASUiP7fqR2JhAUBeHTAxuOnQEvTDYkmYjhGWWFZBIgeIQ0ndVyGli",
+        "userName": "pepito",
+        "email": "a@b.com",
+        "pass": "$2a$10$jahihLmn4Zk1rVjNBEJfHOsYQujIVcy1EiWRqMMLKI219XVSaFwIS",
         "category": "user",
         "avatar": "logo-footer.png",
         "address": "",
         "postalCode": "",
         "province": "",
-        "city": ""
+        "city": "",
+        "rol": 1
     },
     {
         "id": 2,
-        "userName": "fdsfdsfds",
-        "email": "ddsfdsf@mail.com",
-        "pass": "$2a$10$sN94VVlMztC8uwZlvrf4OOzam6YjQ468yh1He5XHa1FI/XMOuS5wG",
+        "userName": "jorgito",
+        "email": "1@2.com",
+        "pass": "$2a$10$1NJhT/g/BI97zfbJ16bGWedmdEHbtjUDByr.B4nP3/zssYGUNTmZC",
         "category": "user",
         "avatar": "logo-footer.png",
         "address": "",
         "postalCode": "",
         "province": "",
-        "city": ""
+        "city": "",
+        "rol": 0
     },
     {
         "id": 3,
-        "userName": "fdgfdgfg",
-        "email": "gfdgfdg@mail.com",
-        "pass": "$2a$10$5cp9T3YJ5nRs6cqyYRwaDuL5CLjFlnSolH8fGy9Y5MJ.gsszJ/Q6u",
+        "userName": "hebe",
+        "email": "eve6@mail.com",
+        "pass": "$2a$10$w2/rAdvN0EZFze3tutQ82OBeN3RVZ/X6k6zGTitdI8UNXDtXwbTf6",
         "category": "user",
-        "avatar": "logo-footer.png",
-        "address": "",
-        "postalCode": "",
+        "avatar": "default_user.jpg",
+        "address": "125 nose",
+        "postalCode": "1856",
         "province": "",
-        "city": ""
-    },
-    {
-        "id": 4,
-        "userName": "firbo",
-        "email": "dsfdsf@mail.com",
-        "pass": "$2a$10$dLe6eJ6E7sfk74OC.MBc1e3HbqiMrlUt0EObeC0Fw9v1Htmu2yC9G",
-        "category": "user",
-        "avatar": "logo-footer.png",
-        "address": "",
-        "postalCode": "",
-        "province": "",
-        "city": ""
-    },
-    {
-        "id": 5,
-        "userName": "dfsdfdsf",
-        "email": "dfddddddd@mail.com",
-        "pass": "$2a$10$6NGfQjS.ltut5k8byOc5YOgsSDBY4O9jNJdi0HYm3.1F48Qtb3dRS",
-        "category": "user",
-        "avatar": "logo-footer.png",
-        "address": "",
-        "postalCode": "",
-        "province": "",
-        "city": ""
+        "city": "",
+        "rol": 1
     }
 ]

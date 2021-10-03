@@ -1,7 +1,7 @@
 const { read } = require('fs');
 const path = require('path');
 const { getProducts, saveDb, getUsers } = require('../data/dataBase');
-
+const { validationResult } = require('express-validator');
 module.exports = {
 
     adminMain: (req, res) => {
@@ -12,52 +12,64 @@ module.exports = {
             }
         })
 
-        res.render('users/admin', {admin})
+        res.render('users/admin', {admin, userInSession : req.session.userLogged ? req.session.userLogged : ''})
 
     },
 
     addRender: (req, res) => {
 
-        res.render('products/productAdd', {dataBase: getProducts});
+        res.render('products/productAdd', {dataBase: getProducts, userInSession : req.session.userLogged ? req.session.userLogged : ''});
 
     },
 
     addProduct: (req, res) => {
+        let errors = validationResult(req)
 
-        let lastId = 1;
-        getProducts.forEach(element => {
-            if (element.id > lastId) {
-                lastId = element.id;
-            };
-        })
+        if (errors.isEmpty()) {
+            let lastId = 1;
+            getProducts.forEach(element => {
+                if (element.id > lastId) {
+                    lastId = element.id;
+                };
+            })
 
-        let producto = {
-            id: lastId + 1,
-            product: req.body.product,
-            price: req.body.precio,
-            description: req.body.descripcion,
-            category: req.body.genero,
-            subcategory: req.body.subGenero,
-            minimumVideo: req.body.minimumVideo,
-            minimumProcessor: req.body.minimumProcessor,
-            minimumRam: req.body.minimumRam,
-            recommendedVideo: req.body.recommendedVideo,
-            recommendedProcessor: req.body.recommendedProcessor,
-            recommendedRam: req.body.recommendedRam,
-            videoURL: req.body.videoURL ? req.body.videoURL : 'https://youtu.be/dQw4w9WgXcQ',
-            image: req.files['imagenProducto'] ? '/games/' + req.files['imagenProducto'][0].filename : '/games/' + 'notFound.png',
-            image2: req.files['imagenProducto2'] ? '/games/' + req.files['imagenProducto2'][0].filename : '/games/' + 'notFound.png',
-            image3: req.files['imagenProducto3'] ? '/games/' + req.files['imagenProducto3'][0].filename : '/games/' + 'notFound.png',
-            image4: req.files['imagenProducto4'] ? '/games/' + req.files['imagenProducto4'][0].filename : '/games/' + 'notFound.png',
-            image5: req.files['imagenProducto5'] ? '/games/' + req.files['imagenProducto5'][0].filename : '/games/' + 'notFound.png'
+            let producto = {
+                id: lastId + 1,
+                product: req.body.product,
+                price: req.body.precio,
+                description: req.body.descripcion,
+                category: req.body.genero,
+                subcategory: req.body.subGenero,
+                minimumVideo: req.body.minimumVideo,
+                minimumProcessor: req.body.minimumProcessor,
+                minimumRam: req.body.minimumRam,
+                recommendedVideo: req.body.recommendedVideo,
+                recommendedProcessor: req.body.recommendedProcessor,
+                recommendedRam: req.body.recommendedRam,
+                videoURL: req.body.videoURL ? req.body.videoURL : 'https://youtu.be/dQw4w9WgXcQ',
+                image: req.files['imagenProducto'] ? '/games/' + req.files['imagenProducto'][0].filename : '/games/' + 'notFound.png',
+                image2: req.files['imagenProducto2'] ? '/games/' + req.files['imagenProducto2'][0].filename : '/games/' + 'notFound.png',
+                image3: req.files['imagenProducto3'] ? '/games/' + req.files['imagenProducto3'][0].filename : '/games/' + 'notFound.png',
+                image4: req.files['imagenProducto4'] ? '/games/' + req.files['imagenProducto4'][0].filename : '/games/' + 'notFound.png',
+                image5: req.files['imagenProducto5'] ? '/games/' + req.files['imagenProducto5'][0].filename : '/games/' + 'notFound.png'
+            }
+
+            getProducts.push(producto);
+
+            saveDb(getProducts);
+            
+            res.redirect(`/product/detail/${producto.id}`, {
+                userInSession : req.session.userLogged ? req.session.userLogged : '',
+                dataBase: getProducts
+            });
+        } else {
+            res.render('products/productAdd', {
+                userInSession : req.session.userLogged ? req.session.userLogged : '',
+                dataBase: getProducts,
+                errors: errors.mapped(),
+                old: req.body
+            })
         }
-
-        getProducts.push(producto);
-
-        saveDb(getProducts);
-        
-        res.redirect(`/product/detail/${producto.id}`);
-
     },
 
     editRender: (req, res) => {
@@ -70,7 +82,7 @@ module.exports = {
             }
         });
 
-        res.render('products/editProduct', {product: productRequiredFind});
+        res.render('products/editProduct', {product: productRequiredFind, userInSession : req.session.userLogged ? req.session.userLogged : ''});
 
     },
 
@@ -116,7 +128,7 @@ module.exports = {
 
         saveDb(getProducts);
 
-        res.redirect('/admin/addProduct');
+        res.redirect('/admin/products');
 
     },
 

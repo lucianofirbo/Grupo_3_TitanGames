@@ -1,5 +1,5 @@
 const { check, body } = require('express-validator')
-const { users } = require('../data/dataBase')
+const { getUsers } = require('../data/dataBase')
 
 module.exports = [
     check('userName')
@@ -15,7 +15,7 @@ module.exports = [
 
     body('email')
     .custom(value => {
-        let user = users.find(user => user.email === value)
+        let user = getUsers.find(user => user.email === value)
 
         if(user === undefined){
             return true
@@ -35,6 +35,6 @@ module.exports = [
 
     body('pass2')
     .custom((value, {req}) => value !== req.body.pass1 ? false : true)
-    .withMessage('FLACO ESCRIBÍ BIEN LA CONTRASEÑA'),
+    .withMessage('Las contraseñas no coinciden'),
 
 ]

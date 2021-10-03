@@ -3,6 +3,9 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const port = 3000;
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
+const localsCheck = require('./middlewares/localsCheck');
 
 /* Setting up the server */ 
 
@@ -18,6 +21,13 @@ app.use(express.urlencoded({extended:false}))
 app.use(express.static('./public'));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.use(cookieParser());
+app.use(session({
+    secret: "titanGames",
+    resave: false,
+    saveUninitialized: true
+}));
+app.use(localsCheck);
 
 /* Setting up routes */
 
@@ -32,3 +42,4 @@ app.use('/admin', adminRouter)
 
 const userRouter = require ('./routes/userRouter');
 app.use('/user', userRouter)
+

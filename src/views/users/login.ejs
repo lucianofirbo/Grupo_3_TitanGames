@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('../partials/head') -%>
+    <title>Iniciar sesión</title>    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/index.css">
+    
+</head>
+<body>
+    <%- include('../partials/background') -%>
+    <%- include('../partials/header') -%> 
+
+    <div class="form_container">
+        <div class="card">
+            <div class="content">
+                <img src="/img/logo-footer.png" alt="logotipo" class="logo-login">
+                <p>Ingresar</p>
+                <form action="/user/login" method="POST">
+                    <div class="form">
+                        <div class="input-container">
+                            <input class="input-style" type="email" name="email" placeholder="Ingrese su email">
+                            <% if(locals.errors && errors.email) { %>
+                                <strong style="color: red; font-size: 0.8rem;"><%= errors.email.msg %></strong>
+                            <% } %>
+                        </div>
+                        <div class="input-container">
+                            <input class="input-style" type="password" name="pass" placeholder="Contraseña">
+                            <% if(locals.errors && errors.pass) { %>
+                                <strong style="color: red; font-size: 0.8rem;"><%= errors.pass.msg %></strong>
+                            <% } %>
+                        </div>
+                        <div class="check">
+                            <label class="recordar" for="recordar">Recordarme</label>
+                            <input type="checkbox" name="recordar" id="recordar">
+                        </div>
+                        <div class="button-container">
+                            <span class="error-message">Credenciales inválidas</span>
+                            <button type="submit" class="submit-login">Ingresar</button>
+                        </div>
+                        <div class="last-text" id="recover-pass">
+                            <a href="http://localhost:3000/user/register"><span>Aún no tengo cuenta</span></a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <%- include('../partials/footer') -%>
+
+</body>

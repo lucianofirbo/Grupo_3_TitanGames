@@ -2,8 +2,6 @@
 @import url('background.css');
 @import url('header.css');
 @import url('footer.css');
-@import url('login.css');
-@import url('register.css');
 :root {
   --pinkTitan: #D94969;
 }

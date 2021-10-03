@@ -70,3 +70,48 @@
 - El sprint 4
 
 ******************************************************************************
+
+## SPRINT 4: Principales conclusiones
+
+#### ¿Qué hicimos bien?
+
+- Hacer reuniones para distribuirnos las tareas del sprint lanzado.
+- Buena comunicación.
+
+#### ¿Qué deberiamos seguir haciendo?
+
+- Comunicarnos cualquier inconveniente que tengamos para no atrasarnos
+- Estar pendientes en Trello
+
+#### ¿Qué hicimos mal?
+
+- .
+
+#### ¿Qué deberíamos empezar a hacer?
+
+- Ponernos una fecha límite para entregar las tareas que nos asignamos
+
+******************************************************************************
+
+## SPRINT 5: Principales conclusiones
+
+#### ¿Qué hicimos bien?
+
+- Hacer reuniones para distribuirnos las tareas del sprint lanzado.
+
+#### ¿Qué deberiamos seguir haciendo?
+
+- Comunicarnos cualquier inconveniente que tengamos para no atrasarnos
+- Estar pendientes en Trello
+
+#### ¿Qué hicimos mal?
+
+- No comunicar los problemas
+- Entregar las tareas asignadas a último momento
+- Pocas reuniones
+- No saber en lo qué estaba trabajando el otro
+
+#### ¿Qué deberíamos empezar a hacer?
+
+- Mejorar en las cosas que hicimos mal
+- Empezar con el sprint 6
