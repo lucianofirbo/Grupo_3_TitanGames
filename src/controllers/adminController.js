@@ -130,6 +130,7 @@ module.exports = {
 
         res.redirect('/admin/products');
 
-    }
+    },
 
+    
 }

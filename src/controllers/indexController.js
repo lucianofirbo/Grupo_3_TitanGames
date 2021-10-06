@@ -1,5 +1,6 @@
 const path = require('path');
 let {getProducts} = require('../data/dataBase');
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 module.exports = {
 
@@ -30,6 +31,6 @@ module.exports = {
             search: req.query.keywords,
             userInSession : req.session.userLogged ? req.session.userLogged : ''
         });
-    }
+    },
     
 }
