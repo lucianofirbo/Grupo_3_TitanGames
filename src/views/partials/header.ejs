@@ -21,8 +21,10 @@
                     <a href=""><p>Ofertas</p></a>
                     <a href=""><p>Mas vendido</p></a>                    
                     <div class="hamburguer-cart">
-                        <a href="http://localhost:3000/product/cart">
-                            <p>Carrito</p>
+                        <% if (userInSession) { %>
+                            <a href="http://localhost:3000/product/cart">
+                                <p>Carrito</p>
+                        <% } %>   
                         </a>
                     </div>
                 </div>

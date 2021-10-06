@@ -61,27 +61,34 @@ span:nth-child(3){
     text-transform: uppercase;
     opacity: 0.5;
     margin-top: 100px;
+    font-weight: bold;
 }
 
 .home-button {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 50px;
+    padding-bottom: 110px;
 }
 
 .home-button a{
     text-decoration: none;
-    color: white;
-    background-color: var(--greenTitan);
-    padding: 8px 15px;
+    color: #1b2735;
+    background-color: #090a0f;
+    padding: 15px 15px;
     margin-bottom: 30px;
-    border-radius: 5px;
+    border-radius: 50%;
     font-weight: bold;
-    transition: all .4s ease;
+    transition: all .6s ease;
+}
+
+.home-button i{
+    font-size: 1.5rem;
 }
 
 .home-button a:hover {
     transform: scale(1.1);
     box-shadow: 2px 1px 15px #FFFFFF;
+    opacity: 0.5;
 }
