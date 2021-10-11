@@ -1,11 +1,12 @@
 const path = require('path');
-let {getProducts} = require('../data/dataBase');
+const {getProducts} = require('../data/dataBase');
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const db = require('../database/models');
 
 module.exports = {
 
     index: (req, res) => {
-        
+
         res.render('users/index', {dataBase: getProducts, userInSession : req.session.userLogged ? req.session.userLogged : ''});
         
     },
