@@ -7,7 +7,7 @@ module.exports = [
     .withMessage('Debes escribir un nombre de usuario'),
 
     
-    check('email')
+    /* check('email')
     .notEmpty()
     .withMessage('Debes escribir un email').bail()
     .isEmail()
@@ -23,7 +23,7 @@ module.exports = [
             return false
         }
     })
-    .withMessage("Email ya registrado"),
+    .withMessage("Email ya registrado"), */
 
     check('pass1')
     .notEmpty()

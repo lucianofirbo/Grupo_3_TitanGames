@@ -1,6 +1,7 @@
 const { validationResult } = require('express-validator')
 const { getUsers, writeUsersJSON } = require('../data/dataBase');
-const bcrypt = require('bcryptjs')
+const bcrypt = require('bcryptjs');
+const db = require('../database/models');
 
 
 module.exports = {
@@ -21,6 +22,29 @@ module.exports = {
     },
 
     processRegister: (req, res) => {
+
+        let errors = validationResult(req)
+
+        if (errors.isEmpty()) {
+            db.User.create ({
+                userName: req.body.userName,
+                email: req.body.email,
+                pass: bcrypt.hashSync(req.body.pass1, 10),
+                rol: 0
+            })
+            .then(() => {
+                res.redirect('/user/login');
+              })
+              .catch((err) => console.log(err));
+        } else {
+            res.render('users/register', {
+                errors: errors.mapped(),
+                old: req.body,
+                userInSession : req.session.userLogged ? req.session.userLogged : ''
+            })
+        }
+
+        /*
         let errors = validationResult(req)
 
         if (errors.isEmpty()) {
@@ -63,7 +87,7 @@ module.exports = {
                 old: req.body,
                 userInSession : req.session.userLogged ? req.session.userLogged : ''
             })
-        }
+        }*/
 
     },
     
