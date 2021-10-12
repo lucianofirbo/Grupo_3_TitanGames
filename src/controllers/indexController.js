@@ -9,11 +9,11 @@ module.exports = {
         
         /* Como primer elemento traigo la subcategoria despues la categoria luego el producto y finalmente las imagenes  */
         db.Subcategory.findAll({
-            include : [{association: "category", include: [{ association: "products", include: [{ association: "productImage" }] }] }]
+            include : [{association: "category", include: [{ association: "products", include: [{association: "productImage"}]}]}]
         })
         .then (subcategory => {
-            /* res.send(subcategory[0].category.products[0].productImage) */
-            res.render('users/index', {dataBase: subcategory, userInSession : req.session.userLogged ? req.session.userLogged : ''});
+            /* res.send(subcategory[0].category.products[0].productImage[1]) */
+            res.render('users/index', {subcategory, userInSession : req.session.userLogged ? req.session.userLogged : ''});
         })
         
     },

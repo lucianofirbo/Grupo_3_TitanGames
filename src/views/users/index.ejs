@@ -25,17 +25,17 @@
             <div class="carousel-inner" style="margin-top: 0;">
                 <div class="carousel-item">
                     <a href="http://localhost:3000/product/detail/3">
-                        <img src="img/<%- dataBase[0].category.products[0].productImage %>" class="d-block w-100" alt="Ni no kuni 2">
+                        <img src="img/<%- subcategory[0].category.products[0].productImage[0].image %>" class="d-block w-100" alt="Ni no kuni 2">
                     </a>
                 </div>
                 <div class="carousel-item">
                     <a href="http://localhost:3000/product/detail/4">
-                        <img src="img/<%- dataBase[0].category.products[0].productImage %>" class="d-block w-100" alt="Ni no kuni 2">
+                        <img src="img/<%- subcategory[0].category.products[0].productImage[1].image %>" class="d-block w-100" alt="Ni no kuni 2">
                     </a>
                 </div>
                 <div class="carousel-item active">
                     <a href="http://localhost:3000/product/detail/2">
-                        <img src="img/<%- dataBase[0].category.products[0].productImage %>" class="d-block w-100" alt="Ni no kuni 2">
+                        <img src="img/<%- subcategory[0].category.products[0].productImage[0].image %>" class="d-block w-100" alt="Ni no kuni 2">
                     </a>
                 </div>
             </div>
@@ -102,14 +102,8 @@
         <div class="separator">
             <p>Descubrir</p>
         </div>
-    
-        <!--<div class="discover">
-    
-            <!-- 
-            124-182 section1
-            184-242 section2
-            244-302 section3
-            
+
+        <div class="discover">            
     
             <div class="categories">
                 <p id="active">Descubrir juegos</p>
@@ -122,15 +116,15 @@
                 <div class="game">
     
                     <a href="http://localhost:3000/product/detail/2">
-                        <img src="img/<%- dataBase[0].image %>" alt="ni no kuni 2" class="games-img-w">
+                        <img src="img/<%- subcategory[0].category.products[0].productImage[0].image %>" alt="ni no kuni 2" class="games-img-w">
                     </a>
     
                     <div class="game-text">
-                        <p><%- dataBase[0].product %></p>
+                        <p><%- subcategory[0].category.products[0].product %></p>
     
                         <div class="price">
                             <p class="sale-box">-10%</p>
-                            <p><%- dataBase[0].price %></p>
+                            <p><%- subcategory[0].category.products[0].price %></p>
                         </div>
     
                     </div>
@@ -141,15 +135,15 @@
                 <div class="game">
     
                     <a href="http://localhost:3000/product/detail/3">
-                        <img src="img/<%- dataBase[1].image %>" alt="ni no kuni 2" class="games-img-w">
+                        <img src="img/<%- subcategory[0].category.products[0].productImage[0].image %>" alt="ni no kuni 2" class="games-img-w">
                     </a>
     
                     <div class="game-text">
-                        <p><%- dataBase[1].product %></p>
+                        <p><%- subcategory[0].category.products[0].product %></p>
     
                         <div class="price">
                             <p class="sale-box">-10%</p>
-                            <p><%- dataBase[1].price %></p>
+                            <p><%- subcategory[0].category.products[0].price %></p>
                         </div>
     
                     </div>
@@ -160,15 +154,15 @@
                 <div class="game">
     
                     <a href="http://localhost:3000/product/detail/4">
-                        <img src="img/<%- dataBase[2].image %>" alt="ni no kuni 2" class="games-img-w">
+                        <img src="img/<%- subcategory[0].category.products[0].productImage[0].image %>" alt="ni no kuni 2" class="games-img-w">
                     </a>
     
                     <div class="game-text">
-                        <p><%- dataBase[2].product %></p>
+                        <p><%- subcategory[0].category.products[0].product %></p>
     
                         <div class="price">
                             <p class="sale-box">-10%</p>
-                            <p><%- dataBase[2].price %></p>
+                            <p><%- subcategory[0].category.products[0].price %></p>
                         </div>
     
                     </div>
@@ -182,15 +176,15 @@
                 <div class="game">
     
                     <a href="http://localhost:3000/product/detail/3">
-                        <img src="img/<%- dataBase[1].image %>" alt="ni no kuni 2" class="games-img-w">
+                        <img src="img/<%- subcategory[0].category.products[0].productImage[0].image %>" alt="ni no kuni 2" class="games-img-w">
                     </a>
     
                     <div class="game-text">
-                        <p><%- dataBase[1].product %></p>
+                        <p><%- subcategory[0].category.products[0].product %></p>
     
                         <div class="price">
                             <p class="sale-box">-10%</p>
-                            <p><%- dataBase[1].price %></p>
+                            <p><%- subcategory[0].category.products[0].price %></p>
                         </div>
     
                     </div>
@@ -201,15 +195,15 @@
                 <div class="game">
     
                     <a href="http://localhost:3000/product/detail/2">
-                        <img src="img/<%- dataBase[0].image %>" alt="ni no kuni 2" class="games-img-w">
+                        <img src="img/<%- subcategory[0].category.products[0].productImage[0].image %>" alt="ni no kuni 2" class="games-img-w">
                     </a>
     
                     <div class="game-text">
-                        <p><%- dataBase[0].product %></p>
+                        <p><%- subcategory[0].category.products[0].product %></p>
     
                         <div class="price">
                             <p class="sale-box">-10%</p>
-                            <p><%- dataBase[0].price %></p>
+                            <p><%- subcategory[0].category.products[0].price %></p>
                         </div>
     
                     </div>
@@ -221,32 +215,28 @@
             </section>
     
             <section class="games" id="newest">
-
                 
-                <hr class="game-discover-hr">
-    
-               
-                
+                <hr class="game-discover-hr">                
     
                 <div class="game">
     
                     <a href="http://localhost:3000/product/detail/3">
-                        <img src="img/<%- dataBase[1].image %>" alt="ni no kuni 2" class="games-img-w">
+                        <img src="img/<%- subcategory[0].category.products[0].productImage[0].image %>" alt="ni no kuni 2" class="games-img-w">
                     </a>
     
                     <div class="game-text">
-                        <p><%- dataBase[1].product %></p>
+                        <p><%- subcategory[0].category.products[0].product %></p>
     
                         <div class="price">
                             <p class="sale-box">-10%</p>
-                            <p><%- dataBase[1].price %></p>
+                            <p><%- subcategory[0].category.products[0].price %></p>
                         </div>
     
                     </div>
     
                 </div>
     
-            </section> -->
+            </section> 
     
             <div class="game see-more-d">
                 <a href="http://localhost:3000/product"><p>Ver más</p></a>
