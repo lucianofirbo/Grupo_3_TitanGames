@@ -1,11 +1,29 @@
 const path = require('path');
 let {getProducts} = require('../data/dataBase');
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const db = require('../database/models');
 
 module.exports = {
 
     index: (req, res) => {
+
+        /* db.Product.findAll({
+            include: {
+              model: Category,
+              include: Subcategory
+            }
+          })
+        .then(result => {
+            console.log(result[0].Category)
+        }) */
         
+        db.Product.findAll({
+            include: [{ all: true, nested: true }]
+        })
+        .then(products => {
+            console.log(products[0].categories)
+        })
+
         res.render('users/index', {dataBase: getProducts, userInSession : req.session.userLogged ? req.session.userLogged : ''});
         
     },
@@ -31,6 +49,6 @@ module.exports = {
             search: req.query.keywords,
             userInSession : req.session.userLogged ? req.session.userLogged : ''
         });
-    },
-    
+    }    
+
 }

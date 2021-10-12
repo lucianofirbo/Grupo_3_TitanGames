@@ -20,11 +20,20 @@ module.exports = (sequelize, dataTypes) => {
 
     const Category = sequelize.define(alias, cols, config)
 
-    Category.associate = models => {
-        Category.hasMany(models.Subcategory, {
-            as: "subcategories",
+    Category.associate = function(models) {
+        Category.hasMany(models.Product, {
+            as: "products",
             foreignKey: "categoryId"
         })
+        Category.hasMany(models.Subcategory, {
+            as: "subcategories",
+            foreignKey: "subCategoryId"
+        })
+        /*
+        Category.hasMany(models.Subcategory, {
+            as: "subCategory",
+            foreignKey: "subCategoryId"
+        })*/
     }
 
     return Category

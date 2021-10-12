@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = "User";
+    let alias = "Product";
     let cols = {
         id: {
             type: dataTypes.INTEGER(11).UNSIGNED,
@@ -20,10 +20,6 @@ module.exports = (sequelize, dataTypes) => {
         },
         offers: {
             type: dataTypes.INTEGER(11)
-        },
-        subCategoryId: {
-            type: dataTypes.INTEGER(11),
-            allowNull: false
         },
         minimumVideo: {
             type: dataTypes.STRING(200)
@@ -55,15 +51,15 @@ module.exports = (sequelize, dataTypes) => {
 
     const Product = sequelize.define(alias, cols, config)
 
-    Product.associate = models => {
-        Product.belongsTo(models.Subcategory, {
-            as: "subcategory",
-            foreignKey: "subcategoryId"
+    Product.associate = function(models) {
+        Product.belongsTo(models.Category, {
+            as: "categories",
+            foreignKey: "categoryId"
         })
-        Product.hasMany(models.ProductImage, {
+        /*Product.hasMany(models.ProductImage, {
             as: "images",
             foreignKey: "productId"
-        })
+        })*/
     }
 
     return Product
