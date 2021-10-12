@@ -5,7 +5,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.INTEGER(11).UNSIGNED,
             primaryKey: true,
             autoIncrement: true,
-            allowNull: false 
+            allowNull: false
         },
         product: {
             type: dataTypes.STRING(100),
@@ -51,6 +51,14 @@ module.exports = (sequelize, dataTypes) => {
 
     const Product = sequelize.define(alias, cols, config)
 
+    /* Product.associate = function (models) {
+        Product.belongsTo(models.Category, {
+            foreignkey: {
+                name: "categoryId"
+            },
+            as: "products"
+        })
+    } */
     Product.associate = function(models) {
         Product.belongsTo(models.Category, {
             as: "categories",

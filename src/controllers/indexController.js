@@ -18,10 +18,15 @@ module.exports = {
         }) */
         
         db.Product.findAll({
-            include: [{ all: true, nested: true }]
+            include: [{ association: "categories" }]
         })
         .then(products => {
-            console.log(products[0].categories)
+            db.Category.findAll({
+                include: [{association: "subcategories"}]
+            })
+            .then(elements => {
+                console.log(elements)
+            }) 
         })
 
         res.render('users/index', {dataBase: getProducts, userInSession : req.session.userLogged ? req.session.userLogged : ''});
