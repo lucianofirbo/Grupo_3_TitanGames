@@ -22,7 +22,7 @@ module.exports = {
         })
         .then(products => {
             db.Category.findAll({
-                include: [{association: "subcategories"}]
+                include: [{association: "subCategory"}]
             })
             .then(elements => {
                 console.log(elements)
