@@ -62,7 +62,7 @@ CREATE TABLE `categories` (
 
 LOCK TABLES `categories` WRITE;
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
-INSERT INTO `categories` VALUES (1,'estrategia'),(2,'fps');
+INSERT INTO `categories` VALUES (1,'Aventura'),(2,'Shooter');
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -87,9 +87,12 @@ CREATE TABLE `products` (
   `recommendedRam` varchar(200) DEFAULT NULL,
   `videoURL` varchar(100) DEFAULT NULL,
   `categoryId` int(11) DEFAULT NULL,
+  `subCategoryId` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_ef58d02f-4de8-4f36-bdcd-d7fc35ed0d2a` (`categoryId`),
-  CONSTRAINT `FK_ef58d02f-4de8-4f36-bdcd-d7fc35ed0d2a` FOREIGN KEY (`categoryId`) REFERENCES `categories` (`id`)
+  KEY `subCategoryId` (`subCategoryId`),
+  CONSTRAINT `FK_ef58d02f-4de8-4f36-bdcd-d7fc35ed0d2a` FOREIGN KEY (`categoryId`) REFERENCES `categories` (`id`),
+  CONSTRAINT `products_ibfk_1` FOREIGN KEY (`subCategoryId`) REFERENCES `subcategories` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -99,7 +102,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'jaja',123,'asd',0,'asd','asd','asd','asd','asd','asd',NULL,1),(2,'hola',55,'jaja',0,'asd','asd','asd','asd','asd','asd',NULL,2);
+INSERT INTO `products` VALUES (1,'The Witcher 3',600,'Mientras la guerra se extiende por los Reinos del Norte, aceptarás el contrato de tu vida: encontrar a la niña de la profecía, un arma viviente que puede alterar el mundo tal y como lo conocemos. ',10,'1050ti','I5 7400','8gb','1070ti','i7 8100','16gb',NULL,1,1),(2,'Battlefield 4',1200,'Esta es la mejor experiencia de Battlefield 4. Vive el mayor conflicto de la humanidad con un completo arsenal de armas, vehículos y dispositivos, y todos los contenidos de personalización de los dos primeros años ',25,'Nvidia GeForce 8800 GT','(Intel): Core 2 Duo 2.4 GHz','4 GB','NVIDIA GeForce GTX 660','(Intel): Quad-core CPU','8 GB de RAM',NULL,2,2);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -126,7 +129,7 @@ CREATE TABLE `products_images` (
 
 LOCK TABLES `products_images` WRITE;
 /*!40000 ALTER TABLE `products_images` DISABLE KEYS */;
-INSERT INTO `products_images` VALUES (1,'asd.png',1);
+INSERT INTO `products_images` VALUES (1,'product-1630325014022.png',1),(2,'product-1630375318093.png',1),(3,'product-1630375318150.png',1),(4,'product-1630468784487.png',1),(5,'product-1630468784538.png',1),(6,'product-1630470009016.png',2),(7,'product-1630470009024.jpg',2),(8,'product-1630470009029.jpg',2),(9,'product-1630470009032.jpg',2),(10,'product-1630325105438.jpg',2);
 /*!40000 ALTER TABLE `products_images` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -153,7 +156,7 @@ CREATE TABLE `subcategories` (
 
 LOCK TABLES `subcategories` WRITE;
 /*!40000 ALTER TABLE `subcategories` DISABLE KEYS */;
-INSERT INTO `subcategories` VALUES (1,'rol',1),(2,'asd',2);
+INSERT INTO `subcategories` VALUES (1,'Rol de aventuras',1),(2,'First Person Shooter',2),(3,'Third Person Shooter',2);
 /*!40000 ALTER TABLE `subcategories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -200,4 +203,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-10-12 15:11:21
+-- Dump completed on 2021-10-12 17:11:54

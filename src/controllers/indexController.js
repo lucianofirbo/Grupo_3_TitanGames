@@ -5,15 +5,14 @@ const db = require('../database/models');
 
 module.exports = {
 
-    index: (req, res) => {        
+    index: (req, res) => {       
         
-        /* Como primer elemento traigo la subcategoria despues la categoria luego el producto y finalmente las imagenes  */
-        db.Subcategory.findAll({
-            include : [{association: "category", include: [{ association: "products", include: [{association: "productImage"}]}]}]
+        db.Product.findAll({
+            include: [{association: "categories"}, {association: "subcategory"}, {association: "productImage"}]
         })
-        .then (subcategory => {
-            /* res.send(subcategory[0].category.products[0].productImage[1]) */
-            res.render('users/index', {subcategory, userInSession : req.session.userLogged ? req.session.userLogged : ''});
+        .then(product => {
+            res.send(product)
+            /* res.render('users/index', {product, userInSession : req.session.userLogged ? req.session.userLogged : ''}); */
         })
         
     },
