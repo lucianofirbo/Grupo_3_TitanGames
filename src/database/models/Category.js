@@ -20,14 +20,6 @@ module.exports = (sequelize, dataTypes) => {
 
     const Category = sequelize.define(alias, cols, config)
 
-    /* Category.associate = function(models) {
-        Category.hasMany(models.Product, {
-            foreignKey: {
-                name: "categoryId"
-            },
-            as: "products"
-        })
-    } */
     Category.associate = function(models) {
         Category.hasMany(models.Product, {
             as: "products",
@@ -35,7 +27,7 @@ module.exports = (sequelize, dataTypes) => {
         })
         Category.hasMany(models.Subcategory, {
             as: "subCategory",
-            foreignKey: "subCategoryId"
+            foreignKey: "categoryId"
         })
     }
 

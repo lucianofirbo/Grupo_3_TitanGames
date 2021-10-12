@@ -5,31 +5,16 @@ const db = require('../database/models');
 
 module.exports = {
 
-    index: (req, res) => {
-
-        /* db.Product.findAll({
-            include: {
-              model: Category,
-              include: Subcategory
-            }
-          })
-        .then(result => {
-            console.log(result[0].Category)
-        }) */
+    index: (req, res) => {        
         
-        db.Product.findAll({
-            include: [{ association: "categories" }]
+        /* Como primer elemento traigo la subcategoria, despues la categoria y finalmente el producto */
+        db.Subcategory.findAll({
+            include : [{association: "category", include: [{ association: "products"}] }]
         })
-        .then(products => {
-            db.Category.findAll({
-                include: [{association: "subCategory"}]
-            })
-            .then(elements => {
-                console.log(elements)
-            }) 
+        .then (subcategory => {
+            res.send(subcategory[0].category.products)
+            /* res.render('users/index', {dataBase: subcategory, userInSession : req.session.userLogged ? req.session.userLogged : ''}); */
         })
-
-        res.render('users/index', {dataBase: getProducts, userInSession : req.session.userLogged ? req.session.userLogged : ''});
         
     },
     politics: (req, res) => {
