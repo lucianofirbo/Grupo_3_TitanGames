@@ -28,7 +28,8 @@ module.exports = {
                 userName: req.body.userName,
                 email: req.body.email,
                 pass: bcrypt.hashSync(req.body.pass1, 10),
-                rol: 0
+                rol: 0,                
+                avatar: req.file ? req.file.filename : "default_user.jpg"
             })
             .then(() => {
                 res.redirect('/user/login');

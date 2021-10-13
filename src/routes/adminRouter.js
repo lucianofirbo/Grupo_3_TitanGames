@@ -8,7 +8,7 @@ const productValidator = require('../validations/productCreateValidator');
 /* Rutas para añadir, editar stock o eliminar un producto */
 
 /* Main Admin */ 
-router.get('/', adminCheck, controller.adminMain)
+router.get('/adminMain/:id', adminCheck, controller.adminMain)
 
 /* Add Product */
 router.get('/products', adminCheck, controller.addRender);

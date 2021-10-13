@@ -1,25 +1,35 @@
 const { read } = require('fs');
 const path = require('path');
-const { getProducts, saveDb, getUsers } = require('../data/dataBase');
+const { getProducts, saveDb } = require('../data/dataBase');
 const { validationResult } = require('express-validator');
+const db = require('../database/models');
+const {Op} = require('sequelize');
+
 module.exports = {
 
     adminMain: (req, res) => {
+        console.log(req.session.userLogged.id)
+        db.User.findByPk(req.session.userLogged.id)
+        .then(user => {
+            res.render('users/admin', {admin: user, userInSession : req.session.userLogged ? req.session.userLogged : ''})
+        })
 
-        let admin = getUsers.filter(user => {
+        /*let admin = getUsers.filter(user => {
             if (user.category == 'admin') {
                 return user;
             }
         })
-
-        res.render('users/admin', {admin, userInSession : req.session.userLogged ? req.session.userLogged : ''})
-
+        res.render('users/admin', {admin, userInSession : req.session.userLogged ? req.session.userLogged : ''})*/
     },
 
     addRender: (req, res) => {
-
-        res.render('products/productAdd', {dataBase: getProducts, userInSession : req.session.userLogged ? req.session.userLogged : ''});
-
+        db.Product.findAll({
+            include: [{association: "categories"}, {association: "subcategory"}, {association: "productImage"}]
+        })
+        .then(product => {
+            /* res.send(product) */
+            res.render('products/productAdd', {dataBase: product, userInSession : req.session.userLogged ? req.session.userLogged : ''});
+        })
     },
 
     addProduct: (req, res) => {

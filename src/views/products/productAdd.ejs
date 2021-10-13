@@ -189,28 +189,28 @@
 
                 <div class="detail-stock">
 
-                    <% dataBase.forEach(element=> {
+                    <% dataBase.forEach(product=> {
                         %>
                         <div class="game-stock">
                             <div class="game-name">
-                                <img src="/img/<%-element.image%>" alt="">
+                                <img src="/img/games/<%- product.productImage[0].name %>" alt="">
                             </div>
                             <div class="price">
                                 <p>
-                                    <%- element.product %>
+                                    <%- product.product %>
                                 </p>
                                 <p>
-                                    <%- element.price %>$
+                                    <%- product.price %>$
                                 </p>
                             </div>
                             <div class="edit-remove">
-                                <a href="/admin/editProduct/<%-element.id%>" id="edit">editar</a>
-                                <form method="POST" action="/admin/deleteProduct/<%-element.id%>?_method=DELETE">
+                                <a href="/admin/editProduct/<%-product.id%>" id="edit">editar</a>
+                                <form method="POST" action="/admin/deleteProduct/<%-product.id%>?_method=DELETE">
                                     <button id="delete-button" type="submit" id="buttonSubmitDelete">eliminar</button>
                                 </form>
                             </div>
                         </div>
-                        <% }) %>
+                    <% }) %>
                 </div>
             </section>
 
