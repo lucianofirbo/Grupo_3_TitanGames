@@ -188,12 +188,11 @@
                 <h2>STOCK</h2>
 
                 <div class="detail-stock">
-
                     <% dataBase.forEach(product=> {
                         %>
                         <div class="game-stock">
                             <div class="game-name">
-                                <img src="/img/games/<%- product.productImage[0].name %>" alt="">
+                                <img src="/img/games/<%= product.productImage[0].image %>" alt="">
                             </div>
                             <div class="price">
                                 <p>

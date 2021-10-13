@@ -8,7 +8,6 @@ const {Op} = require('sequelize');
 module.exports = {
 
     adminMain: (req, res) => {
-        console.log(req.session.userLogged.id)
         db.User.findByPk(req.session.userLogged.id)
         .then(user => {
             res.render('users/admin', {admin: user, userInSession : req.session.userLogged ? req.session.userLogged : ''})
@@ -27,7 +26,7 @@ module.exports = {
             include: [{association: "categories"}, {association: "subcategory"}, {association: "productImage"}]
         })
         .then(product => {
-            /* res.send(product) */
+            /* res.send(product[0].productImage) */
             res.render('products/productAdd', {dataBase: product, userInSession : req.session.userLogged ? req.session.userLogged : ''});
         })
     },

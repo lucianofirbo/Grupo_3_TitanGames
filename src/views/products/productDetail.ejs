@@ -22,23 +22,23 @@
                     <h3><%- productF.product %></h4>
 
                     <div class="mySlides">
-                        <img src="/img/<%- productF.image %>" style="width:100%">
+                        <img src="/img/games/<%- productF.productImage[0].image %>" style="width:100%">
                     </div>
                   
                     <div class="mySlides">
-                      <img src="/img/<%- productF.image2 %>" style="width:100%">
+                      <img src="/img/games/<%- productF.productImage[1].image %>" style="width:100%">
                     </div>
                   
                     <div class="mySlides">
-                      <img src="/img/<%- productF.image3 %>" style="width:100%">
+                      <img src="/img/games/<%- productF.productImage[2].image %>" style="width:100%">
                     </div>
                       
                     <div class="mySlides">
-                      <img src="/img/<%- productF.image4 %>" style="width:100%">
+                      <img src="/img/games/<%- productF.productImage[3].image %>" style="width:100%">
                     </div>
 
                     <div class="mySlides">
-                        <img src="/img/<%- productF.image5 %>" style="width:100%">
+                        <img src="/img/games/<%- productF.productImage[4].image %>" style="width:100%">
                     </div>
                   
                       
@@ -51,19 +51,19 @@
                   
                     <div class="row">
                       <div class="column">
-                        <img class="demo cursor" src="/img/<%- productF.image %>" style="width:100%" onclick="currentSlide(1)" alt="theWitcherImg">
+                        <img class="demo cursor" src="/img/games/<%- productF.productImage[0].image %>" style="width:100%" onclick="currentSlide(1)" alt="theWitcherImg">
                       </div>
                       <div class="column">
-                        <img class="demo cursor" src="/img/<%- productF.image2 %>" style="width:100%" onclick="currentSlide(2)" alt="theWitcherImg">
+                        <img class="demo cursor" src="/img/games/<%- productF.productImage[1].image %>" style="width:100%" onclick="currentSlide(2)" alt="theWitcherImg">
                       </div>
                       <div class="column">
-                        <img class="demo cursor" src="/img/<%- productF.image3 %>" style="width:100%" onclick="currentSlide(3)" alt="theWitcherImg">
+                        <img class="demo cursor" src="/img/games/<%- productF.productImage[2].image %>" style="width:100%" onclick="currentSlide(3)" alt="theWitcherImg">
                       </div>
                       <div class="column">
-                        <img class="demo cursor" src="/img/<%- productF.image4 %>" style="width:100%" onclick="currentSlide(4)" alt="theWitcherImg">
+                        <img class="demo cursor" src="/img/games/<%- productF.productImage[3].image %>" style="width:100%" onclick="currentSlide(4)" alt="theWitcherImg">
                       </div>
                       <div class="column">
-                        <img class="demo cursor" src="/img/<%- productF.image5 %>" style="width:100%" onclick="currentSlide(5)" alt="theWitcherImg">
+                        <img class="demo cursor" src="/img/games/<%- productF.productImage[4].image %>" style="width:100%" onclick="currentSlide(5)" alt="theWitcherImg">
                       </div>
                     </div>
                   </div>
@@ -82,7 +82,7 @@
         <div class="info-container">
             <div>
                 <div class="img-prod-descrp">
-                    <img src="/img/<%- productF.image %>" alt="">
+                    <img src="/img/games/<%- productF.productImage[0].image %>" alt="">
                     <a href="" onclick="toggle();">Mirar Trailer</a>
                     <div class="trailer">
                         <iframe height="200px" src="<%- productF.videoURL %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -93,10 +93,10 @@
 
                     <div class="categoriesDetail">
                         <div class="category-container">
-                            <p id="category"><strong id="strong-category"> Categoria: </strong><%- productF.category %></p>
+                            <p id="category"><strong id="strong-category"> Categoria: </strong><%- productF.categories.name %></p>
                         </div>
                         <div class="category-container">
-                            <p id="category"><strong id="strong-category"> Sub-Categoria: </strong><%- productF.subcategory %></p>
+                            <p id="category"><strong id="strong-category"> Sub-Categoria: </strong><%- productF.subcategory.name %></p>
                         </div>
                     </div>
                     
@@ -126,8 +126,6 @@
             </div>
         </div>    
     </main>
-    
-    <%- include('../partials/interestSection') -%>
 
     <%- include('../partials/footer') -%>
 
