@@ -22,9 +22,7 @@ module.exports = {
     },
 
     processRegister: (req, res) => {
-
         let errors = validationResult(req)
-
         if (errors.isEmpty()) {
             db.User.create ({
                 userName: req.body.userName,
@@ -34,8 +32,8 @@ module.exports = {
             })
             .then(() => {
                 res.redirect('/user/login');
-              })
-              .catch((err) => console.log(err));
+            })
+            .catch((err) => console.log(err));
         } else {
             res.render('users/register', {
                 errors: errors.mapped(),
@@ -93,11 +91,39 @@ module.exports = {
     
     processLogin: (req, res) => {
         let errors = validationResult(req)
+        if (errors.isEmpty()) {
+            db.User.findOne({
+                where: {
+                    email: req.body.email
+                }
+            })
+            .then ((user) => {
+                req.session.userLogged = {
+                    id: user.id,
+                    userName: user.userName,
+                    email: user.email,
+                    rol: user.rol
+                }
+                console.log(req.session.userLogged)
+            })
+            if (req.body.recordar) {
+                res.cookie('TitanGamesUser', req.session.userLogged, { expires: new Date(Date.now() + 900000), httpOnly: true });
+            }
+            res.locals.user = req.session.userLogged;
+            res.redirect('/');
+        } else {
+            res.render('users/login', {
+                errors: errors.mapped(),
+                session: req.session,
+                userInSession : req.session.userLogged ? req.session.userLogged : ''
+            })
+        }
+
+        /*
+        let errors = validationResult(req)
 
         if (errors.isEmpty()) {
-
             let userToLog = getUsers.find(user => user.email === req.body.email);   
-
             req.session.userLogged = {
                 id: userToLog.id,
                 userName: userToLog.userName,
@@ -105,11 +131,10 @@ module.exports = {
                 avatar: userToLog.avatar,
                 rol: userToLog.rol
             }
-                if (req.body.recordar) {
-                    res.cookie('TitanGamesUser', req.session.userLogged, { expires: new Date(Date.now() + 900000), httpOnly: true });
-                }
-
-                res.redirect('/');
+            if (req.body.recordar) {
+                res.cookie('TitanGamesUser', req.session.userLogged, { expires: new Date(Date.now() + 900000), httpOnly: true });
+            }
+            res.redirect('/');
 
         } else {
             res.render('users/login', {
@@ -118,6 +143,7 @@ module.exports = {
                 userInSession : req.session.userLogged ? req.session.userLogged : ''
             })
         }
+        */
     },
 
     profileEdit: (req, res) => {
