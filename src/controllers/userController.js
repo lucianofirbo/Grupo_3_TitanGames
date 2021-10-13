@@ -48,19 +48,16 @@ module.exports = {
 
         if (errors.isEmpty()) {
             let lastId = 0;
-
             getUsers.forEach(user => {
                 if (user.id > lastId) {
                     lastId = user.id
                 }
             })
-
             let {
                 userName,
                 email,
                 pass1
             } = req.body
-
             let newUser = {
                 id: lastId + 1,
                 userName,
@@ -74,11 +71,8 @@ module.exports = {
                 city: "",
                 rol: 0
             }
-
             getUsers.push(newUser)
-
             writeUsersJSON(getUsers)
-
             res.redirect('/user/login')
         } else {
             res.render('users/register', {
@@ -87,7 +81,6 @@ module.exports = {
                 userInSession : req.session.userLogged ? req.session.userLogged : ''
             })
         }*/
-
     },
     
     processLogin: (req, res) => {

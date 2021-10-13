@@ -26,14 +26,26 @@ module.exports = {
             include: [{association: "categories"}, {association: "subcategory"}, {association: "productImage"}]
         })
         .then(product => {
-            /* res.send(product[0].productImage) */
-            res.render('products/productAdd', {dataBase: product, userInSession : req.session.userLogged ? req.session.userLogged : ''});
+            db.Category.findAll()
+            .then(category => { 
+                db.Subcategory.findAll()
+                .then(subcategory => {
+                    /* res.send(product[0].productImage) */
+                    res.render('products/productAdd', {dataBase: product, category, subcategory, userInSession : req.session.userLogged ? req.session.userLogged : ''});
+                })
+            })
         })
     },
 
     addProduct: (req, res) => {
         let errors = validationResult(req)
+        if (errors.isEmpty()) {
 
+        } else {
+
+        }
+
+        /*let errors = validationResult(req)
         if (errors.isEmpty()) {
             let lastId = 1;
             getProducts.forEach(element => {
@@ -41,7 +53,6 @@ module.exports = {
                     lastId = element.id;
                 };
             })
-
             let producto = {
                 id: lastId + 1,
                 product: req.body.product,
@@ -62,11 +73,8 @@ module.exports = {
                 image4: req.files['imagenProducto4'] ? '/games/' + req.files['imagenProducto4'][0].filename : '/games/' + 'notFound.png',
                 image5: req.files['imagenProducto5'] ? '/games/' + req.files['imagenProducto5'][0].filename : '/games/' + 'notFound.png'
             }
-
             getProducts.push(producto);
-
-            saveDb(getProducts);
-            
+            saveDb(getProducts);            
             res.redirect(`/product/detail/${producto.id}`, {
                 userInSession : req.session.userLogged ? req.session.userLogged : '',
                 dataBase: getProducts
@@ -78,7 +86,7 @@ module.exports = {
                 errors: errors.mapped(),
                 old: req.body
             })
-        }
+        }*/
     },
 
     editRender: (req, res) => {
@@ -89,7 +97,13 @@ module.exports = {
             include: [{association: "categories"}, {association: "subcategory"}, {association: "productImage"}]
         })
         .then(product => {
-            res.render('products/editProduct', {product, userInSession : req.session.userLogged ? req.session.userLogged : ''});
+            db.Category.findAll()
+            .then(category => { 
+                db.Subcategory.findAll()
+                .then(subcategory => {
+                    res.render('products/editProduct', {product, category, subcategory, userInSession : req.session.userLogged ? req.session.userLogged : ''});
+                })  
+            })
         })
 
         /* let productRequiredId = +req.params.id;

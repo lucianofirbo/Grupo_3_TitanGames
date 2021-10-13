@@ -13,219 +13,200 @@
 
     <%- include('../partials/background') -%>
 
-        <%- include('../partials/header') -%>
+    <%- include('../partials/header') -%>
 
-            <!-- FORMULARIO DE CARGA DE PRODDUCTOS -->
-            <div class="bar-product">
-                <p data-target="#section1">Carga de Productos</p>
-                <p data-target="#section2">Stock</p>
+    <!-- FORMULARIO DE CARGA DE PRODDUCTOS -->
+    <div class="bar-product">
+        <p data-target="#section1">Carga de Productos</p>
+        <p data-target="#section2">Stock</p>
+    </div>
+
+    <section data-content id="section1" class="active">
+        <form class="load-product" method="POST" action="/admin/products" enctype="multipart/form-data">
+
+            <!-- CARGAR IMÁGENES -->
+            <div class="other-box">
+
+                <div class="field-product">
+                    <label>PRODUCTO:</label>
+                    <input class="style-input" type="text" name="product" placeholder="Nombre del producto" value="<%= locals.old && old.product %>">
+                    <% if(locals.errors && errors.product){ %>
+                        <small style="color: red;"><%= errors.product.msg%></small>
+                    <% } %>
+                </div>
+
+                <div class="grid">
+                    <p>IMAGENES: </p>
+                    <div class="form-element">
+                        <input type="file" id="file-1" accept="image/*" name="imagenProducto">
+                        <label for="file-1" id="file-1-preview">
+                            <img src="/img/img-default.png">
+                        </label>
+                    </div>
+                </div>
+                <div class="form-elements-flex">
+                    <div class="form-elements-ind">
+                        <input type="file" id="file-2" accept="image/*" name="imagenProducto2">
+                        <label for="file-2" id="file-2-preview">
+                            <img src="/img/img-default.png">
+                        </label>
+                    </div>
+                    <div class="form-elements-ind">
+                        <input type="file" id="file-3" accept="image/*" name="imagenProducto3">
+                        <label for="file-3" id="file-3-preview">
+                            <img src="/img/img-default.png">
+                        </label>
+                    </div>
+                    <div class="form-elements-ind">
+                        <input type="file" id="file-4" accept="image/*" name="imagenProducto4">
+                        <label for="file-4" id="file-4-preview">
+                            <img src="/img/img-default.png">
+                        </label>
+                    </div>
+                    <div class="form-elements-ind">
+                        <input type="file" id="file-5" accept="image/*" name="imagenProducto5">
+                        <label for="file-5" id="file-5-preview">
+                            <img src="/img/img-default.png">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="field-product">
+                    <label>PRECIO:</label>
+                    <input class="style-input" type="number" name="precio" placeholder="Precio del producto" value="<%= locals.old && old.precio %>">
+                    <% if(locals.errors && errors.precio){ %>
+                        <small style="color: red;"><%= errors.precio.msg%></small>
+                    <% } %>
+                </div>
+
+
             </div>
 
-            <section data-content id="section1" class="active">
-                <form class="load-product" method="POST" action="/admin/products" enctype="multipart/form-data">
+            <!-- Text Fields -->
 
-                    <!-- CARGAR IMÁGENES -->
-                    <div class="other-box">
+            <div class="desc-product-load">
 
-                        <div class="field-product">
-                            <label>PRODUCTO:</label>
-                            <input class="style-input" type="text" name="product" placeholder="Nombre del producto" value="<%= locals.old && old.product %>">
-                            <% if(locals.errors && errors.product){ %>
-                                <small style="color: red;"><%= errors.product.msg%></small>
-                            <% } %>
-                        </div>
-
-                        <div class="grid">
-                            <p>IMAGENES: </p>
-                            <div class="form-element">
-                                <input type="file" id="file-1" accept="image/*" name="imagenProducto">
-                                <label for="file-1" id="file-1-preview">
-                                    <img src="/img/img-default.png">
-                                </label>
-                            </div>
-                        </div>
-                        <div class="form-elements-flex">
-                            <div class="form-elements-ind">
-                                <input type="file" id="file-2" accept="image/*" name="imagenProducto2">
-                                <label for="file-2" id="file-2-preview">
-                                    <img src="/img/img-default.png">
-                                </label>
-                            </div>
-                            <div class="form-elements-ind">
-                                <input type="file" id="file-3" accept="image/*" name="imagenProducto3">
-                                <label for="file-3" id="file-3-preview">
-                                    <img src="/img/img-default.png">
-                                </label>
-                            </div>
-                            <div class="form-elements-ind">
-                                <input type="file" id="file-4" accept="image/*" name="imagenProducto4">
-                                <label for="file-4" id="file-4-preview">
-                                    <img src="/img/img-default.png">
-                                </label>
-                            </div>
-                            <div class="form-elements-ind">
-                                <input type="file" id="file-5" accept="image/*" name="imagenProducto5">
-                                <label for="file-5" id="file-5-preview">
-                                    <img src="/img/img-default.png">
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class="field-product">
-                            <label>PRECIO:</label>
-                            <input class="style-input" type="number" name="precio" placeholder="Precio del producto" value="<%= locals.old && old.precio %>">
-                            <% if(locals.errors && errors.precio){ %>
-                                <small style="color: red;"><%= errors.precio.msg%></small>
-                            <% } %>
-                        </div>
-
-
+                <div class="field-flex">
+                    <div class="field-gen">
+                        <label>CATEGORÍAS:</label>
+                        <select class="style-select" name="genero">
+                            <option selected hidden>Categorías</option>
+                            <% category.forEach(categoria => { %>
+                                <option value="<%- categoria.name %>"><%- categoria.name %></option>
+                            <% }) %>
+                        </select>
+                        <% if(locals.errors && errors.genero){ %>
+                            <small style="color: red;"><%= errors.genero.msg %></small>
+                        <% } %>
                     </div>
-
-                    <!-- Text Fields -->
-
-                    <div class="desc-product-load">
-
-                        <div class="field-flex">
-                            <div class="field-gen">
-                                <label>CATEGORÍAS:</label>
-                                <select class="style-select" name="genero">
-                                    <option hidden selected>Elija la categoría</option>
-                                    <option value="Acción">Acción</option>
-                                    <option value="Aventura">Aventura</option>
-                                    <option value="Rol">Rol</option>
-                                    <option value="Simulacion">Simulación</option>
-                                    <option value="Estrategia">Estrategia</option>
-                                    <option value="Deportes">Deportes</option>
-                                </select>
-                                <% if(locals.errors && errors.genero){ %>
-                                    <small style="color: red;"><%= errors.genero.msg %></small>
-                                <% } %>
-                            </div>
-                            <div class="field-subgen">
-                                <label>SUBCATEGORÍAS:</label>
-                                <select class="style-select" name="subGenero">
-                                    <option hidden selected>Elija la subcategoría</option>
-                                    <option value="Arcade">Arcade</option>
-                                    <option value="Disparos en primera persona">Disparos en primera persona</option>
-                                    <option value="Disparos en tercera persona">Disparos en tercera persona</option>
-                                    <option value="Lucha">Lucha</option>
-                                    <option value="Pelea">Pelea</option>
-                                    <option value="Buena trama">Buena trama</option>
-                                    <option value="Casuales">Casuales</option>
-                                    <option value="Puzles">Puzles</option>
-                                    <option value="Rol de aventuras">Rol de aventuras</option>
-                                    <option value="En grupo">En grupo</option>
-                                    <option value="Estrategia de rol">Estrategia de rol</option>
-                                    <option value="Por turnos">Por turnos</option>
-                                    <option value="Rol de aventura">Rol de aventura</option>
-                                    <option value="Rol de acción">Rol de acción</option>
-                                    <option value="Rol japonés">Rol japonés</option>
-                                    <option value="Estrategia en tiempo real">Estrategia en tiempo real</option>
-                                    <option value="Militares">Militares</option>
-                                    <option value="Deporte en equipo">Deporte en equipo</option>
-                                    <option value="subgénero3">Deporte individual</option>
-                                </select>
-                                <% if(locals.errors && errors.subGenero){ %>
-                                    <small style="color: red;"><%= errors.subGenero.msg %></small>
-                                <% } %>
-                            </div>
-                        </div>
-                        <div class="display-flex-box">
-                            <div class="desc-flex">
-                                <label>DESCRIPCIÓN:</label>
-                                <textarea class="style-textarea" name="descripcion" cols="30" rows="20"
-                                    placeholder="Ingresa una descripcion para su producto"></textarea>
-                            </div>
-                            <p id="req-title">REQUISITOS:</p>
-                            <div class="row-req">
-                                <div class="req-container">
-                                    <label> MÍNIMOS:</label>
-                                    <input class="style-input" type="text" name="minimumVideo" placeholder="Minimum Video Requirements" value="<%= locals.old && old.minimumVideo %>">
-                                        <% if(locals.errors && errors.minimumVideo){ %>
-                                            <small style="color: red;"><%= errors.minimumVideo.msg%></small>
-                                        <% } %> <br>
-                                    <input class="style-input" type="text" name="minimumProcessor" placeholder="Minimum Processor Requirements" value="<%= locals.old && old.minimumVideo %>"> <br>
-                                    <input class="style-input" type="text" name="minimumRam" placeholder="Minimum Ram Requirements" value="<%= locals.old && old.minimumVideo %>">
-                                </div>
-                                <div class="req-container">
-                                    <label> RECOMENDADOS:</label>
-                                    <input class="style-input" type="text" name="recommendedVideo" placeholder="Recommended Video" value="<%= locals.old && old.recommendedVideo %>">
-                                        <% if(locals.errors && errors.recommendedVideo){ %>
-                                            <small style="color: red;"><%= errors.recommendedVideo.msg%></small>
-                                        <% } %> <br>
-                                    <input class="style-input" type="text" name="recommendedProcessor" placeholder="Recommended Processor" value="<%= locals.old && old.recommendedVideo %>"> <br>
-                                    <input class="style-input" type="text" name="recommendedRam" placeholder="Recommended Ram" value="<%= locals.old && old.recommendedVideo %>">
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="fields">
-                            <div class="field-product">
-                                <label>KEY:</label>
-                                <input class="style-input" type="text" name="key" value="<%= locals.old && old.key %>">
-                            </div>
-
-                            <div class="field-trailer">
-                                <label>TRAILER:</label>
-                                <input class="style-input" type="text" name="videoURL" placeholder="URL" value="<%= locals.old && old.videoURL %>">
-                            </div>
-
-                        </div>
-
-                        <div class="button-container">
-                            <button type="submit" class="btn btn-submit">FINALIZAR</button>
-                        </div>
-
+                    <div class="field-subgen">
+                        <label>SUBCATEGORÍAS:</label>
+                        <select class="style-select" name="subGenero">
+                            <option selected hidden>SubCategorias</option>
+                            <% subcategory.forEach(subcategoria => { %>
+                                <option value="" <%- subcategoria.id = dataBase.subcategoryId ? 'selected' : ''%>> <%-subcategoria.name%> </option>
+                            <% }) %>
+                        </select>
+                        <% if(locals.errors && errors.subGenero){ %>
+                            <small style="color: red;"><%= errors.subGenero.msg %></small>
+                        <% } %>
                     </div>
-
-                </form>
-            </section>
-
-            <section data-content id="section2" class="section-2">
-
-                <h2>STOCK</h2>
-
-                <div class="detail-stock">
-                    <% dataBase.forEach(product=> {
-                        %>
-                        <div class="game-stock">
-                            <div class="game-name">
-                                <img src="/img/games/<%= product.productImage[0].image %>" alt="">
-                            </div>
-                            <div class="price">
-                                <p>
-                                    <%- product.product %>
-                                </p>
-                                <p>
-                                    <%- product.price %>$
-                                </p>
-                            </div>
-                            <div class="edit-remove">
-                                <a href="/admin/editProduct/<%-product.id%>" id="edit">editar</a>
-                                <form method="POST" action="/admin/deleteProduct/<%-product.id%>?_method=DELETE">
-                                    <button id="delete-button" type="submit" id="buttonSubmitDelete">eliminar</button>
-                                </form>
-                            </div>
-                        </div>
-                    <% }) %>
                 </div>
-            </section>
+                <div class="display-flex-box">
+                    <div class="desc-flex">
+                        <label>DESCRIPCIÓN:</label>
+                        <textarea class="style-textarea" name="descripcion" cols="30" rows="20"
+                            placeholder="Ingresa una descripcion para su producto"></textarea>
+                    </div>
+                    <p id="req-title">REQUISITOS:</p>
+                    <div class="row-req">
+                        <div class="req-container">
+                            <label> MÍNIMOS:</label>
+                            <input class="style-input" type="text" name="minimumVideo" placeholder="Minimum Video Requirements" value="<%= locals.old && old.minimumVideo %>">
+                                <% if(locals.errors && errors.minimumVideo){ %>
+                                    <small style="color: red;"><%= errors.minimumVideo.msg%></small>
+                                <% } %> <br>
+                            <input class="style-input" type="text" name="minimumProcessor" placeholder="Minimum Processor Requirements" value="<%= locals.old && old.minimumVideo %>"> <br>
+                            <input class="style-input" type="text" name="minimumRam" placeholder="Minimum Ram Requirements" value="<%= locals.old && old.minimumVideo %>">
+                        </div>
+                        <div class="req-container">
+                            <label> RECOMENDADOS:</label>
+                            <input class="style-input" type="text" name="recommendedVideo" placeholder="Recommended Video" value="<%= locals.old && old.recommendedVideo %>">
+                                <% if(locals.errors && errors.recommendedVideo){ %>
+                                    <small style="color: red;"><%= errors.recommendedVideo.msg%></small>
+                                <% } %> <br>
+                            <input class="style-input" type="text" name="recommendedProcessor" placeholder="Recommended Processor" value="<%= locals.old && old.recommendedVideo %>"> <br>
+                            <input class="style-input" type="text" name="recommendedRam" placeholder="Recommended Ram" value="<%= locals.old && old.recommendedVideo %>">
+                        </div>
+                    </div>
 
-            <%- include('../partials/footer') -%>
+                </div>
 
-                <script src="/js/productAdd.js"></script>
-                <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-                    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-                    crossorigin="anonymous"></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-                    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-                    crossorigin="anonymous"></script>
-                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-                    integrity="pa384-JZR6SpepU02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-                    crossorigin="anonymous"></script>
-                <script src="/js/index.js"></script>
+                <div class="fields">
+                    <div class="field-product">
+                        <label>KEY:</label>
+                        <input class="style-input" type="text" name="key" value="<%= locals.old && old.key %>">
+                    </div>
+
+                    <div class="field-trailer">
+                        <label>TRAILER:</label>
+                        <input class="style-input" type="text" name="videoURL" placeholder="URL" value="<%= locals.old && old.videoURL %>">
+                    </div>
+
+                </div>
+
+                <div class="button-container">
+                    <button type="submit" class="btn btn-submit">FINALIZAR</button>
+                </div>
+
+            </div>
+
+        </form>
+    </section>
+
+    <section data-content id="section2" class="section-2">
+
+        <h2>STOCK</h2>
+
+        <div class="detail-stock">
+            <% dataBase.forEach(product=> {
+                %>
+                <div class="game-stock">
+                    <div class="game-name">
+                        <img src="/img/games/<%= product.productImage[0].image %>" alt="">
+                    </div>
+                    <div class="price">
+                        <p>
+                            <%- product.product %>
+                        </p>
+                        <p>
+                            <%- product.price %>$
+                        </p>
+                    </div>
+                    <div class="edit-remove">
+                        <a href="/admin/editProduct/<%-product.id%>" id="edit">editar</a>
+                        <form method="POST" action="/admin/deleteProduct/<%-product.id%>?_method=DELETE">
+                            <button id="delete-button" type="submit" id="buttonSubmitDelete">eliminar</button>
+                        </form>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </section>
+
+    <%- include('../partials/footer') -%>
+
+    <script src="/js/productAdd.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="pa384-JZR6SpepU02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="/js/index.js"></script>
 </body>
 
 </html>
