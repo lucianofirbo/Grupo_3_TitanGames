@@ -82,17 +82,23 @@ module.exports = {
     },
 
     editRender: (req, res) => {
+        db.Product.findOne({
+            where: {
+                id: req.params.id
+            },
+            include: [{association: "categories"}, {association: "subcategory"}, {association: "productImage"}]
+        })
+        .then(product => {
+            res.render('products/editProduct', {product, userInSession : req.session.userLogged ? req.session.userLogged : ''});
+        })
 
-        let productRequiredId = +req.params.id;
-
+        /* let productRequiredId = +req.params.id;
         let productRequiredFind = getProducts.find(element => {
             if (element.id === productRequiredId) {
                 return element;
             }
         });
-
-        res.render('products/editProduct', {product: productRequiredFind, userInSession : req.session.userLogged ? req.session.userLogged : ''});
-
+        res.render('products/editProduct', {product: productRequiredFind, userInSession : req.session.userLogged ? req.session.userLogged : ''});*/
     },
 
     editProduct: (req, res) => {
