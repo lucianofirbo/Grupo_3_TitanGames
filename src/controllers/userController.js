@@ -97,20 +97,20 @@ module.exports = {
                     email: req.body.email
                 }
             })
-            .then ((user) => {
+            .then (user => {
+                console.log(req.body.email)
                 req.session.userLogged = {
                     id: user.id,
                     userName: user.userName,
                     email: user.email,
                     rol: user.rol
                 }
-                console.log(req.session.userLogged)
+                if (req.body.recordar) {
+                    res.cookie('TitanGamesUser', req.session.userLogged, { expires: new Date(Date.now() + 900000), httpOnly: true });
+                }
+                res.locals.user = req.session.userLogged
+                res.redirect('/');
             })
-            if (req.body.recordar) {
-                res.cookie('TitanGamesUser', req.session.userLogged, { expires: new Date(Date.now() + 900000), httpOnly: true });
-            }
-            res.locals.user = req.session.userLogged;
-            res.redirect('/');
         } else {
             res.render('users/login', {
                 errors: errors.mapped(),
@@ -119,8 +119,7 @@ module.exports = {
             })
         }
 
-        /*
-        let errors = validationResult(req)
+        /*let errors = validationResult(req)
 
         if (errors.isEmpty()) {
             let userToLog = getUsers.find(user => user.email === req.body.email);   
@@ -142,8 +141,7 @@ module.exports = {
                 session: req.session,
                 userInSession : req.session.userLogged ? req.session.userLogged : ''
             })
-        }
-        */
+        }*/
     },
 
     profileEdit: (req, res) => {

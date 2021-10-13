@@ -11,7 +11,7 @@ module.exports = {
             include: [{association: "categories"}, {association: "subcategory"}, {association: "productImage"}]
         })
         .then(product => {
-            /* res.send(product[1]) */
+            /* res.send(product) */
             res.render('users/index', {product, userInSession : req.session.userLogged ? req.session.userLogged : ''});
         })
         
