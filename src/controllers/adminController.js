@@ -44,20 +44,24 @@ module.exports = {
             errors.push(image);
         } */
         if (errors.isEmpty()) {
-            console.log(req.files)
             let arrayImages = [];
-            if (req.files) {
-                req.files.forEach((image) => {
-                    arrayImages.push(image.fieldname);
-                })
-            }
+             if (req.files) {
+                for (const clave in req.files) {
+                    array = req.files[clave]
+                    arrayImages.push(`${array[0].filename}`);
+                }
+                /* Array(req.files).forEach(image => {
+                    arrayImages.push(image[0].filename);
+                }) */
+            } 
+            console.log(arrayImages)
             db.Product.create({
                 product: req.body.product,
                 price: req.body.precio,
                 description: req.body.descripcion,
                 /* offers: req.body.offers, */
-                category: req.body.genero,
-                subcategory: req.body.subGenero,
+                categoryId: req.body.genero,
+                subCategoryId: req.body.subGenero,
                 minimumVideo: req.body.minimumVideo,
                 minimumProcessor: req.body.minimumProcessor,
                 minimumRam: req.body.minimumRam,
@@ -67,6 +71,7 @@ module.exports = {
                 videoURL: req.body.videoURL ? req.body.videoURL : 'https://youtu.be/dQw4w9WgXcQ'
             })
             .then(product => {
+                console.log(images)
                 if(arrayImages.length > 0){
                     let images = arrayImages.map(image => {
                         return {

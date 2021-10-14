@@ -92,7 +92,7 @@
                         <select class="style-select" name="genero">
                             <option selected hidden>Categorías</option>
                             <% category.forEach(categoria => { %>
-                                <option value="<%- categoria.name %>"><%- categoria.name %></option>
+                                <option value="<%- categoria.id %>"><%- categoria.name %></option>
                             <% }) %>
                         </select>
                         <% if(locals.errors && errors.genero){ %>
@@ -104,7 +104,7 @@
                         <select class="style-select" name="subGenero">
                             <option selected hidden>SubCategorias</option>
                             <% subcategory.forEach(subcategoria => { %>
-                                <option value="<%- subcategoria.name %>"><%- subcategoria.name %></option>
+                                <option value="<%- subcategoria.id %>"><%- subcategoria.name %></option>
                             <% }) %>
                         </select>
                         <% if(locals.errors && errors.subGenero){ %>
