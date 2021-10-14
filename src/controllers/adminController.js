@@ -246,17 +246,32 @@ module.exports = {
 
     deleteProduct: (req, res) => {
 
-        getProducts.forEach(element => {
+        db.ProductImage.destroy({
+            where: {
+                productId: req.params.id
+            }
+        })
+        .then(() => {
+            db.Product.destroy({
+                where: {
+                    id: req.params.id
+                },
+                include: [/* {association: 'categories'}, {association: 'subcategory'},  */{association: 'productImage'}]
+            })
+            .then(() => {
+                res.redirect('/')
+            })
+        })
+        
+
+        /* getProducts.forEach(element => {
             if (element.id === +req.params.id) {
                 let productRemove = getProducts.indexOf(element);
                 getProducts.splice(productRemove, 1);
             }
         })
-
         saveDb(getProducts);
-
-        res.redirect('/admin/products');
-
+        res.redirect('/admin/products'); */
     },
 
     
