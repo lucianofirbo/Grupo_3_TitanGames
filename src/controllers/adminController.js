@@ -50,11 +50,7 @@ module.exports = {
                     array = req.files[clave]
                     arrayImages.push(`${array[0].filename}`);
                 }
-                /* Array(req.files).forEach(image => {
-                    arrayImages.push(image[0].filename);
-                }) */
             } 
-            console.log(arrayImages)
             db.Product.create({
                 product: req.body.product,
                 price: req.body.precio,
@@ -71,9 +67,9 @@ module.exports = {
                 videoURL: req.body.videoURL ? req.body.videoURL : 'https://youtu.be/dQw4w9WgXcQ'
             })
             .then(product => {
-                console.log(images)
                 if(arrayImages.length > 0){
                     let images = arrayImages.map(image => {
+                        console.log(image)
                         return {
                             image: image,
                             productId: product.id
