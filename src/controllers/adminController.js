@@ -1,5 +1,6 @@
 const { getProducts, saveDb } = require('../data/dataBase');
 const { validationResult } = require('express-validator');
+const fs = require('fs').promises
 const db = require('../database/models');
 
 module.exports = {
@@ -36,16 +37,16 @@ module.exports = {
 
     addProduct: (req, res) => {
         let errors = validationResult(req);
-        /* if (req.fileValidatorError) {
+        if (req.fileValidatorError) {
             let image = {
                 param: "image",
                 msg: req.fileValidatorError,
             };
             errors.push(image);
-        } */
+        } 
         if (errors.isEmpty()) {
             let arrayImages = [];
-             if (req.files) {
+            if (req.files) {
                 for (const clave in req.files) {
                     array = req.files[clave]
                     arrayImages.push(`${array[0].filename}`);
@@ -154,8 +155,71 @@ module.exports = {
     },
 
     editProduct: (req, res) => {
+        let errors = validationResult(req);
+        if (req.fileValidatorError) {
+            let image = {
+                param: "image",
+                msg: req.fileValidatorError,
+            };
+            errors.push(image);
+        }        
+        let arrayImages = [];
+        if (req.files) {
+            for (const clave in req.files) {
+                array = req.files[clave]
+                arrayImages.push(`${array[0].filename}`);
+            }
+        } 
+        if (errors.isEmpty()) {
+            db.Product.update({
+                product: req.body.product,
+                price: req.body.precio,
+                description: req.body.descripcion,
+                /* offers: req.body.offers, */
+                categoryId: req.body.genero,
+                subCategoryId: req.body.subGenero,
+                minimumVideo: req.body.minimumVideo,
+                minimumProcessor: req.body.minimumProcessor,
+                minimumRam: req.body.minimumRam,
+                recommendedVideo: req.body.recommendedVideo,
+                recommendedProcessor: req.body.recommendedProcessor,
+                recommendedRam: req.body.recommendedRam,
+                videoURL: req.body.videoURL ? req.body.videoURL : 'https://youtu.be/dQw4w9WgXcQ'
+            }, {
+                where: {
+                    id: req.params.id
+                }
+            })
+            .then(() => {
+                if (arrayImages.length > 0) {
+                    db.ProductImage.findAll({
+                        where: {
+                            productId: req.params.id
+                        }
+                    })
+                    .then(image => {
+                        image.forEach(image => {
+                            db.ProductImage.destroy({
+                                where: {
+                                    image: image.image
+                                }
+                            })
+                        })
+                        let images = arrayImages.map(image => {
+                        return {
+                            image: image,
+                            productId: req.params.id
+                            }
+                        })                               
+                        db.ProductImage.bulkCreate(images)
+                        .then(() => res.redirect('/admin/products'))
+                    })
+                }
+            })
+        }
+    },
 
-        getProducts.forEach(element => {
+        /* getProducts.forEach(element => {
             if (element.id === +req.params.id) {
                 element.id = element.id,
                 element.product = req.body.product ? req.body.product : element.product,
@@ -177,12 +241,8 @@ module.exports = {
                 element.image5 = req.files['imagenProducto5'] ? '/games/' + req.files['imagenProducto5'][0].filename : element.image5
             }
         })
-
         saveDb(getProducts);
-
-        res.redirect(`/product/detail/${req.params.id}`);
-
-    },
+        res.redirect(`/product/detail/${req.params.id}`); */
 
     deleteProduct: (req, res) => {
 

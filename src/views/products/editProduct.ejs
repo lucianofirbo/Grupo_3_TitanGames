@@ -81,19 +81,16 @@
                     <div class="field-gen">
                         <label>CATEGORÍAS:</label>
                             <select class="style-select" name="genero">
-                                <option selected hidden>Categorías</option>
                                 <% category.forEach(categoria => { %>
-                                    <option value="<%- categoria.name %>"><%- categoria.name %></option>
+                                    <option value="<%- categoria.id %>" <%- product.categoryId == categoria.id ? "selected" : null %>><%-categoria.name%></option>
                                 <% }) %>
                             </select>
                     </div>
                     <div class="field-subgen">
                         <label>SUBCATEGORÍAS:</label>
                             <select class="style-select" name="subGenero">
-                                %>
-                                <option selected hidden>SubCategorias</option>
                                 <% subcategory.forEach(subcategoria => { %>
-                                    <option value="" <%- subcategoria.id = product.subcategoryId ? 'selected' : ''%>> <%-subcategoria.name%> </option>
+                                    <option value="<%-subcategoria.id%>" <%- product.subCategoryId == subcategoria.id ? "selected" : null %>><%-subcategoria.name%></option>
                                 <% }) %>
                             </select>
                     </div>
