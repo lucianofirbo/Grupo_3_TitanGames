@@ -192,6 +192,7 @@ module.exports = {
             })
             .then(() => {
                 if (arrayImages.length > 0) {
+                    /* No tengo ni idea como hacer para que elimine solo las imagenes que eligen reemplazar */
                     db.ProductImage.findAll({
                         where: {
                             productId: req.params.id
@@ -215,6 +216,7 @@ module.exports = {
                         .then(() => res.redirect('/admin/products'))
                     })
                 }
+                res.redirect('/admin/products')
             })
         }
     },
