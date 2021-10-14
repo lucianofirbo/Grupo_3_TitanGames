@@ -1,9 +1,6 @@
-const { read } = require('fs');
-const path = require('path');
 const { getProducts, saveDb } = require('../data/dataBase');
 const { validationResult } = require('express-validator');
 const db = require('../database/models');
-const {Op} = require('sequelize');
 
 module.exports = {
 
@@ -38,12 +35,54 @@ module.exports = {
     },
 
     addProduct: (req, res) => {
-        let errors = validationResult(req)
+        let errors = validationResult(req);
+        /* if (req.fileValidatorError) {
+            let image = {
+                param: "image",
+                msg: req.fileValidatorError,
+            };
+            errors.push(image);
+        } */
         if (errors.isEmpty()) {
-
+            console.log(req.files)
+            let arrayImages = [];
+            if (req.files) {
+                req.files.forEach((image) => {
+                    arrayImages.push(image.fieldname);
+                })
+            }
+            db.Product.create({
+                product: req.body.product,
+                price: req.body.precio,
+                description: req.body.descripcion,
+                /* offers: req.body.offers, */
+                category: req.body.genero,
+                subcategory: req.body.subGenero,
+                minimumVideo: req.body.minimumVideo,
+                minimumProcessor: req.body.minimumProcessor,
+                minimumRam: req.body.minimumRam,
+                recommendedVideo: req.body.recommendedVideo,
+                recommendedProcessor: req.body.recommendedProcessor,
+                recommendedRam: req.body.recommendedRam,
+                videoURL: req.body.videoURL ? req.body.videoURL : 'https://youtu.be/dQw4w9WgXcQ'
+            })
+            .then(product => {
+                if(arrayImages.length > 0){
+                    let images = arrayImages.map(image => {
+                        return {
+                            image: image,
+                            productId: product.id
+                        }
+                    })
+                    db.ProductImage.bulkCreate(images)
+                    .then(() => res.redirect('/admin/products'))
+                    .catch(err => console.log(err))
+                }
+            })
         } else {
-
+            console.log(errors)
         }
+    },
 
         /*let errors = validationResult(req)
         if (errors.isEmpty()) {
@@ -87,7 +126,6 @@ module.exports = {
                 old: req.body
             })
         }*/
-    },
 
     editRender: (req, res) => {
         db.Product.findOne({

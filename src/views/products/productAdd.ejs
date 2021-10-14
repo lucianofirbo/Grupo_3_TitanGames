@@ -104,7 +104,7 @@
                         <select class="style-select" name="subGenero">
                             <option selected hidden>SubCategorias</option>
                             <% subcategory.forEach(subcategoria => { %>
-                                <option value="" <%- subcategoria.id = dataBase.subcategoryId ? 'selected' : ''%>> <%-subcategoria.name%> </option>
+                                <option value="<%- subcategoria.name %>"><%- subcategoria.name %></option>
                             <% }) %>
                         </select>
                         <% if(locals.errors && errors.subGenero){ %>
