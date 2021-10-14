@@ -69,7 +69,6 @@ module.exports = {
             .then(product => {
                 if(arrayImages.length > 0){
                     let images = arrayImages.map(image => {
-                        console.log(image)
                         return {
                             image: image,
                             productId: product.id
