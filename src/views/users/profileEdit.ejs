@@ -13,7 +13,7 @@
 
     <div class="register-card" id="register-card">
         <div class="register-container">
-            <form class="form-container" action="/user/profile/edit/<%= user.id %>?_method=PUT" method="POST">
+            <form class="form-container" action="/user/profile/edit/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <img src="/img/logo-footer.png" alt="logotipo" class="logo-register">
                 <div class="registrate"><p>Editar perfil</p></div>
                 <div class="input-container-reg">

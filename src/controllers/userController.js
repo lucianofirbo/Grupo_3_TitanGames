@@ -11,7 +11,14 @@ module.exports = {
     },
 
     indexProfile: (req, res) => {
-            res.render('users/profile', {userInSession : req.session.userLogged ? req.session.userLogged : ''});
+        db.User.findOne({
+            where: {
+                id: req.session.userLogged.id
+            }
+        })
+        .then(user => {            
+            res.render('users/profile', {userInSession : req.session.userLogged ? req.session.userLogged : '', user});
+        })
     },
 
     renderLogin: (req, res) => {
@@ -164,7 +171,7 @@ module.exports = {
         let errors = validationResult(req);
 
         if (errors.isEmpty()) {
-            console.log(req.session.userLogged)
+            console.log(req.file)
             db.User.update({
                 userName: req.body.userName,
                 email: req.body.email,
@@ -207,6 +214,8 @@ module.exports = {
                     })
                 }
             })
+        } else {
+            res.send('error')
         }
 
         /* let errors = validationResult(req)
