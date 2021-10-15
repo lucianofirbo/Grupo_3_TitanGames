@@ -165,6 +165,7 @@ module.exports = {
         }        
         let arrayImages = [];
         if (req.files) {
+            console.log(req.files)
             for (const clave in req.files) {
                 array = req.files[clave]
                 arrayImages.push(`${array[0].filename}`);

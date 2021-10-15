@@ -175,12 +175,12 @@ module.exports = {
                 }
             })
             .then(() => {
-                const adreesUser = db.Address.findOne({
+                const adressUser = db.Address.findOne({
                     where: {
                         userId: req.params.id
                     }
                 });
-                if (adreesUser) {
+                if (adressUser) {
                     db.Address.update({
                         street: req.body.address,
                         city: req.body.city,
@@ -191,6 +191,9 @@ module.exports = {
                             userId: req.params.id
                         }
                     })
+                    .then(() => {
+                        res.redirect('/admin/products');
+                    })
                 } else {
                     db.Address.create({
                         street: req.body.address,
@@ -198,6 +201,9 @@ module.exports = {
                         province: req.body.province,
                         postalCode: req.body.postalCode,
                         userId: req.params.id
+                    })
+                    .then(() => {
+                        res.redirect('/admin/products');
                     })
                 }
             })
