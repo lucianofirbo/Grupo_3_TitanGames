@@ -6,10 +6,15 @@ const db = require('../database/models');
 module.exports = {
 //vista con una lista de todos los productos?
     index: (req, res) => {
-        res.render('products/products', {
-            products: getProducts,
-            toThousand,
-            userInSession : req.session.userLogged ? req.session.userLogged : ''
+        db.Product.findAll({
+            include: [{association: "categories"}, {association: "subcategory"}, {association: "productImage"}]
+        })
+        .then(products => {
+            res.render('products/products', {
+                products,
+                toThousand,
+                userInSession : req.session.userLogged ? req.session.userLogged : ''
+            })        
         })
     }, 
 
