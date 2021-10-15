@@ -11,7 +11,7 @@ module.exports = {
     },
 
     indexProfile: (req, res) => {
-        res.render('users/profile', {userInSession : req.session.userLogged ? req.session.userLogged : ''});
+            res.render('users/profile', {userInSession : req.session.userLogged ? req.session.userLogged : ''});
     },
 
     renderLogin: (req, res) => {
@@ -29,7 +29,7 @@ module.exports = {
                 email: req.body.email,
                 pass: bcrypt.hashSync(req.body.pass1, 10),
                 rol: 0,                
-                avatar: req.file ? req.file.filename : "default_user.jpg"
+                avatar: "default_user.jpg"
             })
             .then(() => {
                 res.redirect('/user/login');
@@ -97,7 +97,8 @@ module.exports = {
                     id: user.id,
                     userName: user.userName,
                     email: user.email,
-                    rol: user.rol
+                    rol: user.rol,
+                    avatar: user.avatar
                 }
                 if (req.body.recordar) {
                     res.cookie('TitanGamesUser', req.session.userLogged, { expires: new Date(Date.now() + 900000), httpOnly: true });
@@ -139,19 +140,72 @@ module.exports = {
     },
 
     profileEdit: (req, res) => {
-        let user = getUsers.find(user => user.id === +req.params.id)
+        db.User.findOne({
+            where: {
+                id: req.params.id
+            },
+            include: [{association: 'adress'}]
+        })
+        .then(user => {
+            res.render('users/profileEdit', {
+                user,
+                userInSession : req.session.userLogged ? req.session.userLogged : ''
+            }) 
+        })
+
+        /* let user = getUsers.find(user => user.id === +req.params.id)
         res.render('users/profileEdit', {
             user,
             userInSession : req.session.userLogged ? req.session.userLogged : ''
-        })
+        }) */
     },
 
     updateProfile: (req, res) => {
-        let errors = validationResult(req)
+        let errors = validationResult(req);
 
         if (errors.isEmpty()) {
-            let user = getUsers.find(user => user.id === +req.params.id)
+            console.log(req.session.userLogged)
+            db.User.update({
+                userName: req.body.userName,
+                email: req.body.email,
+                avatar: req.file ? req.file.filename : req.session.userLogged.avatar
+            }, {
+                where: {
+                    id: req.params.id
+                }
+            })
+            .then(() => {
+                const adreesUser = db.Address.findOne({
+                    where: {
+                        userId: req.params.id
+                    }
+                });
+                if (adreesUser) {
+                    db.Address.update({
+                        street: req.body.address,
+                        city: req.body.city,
+                        province: req.body.province,
+                        postalCode: req.body.postalCode
+                    }, {
+                        where: {
+                            userId: req.params.id
+                        }
+                    })
+                } else {
+                    db.Address.create({
+                        street: req.body.address,
+                        city: req.body.city,
+                        province: req.body.province,
+                        postalCode: req.body.postalCode,
+                        userId: req.params.id
+                    })
+                }
+            })
+        }
 
+        /* let errors = validationResult(req)
+        if (errors.isEmpty()) {
+            let user = getUsers.find(user => user.id === +req.params.id)
             let {
                 userName,
                 email,
@@ -160,7 +214,6 @@ module.exports = {
                 province,
                 city,
             } = req.body
-
             user.userName = userName
             user.email = email
             user.address = address
@@ -168,22 +221,17 @@ module.exports = {
             user.province = province
             user.city = city
             user.avatar = req.file ? req.file.filename : user.avatar
-
             writeUsersJSON(getUsers)
-
             delete user.pass
-
             req.session.user = user
-
             res.redirect('/user/profile')
-
         }else{
             res.render('users/profileEdit', {
                 errors: errors.mapped(),
                 old: req.body, 
                 userInSession : req.session.userLogged ? req.session.userLogged : ''
             })
-        }
+        } */
     },
 
     logout: (req, res) => {
