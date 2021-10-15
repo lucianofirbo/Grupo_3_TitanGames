@@ -14,9 +14,11 @@ module.exports = {
         db.User.findOne({
             where: {
                 id: req.session.userLogged.id
-            }
+            },
+            include: {association: 'adress'}
         })
-        .then(user => {            
+        .then(user => {     
+            console.log(user.adress)       
             res.render('users/profile', {userInSession : req.session.userLogged ? req.session.userLogged : '', user});
         })
     },

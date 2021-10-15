@@ -30,11 +30,11 @@
                     <% } %>
                 </div>
                 <div class="input-container-reg">
-                    <input class="input-style" type="text" name="address" placeholder="Dirección" value="<%= locals.old ? old.address : user.address %>">
+                    <input class="input-style" type="text" name="address" placeholder="Dirección" value="<%= user.adress[0].userId == user.id  ? user.adress[0].street : '' %>">
                 </div>
 
                 <div class="input-container-reg">
-                    <input class="input-style" type="text" name="postalCode" placeholder="Código Postal" value="<%= locals.old ? old.postalCode : user.postalCode %>">
+                    <input class="input-style" type="text" name="postalCode" placeholder="Codigo postal" value="<%= user.adress[0].userId == user.id  ? user.adress[0].postalCode : '' %>">
                 </div>
 
                 <div class="form-ad-input">
