@@ -45,7 +45,7 @@
                 <% if (result.length > 0) { %>
                     <% result.forEach(product => { %>
                         <div class="game">
-                            <a href="http://localhost:3000/product/detail/<&- product.id &>">                        
+                            <a href="http://localhost:3000/product/detail/<%-product.id%>">                        
                                 <img src="/img/games/<%- product.productImage[0].image %>" alt="img del juego" class="games-img-w">
                             </a>
                             <div class="game-text">
