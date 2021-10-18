@@ -24,7 +24,7 @@ router.post('/register', registerValidator, processRegister);
 
 /* Ruta para login */
 router.get('/login', userLoginCheck, renderLogin);
-router.post('/login', /*loginValidator,*/ cookieCheck, processLogin);
+router.post('/login', loginValidator, cookieCheck, processLogin);
 
 /* Ruta para la edicion del perfil */
 router.get('/profile/edit/:id', userCheck, profileEdit);

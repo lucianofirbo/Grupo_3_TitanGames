@@ -132,6 +132,7 @@ main {
 .special-offer-game img {
     width: 100%;
     box-shadow: 2px 0.7698959708213806px 1.078827142715454px 2px #00000065;
+    border-radius: 5%;
 }
 
 .special-offer-details {
@@ -147,6 +148,7 @@ main {
     font-weight: 600;
     text-align: center;
     background-color: #807c7cbd;
+    border-radius: 5%;
 }
 
 .special-offer-details p {  
@@ -263,12 +265,13 @@ main {
     display: flex;
     padding: 5px;
     flex-direction: column;
+    text-align: right;
 }
 
 .price {
     display: flex;
-    justify-content: center;
     gap: 5px;
+    justify-content: right;
 }
 
 .sale-box {
@@ -319,6 +322,7 @@ main {
         position: relative;
         transition: all .2s ease-in-out;
         height: 100%;
+        border-radius: 5%;
     }
 
     .see-more-button {
