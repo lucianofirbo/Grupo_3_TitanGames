@@ -97,7 +97,7 @@ CREATE TABLE `products` (
   KEY `subCategoryId` (`subCategoryId`),
   CONSTRAINT `FK_ef58d02f-4de8-4f36-bdcd-d7fc35ed0d2a` FOREIGN KEY (`categoryId`) REFERENCES `categories` (`id`),
   CONSTRAINT `products_ibfk_1` FOREIGN KEY (`subCategoryId`) REFERENCES `subcategories` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -106,7 +106,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'The Witcher 3',600,'Mientras la guerra se extiende por los Reinos del Norte, aceptarás el contrato de tu vida: encontrar a la niña de la profecía, un arma viviente que puede alterar el mundo tal y como lo conocemos. ',10,'1050ti','I5 7400','8gb','1070ti','i7 8100','16gb',NULL,1,3),(2,'Battlefield 4',1200,'Esta es la mejor experiencia de Battlefield 4. Vive el mayor conflicto de la humanidad con un completo arsenal de armas, vehículos y dispositivos, y todos los contenidos de personalización de los dos primeros años ',25,'Nvidia GeForce 8800 GT','(Intel): Core 2 Duo 2.4 GHz','4 GB','NVIDIA GeForce GTX 660','(Intel): Quad-core CPU','8 GB de RAM',NULL,2,2),(8,'asd',123,'asd',NULL,'asd','asd','asd','asd','asd','asd','https://youtu.be/dQw4w9WgXcQ',1,3);
+INSERT INTO `products` VALUES (1,'The Witcher 3',600,'Mientras la guerra se extiende por los Reinos del Norte, aceptarás el contrato de tu vida: encontrar a la niña de la profecía, un arma viviente que puede alterar el mundo tal y como lo conocemos. ',10,'1050ti','I5 7400','8gb','1070ti','i7 8100','16gb',NULL,1,3),(2,'Battlefield 4',1200,'Esta es la mejor experiencia de Battlefield 4. Vive el mayor conflicto de la humanidad con un completo arsenal de armas, vehículos y dispositivos, y todos los contenidos de personalización de los dos primeros años ',25,'Nvidia GeForce 8800 GT','(Intel): Core 2 Duo 2.4 GHz','4 GB','NVIDIA GeForce GTX 660','(Intel): Quad-core CPU','8 GB de RAM',NULL,2,2),(11,'Ni no Kuni™ II: Revenant Kingdom',649,'Únete al viaje que llevará al joven rey Evan en busca de un nuevo reino, además de, con la ayuda de nuevos amigos, unir el mundo y salvar a sus gentes de un mal espantoso. ',NULL,'NVIDIA GeForce GTX 750 Ti','Intel Core i5-4460','4 GB de RAM','NVIDIA GeForce GTX 970','Intel Core i7-3770','8 GB de RAM','https://youtu.be/dQw4w9WgXcQ',1,1),(12,'Hearts of Iron IV',439,'¡Tenemos la victoria al alcance de la mano! Tu capacidad para liderar tu nación es tu arma principal. En el juego de estrategia Hearts of Iron IV podrás ponerte el mando de cualquier nación de la II Guerra Mundial, el conflicto más fascinante de la historia mundial. ',NULL,'ATI Radeon HD 5850','Intel Core 2 Quad Q9400 @ 2.66 GHz','4 GB de RAM','ATI Radeon HD 6950','Intel Core i5 750 @ 2.66 GHz','4 GB de RAM','https://youtu.be/dQw4w9WgXcQ',2,3),(13,'Europa Universalis IV',439,'Cuatro siglos de historia cobran vida en el juego de gran estrategia de Paradox. Dirige una nación desde el Renacimiento hasta la Revolución en una compleja simulación del comienzo del mundo moderno. Domina el arte de la guerra, la diplomacia y el comercio para cambiar la historia de tu nación.',NULL,'Nvidia® GeForce™ GTX 460','Intel® Core™ i3-2105','1 GB RAM','Nvidia® GeForce™ GTX 560 Ti','Intel® Core™ i3 3240','8 GB RAM','https://youtu.be/dQw4w9WgXcQ',2,3),(15,'The Elder Scrolls IV: Oblivion',240,'The Elder Scrolls IV: Oblivion® Edición Juego del Año presenta uno de los mejores juegos de rol de todos los tiempos como nunca se había visto hasta ahora. Adéntrate en el mundo más detallado y emocionante jamás creado. ',NULL,'Tarjeta gráfica con 128 MB de VRAM','Intel Pentium 4 a 2 GHz','512 MB de RAM','Tarjeta gráfica con 128 MB de VRAM','Intel Pentium 4 a 2 GHz','512 MB de RAM','https://youtu.be/dQw4w9WgXcQ',1,1);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -124,7 +124,7 @@ CREATE TABLE `products_images` (
   PRIMARY KEY (`id`),
   KEY `productId` (`productId`),
   CONSTRAINT `products_images_ibfk_1` FOREIGN KEY (`productId`) REFERENCES `products` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=78 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -133,7 +133,7 @@ CREATE TABLE `products_images` (
 
 LOCK TABLES `products_images` WRITE;
 /*!40000 ALTER TABLE `products_images` DISABLE KEYS */;
-INSERT INTO `products_images` VALUES (1,'product-1630325014022.png',1),(2,'product-1630375318093.png',1),(3,'product-1630375318150.png',1),(4,'product-1630468784487.png',1),(5,'product-1630468784538.png',1),(6,'product-1630470009016.png',2),(7,'product-1630470009024.jpg',2),(8,'product-1630470009029.jpg',2),(9,'product-1630470009032.jpg',2),(10,'product-1630325105438.jpg',2),(36,'product-1634341451962.jpg',8);
+INSERT INTO `products_images` VALUES (1,'product-1630325014022.png',1),(2,'product-1630375318093.png',1),(3,'product-1630375318150.png',1),(4,'product-1630468784487.png',1),(5,'product-1630468784538.png',1),(6,'product-1630470009016.png',2),(7,'product-1630470009024.jpg',2),(8,'product-1630470009029.jpg',2),(9,'product-1630470009032.jpg',2),(10,'product-1630325105438.jpg',2),(53,'product-1634581206316.jpg',11),(54,'product-1634581206326.jpg',11),(55,'product-1634581206327.jpg',11),(56,'product-1634581206328.jpg',11),(57,'product-1634581206328.jpg',11),(58,'product-1634582275638.jpg',12),(59,'product-1634582275639.jpg',12),(60,'product-1634582275640.jpg',12),(61,'product-1634582275641.jpg',12),(62,'product-1634582275643.jpg',12),(63,'product-1634582464501.jpg',13),(64,'product-1634582464509.jpg',13),(65,'product-1634582464510.jpg',13),(66,'product-1634582464511.jpg',13),(67,'product-1634582464512.jpg',13),(73,'product-1634583343258.jpg',15),(74,'product-1634583343263.jpg',15),(75,'product-1634583343263.jpg',15),(76,'product-1634583343264.jpg',15),(77,'product-1634583343265.jpg',15);
 /*!40000 ALTER TABLE `products_images` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -206,4 +206,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-10-18 14:41:16
+-- Dump completed on 2021-10-18 18:30:19
