@@ -155,6 +155,7 @@ module.exports = {
     },
 
     editProduct: (req, res) => {
+        console.log(req.body)
         let errors = validationResult(req);
         if (req.fileValidatorError) {
             let image = {
@@ -166,7 +167,7 @@ module.exports = {
         let arrayImages = [];
         if (req.files) {
             console.log(req.files)
-            for (const clave in req.files) {
+            for (clave in req.files) {
                 array = req.files[clave]
                 arrayImages.push(`${array[0].filename}`);
             }
@@ -194,19 +195,17 @@ module.exports = {
             .then(() => {
                 if (arrayImages.length > 0) {
                     /* No tengo ni idea como hacer para que elimine solo las imagenes que eligen reemplazar */
-                    db.ProductImage.findAll({
+                    db.ProductImage.findOne({
                         where: {
-                            productId: req.params.id
+                            image: req.body.imageOldName0
                         }
                     })
                     .then(image => {
-                        image.forEach(image => {
-                            db.ProductImage.destroy({
+                        db.ProductImage.destroy({
                                 where: {
-                                    image: image.image
+                                    id: image.id
                                 }
                             })
-                        })
                         let images = arrayImages.map(image => {
                         return {
                             image: image,
