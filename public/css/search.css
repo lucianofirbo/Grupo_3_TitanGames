@@ -10,7 +10,7 @@
 /* Dropdowns */
 
 .main-search {
-    min-height: 100vh;
+    min-height: 75vh;
 }
 .sort-by-dropdown {
     position: relative;
@@ -164,7 +164,7 @@
 
 .price {
     display: flex;
-    justify-content: center;
+    justify-content: right;
     gap: 5px;
 }
 
@@ -210,6 +210,10 @@
     
     .search-searchbar {
         margin-top: 60px;
+    }
+
+    .game img {
+        width: 350px;
     }
 
 }
