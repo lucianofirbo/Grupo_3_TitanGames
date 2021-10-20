@@ -12,7 +12,6 @@ module.exports = {
             include: [{association: "categories"}, {association: "subcategory"}, {association: "productImage"}]
         })
         .then(product => {
-            /* res.send(product[0].productImage[0]) */
             res.render('users/index', {product, userInSession : req.session.userLogged ? req.session.userLogged : ''});
         })
         
@@ -53,6 +52,21 @@ module.exports = {
             search: req.query.keywords,
             userInSession : req.session.userLogged ? req.session.userLogged : ''
         }); */
-    }    
+    },
+    searchPrice: (req, res) => {
+        db.Product.findAll({
+            include: [{association: "categories"}, {association: "subcategory"}, {association: "productImage"}],
+            where: {
+                price: {[Op.lte]: req.params.price}
+            }
+        })
+        .then(result => {
+            res.render('users/search', {
+                result,
+                search: req.params.price,
+                userInSession : req.session.userLogged ? req.session.userLogged : ''
+            });
+        })
+    }
 
 }

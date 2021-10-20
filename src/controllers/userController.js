@@ -101,7 +101,6 @@ module.exports = {
                 }
             })
             .then (user => {
-                console.log(req.body.email)
                 req.session.userLogged = {
                     id: user.id,
                     userName: user.userName,
@@ -173,7 +172,6 @@ module.exports = {
         let errors = validationResult(req);
 
         if (errors.isEmpty()) {
-            console.log(req.file)
             db.User.update({
                 userName: req.body.userName,
                 email: req.body.email,
@@ -188,8 +186,14 @@ module.exports = {
                     where: {
                         userId: req.params.id
                     }
+                })
+                .then(() => {
+                    return true
+                })
+                .catch(error => {
+                    return false
                 });
-                if (adressUser) {
+                if (adressUser == true) {
                     db.Address.update({
                         street: req.body.address,
                         city: req.body.city,

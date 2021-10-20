@@ -1,39 +1,32 @@
 const { check, body } = require('express-validator');
-const bcrypt = require('bcryptjs');
-let db = require("../database/models");
+const bcrypt = require('bcryptjs')
+const db = require('../database/models')
 
 module.exports = [
-
-    check("email")
+    
+    check('email')
     .notEmpty()
-    .withMessage("Debes escribir un email")
-    .bail()
+    .withMessage('Debes ingresar un email').bail()
     .isEmail()
-    .withMessage("Debes escribir un email válido"),
+    .withMessage('Debes ingresar un email válido'),
 
-    check('pass')
-    .notEmpty()
-    .withMessage('Debes escribir tu contraseña'),
-
-    body("pass")
-    .custom((value, { req }) => {
-        console.log(value)
-        console.log(req.body.email)
+    body('pass')
+    .custom((value, {req})=> {
         return db.User.findOne({
-            where: {
+            where:{
                 email: req.body.email
             }
         })
-        .then((user) => {
-            if (bcrypt.compareSync(value, user.dataValues.pass)) {
-                return Promise.reject('No coincide la contraseña');
+        .then(user => {
+            if(!bcrypt.compareSync(value, user.dataValues.pass)){
+                return Promise.reject()
             }
         })
-        .catch((error) => {
-            return Promise.reject("Credenciales inválidas");
+        .catch((err) => {
+            return Promise.reject("Email o contraseña incorrectos")
         })
     })
-
+]
     /*check('email')
     .notEmpty()
     .withMessage('Debes ingresar un email').bail()
@@ -51,4 +44,3 @@ module.exports = [
         }
     })
     .withMessage('Email no registrado'),*/
-]

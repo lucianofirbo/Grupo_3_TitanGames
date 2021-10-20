@@ -10,5 +10,7 @@ router.get('/politics', controller.politics);
 router.get('/about', controller.about);
 /* Ruta para la búsqueda */
 router.get('/search', controller.search);
+/* Ruta para busqueda por precio */
+router.get('/searchPrice/:price', controller.searchPrice);
 
 module.exports = router;
