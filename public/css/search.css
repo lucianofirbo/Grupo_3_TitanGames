@@ -10,7 +10,7 @@
 /* Dropdowns */
 
 .main-search {
-    height: 100vh;
+    min-height: 100vh;
 }
 .sort-by-dropdown {
     position: relative;
