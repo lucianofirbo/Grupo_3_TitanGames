@@ -93,11 +93,11 @@ i {
     justify-content: space-between;
     position: absolute;
     background-color: #161623;
-    width: 170px;
+    width: 160px;
     border-radius: 5px;
     right: -60px;
     text-align: center;
-    height: 70px;
+    height: 85px;
     padding-top: 17px;
     padding-bottom: 20px;
     top: 20px;
@@ -236,9 +236,18 @@ i {
     flex-direction: column;
 }
 
+label {
+    margin-bottom: 0;
+}
+
 .hamburguer-logo img {
     width: 30%;
     margin: 20%;
+}
+
+.logoImgHeader {
+    vertical-align: middle;
+    border-style: none;
 }
 
 .hamburguer-logo {
@@ -255,6 +264,7 @@ i {
 .search-form {
     display: flex;
     width: initial;
+    align-items: center;
 }
 .search-form_input {
     border: none;
@@ -263,6 +273,8 @@ i {
     padding: 0 25px;
     color: white;
     font-size: 0.9rem;
+    height: 25px;
+    width: 300px;
 }
 .search-form_button {
     background-color: rgba(0, 0, 0, 0.247);
