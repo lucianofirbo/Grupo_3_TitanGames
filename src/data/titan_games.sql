@@ -179,7 +179,7 @@ CREATE TABLE `users` (
   `rol` int(2) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -188,6 +188,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (10,'pepito','a@b.com','$2a$10$PVUuxr681p.JlMfS2G9ubOcEMbRkmhSDuzKbVE1Vku3e1oZXcDRge','default_user.jpg',1),(11,'ramon','1@2.com','$2a$10$es5NEn1D.jZgee72TJAIt.OlilDseJHdkFg8tEXp0mtk.HbVnDdgS','default_user.jpg',0);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -204,4 +205,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-10-23  1:51:49
+-- Dump completed on 2021-10-23  1:57:18
