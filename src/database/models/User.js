@@ -16,7 +16,7 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         },
         pass: {
-            type: dataTypes.STRING(20),
+            type: dataTypes.STRING(200),
             allowNull: false
         },
         avatar: {

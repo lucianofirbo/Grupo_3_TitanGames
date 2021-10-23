@@ -63,7 +63,7 @@ module.exports = {
         .then(result => {
             res.render('users/search', {
                 result,
-                search: 'Hasta ' + req.params.price + '$',
+                search: 'Hasta $' + req.params.price,
                 userInSession : req.session.userLogged ? req.session.userLogged : ''
             });
         })

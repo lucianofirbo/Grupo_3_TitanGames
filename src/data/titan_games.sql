@@ -42,7 +42,6 @@ CREATE TABLE `addresses` (
 
 LOCK TABLES `addresses` WRITE;
 /*!40000 ALTER TABLE `addresses` DISABLE KEYS */;
-INSERT INTO `addresses` VALUES (1,'asd123','','',NULL,16,2);
 /*!40000 ALTER TABLE `addresses` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -175,12 +174,12 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `userName` varchar(45) DEFAULT NULL,
   `email` varchar(60) DEFAULT NULL,
-  `pass` varchar(20) DEFAULT NULL,
+  `pass` varchar(200) DEFAULT NULL,
   `avatar` varchar(100) DEFAULT NULL,
   `rol` int(2) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -189,7 +188,6 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'pepito','a@b.com','$2a$10$0CHfW7LVY8bV4','user-1634266503976.jpg',0),(2,'jorgito','1@2.com','$2a$10$gZ/ewU2A5VNrz','default_user.jpg',1),(6,'jaimito','2@3.com','$2a$10$VxrkMhZgON651','default_user.jpg',0),(7,'pepito','jaja@a.com','$2a$10$.KrYmcljHvi2w','default_user.jpg',0);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -206,4 +204,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-10-18 18:30:19
+-- Dump completed on 2021-10-23  1:51:49
