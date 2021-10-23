@@ -13,17 +13,11 @@ body .box-shop {
     margin-top: 40px;
     background-color: #161623
 }
+main {
+    min-height: 80vh;
+}
 .text-shop2 {
     display: none;
-}
-.dashboard {
-    width: 25%;
-    height: 677px;
-    background-color: #161623;
-    margin-top: 55px;
-    display: none;
-    margin-bottom: 14px;
-    z-index: 1;
 }
 .box-shop .box-shop1 {
     height: 100%;
@@ -168,7 +162,7 @@ form {
 
 @media screen and (min-width:769px){
     body .box-shop {
-      margin-top: 60px;
+        margin-top: 60px;
     }
 }
 @media screen and (min-width:1024px){
@@ -183,11 +177,8 @@ form {
     .img-container {
         height: 83%;
     }
-    .store-dropdown {
-        display: none;
-    }
     .top-right {
-        margin-right: 2%;
+        margin-right: 7%;
     }
     .text-shop {
         display: none;
