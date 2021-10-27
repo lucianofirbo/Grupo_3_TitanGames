@@ -4,20 +4,13 @@ const Op = db.Sequelize.Op;
 module.exports = {
 
     index: (req, res) => {       
-        db.Product.findAll({
-            include: [{association: "categories"}, {association: "subcategory"}, {association: "productImage"}]
+        db.Product.findAll({       
+            order: [['timesVisited', 'DESC']],
+            include: [{association: "categories"}, {association: "subcategory"}, {association: "productImage"}],    
         })
         .then(product => {
-            db.Product.findAll({
-                order: [['timesVisited', 'DESC']],
-                limit: 3,                
-                include: [{association: "categories"}, {association: "subcategory"}, {association: "productImage"}]
-            })
-            .then(maxVisited => {
-                console.log(maxVisited)
                 /* res.send(product) */
-            res.render('users/index', {product, maxVisited, userInSession : req.session.userLogged ? req.session.userLogged : ''});
-            })
+            res.render('users/index', {product, userInSession : req.session.userLogged ? req.session.userLogged : ''});
         })
         
     },
