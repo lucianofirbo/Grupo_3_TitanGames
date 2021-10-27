@@ -54,10 +54,15 @@ module.exports = {
     },
 
     cart: (req, res) => {
-        res.render('products/productCart', {
-            dataBase: getProducts,
-            toThousand,
-            userInSession : req.session.userLogged ? req.session.userLogged : ''
+        db.Product.findAll({
+            include: [{association: "categories"}, {association: "subcategory"}, {association: "productImage"}]
+        })
+        .then(product => {
+            res.render('products/productCart', {
+                product,
+                toThousand,
+                userInSession : req.session.userLogged ? req.session.userLogged : ''
+            })
         })
     }
 }

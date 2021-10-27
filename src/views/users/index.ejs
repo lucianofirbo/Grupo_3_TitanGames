@@ -24,18 +24,18 @@
             </ol>
             <div class="carousel-inner" style="margin-top: 0;">
                 <div class="carousel-item">
-                    <a href="http://localhost:3000/product/detail/1">
-                        <img src="img/games/<%- product[0].productImage[0].image %>" class="d-block w-100" alt="Ni no kuni 2">
+                    <a href="http://localhost:3000/product/detail/18">
+                        <img src="img/games/<%- product[7].productImage[0].image %>" class="d-block w-100" alt="Ni no kuni 2">
                     </a>
                 </div>
                 <div class="carousel-item">
-                    <a href="http://localhost:3000/product/detail/2">
-                        <img src="img/games/<%- product[1].productImage[0].image %>" class="d-block w-100" alt="Ni no kuni 2">
+                    <a href="http://localhost:3000/product/detail/22">
+                        <img src="img/games/<%- product[8].productImage[0].image %>" class="d-block w-100" alt="Ni no kuni 2">
                     </a>
                 </div>
                 <div class="carousel-item active">
-                    <a href="http://localhost:3000/product/detail/11">
-                        <img src="img/games/<%- product[2].productImage[0].image %>" class="d-block w-100" alt="Ni no kuni 2">
+                    <a href="http://localhost:3000/product/detail/16">
+                        <img src="img/games/<%- product[6].productImage[0].image %>" class="d-block w-100" alt="Ni no kuni 2">
                     </a>
                 </div>
             </div>
@@ -62,7 +62,8 @@
                     <a href="http://localhost:3000/searchPrice/250">
                         <img src="img/blob1.png" alt="" class="sale-img3">       
                     <div class="special-offer-details">
-                        <p>JUEGOS HASTA $250</p>
+                        <p>JUEGOS DE</p>
+                        <p id="price-offer">-$250</p>
                     </div>  
                     </a>       
                 </div>
@@ -90,8 +91,36 @@
         
 
         <div class="separator">
-            <p>Descubrir</p>
+            <p>Últimos lanzamientos</p>
         </div>
+
+    <section class="games-main">
+        <div class ="games-main-container">
+            
+        <% product.forEach(product => { %>
+
+            <div class="card-container">
+                <div class="imgBx">
+                    <a href="/product/detail/<%-product.id%>"><img src="img/games/<%- product.productImage[0].image %>"></a>
+                </div>
+                <a href="/product/detail/<%-product.id%>"><div class="content-card">
+                    <div class="contentBx">
+                        <h3><%- product.product %><br> <span>$<%- product.price %></span> </h3>
+                    </div>
+                    <div class="icon-cart">
+                        <i class="fas fa-cart-plus"></i>
+                    </div> 
+                </div></a>
+                               
+            </div>
+
+        <% }) %>
+        </div>
+    </section>
+
+    <div class="separator">
+        <p>Descubrir</p>
+    </div>
 
         <div class="discover">            
     
@@ -105,16 +134,16 @@
     
                 <div class="game">
     
-                    <a href="http://localhost:3000/product/detail/1">
-                        <img src="img/games/<%- product[0].productImage[0].image %>" alt="" class="games-img-w">
-                    </a>
+                        <a href="http://localhost:3000/product/detail/1">
+                            <img src="img/games/<%- product[0].productImage[0].image %>" alt="" class="games-img-w">
+                        </a>
     
                     <div class="game-text">
                         <p><%- product[0].product %></p>
     
                         <div class="price">
                             <p class="sale-box">-10%</p>
-                            <p><%- product[0].product %></p>
+                            <p><%- product[0].price %></p>
                         </div>
     
                     </div>
@@ -210,27 +239,65 @@
     
                 <div class="game">
     
-                    <a href="http://localhost:3000/product/detail/15">
-                        <img src="img/games/<%- product[5].productImage[0].image %>" alt="ni no kuni 2" class="games-img-w">
+                    <a href="http://localhost:3000/product/detail/1">
+                        <img src="img/games/<%- product[0].productImage[0].image %>" alt="ni no kuni 2" class="games-img-w">
                     </a>
     
                     <div class="game-text">
-                        <p><%- product[5].product %></p>
+                        <p><%- product[0].product %></p>
     
                         <div class="price">
                             <p class="sale-box">-10%</p>
-                            <p><%- product[5].price %></p>
+                            <p><%- product[0].price %></p>
                         </div>
     
                     </div>
     
                 </div>
+
+                <div class="game">
     
-            </section> 
+                    <a href="http://localhost:3000/product/detail/2">
+                        <img src="img/games/<%- product[1].productImage[0].image %>" alt="ni no kuni 2" class="games-img-w">
+                    </a>
+    
+                    <div class="game-text">
+                        <p><%- product[1].product %></p>
+    
+                        <div class="price">
+                            <p class="sale-box">-10%</p>
+                            <p><%- product[1].price %></p>
+                        </div>
+    
+                    </div>
+    
+                </div>
+
+                <div class="game">
+    
+                    <a href="http://localhost:3000/product/detail/11">
+                        <img src="img/games/<%- product[2].productImage[0].image %>" alt="ni no kuni 2" class="games-img-w">
+                    </a>
+    
+                    <div class="game-text">
+                        <p><%- product[2].product %></p>
+    
+                        <div class="price">
+                            <p class="sale-box">-10%</p>
+                            <p><%- product[2].price %></p>
+                        </div>
+    
+                    </div>
+    
+                </div>
+
+                
+    
+            </section>  
     
             <div class="game see-more-d">
                 <a href="http://localhost:3000/product"><p>Ver más</p></a>
-            </div>
+            </div> 
     
         </div>
 

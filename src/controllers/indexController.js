@@ -12,7 +12,7 @@ module.exports = {
             include: [{association: "categories"}, {association: "subcategory"}, {association: "productImage"}]
         })
         .then(product => {
-            res.render('users/index', {product, userInSession : req.session.userLogged ? req.session.userLogged : ''});
+            res.render('users/index', {product, toThousand,userInSession : req.session.userLogged ? req.session.userLogged : ''});
         })
         
     },

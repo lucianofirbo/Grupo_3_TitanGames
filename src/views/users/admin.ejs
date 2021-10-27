@@ -13,21 +13,24 @@
 
     <main>
 
-        <h1>Bienvenido de nuevo <%- admin.userName %></h1>
+        <h1>Bienvenid@ de nuevo</h1>
+            <span><%- admin.userName %>!</span>
 
-        <div class="cajas">
+        <div class="box-container">
 
-            <a href="/admin/products">
-                <p>Maneje sus productos</p>
-            </a>
-    
-            <a href="/admin/products">
-                <p>Maneje sus usuarios</p>
-            </a>
+            <div class="box">
+                <a href="/admin/products">
+                    <p>Ver stock</p>
+                </a>
+            </div>
+
+            <div class="box">
+                <a href="/admin/products">
+                    <p>Agregar productos</p>
+                </a>
+            </div>
 
         </div>
-
-        
 
     </main>
 

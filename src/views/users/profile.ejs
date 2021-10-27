@@ -105,9 +105,9 @@
                             <div class="userInformationContainer">
                                 <div class="userInformation">
                                     <h3>Datos del usuario</h3>
-                                        <p>Username: <%- userInSession.userName %></p>
-                                        <p>Email: <%- userInSession.email %></p>
-                                        <p>Rol: <% if (userInSession.rol === 1) { %> 
+                                        <p>Username: <%- user.userName %></p>
+                                        <p>Email: <%- user.email %></p>
+                                        <p>Rol: <% if (user.rol === 1) { %> 
                                                 Admin
                                             <% } else { %> 
                                                 Usuario

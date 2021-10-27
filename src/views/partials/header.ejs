@@ -50,9 +50,12 @@
             
             <div class="user-icon">
                 <% if (userInSession) { %>
-                    <div class="userLoggedIcon">
+                    <!-- <div class="userLoggedIcon">
                         <i class="fas fa-user-circle hamburguer-account user-icon"></i><span class="session"></span></a>
-                    </div>
+                    </div>  -->
+                     <div class="profile-image-user-icon">
+                        <img src="/img/users/<%= userInSession.avatar %>" alt="Profile Image"></i><span class="session"></span>
+                    </div> 
                     <div class="dropdown-content-user-main-nav">
                         <a href="/user/profile">Perfil</a>
                         <a href="/user/logout">Cerrar sesión</a>
@@ -73,8 +76,15 @@
 
         <div class="username" id="hamburguer-account">
             <div class="hamburguer-username" id="hamburguer-account">
-                <i class="fas fa-user-circle hamburguer-account"></i>
-                <h3 id="hamburguer-account">Username</h3>
+                <% if (userInSession) { %>
+                    <div class="profile-image-user-icon">
+                        <a href="/user/profile"><img src="/img/users/<%= userInSession.avatar %>" alt="Profile Image"></i><span class="session"></span></a>
+                    </div> 
+                    <h3 id="hamburguer-account"><%- userInSession.userName %></h3>
+                <% } else { %>
+                    <a href="/user/login"><i class="fas fa-user-circle hamburguer-account"></i></a>
+                    <h3 id="hamburguer-account">user</h3>
+                <% } %>
                 <span class="close" id="close">x</span>
             </div>
         </div>

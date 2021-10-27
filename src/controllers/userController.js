@@ -216,7 +216,7 @@ module.exports = {
                         userId: req.params.id
                     })
                     .then(() => {
-                        res.redirect('/admin/products');
+                        res.redirect('/user/profile');
                     })
                 }
             })

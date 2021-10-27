@@ -11,7 +11,7 @@ i {
     z-index: 2;
     /*display: none;*/
     align-items: center;
-    background-color: #161623;
+    background-color: #0d1219;
     width: 100%;
     height: 40px;
     box-shadow: 2px 0.7698959708213806px 1.078827142715454px 2px #00000065;
@@ -59,7 +59,7 @@ i {
     justify-content: flex-start;
     align-items: flex-start;
     position: absolute;
-    background-color: #161623;
+    background-color: #0d1219;
     width: 170px;
     border-radius: 5px;
     padding-left: 10px;
@@ -78,7 +78,7 @@ i {
     justify-content: flex-end;
     align-items: flex-end;
     position: absolute;
-    background-color: #161623;
+    background-color: #0d1219;
     width: 170px;
     border-radius: 5px;
     color: white;
@@ -92,16 +92,28 @@ i {
     flex-direction: column;
     justify-content: space-between;
     position: absolute;
-    background-color: #161623;
+    background-color: #0d1219;
     width: 170px;
     border-radius: 5px;
     right: -60px;
     text-align: center;
-    height: 70px;
+    height: 80px;
     padding-top: 17px;
     padding-bottom: 20px;
-    top: 20px;
+    top: 25px;
 }
+
+.profile-image-user-icon img {
+    height: 25px;
+    width: 25px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profile-image-user-icon {
+    display: flex;
+    position: relative;
+} 
 
 .dropdown-content-user-main-nav a{
     color: white;
@@ -141,7 +153,7 @@ i {
 
 .dropdown-content-notificacion-hamburguer {
     display: none;
-    background-color: #161623;
+    background-color: #0d1219;
     color: white;
     font-size: 1rem;
     width: 100%;
@@ -161,12 +173,16 @@ i {
 .store-hamburguer-dropdown {
     flex-direction: column;
     display: none;
-    background-color: #161623;
+    background-color: #0d1219;
     width: 210px;
     color: white;
     right: -5px;
     border-radius: 5px;
     z-index: 17;
+}
+
+#hamburguer-account h3{
+    margin: 0 10px;
 }
 
 .store-dropdown:hover .dropdown-content {display: flex;}
@@ -186,7 +202,7 @@ i {
     flex-direction: column;
     width: 70vw;
     height: 100%;
-    background-color: #161623;
+    background-color: #0d1219;
     color: whitesmoke;
     border: 1px solid black;
 }
