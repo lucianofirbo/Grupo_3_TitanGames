@@ -125,7 +125,7 @@
                 <% let productsFound = [] %>
                 <% for(i=0; i < 3 ;i++) { %>
                     <div class="game">
-                        <a href="http://localhost:3000/product/detail/product[i].id">
+                        <a href="http://localhost:3000/product/detail/<%-product[i].id%>">
                             <img src="img/games/<%- product[i].productImage[0].image %>" alt="ni no kuni 2" class="games-img-w">
                         </a>    
                         <div class="game-text">
