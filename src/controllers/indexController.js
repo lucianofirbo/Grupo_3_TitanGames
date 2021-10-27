@@ -8,8 +8,16 @@ module.exports = {
             include: [{association: "categories"}, {association: "subcategory"}, {association: "productImage"}]
         })
         .then(product => {
-            /* res.send(product) */
-            res.render('users/index', {product, userInSession : req.session.userLogged ? req.session.userLogged : ''});
+            db.Product.findAll({
+                order: [['timesVisited', 'DESC']],
+                limit: 3,                
+                include: [{association: "categories"}, {association: "subcategory"}, {association: "productImage"}]
+            })
+            .then(maxVisited => {
+                console.log(maxVisited)
+                /* res.send(product) */
+            res.render('users/index', {product, maxVisited, userInSession : req.session.userLogged ? req.session.userLogged : ''});
+            })
         })
         
     },
