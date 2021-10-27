@@ -56,7 +56,8 @@ module.exports = {
                 recommendedVideo: req.body.recommendedVideo,
                 recommendedProcessor: req.body.recommendedProcessor,
                 recommendedRam: req.body.recommendedRam,
-                videoURL: req.body.videoURL ? req.body.videoURL : 'https://youtu.be/dQw4w9WgXcQ'
+                videoURL: req.body.videoURL ? req.body.videoURL : 'https://youtu.be/dQw4w9WgXcQ',
+                timesVisited: 0
             })
             .then(product => {
                 if(arrayImages.length > 0){

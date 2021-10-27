@@ -14,7 +14,7 @@ module.exports = {
             where: {
                 id: req.session.userLogged.id
             },
-            include: {association: 'adress'}
+            include: {association: 'address'}
         })
         .then(user => {     
             console.log(user.adress)       
@@ -88,7 +88,7 @@ module.exports = {
             where: {
                 id: req.params.id
             },
-            include: [{association: 'adress'}]
+            include: [{association: 'address'}]
         })
         .then(user => {
             res.render('users/profileEdit', {
@@ -153,6 +153,18 @@ module.exports = {
         } else {
             res.send('error')
         }
+    },
+
+    delete: (req, res) => {
+        db.User.destroy({
+            where: {
+                id: req.session.userLogged.id
+            },
+            include: [{association: 'Address'}]
+        })
+        .then(() => {
+            res.redirect('/')
+        })
     },
 
     logout: (req, res) => {

@@ -40,7 +40,7 @@
                         <h4>+</h4>
                     </div>
                 </div>
-                <div class="img-container" id="userData">                    
+                <div class="img-container" id="userData">
                     <div class="profile-image-user">
                         <img src="/img/users/<%= user.avatar %>" alt="Profile Image">
                     </div>
@@ -54,11 +54,15 @@
                                     <% } else { %> 
                                         Usuario
                                     <% } %>
-                                </p>                        
+                                </p>
+                            </div>
+                            <div class="buttons">
+                                <a href="/user/profile/edit/<%= userInSession.id %>" class="buttonEdit">Editar</a>
+                                <a href="/user/profile/delete" class="buttonDelete">Eliminar</a>
                             </div>
                         </div>
                     </div>
-                </div>                        
+                </div>
     
             </div>
         </div>

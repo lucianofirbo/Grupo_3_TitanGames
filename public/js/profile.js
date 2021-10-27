@@ -43,5 +43,3 @@ function showHide (idShow, idHide, idHide2) {
     document.getElementById(idHide).style.display = 'none'
     document.getElementById(idHide2).style.display = 'none'
 }
-
-/* document.getElementById('showHideBar') */

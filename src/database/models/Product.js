@@ -41,6 +41,9 @@ module.exports = (sequelize, dataTypes) => {
         },
         videoURL: {
             type: dataTypes.STRING(100)
+        },
+        timesVisited: {
+            type: dataTypes.INTEGER(11)
         }
     }
 

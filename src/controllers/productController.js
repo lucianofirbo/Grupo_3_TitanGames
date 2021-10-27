@@ -27,11 +27,21 @@ module.exports = {
                 include: [{association: "categories"}, {association: "subcategory"}, {association: "productImage"}]
             })
             .then(product => {
-                res.render('products/productDetail', {
-                    productF: product, 
-                    dataBase: products,
-                    toThousand,
-                    userInSession : req.session.userLogged ? req.session.userLogged : ''
+                let times = product.timesVisited + 1
+                db.Product.update({
+                    timesVisited: times
+                }, {
+                    where: {
+                        id: req.params.id
+                    }
+                })
+                .then(() => {
+                    res.render('products/productDetail', {
+                        productF: product, 
+                        dataBase: products,
+                        toThousand,
+                        userInSession : req.session.userLogged ? req.session.userLogged : ''
+                })
                 });
             }
         )})

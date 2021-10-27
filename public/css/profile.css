@@ -14,6 +14,8 @@ body .box-shop {
     background-color: #161623
 }
 main {
+    display: flex;
+    flex-direction: column;
     min-height: 80vh;
 }
 .text-shop2 {
@@ -74,6 +76,28 @@ main {
     background-color: #161623;
     border: 0.1px solid;
     z-index: 1;
+}
+.buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.buttonEdit {
+    text-decoration: none;
+    color: white;
+    background-color: green;
+    font-size: 25px;
+    padding: 5px;
+    border-radius: 5px;
+}
+.buttonDelete {
+    text-decoration: none;
+    color: white;
+    background-color: red;
+    font-size: 25px;
+    padding: 5px;
+    border-radius: 5px;
 }
 .game-keys .profile-text {
     display: flex;
