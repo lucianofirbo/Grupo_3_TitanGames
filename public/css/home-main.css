@@ -263,7 +263,7 @@ main {
     display: flex;
     padding: 5px;
     flex-direction: column;
-    text-align: right;
+    text-align: center;
 }
 
 .price {
@@ -275,6 +275,8 @@ main {
 .sale-box {
     border-radius: 5px;
     background-color: hotpink;
+    width: 40px;
+    text-align: center;
 }
 
 .game-discover-hr {
