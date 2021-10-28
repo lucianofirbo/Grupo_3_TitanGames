@@ -7,6 +7,7 @@ const controller = require('../controllers/productController')
 router.get('/', controller.index);
 /* Ruta para el detalle del producto */
 router.get('/detail/:id', controller.detail);
+
 /* Ruta para el carrito de compras */
 router.get('/cart', controller.cart);
 
