@@ -97,15 +97,16 @@
     <section class="games-main">
         <div class ="games-main-container">
             
-        <% product.forEach(product => { %>
+        <% for (i=0; i < 9; i++) { %>
 
             <div class="card-container">
+
                 <div class="imgBx">
-                    <a href="/product/detail/<%-product.id%>"><img src="img/games/<%- product.productImage[0].image %>"></a>
+                    <a href="/product/detail/<%-product[i].id%>"><img src="img/games/<%- product[i].productImage[0].image %>"></a>
                 </div>
-                <a href="/product/detail/<%-product.id%>"><div class="content-card">
+                <a href="/product/detail/<%-product[i].id%>"><div class="content-card">
                     <div class="contentBx">
-                        <h3><%- product.product %><br> <span>$<%- product.price %></span> </h3>
+                        <h3><%- product[i].product %><br> <span>$<%- product[i].price %></span> </h3>
                     </div>
                     <div class="icon-cart">
                         <i class="fas fa-cart-plus"></i>
@@ -114,7 +115,7 @@
                                
             </div>
 
-        <% }) %>
+        <% } %>
         </div>
     </section>
 
