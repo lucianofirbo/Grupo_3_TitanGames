@@ -129,17 +129,20 @@ main {
 }
 
 .profile-image-user {
-    height: 200px;
-    display: flex;
     justify-content: center;
     align-items: center;
     margin: 20px auto;
-}
+} 
 
 .profile-image-user img {
-    height: 100%;
-    width: auto;
+    height: 180px;
+    width: 180px;
     border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    box-shadow: 1px 1px 30px -8px rgba(255, 255, 255, 0.603);
+-webkit-box-shadow: 1px 1px 30px -8px rgba(255, 255, 255, 0.329);
+-moz-box-shadow: 1px 1px 30px -8px rgba(255, 255, 255, 0.418);
 }
 
 /* .userInformation {

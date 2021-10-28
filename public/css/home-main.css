@@ -46,11 +46,12 @@ main {
 /* Grow item */
 
 .special-offer-game:hover {    
-    -moz-transform: scale(1.05);
+    /* -moz-transform: scale(1.05);
     -webkit-transform: scale(1.05);
     -o-transform: scale(1.05);
     -ms-transform: scale(1.05);
-    transform: scale(1.05);
+    transform: scale(1.05); */
+    filter: brightness(50%);
 }
 
 /* Carousel */
@@ -69,17 +70,15 @@ main {
 /* Section separator */
 
 .separator {
-    margin: 0;
-    border-bottom: 2px solid white;
+    margin: 10px;
+    border-bottom: 0.1px solid #7c7c7c69;
     display: flex;
     height: 40px;
 }
 
 .separator p {
     color: white;
-    font-size: 25px;
-    font-weight: 150;
-    font-family: arial;
+    font-size: 18px;
     margin-left: 2.5%;
 }
 
@@ -89,11 +88,12 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    padding: 0 10px 10px 10px;
+    padding: 0 10px 20px 10px;
     width: 100%;
     gap: 15px;
     margin-top: 20px;
     height: 34vh;
+    
 }
 
 .special-offer a {
@@ -132,8 +132,9 @@ main {
 .special-offer-game img {
     width: 100%;
     box-shadow: 2px 0.7698959708213806px 1.078827142715454px 2px #00000065;
-    border-radius: 5%;
+    /* border-radius: 5%; */
 }
+
 
 .special-offer-details {
     position: absolute;
@@ -166,6 +167,77 @@ main {
 
 /* Discover */
 
+  .imgBx img {
+    width: 300px;
+    height: 150px;
+    object-fit: cover;
+  }
+  .games-main-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 20px 0;
+  }
+  .games-main-container .card-container {
+    position: relative;
+    margin: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.308);
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease-in-out;
+  }
+  .games-main-container .card-container:hover {
+    transform: scale(1.05);
+  }
+  .games-main-container .card-container .content-card {
+    position: absolute;
+    bottom: -160px;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(3px);
+    box-shadow: 0 -10px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: bottom 0.5s;
+    cursor: pointer;
+  }
+  .games-main-container .card-container:hover .content-card {
+    bottom: 0px;
+  }
+  .games-main-container .card-container .content-card .contentBx h3 {
+    color: black;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 0 15px;
+    line-height: 1.1em;
+    transition: 0.5s;
+  }
+  .games-main-container .card-container .content-card .contentBx h3 span {
+    font-weight: 900;
+    color: white;
+    text-transform: initial;
+  }
+  .games-main-container .card-container .content-card .icon-cart {
+    position: relative;
+    bottom: 10px;
+    display: flex;
+  }
+  .games-main-container .card-container:hover .content-card .icon-cart i{
+    color: var(--greenTitan);
+  }
+
+/* Last section */
 .discover {
     display: flex;
     flex-direction: column;
@@ -187,7 +259,7 @@ main {
 }
 
 .games > .game:first-child {
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 .games > .game:last-child {
@@ -201,31 +273,30 @@ main {
 }
 
 #active {    
-    background-color: #807c7c8a;
+    background-color: #0000004d;
     margin-bottom: 0;
 }
 
 #active2 {
-    background-color: rgba(0, 0, 0, 0);
+    background-color: #0000004d;
     margin-bottom: 0;
 }
 #active3 {
-    background-color: rgba(0, 0, 0, 0);
+    background-color: #0000004d;
     margin-bottom: 0;
 }
 
 .games {
-    display: flex;
     flex-direction: column;
-    background-color: #807c7c8a;
-    margin-top: 0;
-    width: 100%;
+    background-color: #0000004d;
     color: whitesmoke;
     font-weight: 600;
     justify-content: space-around;
-    width: 95%;
     text-align: center;
     border-radius: 0 10px 10px 10px;
+    padding-bottom: 50px;
+    position: relative;
+    width: 100%;
 }
 
 #top-sales {
@@ -238,12 +309,18 @@ main {
 
 .game a {
     width: 40%;
-    height: 100%;
+    text-decoration: none;
 }
 
 .game img {
+<<<<<<< HEAD
     width: 100%;
     max-height: 165px;
+=======
+    height: 70px;
+    width: 120px;
+    object-fit: cover;
+>>>>>>> 06d1c5efdaa90b1bca065926059fbbeef95dbe8d
 }
 
 .game {
@@ -251,6 +328,9 @@ main {
     padding: 2%;
     justify-content: space-between;
     max-height: 199px;
+    align-items: center;
+    background-color: #00000038;
+    margin-top: 10px;
 }
 
 .game-text {
@@ -274,9 +354,13 @@ main {
 
 .sale-box {
     border-radius: 5px;
+<<<<<<< HEAD
     background-color: hotpink;
     width: 40px;
     text-align: center;
+=======
+    background-color: var(--greenTitan);
+>>>>>>> 06d1c5efdaa90b1bca065926059fbbeef95dbe8d
 }
 
 .game-discover-hr {
@@ -286,24 +370,29 @@ main {
 
 .see-more-d {
     justify-content: center;
-    background-color: #807c7c8a;
-    width: 40%;
-    margin-bottom: 15px;
-    border-radius: 0 0 15px 15px;
+    background-color: transparent;
+    width: 150px;
+    height: 60px;
+    position: absolute;
+    bottom: 0px;
+    border: 1px solid black;
+    box-shadow: -1px 0px 49px -25px rgba(0,0,0,0.51) inset;
+-webkit-box-shadow: -1px 0px 49px -25px rgba(0,0,0,0.51) inset;
+-moz-box-shadow: -1px 0px 49px -25px rgba(0,0,0,0.51) inset;
 }
 
 .see-more-d a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.see-more-d p {
     color: white;
     font-weight: 600;
     font-size: 0.7rem;
+    display: contents;
     text-align: center;
 }
+
+.see-more-d p {
+    margin-bottom: initial;
+}
+
 
 /* Media Querys */ 
 
@@ -322,7 +411,7 @@ main {
         position: relative;
         transition: all .2s ease-in-out;
         height: 100%;
-        border-radius: 5%;
+        /* border-radius: 5%; */
     }
 
     .see-more-button {
@@ -330,7 +419,8 @@ main {
     }
 
     .slide img {
-        height: 32vh;
+        height: 50vh;
+        object-fit: cover;
         margin-bottom: 5px;
         margin-top: 5.5%;
     }
@@ -349,8 +439,18 @@ main {
 
     .discover {
         margin-top: 2%;
+        margin-bottom: 2%;
     }
 
+    .see-more-d {
+        margin: initial;
+        padding-bottom: 20px;
+    }
+
+    .game img {
+        height: 90px;
+        width: 150px;
+    }
 }
 
 @media screen and (min-width: 1024px) {
@@ -360,8 +460,8 @@ main {
     }
     
     .games img {
-        max-height: 160px;
-        width: 100%;
+        max-height: 100px;
+        width: 150px;
     }
 
     .see-more-button {
@@ -369,8 +469,13 @@ main {
     }
 
     .slide img {
-        height: 45vh;
+        height: 55vh;
+        width: 65vw;
         margin-bottom: 5px;
+    }
+
+    .game a {
+        width: 20%;
     }
 
 }
