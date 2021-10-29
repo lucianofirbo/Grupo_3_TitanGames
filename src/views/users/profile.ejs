@@ -37,17 +37,23 @@
                 <div class="game-keys">
                     <div class="profile-text" id="showHideBar">
                         <h4>MIS DATOS</h4>
-                        <h4>+</h4>
+                        <div class="showHideIcon">
+                            <span id="showMore" onclick="showContent();">+</span>
+                            <span id="showLess" onclick="hideContent();">-</span>
+                        </div>
                     </div>
                 </div>
+
                 <div class="img-container" id="userData">
+                    <a class="edit-profile-page" href="/user/profile/edit/<%= userInSession.id %>"><i class="far fa-edit"></i></a>
                     <div class="profile-image-user">
                         <img src="/img/users/<%= user.avatar %>" alt="Profile Image">
                     </div>
+                    <h3>Datos del usuario</h3>
                     <div class="userInformationContainer">
-                        <div class="userInformation">
-                            <h3>Datos del usuario</h3>
-                                <p>Username: <%- userInSession.userName %></p>
+                        
+                        <div class="userInformation">                            
+                                <p><span>username: </span> <%- userInSession.userName %></p>
                                 <p>Email: <%- userInSession.email %></p>
                                 <p>Rol: <% if (userInSession.rol === 1) { %> 
                                         Admin
@@ -55,12 +61,16 @@
                                         Usuario
                                     <% } %>
                                 </p>
-                            </div>
-                            <div class="buttons">
-                                <a href="/user/profile/edit/<%= userInSession.id %>" class="buttonEdit">Editar</a>
-                                <a href="/user/profile/delete" class="buttonDelete">Eliminar</a>
-                            </div>
                         </div>
+                        <div class="userInformation">                   
+                                <p>Dirección: <%- userInSession.street ? userInSession.street : userInSession.street = '.....' %></p>
+                                <p>Código Postal: <%- userInSession.postalCode ? userInSession.postalCode : userInSession.postalCode = '.....' %></p>
+                                <p>Ciudad: <%- userInSession.city ? userInSession.city : userInSession.city = '.....' %></p>
+                        </div>
+
+                    </div>
+                    <div class="buttons">                        
+                        <a href="/user/profile/delete" class="buttonDelete">Eliminar cuenta</a>
                     </div>
                 </div>
     
