@@ -9,34 +9,34 @@
     <%- include('../partials/background') -%>
     <%- include('../partials/header') -%>
 
-    <!-- Editar Perfil -->
+    <!-- Editar Perfil -->    
+    <div class="edit-card"> 
 
-    <div class="register-card" id="register-card">
-        <div class="register-container">
-            <form class="form-container" action="/user/profile/edit/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
-                <img src="/img/logo-footer.png" alt="logotipo" class="logo-register">
-                <div class="registrate"><p>Editar perfil</p></div>
-                <div class="input-container-reg">
-                    <input class="input-style" type="name" name="userName" placeholder="Ingrese su usuario" value="<%= locals.old ? old.userName : user.userName %>" >
+        <div class="edit-container">
+
+            <img src="/img/logo-footer.png" alt="logotipo" class="logo-edit">
+            <div class="edit-profile"><p>Editar perfil</p></div>
+
+            <form class="form-container-edit" action="/user/profile/edit/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                
+                <div class="input-container-edit">
+                    <input class="input-style-edit" type="name" name="userName" placeholder="Ingrese su usuario" value="<%= locals.old ? old.userName : user.userName %>" >
                     <% if (locals.errors && errors.userName) { %>
                         <small class="text-danger"><%= errors.userName.msg %> </small>
                     <% } %>
                 </div>
-
-                <div class="input-container-reg">
-                    <input class="input-style" type="email" name="email" placeholder="Ingrese su email" value="<%= locals.old ? old.email : user.email %>">
+                <div class="input-container-edit">
+                    <input class="input-style-edit" type="email" name="email" placeholder="Ingrese su email" readonly value="<%= locals.old ? old.email : user.email %>">
                     <% if (locals.errors && errors.email) { %>
                         <small class="text-danger"><%= errors.email.msg %> </small>
                     <% } %>
                 </div>
-                <div class="input-container-reg">
-                    <input class="input-style" type="text" name="address" placeholder="Dirección" value="<%= user.address[0]?.userId == user.id  ? user.address[0].street : '' %>">
+                <div class="input-container-edit">
+                    <input class="input-style-edit" type="text" name="address" placeholder="Dirección" value="<%= user.address[0]?.userId == user.id  ? user.address[0].street : '' %>">
                 </div>
-
-                <div class="input-container-reg">
-                    <input class="input-style" type="text" name="postalCode" placeholder="Codigo postal" value="<%= user.address[0]?.userId == user.id  ? user.address[0].postalCode : '' %>">
+                <div class="input-container-edit">
+                    <input class="input-style-edit" type="text" name="postalCode" placeholder="Codigo postal" value="<%= user.address[0]?.userId == user.id  ? user.address[0].postalCode : '' %>">
                 </div>
-
                 <div class="form-ad-input">
                     <select name="province" id="">
                         <option value="">Provincia</option>
@@ -47,22 +47,16 @@
                         <option value="">Localidad</option>
                     </select>
                 </div>
-
                 <div class="input-file">
                     <p>Cambiar foto de perfil</p>
                     <input type="file" name='avatar'>
                 </div>
+                <div class="button-container-edit">                    
+                    <button type="submit" class="submit-edit">Guardar</button>
+                </div>
 
-                <div class="button-container-reg">
-                    
-                    <button type="submit" class="submit-register">Guardar</button>
-                </div>
-                <div class="redirect-register" id="redirect-login">
-                    <span>
-                        <a style="text-decoration: none;" href="#"><span></span></a>
-                    </span>
-                </div>
             </form>
+
         </div>
     </div>
     <%- include('../partials/footer') -%>
