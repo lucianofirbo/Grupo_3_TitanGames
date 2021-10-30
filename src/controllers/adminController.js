@@ -47,7 +47,7 @@ module.exports = {
                 product: req.body.product,
                 price: req.body.precio,
                 description: req.body.descripcion,
-                /* offers: req.body.offers, */
+                offers: req.body.offers,
                 categoryId: req.body.genero,
                 subCategoryId: req.body.subGenero,
                 minimumVideo: req.body.minimumVideo,
@@ -118,7 +118,7 @@ module.exports = {
                 product: req.body.product,
                 price: req.body.precio,
                 description: req.body.descripcion,
-                /* offers: req.body.offers, */
+                offers: req.body.offers, 
                 categoryId: req.body.genero,
                 subCategoryId: req.body.subGenero,
                 minimumVideo: req.body.minimumVideo,

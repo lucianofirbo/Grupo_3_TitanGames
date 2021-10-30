@@ -70,7 +70,9 @@
             </div>
             <!-- TERMINA SLIDER-->
             <div class="buy-product">
-                <p id="offer">-90%</p>
+                <% if (productF.offers) { %>
+                    <p class="sale-box"><%-productF.offers%>%</p>
+                <% } %>
                 <p> $<%- toThousand(productF.price) %> </p>
                 <div class="button-container">
                     <button type="submit" class="btn btn-submit">Añadir al carrito <i class="fas fa-cart-plus"></i></button>
@@ -93,10 +95,10 @@
 
                     <div class="categoriesDetail">
                         <div class="category-container">
-                            <p id="category"><strong id="strong-category"> Categoria: </strong><%- productF.categories.name %></p>
+                            <strong id="strong-category"> Categoria: </strong><p id="category"><%- productF.categories.name %></p>
                         </div>
                         <div class="category-container">
-                            <p id="category"><strong id="strong-category"> Sub-Categoria: </strong><%- productF.subcategory.name %></p>
+                            <strong id="strong-category"> Sub-Categoria: </strong><p id="category"><%- productF.subcategory.name %></p>
                         </div>
                     </div>
                     

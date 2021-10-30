@@ -12,9 +12,17 @@ module.exports = {
             order: [['id', 'DESC']],
             include: [{association: "categories"}, {association: "subcategory"}, {association: "productImage"}]
         })
-        Promise.all([product, lastGames])
-        .then(function([product, lastGames]) {
-            res.render('users/index', {product, lastGames,/* toThousand, */userInSession : req.session.userLogged ? req.session.userLogged : ''});
+        let productSale = db.Product.findAll({
+            where: {
+                offers: {
+                    [Op.gte]: 30
+                }
+            },
+            include: [{association: "categories"}, {association: "subcategory"}, {association: "productImage"}]
+        })
+        Promise.all([product, lastGames, productSale])
+        .then(function([product, lastGames, productSale]) {
+            res.render('users/index', {product, lastGames, productSale,/* toThousand, */userInSession : req.session.userLogged ? req.session.userLogged : ''});
         })        
     },
     politics: (req, res) => {

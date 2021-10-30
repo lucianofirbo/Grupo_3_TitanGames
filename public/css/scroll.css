@@ -1,0 +1,20 @@
+/* PERSONALIZACIÓN PARA EL SCROLL */
+
+html {
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+    background-color: #0e131a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(transparent, #383f49);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(transparent, #4b5563);
+}
