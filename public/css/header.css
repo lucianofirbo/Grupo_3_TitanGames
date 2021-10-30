@@ -92,21 +92,12 @@ i {
     flex-direction: column;
     justify-content: space-between;
     position: absolute;
-<<<<<<< HEAD
-    background-color: #161623;
-    width: 160px;
-    border-radius: 5px;
-    right: -60px;
-    text-align: center;
-    height: 85px;
-=======
     background-color: #0d1219;
     width: 170px;
     border-radius: 5px;
     right: -60px;
     text-align: center;
     height: 80px;
->>>>>>> 06d1c5efdaa90b1bca065926059fbbeef95dbe8d
     padding-top: 17px;
     padding-bottom: 20px;
     top: 25px;
