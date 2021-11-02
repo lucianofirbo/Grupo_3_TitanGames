@@ -2,125 +2,81 @@
 <html lang="en">
 <head>
     <%- include('../partials/head') -%>
-        <title>Perfil</title>
-        <link rel="stylesheet" href="/css/index.css">
-        <link rel="stylesheet" href="/css/profile.css">
+    <title>Perfil</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/profile.css">
+    <script src="/js/profile.js" defer></script>
 </head>
 <body>
     <%- include('../partials/background') -%>
-            <%- include('../partials/header') -%>
-                <div class="complete-dashboard">
-                    <div class="dashboard">
-                        <div class="text-dashboard">
-                            <div class="text-shop2">
-                                <h4>MI TABLERO</h4>
-                            </div>
-                        </div>
-                        <div class="button-dashboard"><a href="">MI CUENTA</a><i class="fas fa-caret-down"></i>
-                            <div class="button-dashboard-dropdown">
-                                <div class="button-dashboard-dropdown1"><a href=""></a>
-                                    <a href="/user/profile/edit/<%= userInSession.id %>"><h4>Editar cuenta</h4></a>
-                                </div>
-                                <div class="button-dashboard-dropdown1"><a href=""></a>
-                                    <a href="/user/logout"><h4>Cerrar sesión</h4></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="button-dashboard"><a href="">REDES SOCIALES</a><i class="fas fa-caret-down"></i>
-                            <div class="button-dashboard-dropdown">
-                                <div class="redes-social">
-                                    <div class="social-box"><a href="https://www.instagram.com/_titan_games_/"
-                                            target="_blank"><i class="fab fa-instagram"></i></a>
-                                        <div>
-                                            <h4>INTAGRAM</h4>
-                                        </div>
-                                    </div>
-                                    <div class="social-box"><a
-                                            href="https://www.facebook.com/Titan-Games-markteplace-109552258094094"
-                                            target="_blank"><i class="fab fa-facebook"></i></a>
-                                        <div>
-                                            <h4>FACEBOOK</h4>
-                                        </div>
-                                    </div>
-                                    <div class="social-box"><a href="https://www.twitch.tv/titangamesmarket"
-                                            target="_blank"><i class="fab fa-twitch"></i></a>
-                                        <div>
-                                            <h4>TWITCH</h4>
-                                        </div>
-                                    </div>
-                                    <div class="social-box"><a href="https://twitter.com/_Titan_Games_"
-                                            target="_blank"><i class="fab fa-twitter"></i></a>
-                                        <div>
-                                            <h4>TWITTER</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="button-dashboard"><a href="">SOPORTE</a><i class="fas fa-caret-down"></i>
-                            <div class="button-dashboard-dropdown">
-                                <div class="soporte">
-                                    <div class="button-dashboard-dropdown1 soporte-box"><a href="http://localhost:3000/about"
-                                            target="_blank"><h4>Sobre nosotros</h4></a></div>
-                                    <div class="button-dashboard-dropdown1 soporte-box"><a href="http://localhost:3000/politics"
-                                            target="_blank"><h4>Politicas de privacidad</h4></a></div>
-                                    <div class="button-dashboard-dropdown1 soporte-box"><a href="#" target="_blank"><h4>Contactanos</h4></a></div>
-                                </div>
-                            </div>
-                        </div>
+    <%- include('../partials/header') -%>
+    <main>
+        <div class="complete-dashboard">
+            <div class="box-shop">
+                <div class="box-shop1">
+                    <div class="circle1">
+                        <i id="icon-shop" class="fas fa-shopping-cart"></i>
                     </div>
-                    <div class="box-shop">
-                        <div class="box-shop1">
-                            <div class="circle1">
-                                <i id="icon-shop" class="fas fa-shopping-cart"></i>
-                            </div>
-                            <div class="text-shop">
-                                <h4>TIENDA</h4>
-                            </div>
-                        </div>
-                        <div class="box-shop2">
-                            <div class="circle2">
-                                <div>
-                                    <i id="shop-icon2" class="fas fa-bolt"></i>
-                                </div>
-                            </div>
-                            <div class="text-shop">
-                                <h4>OFERTAS</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="keys-container">
-                        <div class="game-keys">
-                            <div class="profile-text">
-                                <h4>MIS DATOS</h4>
-                                <h4>+</h4>
-                            </div>
-                        </div>
-                        <div class="img-container">
-                                
-                            <div class="profile-image-user">
-                                <img src="/img/users/<%= user.avatar %>" alt="Profile Image">
-                            </div>
-
-                            <div class="userInformationContainer">
-                                <div class="userInformation">
-                                    <h3>Datos del usuario</h3>
-                                        <p>Username: <%- userInSession.userName %></p>
-                                        <p>Email: <%- userInSession.email %></p>
-                                        <p>Rol: <% if (userInSession.rol === 1) { %> 
-                                                Admin
-                                            <% } else { %> 
-                                                Usuario
-                                            <% } %>
-                                        </p>                        
-                                    </div>
-                                </div>
-                            </div>                            
-
-                        </div>                        
-
+                    <div class="text-shop">
+                        <h4>TIENDA</h4>
                     </div>
                 </div>
-                <%- include('../partials/footer') -%>
+                <div class="box-shop2">
+                    <div class="circle2">
+                        <div>
+                            <i id="shop-icon2" class="fas fa-bolt"></i>
+                        </div>
+                    </div>
+                    <div class="text-shop">
+                        <h4>OFERTAS</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="keys-container">
+    
+                <div class="game-keys">
+                    <div class="profile-text" id="showHideBar">
+                        <h4>MIS DATOS</h4>
+                        <div class="showHideIcon">
+                            <span id="showMore" onclick="showContent();">+</span>
+                            <span id="showLess" onclick="hideContent();">-</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="img-container" id="userData">
+                    <a class="edit-profile-page" href="/user/profile/edit/<%= userInSession.id %>"><i class="far fa-edit"></i></a>
+                    <div class="profile-image-user">
+                        <img src="/img/users/<%= user.avatar %>" alt="Profile Image">
+                    </div>
+                    <h3>Datos del usuario</h3>
+                    <div class="userInformationContainer">
+                        
+                        <div class="userInformation">                            
+                                <p><span>username: </span> <%- userInSession.userName %></p>
+                                <p>Email: <%- userInSession.email %></p>
+                                <p>Rol: <% if (userInSession.rol === 1) { %> 
+                                        Admin
+                                    <% } else { %> 
+                                        Usuario
+                                    <% } %>
+                                </p>
+                        </div>
+                        <div class="userInformation">                   
+                                <p>Dirección: <%- userInSession.street ? userInSession.street : userInSession.street = '.....' %></p>
+                                <p>Código Postal: <%- userInSession.postalCode ? userInSession.postalCode : userInSession.postalCode = '.....' %></p>
+                                <p>Ciudad: <%- userInSession.city ? userInSession.city : userInSession.city = '.....' %></p>
+                        </div>
+
+                    </div>
+                    <div class="buttons">                        
+                        <a href="/user/profile/delete" class="buttonDelete">Eliminar cuenta</a>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </main>
+    <%- include('../partials/footer') -%>
 </body>
 </html>

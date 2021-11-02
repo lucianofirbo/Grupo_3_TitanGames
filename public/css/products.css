@@ -1,7 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
-@import url('background.css');
-@import url('header.css');
-@import url('footer.css');
+@import url('general.css');
+@import url('scroll.css');
 
 :root {
   --pinkTitan: #D94969;
@@ -74,7 +72,12 @@
 }
 
 .sale-box {
-    background-color: var(--pinkTitan);
+    background-color: var(--greenTitan);
+    width: 35px;
+    height: 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    align-items: center;
 }
 
 .game-discover-hr {
@@ -114,8 +117,12 @@
     .game img {
         max-width: 200px;
     }
-
-    .game img:hover{
-        transform: scale(1);
+    .game a {
+        transition: all .6s ease-in-out;
+        filter: brightness(80%);
+    }
+    .game a:hover {
+        transform: scale(1.2);
+        filter: brightness(100%);
     }
 }

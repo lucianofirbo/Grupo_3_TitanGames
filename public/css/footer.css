@@ -8,12 +8,12 @@
 }
 
 footer {
-    background-color: #161623;
+    background-color: #0a0d13;
     position: relative;
     z-index: 1;
     display: flex;
     justify-content: space-around;   
-    width: 100vw;
+    width: 100%;
 }
 
 .logo-footer img{

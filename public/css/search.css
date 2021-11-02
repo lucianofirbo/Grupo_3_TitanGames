@@ -1,7 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
-@import url('background.css');
-@import url('header.css');
-@import url('footer.css');
+@import url('general.css');
+@import url('scroll.css');
 
 :root {
   --pinkTitan: #D94969;
@@ -158,8 +156,10 @@
 
 .game-text p {
     display: flex;
-    padding: 0;
+    padding: 5px;
     flex-direction: column;
+    text-align: right;
+    border-radius: 5px;
 }
 
 .price {

@@ -1,20 +1,29 @@
-const path = require('path');
-let {getProducts} = require('../data/dataBase');
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const db = require('../database/models');
 const Op = db.Sequelize.Op;
 
 module.exports = {
 
     index: (req, res) => {       
-        
-        db.Product.findAll({
+        let product = db.Product.findAll({       
+            order: [['timesVisited', 'DESC']],
+            include: [{association: "categories"}, {association: "subcategory"}, {association: "productImage"}],    
+        })
+        let lastGames = db.Product.findAll({
+            order: [['id', 'DESC']],
             include: [{association: "categories"}, {association: "subcategory"}, {association: "productImage"}]
         })
-        .then(product => {
-            res.render('users/index', {product, userInSession : req.session.userLogged ? req.session.userLogged : ''});
+        let productSale = db.Product.findAll({
+            where: {
+                offers: {
+                    [Op.gte]: 30
+                }
+            },
+            include: [{association: "categories"}, {association: "subcategory"}, {association: "productImage"}]
         })
-        
+        Promise.all([product, lastGames, productSale])
+        .then(function([product, lastGames, productSale]) {
+            res.render('users/index', {product, lastGames, productSale,/* toThousand, */userInSession : req.session.userLogged ? req.session.userLogged : ''});
+        })        
     },
     politics: (req, res) => {
         res.render('users/privacyPolitics', {
@@ -40,18 +49,6 @@ module.exports = {
                 userInSession : req.session.userLogged ? req.session.userLogged : ''
             });
         })
-
-        /*let result = [];
-        getProducts.forEach(product => {
-            if (product.product.toLowerCase().includes(req.query.keywords.toLowerCase())) {
-                result.push(product)
-            }
-        });
-        res.render('users/search', {
-            result,
-            search: req.query.keywords,
-            userInSession : req.session.userLogged ? req.session.userLogged : ''
-        }); */
     },
     searchPrice: (req, res) => {
         db.Product.findAll({
