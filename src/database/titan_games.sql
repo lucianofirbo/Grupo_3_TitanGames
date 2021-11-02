@@ -33,7 +33,7 @@ CREATE TABLE `addresses` (
   PRIMARY KEY (`id`),
   KEY `userId` (`userId`),
   CONSTRAINT `addresses_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,6 +42,7 @@ CREATE TABLE `addresses` (
 
 LOCK TABLES `addresses` WRITE;
 /*!40000 ALTER TABLE `addresses` DISABLE KEYS */;
+INSERT INTO `addresses` VALUES (2,'asd123','','',NULL,1212,12);
 /*!40000 ALTER TABLE `addresses` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -91,6 +92,7 @@ CREATE TABLE `products` (
   `videoURL` varchar(100) DEFAULT NULL,
   `categoryId` int(11) DEFAULT NULL,
   `subCategoryId` int(11) DEFAULT NULL,
+  `timesVisited` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_ef58d02f-4de8-4f36-bdcd-d7fc35ed0d2a` (`categoryId`),
   KEY `subCategoryId` (`subCategoryId`),
@@ -105,7 +107,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'The Witcher 3',600,'Mientras la guerra se extiende por los Reinos del Norte, aceptarás el contrato de tu vida: encontrar a la niña de la profecía, un arma viviente que puede alterar el mundo tal y como lo conocemos. ',10,'1050ti','I5 7400','8gb','1070ti','i7 8100','16gb',NULL,1,3),(2,'Battlefield 4',1200,'Esta es la mejor experiencia de Battlefield 4. Vive el mayor conflicto de la humanidad con un completo arsenal de armas, vehículos y dispositivos, y todos los contenidos de personalización de los dos primeros años ',25,'Nvidia GeForce 8800 GT','(Intel): Core 2 Duo 2.4 GHz','4 GB','NVIDIA GeForce GTX 660','(Intel): Quad-core CPU','8 GB de RAM',NULL,2,2),(11,'Ni no Kuni™ II: Revenant Kingdom',649,'Únete al viaje que llevará al joven rey Evan en busca de un nuevo reino, además de, con la ayuda de nuevos amigos, unir el mundo y salvar a sus gentes de un mal espantoso. ',NULL,'NVIDIA GeForce GTX 750 Ti','Intel Core i5-4460','4 GB de RAM','NVIDIA GeForce GTX 970','Intel Core i7-3770','8 GB de RAM','https://youtu.be/dQw4w9WgXcQ',1,1),(12,'Hearts of Iron IV',439,'¡Tenemos la victoria al alcance de la mano! Tu capacidad para liderar tu nación es tu arma principal. En el juego de estrategia Hearts of Iron IV podrás ponerte el mando de cualquier nación de la II Guerra Mundial, el conflicto más fascinante de la historia mundial. ',NULL,'ATI Radeon HD 5850','Intel Core 2 Quad Q9400 @ 2.66 GHz','4 GB de RAM','ATI Radeon HD 6950','Intel Core i5 750 @ 2.66 GHz','4 GB de RAM','https://youtu.be/dQw4w9WgXcQ',2,3),(13,'Europa Universalis IV',439,'Cuatro siglos de historia cobran vida en el juego de gran estrategia de Paradox. Dirige una nación desde el Renacimiento hasta la Revolución en una compleja simulación del comienzo del mundo moderno. Domina el arte de la guerra, la diplomacia y el comercio para cambiar la historia de tu nación.',NULL,'Nvidia® GeForce™ GTX 460','Intel® Core™ i3-2105','1 GB RAM','Nvidia® GeForce™ GTX 560 Ti','Intel® Core™ i3 3240','8 GB RAM','https://youtu.be/dQw4w9WgXcQ',2,3),(15,'The Elder Scrolls IV: Oblivion',240,'The Elder Scrolls IV: Oblivion® Edición Juego del Año presenta uno de los mejores juegos de rol de todos los tiempos como nunca se había visto hasta ahora. Adéntrate en el mundo más detallado y emocionante jamás creado. ',NULL,'Tarjeta gráfica con 128 MB de VRAM','Intel Pentium 4 a 2 GHz','512 MB de RAM','Tarjeta gráfica con 128 MB de VRAM','Intel Pentium 4 a 2 GHz','512 MB de RAM','https://youtu.be/dQw4w9WgXcQ',1,1);
+INSERT INTO `products` VALUES (1,'The Witcher 3',600,'Mientras la guerra se extiende por los Reinos del Norte, aceptarás el contrato de tu vida: encontrar a la niña de la profecía, un arma viviente que puede alterar el mundo tal y como lo conocemos. ',10,'1050ti','I5 7400','8gb','1070ti','i7 8100','16gb',NULL,1,3,1),(2,'Battlefield 4',1200,'Esta es la mejor experiencia de Battlefield 4. Vive el mayor conflicto de la humanidad con un completo arsenal de armas, vehículos y dispositivos, y todos los contenidos de personalización de los dos primeros años ',25,'Nvidia GeForce 8800 GT','(Intel): Core 2 Duo 2.4 GHz','4 GB','NVIDIA GeForce GTX 660','(Intel): Quad-core CPU','8 GB de RAM',NULL,2,2,0),(11,'Ni no Kuni™ II: Revenant Kingdom',649,'Únete al viaje que llevará al joven rey Evan en busca de un nuevo reino, además de, con la ayuda de nuevos amigos, unir el mundo y salvar a sus gentes de un mal espantoso. ',NULL,'NVIDIA GeForce GTX 750 Ti','Intel Core i5-4460','4 GB de RAM','NVIDIA GeForce GTX 970','Intel Core i7-3770','8 GB de RAM','https://youtu.be/dQw4w9WgXcQ',1,1,3),(12,'Hearts of Iron IV',439,'¡Tenemos la victoria al alcance de la mano! Tu capacidad para liderar tu nación es tu arma principal. En el juego de estrategia Hearts of Iron IV podrás ponerte el mando de cualquier nación de la II Guerra Mundial, el conflicto más fascinante de la historia mundial. ',NULL,'ATI Radeon HD 5850','Intel Core 2 Quad Q9400 @ 2.66 GHz','4 GB de RAM','ATI Radeon HD 6950','Intel Core i5 750 @ 2.66 GHz','4 GB de RAM','https://youtu.be/dQw4w9WgXcQ',2,3,0),(13,'Europa Universalis IV',439,'Cuatro siglos de historia cobran vida en el juego de gran estrategia de Paradox. Dirige una nación desde el Renacimiento hasta la Revolución en una compleja simulación del comienzo del mundo moderno. Domina el arte de la guerra, la diplomacia y el comercio para cambiar la historia de tu nación.',NULL,'Nvidia® GeForce™ GTX 460','Intel® Core™ i3-2105','1 GB RAM','Nvidia® GeForce™ GTX 560 Ti','Intel® Core™ i3 3240','8 GB RAM','https://youtu.be/dQw4w9WgXcQ',2,3,0),(15,'The Elder Scrolls IV: Oblivion',240,'The Elder Scrolls IV: Oblivion® Edición Juego del Año presenta uno de los mejores juegos de rol de todos los tiempos como nunca se había visto hasta ahora. Adéntrate en el mundo más detallado y emocionante jamás creado. ',NULL,'Tarjeta gráfica con 128 MB de VRAM','Intel Pentium 4 a 2 GHz','512 MB de RAM','Tarjeta gráfica con 128 MB de VRAM','Intel Pentium 4 a 2 GHz','512 MB de RAM','https://youtu.be/dQw4w9WgXcQ',1,1,0);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -179,7 +181,7 @@ CREATE TABLE `users` (
   `rol` int(2) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -188,7 +190,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (10,'pepito','a@b.com','$2a$10$PVUuxr681p.JlMfS2G9ubOcEMbRkmhSDuzKbVE1Vku3e1oZXcDRge','default_user.jpg',1),(11,'ramon','1@2.com','$2a$10$es5NEn1D.jZgee72TJAIt.OlilDseJHdkFg8tEXp0mtk.HbVnDdgS','default_user.jpg',0);
+INSERT INTO `users` VALUES (10,'pepito','a@b.com','$2a$10$PVUuxr681p.JlMfS2G9ubOcEMbRkmhSDuzKbVE1Vku3e1oZXcDRge','default_user.jpg',1),(11,'ramon','1@2.com','$2a$10$es5NEn1D.jZgee72TJAIt.OlilDseJHdkFg8tEXp0mtk.HbVnDdgS','default_user.jpg',0),(12,'asd','1@1.com','$2a$10$KA5xgO0c7SF0HJXTSdcfW.OlK3SoXVV.AfiAIBAJvWP5jOzJC5r5O','default_user.jpg',0);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -205,4 +207,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-10-23  1:57:18
+-- Dump completed on 2021-10-27 20:23:27

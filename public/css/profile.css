@@ -13,17 +13,13 @@ body .box-shop {
     margin-top: 40px;
     background-color: #161623
 }
+main {
+    display: flex;
+    flex-direction: column;
+    min-height: 80vh;
+}
 .text-shop2 {
     display: none;
-}
-.dashboard {
-    width: 25%;
-    height: 677px;
-    background-color: #161623;
-    margin-top: 55px;
-    display: none;
-    margin-bottom: 14px;
-    z-index: 1;
 }
 .box-shop .box-shop1 {
     height: 100%;
@@ -81,6 +77,28 @@ body .box-shop {
     border: 0.1px solid;
     z-index: 1;
 }
+.buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.buttonEdit {
+    text-decoration: none;
+    color: white;
+    background-color: green;
+    font-size: 25px;
+    padding: 5px;
+    border-radius: 5px;
+}
+.buttonDelete {
+    text-decoration: none;
+    color: white;
+    background-color: red;
+    font-size: 25px;
+    padding: 5px;
+    border-radius: 5px;
+}
 .game-keys .profile-text {
     display: flex;
     align-items: center;
@@ -111,17 +129,20 @@ body .box-shop {
 }
 
 .profile-image-user {
-    height: 200px;
-    display: flex;
     justify-content: center;
     align-items: center;
     margin: 20px auto;
-}
+} 
 
 .profile-image-user img {
-    height: 100%;
-    width: auto;
+    height: 180px;
+    width: 180px;
     border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    box-shadow: 1px 1px 30px -8px rgba(255, 255, 255, 0.603);
+-webkit-box-shadow: 1px 1px 30px -8px rgba(255, 255, 255, 0.329);
+-moz-box-shadow: 1px 1px 30px -8px rgba(255, 255, 255, 0.418);
 }
 
 /* .userInformation {
@@ -168,7 +189,7 @@ form {
 
 @media screen and (min-width:769px){
     body .box-shop {
-      margin-top: 60px;
+        margin-top: 60px;
     }
 }
 @media screen and (min-width:1024px){
@@ -183,11 +204,8 @@ form {
     .img-container {
         height: 83%;
     }
-    .store-dropdown {
-        display: none;
-    }
     .top-right {
-        margin-right: 2%;
+        margin-right: 7%;
     }
     .text-shop {
         display: none;
