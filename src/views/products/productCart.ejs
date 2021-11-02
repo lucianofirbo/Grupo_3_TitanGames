@@ -13,7 +13,9 @@
     
     <main>
         <h3 class="detalle-compra">Detalles de compra</h3>
-        <div class="detail-cart">         
+        <div class="detail-cart"> 
+            
+            <% products.forEach(product => { %>
             <div class="game-cart">
                 <div class="game-name">
                     <img src="agregar imagen" alt="">
@@ -24,7 +26,7 @@
                     <strong id="remove-all">eliminar</strong>
                 </div>  
             </div>
-
+            <% }) %>
             
             <div class="button-container">
                 <button type="submit" class="btn btn-submit">Comprar</button>
