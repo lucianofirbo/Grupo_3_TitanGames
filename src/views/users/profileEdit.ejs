@@ -4,6 +4,7 @@
     <%- include('../partials/head') -%>
     <title>Editar perfil</title>        
     <link rel="stylesheet" href="/css/index.css">
+    <script src="/js/validations/editProfile.js"></script>
 </head>
 <body>
     <%- include('../partials/background') -%>
@@ -17,43 +18,60 @@
             <img src="/img/logo-footer.png" alt="logotipo" class="logo-edit">
             <div class="edit-profile"><p>Editar perfil</p></div>
 
-            <form class="form-container-edit" action="/user/profile/edit/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
-                
-                <div class="input-container-edit">
-                    <input class="input-style-edit" type="name" name="userName" placeholder="Ingrese su usuario" value="<%= locals.old ? old.userName : user.userName %>" >
-                    <% if (locals.errors && errors.userName) { %>
-                        <small class="text-danger"><%= errors.userName.msg %> </small>
-                    <% } %>
+            <form class="form-container-edit" id="form" action="/user/profile/edit/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                <div class="profile-image-user" id="img-preview">
+                    <img src="/img/users/<%= user.avatar %>" alt="Profile Image">
                 </div>
-                <div class="input-container-edit">
-                    <input class="input-style-edit" type="email" name="email" placeholder="Ingrese su email" readonly value="<%= locals.old ? old.email : user.email %>">
-                    <% if (locals.errors && errors.email) { %>
-                        <small class="text-danger"><%= errors.email.msg %> </small>
-                    <% } %>
-                </div>
-                <div class="input-container-edit">
-                    <input class="input-style-edit" type="text" name="address" placeholder="Dirección" value="<%= user.address[0]?.userId == user.id  ? user.address[0].street : '' %>">
-                </div>
-                <div class="input-container-edit">
-                    <input class="input-style-edit" type="text" name="postalCode" placeholder="Codigo postal" value="<%= user.address[0]?.userId == user.id  ? user.address[0].postalCode : '' %>">
-                </div>
-                <div class="form-ad-input">
-                    <select name="province" id="">
-                        <option value="">Provincia</option>
-                    </select>
-                </div>
-                <div class="form-ad-input">
-                    <select name="city" id="">
-                        <option value="">Localidad</option>
-                    </select>
-                </div>
+                <span class="text-danger" id="fileErrors"></span>
                 <div class="input-file">
                     <p>Cambiar foto de perfil</p>
-                    <input type="file" name='avatar'>
+                    <input type="file" name='avatar' id="formFile">
+                    <span class="text-danger" id="fileErrors"></span>
                 </div>
+
+                <div class="container-info-profile">
+                    <div class="group-info-profile">
+                        <div class="input-container-edit">
+                            <input class="input-style-edit" id="userName" type="name" name="userName" placeholder="Ingrese su usuario" value="<%= locals.old ? old.userName : user.userName %>" >
+                            
+                            <span class="text-danger" id="nameErrors"></span>
+                            
+                        </div>
+                        <div class="input-container-edit">
+                            <input class="input-style-edit" type="email" name="email" placeholder="Ingrese su email" readonly value="<%= locals.old ? old.email : user.email %>">
+                            <% if (locals.errors && errors.email) { %>
+                                <small class="text-danger"><%= errors.email.msg %> </small>
+                            <% } %>
+                        </div>               
+                        <div class="input-container-edit">
+                            <input class="input-style-edit" type="text" name="address" placeholder="Dirección" value="<%= user.address[0]?.userId == user.id  ? user.address[0].street : '' %>">
+                        </div>
+                    </div>
+                    
+    
+                    <div class="group-info-profile">
+                        <div class="input-container-edit">
+                            <input class="input-style-edit" type="text" name="postalCode" placeholder="Codigo postal" value="<%= user.address[0]?.userId == user.id  ? user.address[0].postalCode : '' %>">
+                        </div>
+                        <div class="form-ad-input">
+                            <select name="province" id="">
+                                <option value="">Provincia</option>
+                            </select>
+                        </div>
+                        <div class="form-ad-input">
+                            <select name="city" id="">
+                                <option value="">Localidad</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                
                 <div class="button-container-edit">                    
                     <button type="submit" class="submit-edit">Guardar</button>
                 </div>
+                <span class="text-danger" id="submitErrors"></span>
 
             </form>
 

@@ -5,6 +5,7 @@
     <title>Iniciar sesión</title>    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/index.css">
+    <script src="/js/validations/login.js" defer></script>
     
 </head>
 <body>
@@ -16,24 +17,29 @@
             <div class="content">
                 <img src="/img/logo-footer.png" alt="logotipo" class="logo-login">
                 <p>Ingresar</p>
-                <form action="/user/login" method="POST">
+                <form action="/user/login" id="form" method="POST">
                     <div class="form">
                         <div class="input-container">
-                            <input class="input-style" type="email" name="email" placeholder="Ingrese su email">
-                            <% if(locals.errors && errors.email) { %>
-                                <strong style="color: red; font-size: 0.8rem;"><%= errors.email.msg %></strong>
-                            <% } %>
+                            <input class="input-style" id="email" type="email" name="email" placeholder="Ingrese su email">
+                            
+                                <span class="text-danger" id="emailErrors"></span>
+                            
                         </div>
                         <div class="input-container">
-                            <input class="input-style" type="password" name="pass" placeholder="Contraseña">
+                            <input class="input-style" id="pass" type="password" name="pass" placeholder="Contraseña">
                             <% if(locals.errors && errors.pass) { %>
-                                <strong style="color: red; font-size: 0.8rem;"><%= errors.pass.msg %></strong>
+                                <span class="text-danger" id="passErrors"><%= errors.pass.msg%></span>
                             <% } %>
                         </div>
                         <div class="check">
                             <label class="recordar" for="recordar">Recordarme</label>
                             <input type="checkbox" name="recordar" id="recordar">
                         </div>
+
+                        <div class="error-msg">
+                            <span class="text-danger" id="submitErrors"></span>
+                        </div>
+                        
                         <div class="button-container">
                             <button type="submit" class="submit-login">Ingresar</button>
                         </div>

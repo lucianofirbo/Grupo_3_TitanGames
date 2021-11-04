@@ -6,6 +6,7 @@
     <%- include('../partials/head') -%>
         <title>Cargar producto</title>
         <link rel="stylesheet" href="/css/productAdd.css">
+        <script src="/js/validations/productCreate.js" defer></script>
 </head>
 
 
@@ -22,17 +23,17 @@
     </div>
 
     <section data-content id="section1" class="active">
-        <form class="load-product" method="POST" action="/admin/products" enctype="multipart/form-data">
+        <form class="load-product" id="form" method="POST" action="/admin/products" enctype="multipart/form-data">
 
             <!-- CARGAR IMÁGENES -->
             <div class="other-box">
 
                 <div class="field-product">
                     <label>PRODUCTO:</label>
-                    <input class="style-input" type="text" name="product" placeholder="Nombre del producto" value="<%= locals.old && old.product %>">
-                    <% if(locals.errors && errors.product){ %>
-                        <small style="color: red;"><%= errors.product.msg%></small>
-                    <% } %>
+                    <input class="style-input" id="productName" type="text" name="product" placeholder="Nombre del producto" value="<%= locals.old && old.product %>">
+                    
+                        <span class="text-danger" id="productNameErrors"></span>
+                    
                 </div>
 
                 <div class="grid">
@@ -42,6 +43,7 @@
                         <label for="file-1" id="file-1-preview">
                             <img src="/img/img-default.png">
                         </label>
+                        <span class="text-danger" id="fileErrors"></span>
                     </div>
                 </div>
                 <div class="form-elements-flex">
@@ -50,33 +52,39 @@
                         <label for="file-2" id="file-2-preview">
                             <img src="/img/img-default.png">
                         </label>
+                        <span class="text-danger" id="fileErrors"></span>
                     </div>
                     <div class="form-elements-ind">
                         <input type="file" id="file-3" accept="image/*" name="imagenProducto3">
                         <label for="file-3" id="file-3-preview">
                             <img src="/img/img-default.png">
                         </label>
+                        <span class="text-danger" id="fileErrors"></span>
                     </div>
                     <div class="form-elements-ind">
                         <input type="file" id="file-4" accept="image/*" name="imagenProducto4">
                         <label for="file-4" id="file-4-preview">
                             <img src="/img/img-default.png">
                         </label>
+                        <span class="text-danger" id="fileErrors"></span>
                     </div>
                     <div class="form-elements-ind">
                         <input type="file" id="file-5" accept="image/*" name="imagenProducto5">
                         <label for="file-5" id="file-5-preview">
                             <img src="/img/img-default.png">
                         </label>
+                        <span class="text-danger" id="fileErrors"></span>
                     </div>
                 </div>
 
+                <span class="text-danger" id="filesErrors"></span>
+
                 <div class="field-product">
                     <label>PRECIO:</label>
-                    <input class="style-input" type="number" name="precio" placeholder="Precio del producto" value="<%= locals.old && old.precio %>">
-                    <% if(locals.errors && errors.precio){ %>
-                        <small style="color: red;"><%= errors.precio.msg%></small>
-                    <% } %>
+                    <input class="style-input" id="inputPrice" type="number" name="precio" placeholder="Precio del producto" value="<%= locals.old && old.precio %>">
+                    
+                    <span class="text-danger" id="inputPriceErrors"></span>
+                    
                 </div>
 
                 <div class="field-product">
@@ -93,52 +101,49 @@
                 <div class="field-flex">
                     <div class="field-gen">
                         <label>CATEGORÍAS:</label>
-                        <select class="style-select" name="genero">
+                        <select class="style-select" id="selectCategory" name="genero">
                             <option selected hidden>Categorías</option>
                             <% category.forEach(categoria => { %>
                                 <option value="<%- categoria.id %>"><%- categoria.name %></option>
                             <% }) %>
                         </select>
-                        <% if(locals.errors && errors.genero){ %>
-                            <small style="color: red;"><%= errors.genero.msg %></small>
-                        <% } %>
+                        <span class="text-danger" id="categoryErrors"></span>                        
                     </div>
                     <div class="field-subgen">
                         <label>SUBCATEGORÍAS:</label>
-                        <select class="style-select" name="subGenero">
+                        <select class="style-select" id="selectSubcategory" name="subGenero">
                             <option selected hidden>SubCategorias</option>
                             <% subcategory.forEach(subcategoria => { %>
                                 <option value="<%- subcategoria.id %>"><%- subcategoria.name %></option>
                             <% }) %>
-                        </select>
-                        <% if(locals.errors && errors.subGenero){ %>
-                            <small style="color: red;"><%= errors.subGenero.msg %></small>
-                        <% } %>
+                        </select>       
+                        <span class="text-danger" id="subcategoryErrors"></span>                        
                     </div>
                 </div>
                 <div class="display-flex-box">
                     <div class="desc-flex">
                         <label>DESCRIPCIÓN:</label>
-                        <textarea class="style-textarea" name="descripcion" cols="30" rows="20"
+                        <textarea class="style-textarea" id="description" name="descripcion" cols="30" rows="20"
                             placeholder="Ingresa una descripcion para su producto"></textarea>
+                        <span class="text-danger" id="descriptionErrors"></span>
                     </div>
                     <p id="req-title">REQUISITOS:</p>
                     <div class="row-req">
                         <div class="req-container">
                             <label> MÍNIMOS:</label>
-                            <input class="style-input" type="text" name="minimumVideo" placeholder="Minimum Video Requirements" value="<%= locals.old && old.minimumVideo %>">
-                                <% if(locals.errors && errors.minimumVideo){ %>
-                                    <small style="color: red;"><%= errors.minimumVideo.msg%></small>
-                                <% } %> <br>
+                            <input class="style-input" id="minReq" type="text" name="minimumVideo" placeholder="Minimum Video Requirements" value="<%= locals.old && old.minimumVideo %>">
+                                
+                                    <span class="text-danger" id="minReqErrors"></span>
+                                 <br>
                             <input class="style-input" type="text" name="minimumProcessor" placeholder="Minimum Processor Requirements" value="<%= locals.old && old.minimumVideo %>"> <br>
                             <input class="style-input" type="text" name="minimumRam" placeholder="Minimum Ram Requirements" value="<%= locals.old && old.minimumVideo %>">
                         </div>
                         <div class="req-container">
                             <label> RECOMENDADOS:</label>
-                            <input class="style-input" type="text" name="recommendedVideo" placeholder="Recommended Video" value="<%= locals.old && old.recommendedVideo %>">
-                                <% if(locals.errors && errors.recommendedVideo){ %>
-                                    <small style="color: red;"><%= errors.recommendedVideo.msg%></small>
-                                <% } %> <br>
+                            <input class="style-input" id="maxReq" type="text" name="recommendedVideo" placeholder="Recommended Video" value="<%= locals.old && old.recommendedVideo %>">
+                                
+                                    <span class="text-danger" id="maxReqErrors"></span>
+                                 <br>
                             <input class="style-input" type="text" name="recommendedProcessor" placeholder="Recommended Processor" value="<%= locals.old && old.recommendedVideo %>"> <br>
                             <input class="style-input" type="text" name="recommendedRam" placeholder="Recommended Ram" value="<%= locals.old && old.recommendedVideo %>">
                         </div>
@@ -162,6 +167,7 @@
                 <div class="button-container">
                     <button type="submit" class="btn btn-submit">FINALIZAR</button>
                 </div>
+                <span class="text-danger" id="submitErrors"></span>
 
             </div>
 
