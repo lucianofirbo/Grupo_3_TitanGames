@@ -119,5 +119,22 @@ ENTREGADO:
 
 ### Retrospectiva [retro.md](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/retro.md)
 
+# SPRINT 6: BASES DE DATOS
+
+ENTREGADO:
+- Script de creación de estructura de base de datos con:
+    - Creación de la base de datos y de todas sus tablas.
+    - Tipos de datos de los campos y sus restricciones.
+    - Relaciones entre las diferentes tablas.
+- Creación de carpeta Sequelize con:
+    - Archivos de configuración.
+    - Modelos con sus relaciones.
+- CRUD
+    - De productos.
+    - De usuarios.
+    - De tablas secundarias.
+ 
+### Retrospectiva [retro.md](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/retro.md)
+
 
 
