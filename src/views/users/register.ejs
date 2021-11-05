@@ -4,6 +4,7 @@
     <%- include('../partials/head') -%>
     <title>Registrarse</title>        
     <link rel="stylesheet" href="/css/index.css">
+    <script src="/js/validations/register.js" defer></script>
 </head>
 <body>
     <%- include('../partials/background') -%>
@@ -13,40 +14,42 @@
 
     <div class="register-card" id="register-card">
         <div class="register-container">
-            <form class="form-container" action="/user/register" method="POST">
+            <form class="form-container" id="form" action="/user/register" method="POST">
                 <img src="/img/logo-footer.png" alt="logotipo" class="logo-register">
                 <div class="registrate"><p>Registrate</p></div>
                 <div class="input-container-reg">
-                    <input class="input-style" type="name" name="userName" placeholder="Ingrese su usuario" value="<%= locals.old && old.name %>" >
-                    <% if (locals.errors && errors.userName) { %>
-                        <small class="text-danger"><%= errors.userName.msg %> </small>
-                    <% } %>
+                    <input class="input-style" id="name" type="name" name="userName" placeholder="Ingrese su nombre de usuario" value="<%= locals.old && old.name %>" >
+                    
+                        <small class="text-danger" id="nameErrors"></small>
+                    
                 </div>
 
                 <div class="input-container-reg">
-                    <input class="input-style" type="email" name="email" placeholder="Ingrese su email">
-                    <% if (locals.errors && errors.email) { %>
-                        <small class="text-danger"><%= errors.email.msg %> </small>
-                    <% } %>
+                    <input class="input-style" id="email" type="email" name="email" placeholder="Ingrese su email">
+                    
+                        <small class="text-danger" id="emailErrors"></small>
+                    
                 </div>
                 <div class="input-container-reg">
-                    <input class="input-style" type="password" name="pass1" placeholder="Contraseña">
-                    <% if (locals.errors && errors.pass1) { %>
-                        <small class="text-danger"><%= errors.pass1.msg %> </small>
-                    <% } %>
+                    <input class="input-style" id="pass" type="password" name="pass1" placeholder="Contraseña">
+                    
+                        <small class="text-danger" id="passErrors"></small>
+                    
                 </div>
 
                 <div class="input-container-reg">
-                    <input class="input-style" type="password" name="pass2" placeholder="Contraseña">
-                    <% if (locals.errors && errors.pass2) { %>
-                        <small class="text-danger"><%= errors.pass2.msg %> </small>
-                    <% } %>
+                    <input class="input-style" id="pass2" type="password" name="pass2" placeholder="Repetir contraseña">
+                    
+                        <small class="text-danger" id="pass2Errors"></small>
+                    
                 </div>
 
                 <div class="button-container-reg">
                     
                     <button type="submit" class="submit-register">Registrarse</button>
+                    
                 </div>
+                <span class="text-danger" id="submitErrors"></span>
                 <div class="redirect-register" id="redirect-login">
                     <span>
                         <a style="text-decoration: none;" href="http://localhost:3000/user/login"><span>¿tienes una cuenta?</span></a>

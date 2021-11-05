@@ -4,7 +4,15 @@
     justify-content: center;
     box-sizing: border-box;
     width: 100%;
-    height: 100vh;
+    margin-top: 50px;
+    /* height: 100vh; */
+}
+
+span.text-danger {
+    color: rgb(252, 90, 90);
+    font-weight: bold;
+    font-size: 12px;
+    text-align: center;
 }
 
 .edit-container {
@@ -44,8 +52,25 @@
     padding: 2rem;
 }
 
+.profile-image-user {
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+}
+.profile-image-user img {
+    height: 180px;
+    width: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    box-shadow: 1px 1px 30px -8px rgba(255, 255, 255, 0.603);
+-webkit-box-shadow: 1px 1px 30px -8px rgba(255, 255, 255, 0.329);
+-moz-box-shadow: 1px 1px 30px -8px rgba(255, 255, 255, 0.418);
+}
+
 input.input-style-edit{
     border: 1px solid black;
+    background-color: rgba(255, 255, 255, 0.733);
     padding-left: 15px;
     height: 30px;
     border-radius: 50px;
@@ -59,6 +84,7 @@ input.input-style-edit{
 
 input.input-style-edit:focus {
     box-shadow: 0 0 6px white;
+    background-color: white;
     outline: none;
 }
 
@@ -67,7 +93,7 @@ button.submit-edit {
     justify-content: center;
     align-items: center;
     margin-top: 15px;
-    background: #fff;
+    background: rgba(255, 255, 255, 0.952);
     color:black;
     border-radius: 25px;
     text-decoration: none;
@@ -116,7 +142,7 @@ button.submit-edit {
     max-width: 300px;
     position: relative;
     box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.37);
-    color: rgb(255, 255, 255);
+    color: rgba(255, 255, 255, 0.829);
     font-weight: bold;
     padding: 0 1rem;
     border-radius: .9rem;
@@ -139,16 +165,24 @@ button.submit-edit {
     div.edit-card {
         align-items: center;
         justify-content: center; 
+        height: 100vh;
     }
     .form-container-edit {
         margin-top: 8%;
-    }       
+    }
+    .container-info-profile {
+        margin-top: 20px;
+        display: flex;
+        width: 100%;
+        justify-content: space-evenly;
+        align-items: center;
+    }     
 }
 
 @media (min-width: 1024px) {
     .form-container-edit {
         background: rgba(0, 0, 0, 0.288);
-        width: 600px;
+        width: 900px;
         height: 500px;
         border-radius: 10px;
         backdrop-filter: blur(2.5px);

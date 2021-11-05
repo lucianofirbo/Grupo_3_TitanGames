@@ -63,7 +63,6 @@
     align-items: center;
     width: 100%;
     margin-bottom: 3px;
-    margin-top: 7px;
     height: 100%;
     border: none;
 }
@@ -79,6 +78,17 @@
 input.input-style:focus {
     box-shadow: 0 0 6px white;
     outline: none;
+}
+
+span#submitErrors.text-danger {
+    color: rgb(252, 90, 90);
+    font-weight: bold;
+    font-size: 12px;
+    text-align: center;
+}
+
+.error-msg {
+    text-align: center;
 }
 
 .check {

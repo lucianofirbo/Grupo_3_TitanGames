@@ -4,8 +4,9 @@
 
 <head>
     <%- include('../partials/head') -%>
-    <title>Cargar producto</title>
+    <title>Editar: <%- product.product %></title>
     <link rel="stylesheet" href="/css/productAdd.css">
+    <script src="/js/validations/productEdit.js" defer></script>
 </head>
 
 
@@ -16,14 +17,15 @@
     <%- include('../partials/header') -%>
 
     <section data-content id="section1" class="active">               
-        <form class="load-product" method="POST" action="/admin/editProduct/<%=product.id%>?_method=PUT" enctype="multipart/form-data">
+        <form class="load-product" id="form" method="POST" action="/admin/editProduct/<%=product.id%>?_method=PUT" enctype="multipart/form-data">
 
             <!-- CARGAR IMÁGENES -->
             <div class="other-box">
 
                 <div class="field-product">
                     <label>PRODUCTO:</label>
-                    <input class="style-input" type="text" name="product" value="<%- product.product %>" placeholder="Nombre del producto">
+                    <input class="style-input" type="text" id="productName" name="product" value="<%- product.product %>" placeholder="Nombre del producto">
+                        <span class="text-danger" id="productNameErrors"></span>
                 </div>
 
                 <div class="grid">
@@ -33,8 +35,9 @@
                         <input type="file" id="file-1" accept="image/*" name="imagenProducto">
                         <label for="file-1" id="file-1-preview">
                             <img src="/img/games/<%- product.productImage[0]?.image %>">
-                        </label>
+                        </label>                        
                     </div>
+                    <span class="text-danger" id="fileErrors"></span>
                 </div>
                 <div class="form-elements-flex">
                     <div class="form-elements-ind">
@@ -43,38 +46,43 @@
                         <label for="file-2" id="file-2-preview">
                             <img src="/img/games/<%- product.productImage[1]?.image %>">
                         </label>
+                        
                     </div>
+                    <span class="text-danger" id="fileErrors"></span>
                     <div class="form-elements-ind">
                         <input type="file" id="file-3" accept="image/*" name="imagenProducto3">
                         <label for="file-3" id="file-3-preview">
                             <img src="/img/games/<%- product.productImage[2]?.image %>">
                         </label>
+                        
                     </div>
+                    <span class="text-danger" id="fileErrors"></span>
                     <div class="form-elements-ind">
                         <input type="file" id="file-4" accept="image/*" name="imagenProducto4">
                         <label for="file-4" id="file-4-preview">
                             <img src="/img/games/<%- product.productImage[3]?.image %>">
                         </label>
+                        
                     </div>
+                    <span class="text-danger" id="fileErrors"></span>
                     <div class="form-elements-ind">
                         <input type="file" id="file-5" accept="image/*" name="imagenProducto5">
                         <label for="file-5" id="file-5-preview">
                             <img src="/img/games/<%- product.productImage[4]?.image %>">
                         </label>
+                        
                     </div>
+                    <span class="text-danger" id="fileErrors"></span>
                 </div> 
                 
                 <div class="field-product">
                     <label>PRECIO:</label>
-                    <input class="style-input" type="number" name="precio" value="<%- product.price %>" placeholder="Precio del producto">
+                    <input class="style-input" id="inputPrice" type="number" name="precio" value="<%- product.price %>" placeholder="Precio del producto">
+                    <span class="text-danger" id="inputPriceErrors"></span>
                 </div>
                 <div class="field-product">
                     <label>OFERTA:</label>
                     <input class="style-input" type="number" name="offers" value="<%- product.offers %>" placeholder="Oferta del producto">
-                </div>
-
-                <div class="button-container">
-                    <button type="submit" class="btn btn-submit">FINALIZAR</button>
                 </div>
 
             </div>
@@ -86,38 +94,43 @@
                 <div class="field-flex">
                     <div class="field-gen">
                         <label>CATEGORÍAS:</label>
-                            <select class="style-select" name="genero">
+                            <select class="style-select" id="selectCategory" name="genero">
                                 <% category.forEach(categoria => { %>
                                     <option value="<%- categoria.id %>" <%- product.categoryId == categoria.id ? "selected" : null %>><%-categoria.name%></option>
                                 <% }) %>
                             </select>
+                            <span class="text-danger" id="categoryErrors"></span>
                     </div>
                     <div class="field-subgen">
                         <label>SUBCATEGORÍAS:</label>
-                            <select class="style-select" name="subGenero">
+                            <select class="style-select" id="selectSubcategory" name="subGenero">
                                 <% subcategory.forEach(subcategoria => { %>
                                     <option value="<%-subcategoria.id%>" <%- product.subCategoryId == subcategoria.id ? "selected" : null %>><%-subcategoria.name%></option>
                                 <% }) %>
                             </select>
+                            <span class="text-danger" id="subcategoryErrors"></span>
                     </div>
                 </div>
                 <div class="display-flex-box">
                     <div class="desc-flex">
                         <label for="">DESCRIPCIÓN:</label>
-                        <textarea class="style-textarea" name="descripcion" cols="30" rows="20" placeholder="Ingresa una descripcion para su producto"><%- product.description %></textarea>
+                        <textarea class="style-textarea" id="description" name="descripcion" cols="30" rows="20" placeholder="Ingresa una descripcion para su producto"><%- product.description %></textarea>
+                        <span class="text-danger" id="descriptionErrors"></span>
                     </div>
                     <p id="req-title">REQUISITOS:</p>
                     <div class="row-req">
                         <div class="req-container">
                             <label for=""> MÍNIMOS:</label>
-                            <input class="style-input" type="text" name="minimumVideo" value="<%- product.minimumVideo %>" placeholder="Minimum Video Requirements"> <br>
-                            <input class="style-input" type="text" name="minimumProcessor" value="<%- product.minimumProcessor %>" placeholder="Minimum Processor Requirements"> <br>
+                            <input class="style-input" id="minReq" type="text" name="minimumVideo" value="<%- product.minimumVideo %>" placeholder="Minimum Video Requirements"> 
+                            <span class="text-danger" id="minReqErrors"></span><br>
+                            <input class="style-input" type="text" name="minimumProcessor" value="<%- product.minimumProcessor %>" placeholder="Minimum Processor Requirements"><br>
                             <input class="style-input" type="text" name="minimumRam" value="<%- product.minimumRam %>" placeholder="Minimum Ram Requirements">
                         </div>
                         <div class="req-container">
                             <label for=""> RECOMENDADOS:</label>
-                            <input class="style-input" type="text" name="recommendedVideo" value="<%- product.recommendedVideo %>" placeholder="Recommended Video"> <br>
-                            <input class="style-input" type="text" name="recommendedProcessor" value="<%- product.recommendedProcessor %>" placeholder="Recommended Processor"> <br>
+                            <input class="style-input" id="maxReq" type="text" name="recommendedVideo" value="<%- product.recommendedVideo %>" placeholder="Recommended Video"> 
+                            <span class="text-danger" id="maxReqErrors"></span><br>
+                            <input class="style-input" type="text" name="recommendedProcessor" value="<%- product.recommendedProcessor %>" placeholder="Recommended Processor"><br>
                             <input class="style-input" type="text" name="recommendedRam" value="<%- product.recommendedRam %>" placeholder="Recommended Ram">
                         </div>
                     </div>
@@ -136,8 +149,12 @@
                     </div>
 
                 </div>
-
+                <div class="button-container">
+                    <button type="submit" class="btn btn-submit">FINALIZAR</button>
+                </div>
+                <span class="text-danger" id="submitErrors"></span>
             </div>
+            
 
         </form>
     </section>
