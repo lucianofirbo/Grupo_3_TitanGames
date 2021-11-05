@@ -13,13 +13,10 @@ window.addEventListener('load', function() {
      $minReqErrors = qs('#minReqErrors'),
      $maxReq = qs('#maxReq'),
      $maxReqErrors = qs('#maxReqErrors'),
-
      $selectCategory = qs('#selectCategory'),
      $categoryErrors = qs('#categoryErrors'),
-
      $selectSubcategory = qs('#selectSubcategory'),
      $subcategoryErrors = qs('#subcategoryErrors'),
-
      $fileErrors = qs('#filesErrors'),
      $file1 = qs('#file-1'),
      $imgPreview1 = qs("#file-1-preview"),
@@ -33,7 +30,6 @@ window.addEventListener('load', function() {
      $imgPreview5 = qs("#file-5-preview"),
      $form = qs('#form'),
      submitErrors = qs('#submitErrors'),
-
     regLongName = /^.{5,}$/,
     regLongDescription = /^.{20,}$/;
 
@@ -117,7 +113,7 @@ window.addEventListener('load', function() {
     });
 
     $selectCategory.addEventListener("blur", function(){
-        if ($selectCategory.value.trim()) {
+        if ( !$selectCategory.value.trim()) {
             $categoryErrors.innerHTML = "Debe seleccionar una categoría"
             $selectCategory.style.backgroundColor = 'rgba(255, 126, 126, 0.466)'
         } else {

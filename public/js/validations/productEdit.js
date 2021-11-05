@@ -7,27 +7,17 @@ window.addEventListener('load', function() {
      $productNameErrors = qs('#productNameErrors'),
      $inputPrice = qs('#inputPrice'),
      $inputPriceErrors = qs('#inputPriceErrors'),
-     $selectCategory = qs('#selectCategory'),
-     $categoryErrors = qs('#categoryErrors'),
-     $selectSubcategory = qs('#selectSubcategory'),
-     $subcategoryErrors = qs('#subcategoryErrors'),
-
      $fileErrors = qs('#fileErrors'),
      $file1 = qs('#file-1'),
      $imgPreview1 = qs("#file-1-preview"),
-
      $file2 = qs('#file-2'),
      $imgPreview2 = qs("#file-2-preview"),
-
      $file3 = qs('#file-3'),
      $imgPreview3 = qs("#file-3-preview"),
-
      $file4 = qs('#file-4'),
      $imgPreview4 = qs("#file-4-preview"),
-
      $file5 = qs('#file-5'),
      $imgPreview5 = qs("#file-5-preview"),
-
      $form = qs('#form'),
      submitErrors = qs('#submitErrors'),
      $description = qs('#description'),
@@ -36,10 +26,9 @@ window.addEventListener('load', function() {
      $minReqErrors = qs('#minReqErrors'),
      $maxReq = qs('#maxReq'),
      $maxReqErrors = qs('#maxReqErrors'),
-
      regLongName = /^.{5,}$/,
      regLongDescription = /^.{20,}$/;
-
+     
      $productName.addEventListener("blur", function(){
         switch (true) {
             case !$productName.value.trim():
