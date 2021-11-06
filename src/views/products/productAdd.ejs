@@ -101,8 +101,8 @@
                 <div class="field-flex">
                     <div class="field-gen">
                         <label>CATEGORÍAS:</label>
-                        <select class="style-select" id="selectCategory" name="genero">
-                            <option selected hidden value="">Categorías</option>
+                        <select class="style-select" name="genero" value="">
+                            <option selected hidden>Categorías</option>
                             <% category.forEach(categoria => { %>
                                 <option value="<%- categoria.id %>"><%- categoria.name %></option>
                             <% }) %>

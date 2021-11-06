@@ -114,8 +114,10 @@
                 <div class="display-flex-box">
                     <div class="desc-flex">
                         <label for="">DESCRIPCIÓN:</label>
-                        <textarea class="style-textarea" id="description" name="descripcion" cols="30" rows="20" placeholder="Ingresa una descripcion para su producto"><%- product.description %></textarea>
-                        <span class="text-danger" id="descriptionErrors"></span>
+                        <textarea class="style-textarea" name="descripcion" cols="30" rows="20" placeholder="Ingresa una descripcion para su producto"><%- product.description %></textarea>
+                        <% if(locals.errors && errors.description){ %>
+                            <small style="color: red;"><%= errors.description.msg%></small>
+                        <% } %>
                     </div>
                     <p id="req-title">REQUISITOS:</p>
                     <div class="row-req">
