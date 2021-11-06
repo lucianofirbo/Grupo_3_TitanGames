@@ -159,6 +159,8 @@ module.exports = {
                 }
                 res.redirect('/admin/products')
             })
+        } else {
+            console.log(errors)
         }
     },
 

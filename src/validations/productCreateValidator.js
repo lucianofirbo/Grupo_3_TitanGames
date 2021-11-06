@@ -13,11 +13,11 @@ module.exports = [
     .isNumeric()
     .withMessage('Solo puedes ingresar números'),
 
-    check('genero')
+    check('category')
     .notEmpty()
     .withMessage('Debe elegir un género'),
 
-    check('subGenero')
+    check('subCategory')
     .notEmpty()
     .withMessage('Debe elegir un subgénero'),
 
@@ -27,5 +27,25 @@ module.exports = [
 
     check('recommendedVideo')
     .notEmpty()
-    .withMessage('Debe ingresar un requisito')
+    .withMessage('Debe ingresar un requisito'),
+
+    check ('minumumProcessor')
+    .notEmpty()
+    .withMessage('Debe ingresar un requisito'),
+
+    check ('recommendedProcessor')
+    .notEmpty()
+    .withMessage('Debe ingresar un requisito'),
+
+    check ('minumumRam')
+    .notEmpty()
+    .withMessage('Debe ingresar un requisito'),
+
+    check ('recommendedRam')
+    .notEmpty()
+    .withMessage('Debe ingresar un requisito'),
+
+    check ('description')
+    .notEmpty()
+    .withMessage('Debe contener alguna descripción'),
 ]
