@@ -11,19 +11,37 @@ module.exports = {
     },
 
     addRender: (req, res) => {
-        db.Product.findAll({
-            include: [{association: "categories"}, {association: "subcategory"}, {association: "productImage"}]
-        })
-        .then(product => {
-            db.Category.findAll()
-            .then(category => { 
-                db.Subcategory.findAll()
-                .then(subcategory => {
-                    /* res.send(product[0].productImage) */
-                    res.render('products/productAdd', {dataBase: product, category, subcategory, userInSession : req.session.userLogged ? req.session.userLogged : ''});
+        let errors = validationResult(req);
+        if (errors) {
+            db.Product.findAll({
+                include: [{association: "categories"}, {association: "subcategory"}, {association: "productImage"}]
+            })
+            .then(product => {
+                db.Category.findAll()
+                .then(category => { 
+                    db.Subcategory.findAll()
+                    .then(subcategory => {
+                        /* res.send(product[0].productImage) */
+                        res.render('products/productAdd', {dataBase: product, category, subcategory, userInSession : req.session.userLogged ? req.session.userLogged : ''});
+                    })
                 })
             })
-        })
+        } else {
+            db.Product.findAll({
+                include: [{association: "categories"}, {association: "subcategory"}, {association: "productImage"}]
+            })
+            .then(product => {
+                db.Category.findAll()
+                .then(category => { 
+                    db.Subcategory.findAll()
+                    .then(subcategory => {
+                        /* res.send(product[0].productImage) */
+                        res.render('products/productAdd', {dataBase: product, errors, category, subcategory, userInSession : req.session.userLogged ? req.session.userLogged : ''});
+                    })
+                })
+            })
+        }
+        
     },
 
     addProduct: (req, res) => {
@@ -72,8 +90,6 @@ module.exports = {
                     .catch(err => console.log(err))
                 }
             })
-        } else {
-            res.redirect('/admin/products')
         }
     },
 
@@ -96,7 +112,6 @@ module.exports = {
     },
 
     editProduct: (req, res) => {
-        console.log(req.body)
         let errors = validationResult(req);
         if (req.fileValidatorError) {
             let image = {

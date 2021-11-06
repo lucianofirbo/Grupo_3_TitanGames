@@ -115,3 +115,26 @@
 
 - Mejorar en las cosas que hicimos mal
 - Empezar con el sprint 6
+
+*******************************************************************************
+
+## SPRINT 6: Principales conclusiones
+
+#### ¿Qué hicimos bien?
+
+- Hacer reuniones para distribuirnos las tareas del sprint lanzado.
+- Buena comunicación.
+- Avisar sobre algún problema
+
+#### ¿Qué deberiamos seguir haciendo?
+
+- Comunicarnos cualquier inconveniente que tengamos para no atrasarnos
+- Estar pendientes en Trello
+
+#### ¿Qué hicimos mal?
+
+- .
+
+#### ¿Qué deberíamos empezar a hacer?
+
+- Mejorar detalles que quedaron del sitio.

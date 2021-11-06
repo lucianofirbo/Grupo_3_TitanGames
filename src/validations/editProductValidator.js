@@ -13,11 +13,11 @@ module.exports = [
     .isNumeric()
     .withMessage('Solo puedes ingresar números'),
 
-    check('category')
+    check('genero')
     .notEmpty()
     .withMessage('Para completar la edicion debe completar este espacio'),
 
-    check('subCategory')
+    check('subGenero')
     .notEmpty()
     .withMessage('Para completar la edicion debe completar este espacio'),
 
@@ -29,23 +29,21 @@ module.exports = [
     .notEmpty()
     .withMessage('Para completar la edicion debe completar este espacio'),
 
-    check ('minumumProcessor')
-    .notEmpty()
-    .withMessage('Para completar la edicion debe completar este espacio'),
+    check('minimumProcessor').notEmpty().withMessage('Para completar la edicion debe completar este espacio'),
 
-    check ('recommendedProcessor')
+    check('recommendedProcessor')
     .notEmpty()
     .withMessage('Para terminar la edicion debe completar este espacio'),
 
-    check ('minimumRam')
+    check('minimumRam')
     .notEmpty()
     .withMessage('Para completar la edicion debe completar este espacio'),
 
-    check ('recommendedRam')
+    check('recommendedRam')
     .notEmpty()
     .withMessage('Para completar la edicion debe completar este espacio'),
 
-    check ('description')
+    check('descripcion')
     .notEmpty()
     .withMessage('Para completar la edicion debe completar este espacio'),
 ]

@@ -1,3 +1,5 @@
+console.log(document.getElementById('hamburguer').innerHTML)
+
 window.onload = () => {
 
     document.addEventListener('click', (event) => {
