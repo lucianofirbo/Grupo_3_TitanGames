@@ -73,7 +73,7 @@ module.exports = {
                 }
             })
         } else {
-            console.log(errors)
+            res.redirect('/admin/products')
         }
     },
 

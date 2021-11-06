@@ -27,7 +27,7 @@ div .registrate p{
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 3px;
-    /* font-size: 1.5rem; */
+    font-size: 1.5rem; 
     text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #ffffff 0px 0px 20px, #f7f7f7 0px 0px 30px, #ffffff 0px 0px 40px, #ffffff 0px 0px 50px, #ffffff 0px 0px 75px;
 }
 
@@ -81,10 +81,15 @@ button.submit-register:hover {
     height: 48px;
 }
 
-.text-danger {
-    color: red;
+span#submitErrors.text-danger {
+    color: rgb(252, 90, 90);
     font-weight: bold;
-    font-size: 11px;
+    font-size: 12px;
+    text-align: center;
+}
+
+#submitErrors {
+    margin-top: 30px;
 }
 
 .input-container-reg {
@@ -98,7 +103,6 @@ button.submit-register:hover {
     align-items: center;
     text-decoration: none;
     color: white;
-    margin-top: 25px;
     cursor: pointer;
     margin-bottom: 11px;
     transition: all .4s ease;
@@ -123,7 +127,6 @@ button.submit-register:hover {
     .form-container {
         width: 450px;
         background: rgba(255, 255, 255, 0.1);
-        width: 400px;
         border-radius: 20px;
         backdrop-filter: blur(2.5px);
         box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);

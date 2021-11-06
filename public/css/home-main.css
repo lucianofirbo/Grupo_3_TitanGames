@@ -1,5 +1,9 @@
 /* Transitions */
 
+* {
+    font-weight: 100;
+}
+
 main {
     margin: auto;
     max-width: 1024px;
@@ -22,6 +26,36 @@ main {
 	        animation: slide-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
+.polygon-container {
+    background-color: var(--greenTitan);
+    width: 50px;
+    height: 95px;
+    position: absolute;
+    top: 35px;
+    right: 30px;
+    box-shadow: -9px -8px 46px -1px rgba(0,0,0,0.61) inset;
+-webkit-box-shadow: -9px -8px 46px -1px rgba(0,0,0,0.61) inset;
+-moz-box-shadow: -9px -8px 46px -1px rgba(0,0,0,0.61) inset;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 100% 100%, 50% 70%, 0 100%, 0 100%);
+}
+
+.polygon-container-info {
+    font-size: 0.5rem;
+    color: white;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
+}
+
+p.info-polygon{
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
 @-webkit-keyframes slide-right {
     0% {
       -webkit-transform: translateX(-100%);
@@ -41,17 +75,6 @@ main {
         -webkit-transform: translateX(0%);
                 transform: translateX(0%);
       }
-}
-
-/* Grow item */
-
-.special-offer-game:hover {    
-    /* -moz-transform: scale(1.05);
-    -webkit-transform: scale(1.05);
-    -o-transform: scale(1.05);
-    -ms-transform: scale(1.05);
-    transform: scale(1.05); */
-    filter: brightness(50%);
 }
 
 /* Carousel */
@@ -116,6 +139,10 @@ main {
     transition: all .2s ease-in-out;
 }
 
+.special-offer-game:hover {
+    filter: contrast(95%);
+}
+
 .see-more {
     display: flex;
     align-items: center;
@@ -132,7 +159,6 @@ main {
 .special-offer-game img {
     width: 100%;
     box-shadow: 2px 0.7698959708213806px 1.078827142715454px 2px #00000065;
-    /* border-radius: 5%; */
 }
 
 
@@ -141,20 +167,30 @@ main {
     width: 100%;
     display: flex;
     align-items: center;
+    justify-content: space-evenly;
     flex-direction: column;
     font-size: 15px;
     color: white;
     font-weight: 600;
     text-align: center;
     border-radius: 5%;
-    top: 50%;
+    top: 40%;
 }
 
-.special-offer-details p {  
+.special-offer-details p {
+    font-weight: bold;
+    color: #92a5de;  
     margin: auto;
     padding: 1.5%;
-    font-size: 0.85rem;
+    font-size: 0.7rem;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#price-offer {
+    font-weight: bold;
+    font-size: 1rem;
+    color: #92a5de;
+    text-shadow: 0px 0px 0 #899CD5, 1px 1px 0 #8194CD, 2px 2px 0 #788BC4, 3px 3px 0 #6F82BB, 4px 4px 0 #607dd4, 5px 5px 0 #546ebb, 6px 6px 0 #3f5699, 7px 7px 0 #3a4c83, 8px 8px 0 #394a7c, 9px 9px 0 #2e4075, 10px 10px 0 #26386d, 2px 2px 2px rgba(206,89,55,0);
 }
 
 .see-more-button {
@@ -440,6 +476,13 @@ main {
         height: 90px;
         width: 150px;
     }
+    .polygon-container {
+        height: 100px;
+        top: 55px;
+    }
+    #price-offer {
+        font-size: 1.8rem;
+    }
 }
 
 @media screen and (min-width: 1024px) {
@@ -465,6 +508,24 @@ main {
 
     .game a {
         width: 20%;
+    }
+    .polygon-container {
+        width: 80px;
+        height: 130px;
+        top: 56px;
+        right: 40px;
+    }
+    .polygon-container-info {
+        font-size: 0.6rem;        
+    }
+    p.info-polygon {
+        text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #ffffff 0px 0px 20px, #ffffff 0px 0px 30px, #ffffff 0px 0px 40px, #ffffff 0px 0px 50px, #ffffff 0px 0px 75px;
+    }
+    #polygon-disc {
+        font-size: 1.2rem;
+    }
+    #price-offer {
+        font-size: 2rem;
     }
 
 }
