@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 
-
 <head>
     <%- include('../partials/head') -%>
     <title>Editar: <%- product.product %></title>
     <link rel="stylesheet" href="/css/productAdd.css">
     <script src="/js/validations/productEdit.js" defer></script>
 </head>
-
 
 <body>
     
@@ -21,13 +19,11 @@
 
             <!-- CARGAR IMÁGENES -->
             <div class="other-box">
-
                 <div class="field-product">
                     <label>PRODUCTO:</label>
                     <input class="style-input" type="text" id="productName" name="product" value="<%- product.product %>" placeholder="Nombre del producto">
                         <span class="text-danger" id="productNameErrors"></span>
                 </div>
-
                 <div class="grid">
                     <p>IMAGENES: </p>
                     <div class="form-element">
@@ -53,16 +49,14 @@
                         <input type="file" id="file-3" accept="image/*" name="imagenProducto3">
                         <label for="file-3" id="file-3-preview">
                             <img src="/img/games/<%- product.productImage[2]?.image %>">
-                        </label>
-                        
+                        </label>                        
                     </div>
                     <span class="text-danger" id="fileErrors"></span>
                     <div class="form-elements-ind">
                         <input type="file" id="file-4" accept="image/*" name="imagenProducto4">
                         <label for="file-4" id="file-4-preview">
                             <img src="/img/games/<%- product.productImage[3]?.image %>">
-                        </label>
-                        
+                        </label>                        
                     </div>
                     <span class="text-danger" id="fileErrors"></span>
                     <div class="form-elements-ind">
@@ -73,8 +67,7 @@
                         
                     </div>
                     <span class="text-danger" id="fileErrors"></span>
-                </div> 
-                
+                </div>                 
                 <div class="field-product">
                     <label>PRECIO:</label>
                     <input class="style-input" id="inputPrice" type="number" name="precio" value="<%- product.price %>" placeholder="Precio del producto">
@@ -84,13 +77,11 @@
                     <label>OFERTA:</label>
                     <input class="style-input" type="number" name="offers" value="<%- product.offers %>" placeholder="Oferta del producto">
                 </div>
-
             </div>
 
             <!-- Text Fields -->
 
             <div class="desc-product-load">
-
                 <div class="field-flex">
                     <div class="field-gen">
                         <label>CATEGORÍAS:</label>
@@ -132,8 +123,7 @@
                             <input class="style-input" type="text" name="recommendedProcessor" value="<%- product.recommendedProcessor %>" placeholder="Recommended Processor"><br>
                             <input class="style-input" type="text" name="recommendedRam" value="<%- product.recommendedRam %>" placeholder="Recommended Ram">
                         </div>
-                    </div>
-                    
+                    </div>                    
                 </div>
 
                 <div class="fields">
@@ -141,20 +131,16 @@
                         <label>KEY:</label>
                         <input class="style-input" type="text" name="key">
                     </div>
-
                     <div class="field-trailer">
                         <label>TRAILER:</label>
                         <input class="style-input" type="text" name="videoURL" placeholder="URL">
                     </div>
-
                 </div>
                 <div class="button-container">
                     <button type="submit" class="btn btn-submit">FINALIZAR</button>
                 </div>
                 <span class="text-danger" id="submitErrors"></span>
             </div>
-            
-
         </form>
     </section>
 
