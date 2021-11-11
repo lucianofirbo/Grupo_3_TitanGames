@@ -136,5 +136,20 @@ ENTREGADO:
  
 ### Retrospectiva [retro.md](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/retro.md)
 
+# SPRINT 7: VALIDACIONES
+
+ENTREGADO:
+- Validaciones del BACK-END con Express Validator:
+    - Registro de usuarios.
+    - Login de usuarios.
+    - Creación y modificación de productos
+- Validaciones del FRONT-END con JavaScript
+    - Registro de usuarios.
+    - Login de usuarios.
+    - Creación y modificación de productos.
+    - Edición de perfil.
+ 
+### Retrospectiva [retro.md](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/retro.md)
+
 
 
