@@ -4,7 +4,7 @@
     <%- include('../partials/head') -%>
     <title>Editar perfil</title>        
     <link rel="stylesheet" href="/css/index.css">
-    <script src="/js/validations/editProfile.js"></script>
+    <!-- <script src="/js/validations/editProfile.js"></script> -->
 </head>
 <body>
     <%- include('../partials/background') -%>
@@ -44,14 +44,14 @@
                             <% } %>
                         </div>               
                         <div class="input-container-edit">
-                            <input class="input-style-edit" type="text" name="address" placeholder="Dirección" value="<%= user.address[0]?.userId == user.id  ? user.address[0].street : '' %>">
+                            <input class="input-style-edit" type="text" name="address" placeholder="Dirección" value="<%= locals.old ? old.address : user.address %>">
                         </div>
                     </div>
                     
     
                     <div class="group-info-profile">
                         <div class="input-container-edit">
-                            <input class="input-style-edit" type="text" name="postalCode" placeholder="Codigo postal" value="<%= user.address[0]?.userId == user.id  ? user.address[0].postalCode : '' %>">
+                            <input class="input-style-edit" type="text" name="postalCode" placeholder="Codigo postal" value="<%= locals.old ? old.postalCode : user.postalCode %>">
                         </div>
                         <div class="form-ad-input">
                             <select name="province" id="">
