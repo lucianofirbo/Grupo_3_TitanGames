@@ -19,35 +19,36 @@
                 <div class="registrate"><p>Registrate</p></div>
                 <div class="input-container-reg">
                     <input class="input-style" id="name" type="name" name="userName" placeholder="Ingrese su nombre de usuario" value="<%= locals.old && old.name %>" >
-                    
-                        <small class="text-danger" id="nameErrors"></small>
-                    
+                    <% if (locals.errors && errors.userName) { %>
+                        <small class="text-danger"><%= errors.userName.msg %> </small>
+                    <% } %>
+                    <small class="text-danger" id="nameErrors"></small>                   
                 </div>
 
                 <div class="input-container-reg">
                     <input class="input-style" id="email" type="email" name="email" placeholder="Ingrese su email">
-                    
-                        <small class="text-danger" id="emailErrors"></small>
-                    
+                    <% if (locals.errors && errors.email) { %>
+                        <small class="text-danger"><%= errors.email.msg %> </small>
+                    <% } %>
+                    <small class="text-danger" id="emailErrors"></small>   
                 </div>
                 <div class="input-container-reg">
                     <input class="input-style" id="pass" type="password" name="pass1" placeholder="Contraseña">
-                    
-                        <small class="text-danger" id="passErrors"></small>
-                    
+                    <% if (locals.errors && errors.pass1) { %>
+                        <small class="text-danger"><%= errors.pass1.msg %> </small>
+                    <% } %>
+                    <small class="text-danger" id="passErrors"></small>  
                 </div>
-
                 <div class="input-container-reg">
                     <input class="input-style" id="pass2" type="password" name="pass2" placeholder="Repetir contraseña">
-                    
-                        <small class="text-danger" id="pass2Errors"></small>
-                    
+                    <% if (locals.errors && errors.pass2) { %>
+                        <small class="text-danger"><%= errors.pass2.msg %> </small>
+                    <% } %>
+                    <small class="text-danger" id="pass2Errors"></small>  
                 </div>
 
-                <div class="button-container-reg">
-                    
-                    <button type="submit" class="submit-register">Registrarse</button>
-                    
+                <div class="button-container-reg"> 
+                    <button type="submit" class="submit-register">Registrarse</button>                  
                 </div>
                 <span class="text-danger" id="submitErrors"></span>
                 <div class="redirect-register" id="redirect-login">
