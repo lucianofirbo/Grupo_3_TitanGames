@@ -4,14 +4,12 @@ module.exports = [
     check('product')
     .notEmpty()
     .withMessage('Debe ingresar el nombre del producto')
-    .isLength({min: 3})
-    .withMessage('Para completar la edicion debe completar este espacio'),
+    .isLength({min: 5})
+    .withMessage('El nombre debe tener más de 5 caracteres'),
 
     check('precio')
     .notEmpty()
-    .withMessage('Para completar la edicion debe completar este espacio')
-    .isNumeric()
-    .withMessage('Solo puedes ingresar números'),
+    .withMessage('Para completar la edicion debe completar este espacio'),
 
     check('genero')
     .notEmpty()
@@ -29,21 +27,17 @@ module.exports = [
     .notEmpty()
     .withMessage('Para completar la edicion debe completar este espacio'),
 
-    check('minimumProcessor').notEmpty().withMessage('Para completar la edicion debe completar este espacio'),
-
-    check('recommendedProcessor')
+    check('minimumProcessor')
     .notEmpty()
-    .withMessage('Para terminar la edicion debe completar este espacio'),
+    .withMessage('Para completar la edicion debe completar este espacio'),
 
     check('minimumRam')
     .notEmpty()
     .withMessage('Para completar la edicion debe completar este espacio'),
 
-    check('recommendedRam')
-    .notEmpty()
-    .withMessage('Para completar la edicion debe completar este espacio'),
-
     check('descripcion')
     .notEmpty()
-    .withMessage('Para completar la edicion debe completar este espacio'),
+    .withMessage('Para completar la edicion debe completar este espacio')
+    .isLength({min: 20})
+    .withMessage('Debes ingresar una descripción de al menos 20 caracteres')
 ]
