@@ -138,7 +138,4 @@
 #### ¿Qué deberíamos empezar a hacer?
 
 - Mejorar detalles que quedaron del sitio.
-<<<<<<< HEAD
-=======
 
->>>>>>> c6e6b1af7416de7bb90917830b8a00334f19ab01
