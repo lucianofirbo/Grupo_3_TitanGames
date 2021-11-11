@@ -6,7 +6,7 @@
     <%- include('../partials/head') -%>
         <title>Cargar producto</title>
         <link rel="stylesheet" href="/css/productAdd.css">
-        <script src="/js/validations/productCreate.js" defer></script>
+        <script src="/js/validations/productCreate.js" defer></script> 
 </head>
 
 
@@ -31,8 +31,10 @@
                 <div class="field-product">
                     <label>PRODUCTO:</label>
                     <input class="style-input" id="productName" type="text" name="product" placeholder="Nombre del producto" value="<%= locals.old && old.product %>">
-                    
-                        <span class="text-danger" id="productNameErrors"></span>
+                    <% if(locals.errors && errors.product){ %>
+                        <small style="color: red; font-weight: bold;"><%= errors.product.msg%></small>
+                    <% } %>
+                    <span class="text-danger" id="productNameErrors"></span>
                     
                 </div>
 
@@ -82,7 +84,9 @@
                 <div class="field-product">
                     <label>PRECIO:</label>
                     <input class="style-input" id="inputPrice" type="number" name="precio" placeholder="Precio del producto" value="<%= locals.old && old.precio %>">
-                    
+                    <% if(locals.errors && errors.precio){ %>
+                        <small style="color: red; font-weight: bold;"><%= errors.precio.msg%></small>
+                    <% } %>
                     <span class="text-danger" id="inputPriceErrors"></span>
                     
                 </div>
@@ -101,12 +105,15 @@
                 <div class="field-flex">
                     <div class="field-gen">
                         <label>CATEGORÍAS:</label>
-                        <select class="style-select" name="genero" value="">
-                            <option selected hidden>Categorías</option>
+                        <select class="style-select" name="genero" id="selectCategory">
+                            <option selected hidden value="">Categorías</option>
                             <% category.forEach(categoria => { %>
                                 <option value="<%- categoria.id %>"><%- categoria.name %></option>
                             <% }) %>
                         </select>
+                        <% if(locals.errors && errors.genero){ %>
+                            <small style="color: red; font-weight: bold;"><%= errors.genero.msg %></small>
+                        <% } %>
                         <span class="text-danger" id="categoryErrors"></span>                        
                     </div>
                     <div class="field-subgen">
@@ -116,7 +123,10 @@
                             <% subcategory.forEach(subcategoria => { %>
                                 <option value="<%- subcategoria.id %>"><%- subcategoria.name %></option>
                             <% }) %>
-                        </select>       
+                        </select>
+                        <% if(locals.errors && errors.subGenero){ %>
+                            <small style="color: red; font-weight: bold;"><%= errors.subGenero.msg %></small>
+                        <% } %>       
                         <span class="text-danger" id="subcategoryErrors"></span>                        
                     </div>
                 </div>
@@ -125,6 +135,9 @@
                         <label>DESCRIPCIÓN:</label>
                         <textarea class="style-textarea" id="description" name="descripcion" cols="30" rows="20"
                             placeholder="Ingresa una descripcion para su producto"></textarea>
+                            <% if(locals.errors && errors.descripcion){ %>
+                                <small style="color: red; font-weight: bold;"><%= errors.descripcion.msg %></small>
+                            <% } %>
                         <span class="text-danger" id="descriptionErrors"></span>
                     </div>
                     <p id="req-title">REQUISITOS:</p>
@@ -132,20 +145,28 @@
                         <div class="req-container">
                             <label> MÍNIMOS:</label>
                             <input class="style-input" id="minReq" type="text" name="minimumVideo" placeholder="Minimum Video Requirements" value="<%= locals.old && old.minimumVideo %>">
-                                
-                                    <span class="text-danger" id="minReqErrors"></span>
-                                 <br>
-                            <input class="style-input" type="text" name="minimumProcessor" placeholder="Minimum Processor Requirements" value="<%= locals.old && old.minimumVideo %>"> <br>
-                            <input class="style-input" type="text" name="minimumRam" placeholder="Minimum Ram Requirements" value="<%= locals.old && old.minimumVideo %>">
+                            <% if(locals.errors && errors.minimumVideo){ %>
+                                <small style="color: red; font-weight: bold;"><%= errors.minimumVideo.msg%></small>
+                            <% } %>   
+                            <span class="text-danger" id="minReqErrors"></span><br>
+                            <input class="style-input" type="text" name="minimumProcessor" placeholder="Minimum Processor Requirements" value="<%= locals.old && old.minimumProcessor %>"> <br>
+                            <% if(locals.errors && errors.minimumProcessor){ %>
+                                <small style="color: red; font-weight: bold;"><%= errors.minimumProcessor.msg%></small>
+                            <% } %>
+                            <input class="style-input" type="text" name="minimumRam" placeholder="Minimum Ram Requirements" value="<%= locals.old && old.minimumRam %>">
+                            <% if(locals.errors && errors.minimumRam){ %>
+                                <small style="color: red; font-weight: bold;"><%= errors.minimumRam.msg%></small>
+                            <% } %>
                         </div>
                         <div class="req-container">
                             <label> RECOMENDADOS:</label>
                             <input class="style-input" id="maxReq" type="text" name="recommendedVideo" placeholder="Recommended Video" value="<%= locals.old && old.recommendedVideo %>">
-                                
-                                    <span class="text-danger" id="maxReqErrors"></span>
-                                 <br>
-                            <input class="style-input" type="text" name="recommendedProcessor" placeholder="Recommended Processor" value="<%= locals.old && old.recommendedVideo %>"> <br>
-                            <input class="style-input" type="text" name="recommendedRam" placeholder="Recommended Ram" value="<%= locals.old && old.recommendedVideo %>">
+                            <% if(locals.errors && errors.recommendedVideo){ %>
+                                <small style="color: red; font-weight: bold;"><%= errors.recommendedVideo.msg%></small>
+                            <% } %>    
+                            <span class="text-danger" id="maxReqErrors"></span><br>
+                            <input class="style-input" type="text" name="recommendedProcessor" placeholder="Recommended Processor" value="<%= locals.old && old.recommendedProcessor %>"> <br>
+                            <input class="style-input" type="text" name="recommendedRam" placeholder="Recommended Ram" value="<%= locals.old && old.recommendedRam %>">
                         </div>
                     </div>
 
