@@ -1,5 +1,5 @@
 # TitanGames
-![](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/public/img/logo.png)
+![](https://i.pinimg.com/originals/87/93/e7/8793e7c1fadd87cc76aa4e2dc786d25a.jpg)
 
 ## Integrantes :octocat:
 **Berrettoni, Pablo Gregorio**
