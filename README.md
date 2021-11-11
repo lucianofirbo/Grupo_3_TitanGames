@@ -50,11 +50,11 @@ Nuestra elección se basó principalmente en la temática del marketplace y gene
 
 ## Wireframes
 
-- [Home](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/Wireframe/Escritorio/Home/Home%20-%20Escritorio.png)
-- [Detalle del producto](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/Wireframe/Escritorio/Detalle%20de%20producto/Detalle%20del%20producto.jpg)
-- [Carrito de compras](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/Wireframe/Escritorio/Carrito/Carrito-desktop.PNG)
-- [Formulario de registro](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/Wireframe/Escritorio/Registro/registro-popup.PNG)
-- [Formulario de login](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/Wireframe/Escritorio/Login/Pop%20up%20Login%20-%20Desktop_Tablet.PNG)
+- [Home](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/design/Wireframe/Escritorio/Home/Home%20-%20Escritorio.png)
+- [Detalle del producto](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/design/Wireframe/Escritorio/Detalle%20de%20producto/Detalle%20del%20producto.jpg)
+- [Carrito de compras](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/design/Wireframe/Escritorio/Carrito/Carrito-desktop.PNG)
+- [Formulario de registro](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/design/Wireframe/Escritorio/Registro/registro-popup.PNG)
+- [Formulario de login](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/design/Wireframe/Escritorio/Login/Pop%20up%20Login%20-%20Desktop_Tablet.PNG)
 
 
 ## Logo, colores y fuentes
