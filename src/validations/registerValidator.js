@@ -29,10 +29,7 @@ module.exports = [
     check('pass1')
     .notEmpty()
     .withMessage('Debes escribir tu contraseña')
-    .isLength({
-        min: 8
-    })
-
+    .isLength({min: 6})
     .withMessage('La contraseña debe tener como mínimo 8 caracteres'),
 
     body('pass1')
