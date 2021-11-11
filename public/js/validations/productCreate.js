@@ -112,15 +112,15 @@ window.addEventListener('load', function() {
             }
     });
 
-    /* $selectCategory.addEventListener("blur", function(){
-        if (!$selectCategory.value.trim()) {
+    $selectCategory.addEventListener("blur", function(){
+        if ( !$selectCategory.value.trim()) {
             $categoryErrors.innerHTML = "Debe seleccionar una categoría"
             $selectCategory.style.backgroundColor = 'rgba(255, 126, 126, 0.466)'
         } else {
             $selectCategory.style.backgroundColor = "white"
             $categoryErrors.innerHTML = "";
         }
-    }); */
+    });
 
     $selectSubcategory.addEventListener("blur", function(){
         if ( !$selectSubcategory.value.trim()) {
@@ -144,6 +144,7 @@ window.addEventListener('load', function() {
                                         && elementosForm[index].name !== "videoURL" 
                                         && elementosForm[index].name !== "recommendedProcessor" 
                                         && elementosForm[index].name !== "recommendedRam"
+                                        && elementosForm[index].name !== "imagenProducto"
                                         && elementosForm[index].name !== "imagenProducto2"
                                         && elementosForm[index].name !== "imagenProducto3"
                                         && elementosForm[index].name !== "imagenProducto4"
