@@ -4,20 +4,18 @@ module.exports = [
     check('product')
     .notEmpty()
     .withMessage('Debe ingresar el nombre del producto')
-    .isLength({min: 3})
+    .isLength({min: 5})
     .withMessage('Ingrese más de 3 caracteres'),
 
     check('precio')
     .notEmpty()
-    .withMessage('Coloque un precio')
-    .isNumeric()
-    .withMessage('Solo puedes ingresar números'),
+    .withMessage('Coloque un precio'),
 
-    check('category')
+    check('genero')
     .notEmpty()
     .withMessage('Debe elegir un género'),
 
-    check('subCategory')
+    check('subGenero')
     .notEmpty()
     .withMessage('Debe elegir un subgénero'),
 
@@ -25,27 +23,21 @@ module.exports = [
     .notEmpty()
     .withMessage('Debe ingresar un requisito'),
 
+    check ('minimumProcessor')
+    .notEmpty()
+    .withMessage('Debe ingresar un requisito'),
+
+    check ('minimumRam')
+    .notEmpty()
+    .withMessage('Debe ingresar un requisito'),
+
     check('recommendedVideo')
     .notEmpty()
     .withMessage('Debe ingresar un requisito'),
 
-    check ('minumumProcessor')
+    check ('descripcion')
     .notEmpty()
-    .withMessage('Debe ingresar un requisito'),
-
-    check ('recommendedProcessor')
-    .notEmpty()
-    .withMessage('Debe ingresar un requisito'),
-
-    check ('minumumRam')
-    .notEmpty()
-    .withMessage('Debe ingresar un requisito'),
-
-    check ('recommendedRam')
-    .notEmpty()
-    .withMessage('Debe ingresar un requisito'),
-
-    check ('description')
-    .notEmpty()
-    .withMessage('Debe contener alguna descripción'),
+    .withMessage('Debe contener alguna descripción')
+    .isLength({min: 20})
+    .withMessage('Debes ingresar una descripción de al menos 20 caracteres')
 ]
