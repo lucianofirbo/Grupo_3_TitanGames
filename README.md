@@ -65,9 +65,10 @@ Nuestra elección se basó principalmente en la temática del marketplace y gene
     - [Poppins](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/design/Fuente/Poppins-Light.ttf) 
 - Colores:
  
-    - ![#8EBD00](https://via.placeholder.com/15/8EBD00/000000?text=+) `greenTitan`
-    - ![#D94969](https://via.placeholder.com/15/D94969/000000?text=+) `pinkTitan`
-    - ![#161623](https://via.placeholder.com/15/161623/000000?text=+) `background`
+    - ![#8EBD00](https://via.placeholder.com/15/8EBD00/000000?text=+) `greenTitan` 
+    - ![#1b2735](https://via.placeholder.com/15/1b27350/000000?text=+) `backgroundGradient` 
+    - ![#161623](https://via.placeholder.com/15/161623/000000?text=+) `backgroundGradient`
+    - ![#090a0f](https://via.placeholder.com/15/090a0f/000000?text=+) `backgroundGradient`
 
 # SPRINT 2: HTML + CSS
 
