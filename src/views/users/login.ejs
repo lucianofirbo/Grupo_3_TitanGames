@@ -21,15 +21,16 @@
                     <div class="form">
                         <div class="input-container">
                             <input class="input-style" id="email" type="email" name="email" placeholder="Ingrese su email">
-                            
-                                <span class="text-danger" id="emailErrors"></span>
-                            
+                            <% if(locals.errors && errors.email) { %>
+                                <strong class="text-danger"><%= errors.email.msg %></strong>
+                            <% } %>
+                            <span class="text-danger" id="emailErrors"></span>       
                         </div>
                         <div class="input-container">
                             <input class="input-style" id="pass" type="password" name="pass" placeholder="Contraseña">
                             <% if(locals.errors && errors.pass) { %>
                                 <span class="text-danger" id="passErrors"><%= errors.pass.msg%></span>
-                            <% } %>
+                            <% } %>   
                         </div>
                         <div class="check">
                             <label class="recordar" for="recordar">Recordarme</label>
