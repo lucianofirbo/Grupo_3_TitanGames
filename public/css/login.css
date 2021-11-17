@@ -80,7 +80,7 @@ input.input-style:focus {
     outline: none;
 }
 
-span#submitErrors.text-danger {
+.text-danger {
     color: rgb(252, 90, 90);
     font-weight: bold;
     font-size: 12px;
@@ -175,8 +175,8 @@ button.submit-login:hover {
 
 @media (min-width:768px) {
     .card {
-        width: 450px;
-        height: 447px;        
+        width: 60%;
+        height: 70%;        
     }
 
     div.input-container {
@@ -185,7 +185,6 @@ button.submit-login:hover {
 
     .input-container,
     .input-style {
-        height: 8vh;
         border-radius: 50px;
     }
 }
@@ -194,10 +193,6 @@ button.submit-login:hover {
     .card {
         width: 450px;
         height: 500px;        
-    }
-    .input-container,
-    .input-style {
-        height: 8vh;
     }
     button.submit {
         height: 8vh;
