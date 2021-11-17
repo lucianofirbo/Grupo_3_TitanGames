@@ -385,11 +385,7 @@ p.info-polygon{
 
 .sale-box {
     border-radius: 5px;
-<<<<<<< HEAD
-    background-color: var(--greenTitan);
-=======
     background-color: var(--greenDarkTitan);
->>>>>>> c3853c58760be8ae1b1dfddddf4a2edffa9d92a8
 }
 
 .game-discover-hr {
