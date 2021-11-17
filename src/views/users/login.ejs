@@ -30,19 +30,20 @@
                             <input class="input-style" id="pass" type="password" name="pass" placeholder="Contraseña">
                             <% if(locals.errors && errors.pass) { %>
                                 <span class="text-danger" id="passErrors"><%= errors.pass.msg%></span>
-                            <% } %>   
+                            <% } %>
+                            <span class="text-danger" id="passErrors"></span>   
                         </div>
                         <div class="check">
                             <label class="recordar" for="recordar">Recordarme</label>
                             <input type="checkbox" name="recordar" id="recordar">
                         </div>
-
-                        <div class="error-msg">
-                            <span class="text-danger" id="submitErrors"></span>
-                        </div>
                         
                         <div class="button-container">
                             <button type="submit" class="submit-login">Ingresar</button>
+                        </div>
+                        
+                        <div class="error-msg">
+                            <span class="text-danger" id="submitErrors"></span>
                         </div>
                         <div class="last-text" id="recover-pass">
                             <a href="http://localhost:3000/user/register"><span>Aún no tengo cuenta</span></a>
