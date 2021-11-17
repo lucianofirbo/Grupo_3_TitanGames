@@ -1,9 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
-/* @import url('login.css'); */
 @import url('login.css');
 @import url('register.css');
-@import url('recoverPassword.css');
-@import url('background.css');
-@import url('header.css');
+@import url('profileEdit.css');
 @import url('home-main.css');
-@import url('footer.css');
+@import url('general.css');
+@import url('scroll.css');
+
+:root {
+    --font-alfa: 'Alfa Slab One', cursive;
+    --greenTitan: #8EBD00;
+    --greenDarkTitan: #6f9401;
+}
+

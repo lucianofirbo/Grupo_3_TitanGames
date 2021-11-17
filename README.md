@@ -1,5 +1,5 @@
 # TitanGames
-![](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/public/img/logo.png)
+![](https://i.pinimg.com/originals/87/93/e7/8793e7c1fadd87cc76aa4e2dc786d25a.jpg)
 
 ## Integrantes :octocat:
 **Berrettoni, Pablo Gregorio**
@@ -50,11 +50,11 @@ Nuestra elección se basó principalmente en la temática del marketplace y gene
 
 ## Wireframes
 
-- [Home](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/Wireframe/Escritorio/Home/Home%20-%20Escritorio.png)
-- [Detalle del producto](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/Wireframe/Escritorio/Detalle%20de%20producto/Detalle%20del%20producto.jpg)
-- [Carrito de compras](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/Wireframe/Escritorio/Carrito/Carrito-desktop.PNG)
-- [Formulario de registro](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/Wireframe/Escritorio/Registro/registro-popup.PNG)
-- [Formulario de login](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/Wireframe/Escritorio/Login/Pop%20up%20Login%20-%20Desktop_Tablet.PNG)
+- [Home](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/design/Wireframe/Escritorio/Home/Home%20-%20Escritorio.png)
+- [Detalle del producto](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/design/Wireframe/Escritorio/Detalle%20de%20producto/Detalle%20del%20producto.jpg)
+- [Carrito de compras](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/design/Wireframe/Escritorio/Carrito/Carrito-desktop.PNG)
+- [Formulario de registro](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/design/Wireframe/Escritorio/Registro/registro-popup.PNG)
+- [Formulario de login](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/design/Wireframe/Escritorio/Login/Pop%20up%20Login%20-%20Desktop_Tablet.PNG)
 
 
 ## Logo, colores y fuentes
@@ -65,9 +65,12 @@ Nuestra elección se basó principalmente en la temática del marketplace y gene
     - [Poppins](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/design/Fuente/Poppins-Light.ttf) 
 - Colores:
  
-    - ![#8EBD00](https://via.placeholder.com/15/8EBD00/000000?text=+) `greenTitan`
-    - ![#D94969](https://via.placeholder.com/15/D94969/000000?text=+) `pinkTitan`
-    - ![#161623](https://via.placeholder.com/15/161623/000000?text=+) `background`
+    - ![#fff](https://via.placeholder.com/15/fff/000000?text=+) `white`
+    - ![#bbe932](https://via.placeholder.com/15/bbe932/000000?text=+) `greenLightTitan`
+    - ![#8EBD00](https://via.placeholder.com/15/8EBD00/000000?text=+) `greenTitan`  
+    - ![#1b2735](https://via.placeholder.com/15/1b27350/000000?text=+) `backgroundGradient` 
+    - ![#161623](https://via.placeholder.com/15/161623/000000?text=+) `backgroundGradient`
+    - ![#090a0f](https://via.placeholder.com/15/090a0f/000000?text=+) `backgroundGradient`
 
 # SPRINT 2: HTML + CSS
 
@@ -117,6 +120,38 @@ ENTREGADO:
     - Función de recordar al usuario
 - Rutas de huéspedes y usuarios
 
+### Retrospectiva [retro.md](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/retro.md)
+
+# SPRINT 6: BASES DE DATOS
+
+ENTREGADO:
+- Script de creación de estructura de base de datos con:
+    - Creación de la base de datos y de todas sus tablas.
+    - Tipos de datos de los campos y sus restricciones.
+    - Relaciones entre las diferentes tablas.
+- Creación de carpeta Sequelize con:
+    - Archivos de configuración.
+    - Modelos con sus relaciones.
+- CRUD
+    - De productos.
+    - De usuarios.
+    - De tablas secundarias.
+ 
+### Retrospectiva [retro.md](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/retro.md)
+
+# SPRINT 7: VALIDACIONES
+
+ENTREGADO:
+- Validaciones del BACK-END con Express Validator:
+    - Registro de usuarios.
+    - Login de usuarios.
+    - Creación y modificación de productos
+- Validaciones del FRONT-END con JavaScript
+    - Registro de usuarios.
+    - Login de usuarios.
+    - Creación y modificación de productos.
+    - Edición de perfil.
+ 
 ### Retrospectiva [retro.md](https://github.com/lucianofirbo/Grupo_3_TitanGames/blob/master/retro.md)
 
 

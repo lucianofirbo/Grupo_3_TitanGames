@@ -1,13 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+@import url('general.css');
 :root {
     --font-alfa: 'Alfa Slab One', cursive;
     --greenTitan: #8EBD00;
     --greenLightTitan: #bbe932;
 }
-
-body {
-    margin-top: 120px;
+.error-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
 }
 .title {
     display: flex;
@@ -85,6 +89,31 @@ span:nth-child(3){
 
 .home-button i{
     font-size: 1.5rem;
+}
+
+.home-button i:hover {
+    animation : rotar 1.5s alternate;
+}
+
+@keyframes rotar {
+    0% {
+        transform: rotate(0deg);
+    }
+    20% {
+        transform: rotate(10deg);
+    }
+    40% {
+        transform: rotate(-15deg);
+    }
+    60% {
+        transform: rotate(15deg);
+    }
+    80% {
+        transform: rotate(-10deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
 }
 
 .home-button a:hover {

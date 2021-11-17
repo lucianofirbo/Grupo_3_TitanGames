@@ -4,6 +4,7 @@ const controller = require('../controllers/adminController');
 const fileUpload = require('../middlewares/multerMiddleware');
 const adminCheck = require('../middlewares/adminCheck');
 const productValidator = require('../validations/productCreateValidator');
+const productEditValidator = require('../validations/editProductValidator');
 
 /* Rutas para añadir, editar stock o eliminar un producto */
 
@@ -26,7 +27,7 @@ router.put('/editProduct/:id', fileUpload.fields([
     { name: 'imagenProducto2', maxCount: 1 },
     { name: 'imagenProducto3', maxCount: 1 },
     { name: 'imagenProducto4', maxCount: 1 },
-    { name: 'imagenProducto5', maxCount: 1 }]), productValidator,controller.editProduct);
+    { name: 'imagenProducto5', maxCount: 1 }]), productEditValidator,controller.editProduct);
 
 /* Delete Product */
 router.delete('/deleteProduct/:id', controller.deleteProduct);

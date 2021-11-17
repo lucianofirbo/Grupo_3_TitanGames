@@ -21,7 +21,9 @@
             <div class="game-text">
                 <p><%= product.product %></p>
                 <div class="price">
-                    <p class="sale-box">-10%</p>
+                    <% if (product.offers) { %>
+                        <p class="sale-box"><%-product.offers%>%</p>
+                    <% } %>
                     <p>$<%= toThousand(product.price) %></p>
                 </div>
             </div>

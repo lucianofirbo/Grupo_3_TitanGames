@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
-@import url('background.css');
-@import url('header.css');
-@import url('footer.css');
+@import url('general.css');
+@import url('scroll.css');
+
 :root {
   --pinkTitan: #D94969;
 }
@@ -25,11 +24,8 @@ main {
 
 /*    */
 
-.categoriesDetail {
-  display: flex;
-}
-
 .title-product h3 {
+  text-align: center;
   letter-spacing: 2.5px;
   text-transform: uppercase;
 }
@@ -47,8 +43,7 @@ main {
 .buy-product {
   display: flex;
   align-items: center;
-  margin-top: 10px;
-  margin-left: 15%;
+  justify-content: space-between;
 }
 #offer {
   background-color: var(--pinkTitan);
@@ -110,7 +105,7 @@ main {
 }
 .column {
   float: left;
-  width: 16.66%;
+  width: 20%;
   padding-left: 10px;
 }
 .demo {
@@ -125,7 +120,7 @@ main {
 .row {
   display: flex;
   justify-content: space-between;
-  margin-top: 10px;
+  margin: 15px 0;
 }
 
 /*botón >comprar*/
@@ -167,27 +162,25 @@ main {
   position: relative;
 } 
 .img-prod-descrp img {
-  width: 90%;
+  width: 100%;
+  object-fit: cover;
   margin-top: 15px;
 }
 .img-prod-descrp p {
-  margin: 10px;
-  font-weight: lighter;
+  font-size: 0.8rem;
+}
+
+.categoriesDetail {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.507);
+  margin: 10px 0;
 }
 
 .category-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#category {
-  text-align: start;
-  background-color: rgba(0, 0, 0, 0.418);
-}
-#strong-category {
-  padding-right: 60px;
-  padding-left: 10px;
+  flex-direction: column;
 }
 
 /* VIDEO POPUP */
@@ -212,7 +205,7 @@ main {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 99999;
-  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(4px);
   width: 100%;
   height: 100%;
   display: flex;
@@ -240,6 +233,7 @@ main {
   filter: invert(1);
   max-width: 32px;
   opacity: 0.5;
+  transition: all .4s ease-in-out;
 }
 .close:hover {
   opacity: 1;
@@ -250,11 +244,13 @@ main {
   margin: 15px;
 }
 .specs-product h4{
+  font-size: 0.7rem;
   margin-block-end: 0;
   text-transform: uppercase;
 }
 .specs-product ul li {
   color: darkgray;
+  font-weight: 600;
 }
 
 /* SECCIÓN : PUEDE QUE TE INTERESE  */
@@ -358,7 +354,10 @@ section h5{
 }
 
 /*Tablets*/
-@media screen and (min-width:769px){
+@media screen and (min-width:768px){
+  .buy-product {
+    justify-content: space-evenly;
+  }
   .buy-product p {
     font-size: 1.4rem;
   }
@@ -369,6 +368,9 @@ section h5{
   .specs-product ul li {
     line-height: 300%;
   }
+  .specs-product h4 {
+    font-size: 1rem;
+  }
   iframe {
     width: 90%;
     height: 400px;
@@ -376,27 +378,28 @@ section h5{
   .title-product h3 {
     font-size: 25px;
   }
-  #offer {
-    width: 80px;
-    padding: 5px;
-  }
   .container {
     width: 90%;
     margin: auto;
   }
   .row {
-    margin-top: 20px;
+    margin: 20px 0;
+  }
+  .column {
+    width: 18%;
   }
   .interese {
     max-width: 80%;
     margin: 20px auto;
   }
-  #category {
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
   .mySlides img {
     height: 400px;
+  }
+  .img-prod-descrp p {
+    font-size: 0.9rem;
+  }
+  .categoryDetail {
+    margin: 20px 20px;
   }
 }
 
@@ -404,6 +407,9 @@ section h5{
 @media screen and (min-width:1024px){
   main {
     display: flex;
+  }
+  .title-product h3 {
+    text-align: start;
   }
   .principal-container {
     width: 70%;
@@ -446,9 +452,6 @@ section h5{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  }
-  .img-prod-descrp img {
-    height: 250px;
   }
   .buy-product{
     margin-top: 5%;

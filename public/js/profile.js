@@ -1,4 +1,4 @@
-window.onload = () => {
+/* window.onload = () => {
 
     document.addEventListener('click', (event) => {
         let objeto = event.target;
@@ -28,9 +28,9 @@ window.onload = () => {
         } else if (idElemento === 'showHideBar') {
             document.getElementById('userData').style.display = 'none'
         }
-    })
+    }) 
 
-}
+} 
 
 function showHideCategories (idShow, idHide, idHide2) {
     document.getElementById(idShow).style.backgroundColor = '#807c7c8a'
@@ -42,4 +42,12 @@ function showHide (idShow, idHide, idHide2) {
     document.getElementById(idShow).style.display = 'flex'
     document.getElementById(idHide).style.display = 'none'
     document.getElementById(idHide2).style.display = 'none'
+} */
+
+function showContent(){
+    document.getElementById('userData').style.display = 'flex'
+}
+
+function hideContent(){
+    document.getElementById('userData').style.display = 'none'
 }

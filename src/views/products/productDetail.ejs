@@ -70,7 +70,9 @@
             </div>
             <!-- TERMINA SLIDER-->
             <div class="buy-product">
-                <p id="offer">-90%</p>
+                <% if (productF.offers) { %>
+                    <p class="sale-box"><%-productF.offers%>%</p>
+                <% } %>
                 <p> $<%- toThousand(productF.price) %> </p>
                 <div class="button-container">
                     <button type="submit" class="btn btn-submit">Añadir al carrito <i class="fas fa-cart-plus"></i></button>
@@ -83,20 +85,21 @@
             <div>
                 <div class="img-prod-descrp">
                     <img src="/img/games/<%- productF.productImage[0].image %>" alt="">
-                    <a href="" onclick="toggle();">Mirar Trailer</a>
+                   
+                    <a href="#" onclick="toggle();">Mirar Trailer</a>
                     <div class="trailer">
-                        <iframe height="200px" src="<%- productF.videoURL %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        <img src="/img/close.png" class="close" onclick="toggle();">
+                        <iframe height="200px" src="<%-productF.videoURL%>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <img src="/img/close.png" class="close" onclick="toggle()">
                     </div>
                     
                     <p> <%- productF.description %> </p>
 
                     <div class="categoriesDetail">
                         <div class="category-container">
-                            <p id="category"><strong id="strong-category"> Categoria: </strong><%- productF.categories.name %></p>
+                            <strong id="strong-category"> Categoria: </strong><p id="category"><%- productF.categories.name %></p>
                         </div>
                         <div class="category-container">
-                            <p id="category"><strong id="strong-category"> Sub-Categoria: </strong><%- productF.subcategory.name %></p>
+                            <strong id="strong-category"> Sub-Categoria: </strong><p id="category"><%- productF.subcategory.name %></p>
                         </div>
                     </div>
                     
