@@ -26,7 +26,7 @@ module.exports = [
             }
         })
         .catch((err) => {
-            return Promise.reject("Contraseña incorrecta")
+            return Promise.reject("Email o contraseña incorrecta")
         })
     })
 ]
