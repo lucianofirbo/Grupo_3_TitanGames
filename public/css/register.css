@@ -81,7 +81,7 @@ button.submit-register:hover {
     height: 48px;
 }
 
-span#submitErrors.text-danger {
+.text-danger {
     color: rgb(252, 90, 90);
     font-weight: bold;
     font-size: 12px;
@@ -95,6 +95,8 @@ span#submitErrors.text-danger {
 .input-container-reg {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .redirect-register span{
