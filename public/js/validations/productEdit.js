@@ -211,13 +211,13 @@ window.addEventListener("load", function () {
   });
 
   $form.addEventListener("submit", function (event) {
-    let error = false;
     event.preventDefault();
+    let error = false;
     let elementosForm = this.elements;
 
     for (let index = 0; index < elementosForm.length - 1; index++) {
       if (
-        elementosForm[index].value == "" &&
+        elementosForm[index].value === "" &&
         elementosForm[index].name !== "offers" &&
         elementosForm[index].name !== "key" &&
         elementosForm[index].name !== "videoURL" &&

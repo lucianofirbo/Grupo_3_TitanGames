@@ -133,24 +133,19 @@ window.addEventListener('load', function() {
     });
 
     $form.addEventListener('submit',function(event){
+        event.preventDefault();
         let error = false;
-        event.preventDefault()
         let elementosForm = this.elements
         
         for (let index = 0; index < elementosForm.length-1; index++) {
-            if(elementosForm[index].value == "" 
+            if(elementosForm[index].value === "" 
                                         && elementosForm[index].name !== "offers" 
                                         && elementosForm[index].name !== "key" 
                                         && elementosForm[index].name !== "videoURL" 
                                         && elementosForm[index].name !== "recommendedProcessor" 
-                                        && elementosForm[index].name !== "recommendedRam"
-                                        && elementosForm[index].name !== "imagenProducto"
-                                        && elementosForm[index].name !== "imagenProducto2"
-                                        && elementosForm[index].name !== "imagenProducto3"
-                                        && elementosForm[index].name !== "imagenProducto4"
-                                        && elementosForm[index].name !== "imagenProducto5"){
+                                        && elementosForm[index].name !== "recommendedRam"){
                 elementosForm[index].style.backgroundColor = 'rgba(255, 126, 126, 0.466)'
-                submitErrors.innerHTML = "Los campos señalados son obligatorios";
+                submitErrors.innerHTML = "Los campos señalados son obligatorios. Debes subir al menos 5 imágenes para el producto";
                 error = true;           
             }
         }   

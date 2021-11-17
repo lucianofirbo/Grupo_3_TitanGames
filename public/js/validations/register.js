@@ -19,6 +19,7 @@ window.addEventListener('load', function(){
 
     submitErrors = qs('#submitErrors')
 
+    regLongName = /^.{3,}$/,
     regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
     regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
     
@@ -26,6 +27,10 @@ window.addEventListener('load', function(){
         switch(true) {
             case !$inputName.value.trim():
                 $nameErrors.innerHTML = 'Debes ingresar un nombre de usuario'
+                $inputName.style.backgroundColor = 'rgba(255, 126, 126, 0.466)'
+                break;
+            case !regLongName.test($inputName.value):
+                $nameErrors.innerHTML = 'Debes ingresar un nombre de usuario de más de 3 caracteres'
                 $inputName.style.backgroundColor = 'rgba(255, 126, 126, 0.466)'
                 break;
             default :
@@ -87,12 +92,12 @@ window.addEventListener('load', function(){
     });
 
     $form.addEventListener('submit',function(event){
+        event.preventDefault();
         let error = false;
-        event.preventDefault()
-        let elementosForm = this.elements
-        
+        let elementosForm = this.elements;
+
         for (let index = 0; index < elementosForm.length-1; index++) {
-            if(elementosForm[index].value == ""){
+            if(elementosForm[index].value === ""){
                 elementosForm[index].style.backgroundColor = 'rgba(255, 126, 126, 0.466)'
                 submitErrors.innerHTML = "Los campos señalados son obligatorios";
                 error = true;
@@ -101,8 +106,6 @@ window.addEventListener('load', function(){
         if(!error){
             console.log('Ok');
             $form.submit()
-        }
-    
+        }    
     })
-
 })

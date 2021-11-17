@@ -42,13 +42,13 @@ window.addEventListener('load', function(){
         }
     });
 
-    $form.addEventListener('submit',function(event){
-        let error = false;        
-        event.preventDefault()
+    $form.addEventListener('submit',function(event){    
+        event.preventDefault();
+        let error = false;    
         let elementosForm = this.elements
         
         for (let index = 0; index < elementosForm.length-1; index++) {
-            if(elementosForm[index].value == ""){
+            if(elementosForm[index].value === ""){
                 elementosForm[index].style.backgroundColor = 'rgba(255, 126, 126, 0.466)'
                 submitErrors.innerHTML = "Debes llenar los campos";
                 error = true;
