@@ -23,7 +23,7 @@
                     <label>PRODUCTO:</label>
                     <input class="style-input" type="text" id="productName" name="product" value="<%- product.product %>" placeholder="Nombre del producto">
                     <% if(locals.errors && errors.product){ %>
-                        <small style="color: red; font-weight: bold;"><%= errors.product.msg%></small>
+                        <span class="text-danger""><%= errors.product.msg%></span>
                     <% } %>
                     <span class="text-danger" id="productNameErrors"></span>
                 </div>
