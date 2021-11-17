@@ -116,12 +116,6 @@ button.submit-edit {
     height: 75px;
 }
 
-.text-danger {
-    color: red;
-    font-weight: bold;
-    font-size: 11px;
-}
-
 .input-container-edit {
     display: flex;
     flex-direction: column;
