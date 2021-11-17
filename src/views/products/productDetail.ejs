@@ -85,10 +85,11 @@
             <div>
                 <div class="img-prod-descrp">
                     <img src="/img/games/<%- productF.productImage[0].image %>" alt="">
-                    <a href="" onclick="toggle();">Mirar Trailer</a>
+                   
+                    <a href="#" onclick="toggle();">Mirar Trailer</a>
                     <div class="trailer">
-                        <iframe height="200px" src="<%- productF.videoURL %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        <img src="/img/close.png" class="close" onclick="toggle();">
+                        <iframe height="200px" src="<%-productF.videoURL%>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <img src="/img/close.png" class="close" onclick="toggle()">
                     </div>
                     
                     <p> <%- productF.description %> </p>
