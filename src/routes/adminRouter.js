@@ -35,4 +35,7 @@ router.delete('/deleteProduct/:id', controller.deleteProduct);
 /* Ruta para administrar usuarios */
 router.get('/adminUsers', adminCheck, controller.userAdmin);
 
+/* Ruta para buscar usuario como admin */
+router.get('/adminSearchUser', adminCheck, controller.adminSearchUser);
+
 module.exports = router;

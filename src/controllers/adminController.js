@@ -1,5 +1,6 @@
 const { validationResult } = require('express-validator');
 const db = require('../database/models');
+const Op = db.Sequelize.Op;
 
 module.exports = {
 
@@ -219,6 +220,21 @@ module.exports = {
             res.render('users/userAdmin', { 
                 users,
                 userInSession: req.session.userLogged ? req.session.userLogged : '' });
+        })
+    },
+
+    adminSearchUser: (req, res) => {
+        db.User.findAll({
+            where: {
+                userName: {[Op.like]: `%${req.query.keywords}%`}
+            }
+        })
+        .then(users => {
+            res.render('users/userAdmin', {
+                users,
+                search: req.query.keywords,
+                userInSession : req.session.userLogged ? req.session.userLogged : ''
+            });
         })
     }
 
