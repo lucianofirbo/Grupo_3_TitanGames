@@ -1,5 +1,5 @@
 main {
-    min-height: 85vh;
+    min-height: 75vh;
     background-size: cover;
 }
 
@@ -45,7 +45,7 @@ option {
     text-align: left;
 }
 
-.editDelete {
+.sendDelete {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -54,6 +54,12 @@ option {
 
 .delete {
     background-color: red;
+    border-radius: 5%;
+    padding: 4px;
+}
+
+.send {
+    background-color: green;
     border-radius: 5%;
     padding: 4px;
 }

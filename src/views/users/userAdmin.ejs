@@ -15,22 +15,26 @@
     <%- include('../partials/header') -%>
 
     <main>
+
+        
+
         <div class="userCards">
             <% users.forEach(user => { %>
                     <div class="userCard">
                         <img src="/img/users/<%- user.avatar %>">
                         <p>User: <%-user.userName%></p>     
                         <p>Email: <%-user.email%></p>
-                        <div class="editDelete">
-                            <select name="rol" id="selectRol">
-                                <% if ( user.rol == 1) { %>
-                                    <option selected hidden value="1">Admin</option>
-                                    <option value="0">User</option>
-                                <% } else { %>
-                                    <option selected hidden value="0">User</option>
-                                    <option value="1">Admin</option>
-                                <% } %>
-                            </select>
+                        <select name="rol" id="selectRol">
+                            <% if ( user.rol == 1) { %>
+                                <option selected hidden value="1">Admin</option>
+                                <option value="0">User</option>
+                            <% } else { %>
+                                <option selected hidden value="0">User</option>
+                                <option value="1">Admin</option>
+                            <% } %>
+                        </select>
+                        <div class="sendDelete">
+                            <p class="send">Guardar</p>
                             <p class="delete">Eliminar</p>
                         </div>
                     </div>
