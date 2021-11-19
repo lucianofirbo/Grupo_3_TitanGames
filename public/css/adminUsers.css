@@ -3,11 +3,20 @@ main {
     background-size: cover;
 }
 
+.search-form-admin {
+    margin-top: 58px;
+    padding: 5px;
+    text-align: center;
+    background-color: #0d1219;
+}
+
 .userCards {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    margin-top: 75px;
+    margin: 35px 0;
+    flex-wrap: wrap;
+    gap: 25px;
 }
 
 .userCard {
