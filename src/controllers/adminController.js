@@ -156,7 +156,7 @@ module.exports = {
                     })
                     .then(image => {
                         db.ProductImage.destroy({
-                             where: {
+                            where: {
                                 id: image.id
                             }
                         })
@@ -212,5 +212,14 @@ module.exports = {
                     })
             })
     },
+
+    userAdmin: (req, res) => {
+        db.User.findAll()
+        .then(users => {
+            res.render('users/userAdmin', { 
+                users,
+                userInSession: req.session.userLogged ? req.session.userLogged : '' });
+        })
+    }
 
 }
