@@ -236,6 +236,25 @@ module.exports = {
                 userInSession : req.session.userLogged ? req.session.userLogged : ''
             });
         })
+    },
+
+    adminSearchProduct: (req, res) => {
+        db.Product.findAll({
+            where: {
+                product: {[Op.like]: `%${req.query.keywords}%`}
+            },
+            include: [{ association: "categories" }, { association: "subcategory" }, { association: "productImage" }]
+        })
+        .then(product => {
+            db.Category.findAll()
+                .then(category => {
+                    db.Subcategory.findAll()
+                        .then(subcategory => {
+                            /* res.send(product[0]) */
+                            res.render('products/productAdd', { dataBase: product, category, subcategory, userInSession: req.session.userLogged ? req.session.userLogged : '' });
+                        })
+                })
+        })
     }
 
 }

@@ -38,4 +38,7 @@ router.get('/adminUsers', adminCheck, controller.userAdmin);
 /* Ruta para buscar usuario como admin */
 router.get('/adminSearchUser', adminCheck, controller.adminSearchUser);
 
+/* Ruta para buscar productos como admin */
+router.get('/adminSearchProduct', adminCheck, controller.adminSearchProduct);
+
 module.exports = router;
