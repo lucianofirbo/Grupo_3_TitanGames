@@ -109,7 +109,6 @@ module.exports = {
             }, {
                 where: {
                     id: req.params.id,
-                    include: [models.address] 
                 }
             })
             .then(() => {
@@ -162,7 +161,7 @@ module.exports = {
             where: {
                 id: req.session.userLogged.id
             },
-            include: [{association: 'Address'}]
+            include: [{association: 'address'}]
         })
         .then(() => {
             res.redirect('/')
