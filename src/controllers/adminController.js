@@ -250,7 +250,6 @@ module.exports = {
                 .then(category => {
                     db.Subcategory.findAll()
                         .then(subcategory => {
-                            /* res.send(product[0]) */
                             res.render('products/productAdd', { dataBase: product, category, subcategory, userInSession: req.session.userLogged ? req.session.userLogged : '' });
                         })
                 })
