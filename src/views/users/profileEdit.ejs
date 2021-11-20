@@ -4,7 +4,7 @@
     <%- include('../partials/head') -%>
     <title>Editar perfil</title>        
     <link rel="stylesheet" href="/css/index.css">
-    <!-- <script src="/js/validations/editProfile.js"></script> -->
+    <script src="/js/validations/editProfile.js"></script>
 </head>
 <body>
     <%- include('../partials/background') -%>
@@ -44,7 +44,7 @@
                             <% } %>
                         </div>               
                         <div class="input-container-edit">
-                            <input class="input-style-edit" type="text" name="address" placeholder="Dirección" value="<%= locals.old ? old.address : user.address %>">
+                            <input class="input-style-edit" type="text" name="address" placeholder="Dirección" value="">
                         </div>
                     </div>
                     
