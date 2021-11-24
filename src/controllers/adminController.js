@@ -214,13 +214,17 @@ module.exports = {
             })
     },
 
-    userAdmin: (req, res) => {
+    userAdminRender: (req, res) => {
         db.User.findAll()
         .then(users => {
             res.render('users/userAdmin', { 
                 users,
                 userInSession: req.session.userLogged ? req.session.userLogged : '' });
         })
+    },
+
+    userAdminEdit:(req, res) => {
+        res.send(req.body.selectRol)
     },
 
     adminSearchUser: (req, res) => {

@@ -16,51 +16,29 @@
 
         <form action="/admin/adminSearchUser" method="GET" class="search-form-admin">
             <input type="text" name="keywords" placeholder="Buscar" class="search-form_input">
-            <label class="label-header" for="buttonHeaderSubmit"><i class="fas fa-search"></i></label>
-            <button type="submit" class="search-form_button" id="buttonHeaderSubmit"></i></button>
+            <label class="label-header" for="buttonSearchUser"><i class="fas fa-search"></i></label>
+            <button type="submit" class="search-form_button" id="buttonSearchUser"></i></button>
         </form>
 
         <div class="userCards">
             <% users.forEach(user => { %>
+                <form action="/admin/userEdit/<%-user.id%>" class="formCard">
                     <div class="userCard">
                         <img src="/img/users/<%- user.avatar %>">
                         <p>User: <%-user.userName%></p>     
                         <p>Email: <%-user.email%></p>
-                        <select name="rol" id="selectRol">
-                            <% if ( user.rol == 1) { %>
-                                <option selected hidden value="1">Admin</option>
-                                <option value="0">User</option>
-                            <% } else { %>
-                                <option selected hidden value="0">User</option>
-                                <option value="1">Admin</option>
-                            <% } %>
-                        </select>
-                        <div class="sendDelete">
-                            <p class="send">Guardar</p>
-                            <p class="delete">Eliminar</p>
+                        <% if ( user.rol == 1) { %> 
+                            <p>Rol: Admin</p>
+                        <% } else { %> 
+                            <p>Rol: User</p>
+                        <% } %>
+                        <div class="editDelete">
+                            <button href="/admin/userEdit/<%-user.id%>" class="edit" >Editar</button>
+                            <button href="/admin/userDelete/<%-user.id%>" class="delete">Eliminar</button>
                         </div>
                     </div>
+                </form>
             <% }) %>
-            <% users.forEach(user => { %>
-                <div class="userCard">
-                    <img src="/img/users/<%- user.avatar %>">
-                    <p>User: <%-user.userName%></p>     
-                    <p>Email: <%-user.email%></p>
-                    <select name="rol" id="selectRol">
-                        <% if ( user.rol == 1) { %>
-                            <option selected hidden value="1">Admin</option>
-                            <option value="0">User</option>
-                        <% } else { %>
-                            <option selected hidden value="0">User</option>
-                            <option value="1">Admin</option>
-                        <% } %>
-                    </select>
-                    <div class="sendDelete">
-                        <p class="send">Guardar</p>
-                        <p class="delete">Eliminar</p>
-                    </div>
-                </div>
-        <% }) %>
         </div>
     </main>
 
