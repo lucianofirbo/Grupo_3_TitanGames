@@ -83,10 +83,10 @@ DROP TABLE IF EXISTS `categories`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `categories` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -125,8 +125,8 @@ CREATE TABLE `products` (
   PRIMARY KEY (`id`),
   KEY `FK_ef58d02f-4de8-4f36-bdcd-d7fc35ed0d2a` (`categoryId`),
   KEY `subCategoryId` (`subCategoryId`),
-  CONSTRAINT `FK_ef58d02f-4de8-4f36-bdcd-d7fc35ed0d2a` FOREIGN KEY (`categoryId`) REFERENCES `categories` (`id`),
-  CONSTRAINT `products_ibfk_1` FOREIGN KEY (`subCategoryId`) REFERENCES `subcategories` (`id`)
+  CONSTRAINT `products_ibfk_1` FOREIGN KEY (`subCategoryId`) REFERENCES `subcategories` (`id`),
+  CONSTRAINT `products_ibfk_2` FOREIGN KEY (`categoryId`) REFERENCES `categories` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -236,4 +236,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-11-25 19:49:41
+-- Dump completed on 2021-11-25 20:29:10
