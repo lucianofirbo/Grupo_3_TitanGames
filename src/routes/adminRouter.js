@@ -6,7 +6,7 @@ const adminCheck = require('../middlewares/adminCheck');
 const productValidator = require('../validations/productCreateValidator');
 const productEditValidator = require('../validations/editProductValidator');
 
-/* Rutas para añadir, editar stock o eliminar un producto */
+/* Rutas para añadir, editar stock o eliminar un producto o usuario */
 
 /* Main Admin */ 
 router.get('/adminMain/:id', adminCheck, controller.adminMain)
@@ -31,5 +31,15 @@ router.put('/editProduct/:id', fileUpload.fields([
 
 /* Delete Product */
 router.delete('/deleteProduct/:id', controller.deleteProduct);
+
+/* Ruta para administrar usuarios */
+router.get('/adminUsers', adminCheck, controller.userAdminRender);
+router.get('/userEdit/:id', adminCheck, controller.userAdminEdit);
+
+/* Ruta para buscar usuario como admin */
+router.get('/adminSearchUser', adminCheck, controller.adminSearchUser);
+
+/* Ruta para buscar productos como admin */
+router.get('/adminSearchProduct', adminCheck, controller.adminSearchProduct);
 
 module.exports = router;
