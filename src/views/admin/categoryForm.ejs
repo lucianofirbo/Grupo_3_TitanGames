@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') -%>
+    <title>Categorias</title>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+    <%- include('../partials/background') -%>
+
+    <%- include('../partials/header') -%>
+
+    <section class="categories-container">
+        <div class="cat-title">
+            <h1>Añadir categoria</h1>
+        </div>
+
+        <form action="/admin/categories/create" method="POST">
+            <label for="name">Nombre:</label>
+            <input type="text" name="name" id="inputName">
+            <button type="submit">Añadir</button>
+        </form>
+
+    </section>
+    <script src="/js/adminCategories.js"></script>
+</body>
+</html>

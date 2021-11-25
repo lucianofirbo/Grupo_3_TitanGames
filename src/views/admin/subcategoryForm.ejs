@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') -%>
+    <title>Subcategorias</title>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+    <%- include('../partials/background') -%>
+
+    <%- include('../partials/header') -%>
+
+    <section class="categories-container">
+        <div class="cat-title">
+            <h1>Añadir Subcategoria</h1>
+        </div>
+
+        <form action="/admin/subcategories/create" method="POST">
+            <label for="name">Nombre:</label>
+            <input type="text" name="name" id="inputName" value="<%=  locals.old && old.name %>">
+
+            <div class="select-category">
+                <select class="form-select categorySelect" id="specificSizeSelect" name="category">
+                    <option selected hidden value="">Categorias</option>
+                   <% locals.categories.forEach(category => { %>
+                      <option value="<%- category.id %>" <%= locals.old && old.category == category.id ? "selected" : "" %> ><%- category.name %></option>
+                   <% }) %>
+                  </select>
+            </div>
+
+            <button type="submit">Añadir</button>
+        </form>
+
+    </section>
+    <script src="/js/adminCategories.js"></script>
+</body>
+</html>
