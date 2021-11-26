@@ -101,6 +101,7 @@ module.exports = {
             include: [{association: 'address'}]
         })
         .then(user => {
+            console.log(user.address[0].postalCode)
             res.render('users/profileEdit', {
                 user,
                 userInSession : req.session.userLogged ? req.session.userLogged : ''
@@ -118,8 +119,7 @@ module.exports = {
                 avatar: req.file ? req.file.filename : req.session.userLogged.avatar
             }, {
                 where: {
-                    id: req.params.id,
-                    include: [{association: 'address'}] 
+                    id: req.params.id
                 }
             })
             .then(() => {
