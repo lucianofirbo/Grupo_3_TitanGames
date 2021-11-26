@@ -44,14 +44,18 @@
                             <% } %>
                         </div>               
                         <div class="input-container-edit">
+<<<<<<< HEAD
                             <input class="input-style-edit" type="text" name="address" placeholder="Dirección" value="">
+=======
+                            <input class="input-style-edit" type="text" name="address" placeholder="Dirección" value="<%= locals.old ? old.street : user.address[0].street %>">
+>>>>>>> 96f3dcc3b782ac3b26c3f6a46c07cfcd052ce149
                         </div>
                     </div>
                     
     
                     <div class="group-info-profile">
                         <div class="input-container-edit">
-                            <input class="input-style-edit" type="text" name="postalCode" placeholder="Codigo postal" value="<%= locals.old ? old.postalCode : user.postalCode %>">
+                            <input class="input-style-edit" type="text" name="postalCode" placeholder="Codigo postal" value="<%= locals.old ? old.postalCode : user.address[0].postalCode %>">
                         </div>
                         <div class="form-ad-input">
                             <select name="province" id="provinces">

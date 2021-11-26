@@ -71,13 +71,13 @@ module.exports = {
     categoryDestroy: (req, res) => {
         db.ProductImage.destroy({
             where: {
-                productId: req.params.id,
+                productId: req.params.id
             }
-        }).then((result) => {
+        }).catch(err => console.log(err)).then((result) => {
             db.Product.destroy({
                 where: {
                     categoryId: req.params.id,
-                },                                
+                },                                                                 
             }).then((result) => {
                 db.Subcategory.destroy({
                     where: {
@@ -97,6 +97,6 @@ module.exports = {
                 }).catch(err => console.log(err))
             })
         })
-                
+          
     }
 }

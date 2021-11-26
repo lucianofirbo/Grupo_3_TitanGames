@@ -1,5 +1,6 @@
 const { validationResult } = require('express-validator');
 const db = require('../database/models');
+const Op = db.Sequelize.Op;
 
 module.exports = {
 
@@ -156,7 +157,7 @@ module.exports = {
                     })
                     .then(image => {
                         db.ProductImage.destroy({
-                             where: {
+                            where: {
                                 id: image.id
                             }
                         })
@@ -212,5 +213,51 @@ module.exports = {
                     })
             })
     },
+
+    userAdminRender: (req, res) => {
+        db.User.findAll()
+        .then(users => {
+            res.render('users/userAdmin', { 
+                users,
+                userInSession: req.session.userLogged ? req.session.userLogged : '' });
+        })
+    },
+
+    userAdminEdit:(req, res) => {
+        res.send(req.body.selectRol)
+    },
+
+    adminSearchUser: (req, res) => {
+        db.User.findAll({
+            where: {
+                userName: {[Op.like]: `%${req.query.keywords}%`}
+            }
+        })
+        .then(users => {
+            res.render('users/userAdmin', {
+                users,
+                search: req.query.keywords,
+                userInSession : req.session.userLogged ? req.session.userLogged : ''
+            });
+        })
+    },
+
+    adminSearchProduct: (req, res) => {
+        db.Product.findAll({
+            where: {
+                product: {[Op.like]: `%${req.query.keywords}%`}
+            },
+            include: [{ association: "categories" }, { association: "subcategory" }, { association: "productImage" }]
+        })
+        .then(product => {
+            db.Category.findAll()
+                .then(category => {
+                    db.Subcategory.findAll()
+                        .then(subcategory => {
+                            res.render('products/productAdd', { dataBase: product, category, subcategory, userInSession: req.session.userLogged ? req.session.userLogged : '' });
+                        })
+                })
+        })
+    }
 
 }

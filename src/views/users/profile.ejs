@@ -63,9 +63,9 @@
                                 </p>
                         </div>
                         <div class="userInformation">                   
-                                <p>Dirección: <%- userInSession.street ? userInSession.street : userInSession.street = '.....' %></p>
-                                <p>Código Postal: <%- userInSession.postalCode ? userInSession.postalCode : userInSession.postalCode = '.....' %></p>
-                                <p>Ciudad: <%- userInSession.city ? userInSession.city : userInSession.city = '.....' %></p>
+                                <p>Dirección: <%= user.address[0].street ? user.address[0].street : '.....' %></p>
+                                <p>Código Postal: <%= user.address[0].postalCode ? user.address[0].postalCode : '.....' %></p>
+                                <p>Ciudad: <%= user.address[0].city ? user.address[0].city : '.....' %></p>
                         </div>
 
                     </div>

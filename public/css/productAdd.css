@@ -262,6 +262,14 @@ section.section-2 h2 {
     flex-direction: column;
 }
 
+.search-form-admin {
+    text-align: center;
+    background-color: #22223ae3;
+    margin-top: -5px;
+    padding: 5px;
+    border-radius: 0 0 5px 5px;
+}
+
 .price p {
     color: white;
 }

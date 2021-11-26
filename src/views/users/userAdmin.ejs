@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>    
+    <%- include('../partials/head') -%>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/adminUsers.css">
+    <title>Admin users</title>
+</head>
+<body>
+
+    <%- include('../partials/background') -%>
+
+    <%- include('../partials/header') -%>
+
+    <main>
+
+        <form action="/admin/adminSearchUser" method="GET" class="search-form-admin">
+            <input type="text" name="keywords" placeholder="Buscar" class="search-form_input">
+            <label class="label-header" for="buttonSearchUser"><i class="fas fa-search"></i></label>
+            <button type="submit" class="search-form_button" id="buttonSearchUser"></i></button>
+        </form>
+
+        <div class="userCards">
+            <% users.forEach(user => { %>
+                <form action="/admin/userEdit/<%-user.id%>" class="formCard">
+                    <div class="userCard">
+                        <img src="/img/users/<%- user.avatar %>">
+                        <p>User: <%-user.userName%></p>     
+                        <p>Email: <%-user.email%></p>
+                        <% if ( user.rol == 1) { %> 
+                            <p>Rol: Admin</p>
+                        <% } else { %> 
+                            <p>Rol: User</p>
+                        <% } %>
+                        <div class="editDelete">
+                            <button href="/admin/userEdit/<%-user.id%>" class="edit" >Editar</button>
+                            <button href="/admin/userDelete/<%-user.id%>" class="delete">Eliminar</button>
+                        </div>
+                    </div>
+                </form>
+            <% }) %>
+        </div>
+    </main>
+
+    <%- include('../partials/footer') -%>
+    
+</body>
+</html>
