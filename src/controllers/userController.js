@@ -101,7 +101,6 @@ module.exports = {
             include: [{association: 'address'}]
         })
         .then(user => {
-            console.log(user.address[0].postalCode)
             res.render('users/profileEdit', {
                 user,
                 userInSession : req.session.userLogged ? req.session.userLogged : ''

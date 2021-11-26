@@ -143,9 +143,13 @@ window.addEventListener('load', function() {
                                         && elementosForm[index].name !== "key" 
                                         && elementosForm[index].name !== "videoURL" 
                                         && elementosForm[index].name !== "recommendedProcessor" 
-                                        && elementosForm[index].name !== "recommendedRam"){
+                                        && elementosForm[index].name !== "recommendedRam"
+                                        && elementosForm[index].name !== "imagenProducto2"
+                                        && elementosForm[index].name !== "imagenProducto3"
+                                        && elementosForm[index].name !== "imagenProducto4"
+                                        && elementosForm[index].name !== "imagenProducto5"){
                 elementosForm[index].style.backgroundColor = 'rgba(255, 126, 126, 0.466)'
-                submitErrors.innerHTML = "Los campos señalados son obligatorios. Debes subir al menos 5 imágenes para el producto";
+                submitErrors.innerHTML = "Los campos señalados son obligatorios. Debes subir al menos 1 imágen para el producto";
                 error = true;           
             }
         }   
