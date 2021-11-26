@@ -224,7 +224,17 @@ module.exports = {
     },
 
     userAdminEdit:(req, res) => {
-        res.send(req.body.selectRol)
+        console.log(req.body.selectRol)
+        db.User.update({
+            rol: req.body.selectRol
+        },{
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(() => {            
+            res.redirect('/admin/adminUsers')
+        })
     },
 
     adminSearchUser: (req, res) => {
