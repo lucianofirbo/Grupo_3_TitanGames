@@ -4,6 +4,8 @@
 <head>
     <%- include('../partials/head') -%>
     <title>Editar: <%- product.product %></title>
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/css/admin.css">
     <link rel="stylesheet" href="/css/productAdd.css">
     <script src="/js/validations/productEdit.js" defer></script> 
 </head>
@@ -11,8 +13,8 @@
 <body>
     
     <%- include('../partials/background') -%>
-
-    <%- include('../partials/header') -%>
+    <%- include('../partials/sideBarAdmin') -%>
+    <%- include('../partials/adminHeader') -%>
 
     <section data-content id="section1" class="active">               
         <form class="load-product" id="form" method="POST" action="/admin/editProduct/<%=product.id%>?_method=PUT" enctype="multipart/form-data">
@@ -91,9 +93,9 @@
                 <div class="field-flex">
                     <div class="field-gen">
                         <label>CATEGORÍAS:</label>
-                            <select class="style-select" id="selectCategory" name="genero">
-                                <% category.forEach(categoria => { %>
-                                    <option value="<%- categoria.id %>" <%- product.categoryId == categoria.id ? "selected" : null %>><%-categoria.name%></option>
+                            <select class="style-select categorySelect" id="selectCategory" name="genero">
+                                <% category.forEach(category => { %>
+                                    <option value="<%- category.id %>" <%- locals.old && old.category == category.id ? "selected" : "" %>><%- category.name %></option>
                                 <% }) %>
                             </select>
                             <% if(locals.errors && errors.genero){ %>
@@ -103,10 +105,9 @@
                     </div>
                     <div class="field-subgen">
                         <label>SUBCATEGORÍAS:</label>
-                            <select class="style-select" id="selectSubcategory" name="subGenero">
-                                <% subcategory.forEach(subcategoria => { %>
-                                    <option value="<%-subcategoria.id%>" <%- product.subCategoryId == subcategoria.id ? "selected" : null %>><%-subcategoria.name%></option>
-                                <% }) %>
+                            <select class="style-select subcategorySelect" id="selectSubcategory" name="subGenero">
+                                    <option selected hidden value="">Subcategorías</option>
+
                             </select>
                             <% if(locals.errors && errors.subGenero){ %>
                                 <small style="color: red; font-weight: bold;"><%= errors.subGenero.msg %></small>
@@ -166,18 +167,9 @@
         </form>
     </section>
 
-    <%- include('../partials/footer') -%>
 
     <script src="/js/productAdd.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="pa384-JZR6SpepU02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-    <script src="/js/index.js"></script>
+    <script src="/js/adminCategories.js"></script>
+    <script src="/js/adminDashboard.js"></script>
 </body>
 </html>

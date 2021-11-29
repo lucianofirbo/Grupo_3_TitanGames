@@ -1,0 +1,20 @@
+.categories-container {
+    color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.box-categories {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.box-categories a {
+    color: white;
+}
+
+.add-category a {
+    color: white;
+}

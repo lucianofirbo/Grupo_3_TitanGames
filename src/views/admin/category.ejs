@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') -%>
+    <title>Categorias</title>
+    <link rel="stylesheet" href="/css/admin.css">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+    <%- include('../partials/background') -%>
+    <%- include('../partials/sideBarAdmin') -%>
+    <%- include('../partials/adminHeader') -%>
+
+    <section class="categories-container">
+        <div class="cat-title">
+            <h1>Categorias</h1>
+        </div>
+        <div class="add-category">
+            <i class="fas fa-plus"><a href="/admin/categories/create">Agregar</a></i>
+        </div>
+
+        <div class="cat-box-container">
+            <% categories.forEach(category => { %>
+                <div class="box-categories">
+                    <h3><%- category.id %></h3>
+                    <h3><%- category.name %></h3>
+                    <a href="/admin/categories/edit/<%= category.id %>">Editar</a>
+                    <form action="/admin/categories/delete/<%- category.id %>?_method=DELETE" method="POST">
+                        <button type="submit">Eliminar</button>
+                    </form>
+                </div>
+            <% }) %>
+        </div>
+
+    </section>
+
+    <script src="/js/adminDashboard.js"></script>   
+</body>
+</html>

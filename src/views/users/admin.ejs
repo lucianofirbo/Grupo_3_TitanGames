@@ -2,44 +2,103 @@
 <html lang="en">
 <head>
     <%- include('../partials/head') -%>
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="/css/admin.css">
-    <title>Admin</title>
+    <title>Admin Dashboard</title>
 </head>
 <body>
-
     <%- include('../partials/background') -%>
+    <%- include('../partials/sideBarAdmin') -%>
+    <%- include('../partials/adminHeader') -%>
 
-    <%- include('../partials/header') -%>
+    <main class="main-dashboard">
 
-    <main>
-
-        <h1>Bienvenid@ de nuevo</h1>
-            <span><%- admin.userName %>!</span>
-
-        <div class="box-container">
-
-            <div class="box">
-                <a href="/admin/products">
-                    <p>Ver stock</p>
-                </a>
+        <div class="container-admin-main">
+            
+            <div class="dashboard-title-container">
+                <h1>Dashboard Admin</h1>
             </div>
 
-            <div class="box">
-                <a href="/admin/products">
-                    <p>Agregar productos</p>
-                </a>
-            </div>
+            <div class="row-admin-data">
 
-            <div class="box">
-                <a href="/admin/adminUsers">
-                    <p>Administrar usuarios</p>
-                </a>
+                <div class="row-data">
+                    <div class="title-data">
+                        <h5>Games</h5>
+                        <span><%- product.length %></span>
+                    </div>
+                    <div class="icon-data">
+                        <i class='bx bx-bookmark-alt'></i>
+                    </div>
+                </div>
+
+                <div class="row-data">
+                    <div class="title-data">
+                        <h5>Genres</h5>
+                        <span><%- genres.length %></span>
+                    </div>
+                    <div class="icon-data">
+                        <i class='bx bxs-data' ></i>
+                    </div>
+                </div>
+
+                <div class="row-data">
+                    <div class="title-data">
+                        <h5>Users</h5>
+                        <span><%- admin.length %></span>
+                    </div>
+                    <div class="icon-data">
+                        <i class='bx bx-user' ></i>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="row-admin-data2">
+
+                <div class="row-data2">
+                    <div class="div-title-lastproduct">
+                        <h3>Last product name</h3>
+                    </div>
+                    <div class="img-lastproduct">
+                        <img src="/img/games/product-1635519994961.jpg" alt="">
+                    </div>
+                    <div class="detail-lastproduct">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit, necessitatibus!</p>
+                    </div>
+                    <div class="link-product">
+                        <a href="#">Ir al producto</a>
+                    </div>
+                </div>
+
+                <div class="row-dataGenres">
+                    <div class="div-title-lastproduct">
+                        <h3>Genres In db</h3>
+                    </div>
+                    <div class="all-genres">
+                        <h5>Name</h5>
+                    </div>
+                    <div class="all-genres">
+                        <h5>Name</h5>
+                    </div>
+                    <div class="all-genres">
+                        <h5>Name</h5>
+                    </div>
+                    <div class="all-genres">
+                        <h5>Name</h5>
+                    </div>
+                    <div class="all-genres">
+                        <h5>Name</h5>
+                    </div>
+                    <div class="all-genres">
+                        <h5>Name</h5>
+                    </div>
+                </div>
             </div>
 
         </div>
 
     </main>
 
-    
+    <script src="/js/adminDashboard.js" defer></script>
 </body>
 </html>

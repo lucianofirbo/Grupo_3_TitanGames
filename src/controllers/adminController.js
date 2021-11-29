@@ -5,10 +5,19 @@ const Op = db.Sequelize.Op;
 module.exports = {
 
     adminMain: (req, res) => {
-        db.User.findByPk(req.session.userLogged.id)
-            .then(user => {
-                res.render('users/admin', { admin: user, userInSession: req.session.userLogged ? req.session.userLogged : '' })
+        db.Category.findAll().then((genres) => {
+            db.Product.findAll().then((product) => {
+                db.User.findAll()
+                    .then(user => {
+                        res.render('users/admin', { 
+                            admin: user ,
+                            product,
+                            genres,
+                            userInSession: req.session.userLogged ? req.session.userLogged : '' 
+                        })
+                    })           
             })
+        })        
     },
 
     addRender: (req, res) => {
@@ -20,9 +29,8 @@ module.exports = {
                     .then(category => {
                         db.Subcategory.findAll()
                             .then(subcategory => {
-                                /* res.send(product[0].productImage) */
                                 res.render('products/productAdd', { dataBase: product, category, subcategory, userInSession: req.session.userLogged ? req.session.userLogged : '' });
-                            })
+                        })
                     })
             })
     },
@@ -206,10 +214,10 @@ module.exports = {
                     where: {
                         id: req.params.id
                     },
-                    include: [/* {association: 'categories'}, {association: 'subcategory'},  */{ association: 'productImage' }]
+                    include: [{ association: 'productImage' }]
                 })
                     .then(() => {
-                        res.redirect('/admin/adminMain/:id')
+                        res.redirect('/admin/products')
                     })
             })
     },

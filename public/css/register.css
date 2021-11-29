@@ -1,3 +1,41 @@
+@-webkit-keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @-webkit-keyframes slide-top {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    100% {
+      -webkit-transform: translateY(-10px);
+              transform: translateY(-10px);
+    }
+  }
+  @keyframes slide-top {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    100% {
+      -webkit-transform: translateY(-10px);
+              transform: translateY(-10px);
+    }
+  }
+
 div.register-card {
     display: flex;
     align-items: center;
@@ -19,6 +57,8 @@ div.register-container {
     max-height: 85px;
     margin-bottom: 27px;
     margin-top: 12px;
+    -webkit-animation: fade-in 1.2s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+	        animation: fade-in 1.2s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
 }
 
 div .registrate p{
@@ -29,6 +69,8 @@ div .registrate p{
     letter-spacing: 3px;
     font-size: 1.5rem; 
     text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #ffffff 0px 0px 20px, #f7f7f7 0px 0px 30px, #ffffff 0px 0px 40px, #ffffff 0px 0px 50px, #ffffff 0px 0px 75px;
+    -webkit-animation: fade-in 1.2s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+	        animation: fade-in 1.2s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
 }
 
 .form-container {
@@ -57,7 +99,7 @@ button.submit-register {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 15px;
+    margin-top: 25px;
     background: #fff;
     color:black;
     border-radius: 25px;
@@ -70,6 +112,8 @@ button.submit-register {
     outline: none;
     font-size: 16px;
     transition: all ease 1s;
+    -webkit-animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 button.submit-register:hover {

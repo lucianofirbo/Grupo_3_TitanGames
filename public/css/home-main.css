@@ -1,12 +1,10 @@
 /* Transitions */
-
 * {
     font-weight: 100;
 }
 
 main {
     margin: auto;
-    max-width: 1024px;
 }
 
 .carousel-indicators {
@@ -87,16 +85,16 @@ p.info-polygon{
 
 .carousel {
     position: relative;
-    margin-top: 20px;
 }
 
 /* Section separator */
 
 .separator {
-    margin: 10px;
+    margin: 1rem;
     border-bottom: 0.1px solid #7c7c7c69;
     display: flex;
     height: 40px;
+    font-weight: bold;
 }
 
 .separator p {
@@ -214,7 +212,7 @@ p.info-polygon{
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    margin: 20px 0;
+    margin: 1.5rem;
   }
   .games-main-container .card-container {
     position: relative;
@@ -306,6 +304,7 @@ p.info-polygon{
     padding: 5px 5px 5px 5px;
     border-radius: 5px 5px 0 0;    
     font-size: 1.85vh;
+    cursor: pointer;
 }
 
 #active {    
@@ -320,6 +319,11 @@ p.info-polygon{
 #active3 {
     background-color: #0000004d;
     margin-bottom: 0;
+}
+#active:hover,
+#active2:hover,
+#active3:hover {
+    text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #ffffff 0px 0px 20px, #f7f7f7 0px 0px 30px, #ffffff 0px 0px 40px, #ffffff 0px 0px 50px, #ffffff 0px 0px 75px;
 }
 
 .games {
@@ -447,7 +451,7 @@ p.info-polygon{
         height: 50vh;
         object-fit: cover;
         margin-bottom: 5px;
-        margin-top: 5.5%;
+        margin-top: 4%;
     }
 
     .discover {
@@ -460,6 +464,8 @@ p.info-polygon{
 
     .special-offer {
         height: 40%;
+        width: 80%;
+        margin: 0 auto;
     }
 
     .discover {
@@ -488,7 +494,8 @@ p.info-polygon{
 @media screen and (min-width: 1024px) {
 
     .discover {
-        margin-top: 1.7%;
+        margin: 1.7% auto;
+        width: 80%;
     }
     
     .games img {
@@ -501,7 +508,7 @@ p.info-polygon{
     }
 
     .slide img {
-        height: 55vh;
+        height: 70vh;
         width: 65vw;
         margin-bottom: 5px;
     }
@@ -526,6 +533,10 @@ p.info-polygon{
     }
     #price-offer {
         font-size: 2rem;
+    }
+    .games-main-container {
+        width: 90%;
+        margin: 1rem auto;
     }
 
 }

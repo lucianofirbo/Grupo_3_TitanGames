@@ -70,7 +70,10 @@
 
                     </div>
                     <div class="buttons">                        
-                        <a href="/user/profile/delete" class="buttonDelete">Eliminar cuenta</a>
+                        <!-- <a href="/user/register" class="buttonDelete">Eliminar cuenta</a> -->
+                        <form action="/profile/delete/<%= userLogged.id %>?_method=DELETE"  method="POST">
+                            <button id="delete-button" type="submit" id="buttonSubmitDelete">Eliminar cuenta</button>
+                        </form>
                     </div>
                 </div>
     

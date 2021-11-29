@@ -2,3 +2,11 @@
 @import url('background.css');
 @import url('header.css');
 @import url('footer.css');
+
+:root {
+    --font-alfa: 'Alfa Slab One', cursive;
+    --font-Poppins: 'Poppins', sans-serif;
+    --greenTitan: #8ebd00;
+    --green2Titan: #bfff0079;
+    --greenDarkTitan: #6f9401;
+}

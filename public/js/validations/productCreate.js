@@ -154,8 +154,15 @@ window.addEventListener('load', function() {
             }
         }   
         if(!error){
-            $form.submit()
-        }   
+            Swal.fire({
+                icon: 'success',
+                title: '¡Producto Agregado!',
+                showConfirmButton: true,
+                timer: 2000
+            })
+            console.log('¡Producto Agregado!');
+            $form.submit()        
+        }
     });
 
     $file1.addEventListener('change', 

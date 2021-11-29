@@ -44,12 +44,22 @@ app.use('/admin', adminRouter)
 const userRouter = require ('./routes/userRouter');
 app.use('/user', userRouter)
 
-// catch 404 and forward to error handler
-/* app.use(function(req, res, next) {
-    next(createError(404));
-}); */
+/* Routes for Apis */
+const apiProductsRouter = require('./routes/api/productRouter');
+app.use('/api', apiProductsRouter);
 
-/* // error 
+const apiCategoriesRouter = require('./routes/api/categoriesRouter');
+app.use('/api/categories', apiCategoriesRouter);
+
+const apiUsersRouter = require('./routes/api/usersRouter');
+app.use('/api', apiUsersRouter);
+
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+    next(createError(404));
+}); 
+
+// error 
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
@@ -58,4 +68,4 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
-}); */
+});
