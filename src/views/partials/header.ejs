@@ -60,15 +60,17 @@
                     <div class="dropdown-content-user-main-nav">
                         <a href="/user/profile">Perfil</a>
                         <a href="/user/logout">Cerrar sesión</a>
-                        <% if (userInSession.rol === 1) { %>
-                            <a href="/admin/adminMain/<%=userInSession.id%>">ADMIN</a>
-                        <% } %>
                     </div>
-                <% } else { %>
-                    <a href="/user/login"><i class="fas fa-user-circle hamburguer-account user-icon"></i></a>
-                <% } %>                
-            </div>
-
+                    <% } else { %>
+                        <a href="/user/login"><i class="fas fa-user-circle hamburguer-account user-icon"></i></a>
+                        <% } %>                
+                    </div>
+                    <% if (userInSession.rol === 1) { %>
+                        <div class="admin-dashlink">
+                            <a href="/admin/adminMain/<%=userInSession.id%>"><small>Hey, Admin!</small></a>
+                        </div>                       
+                    <% } %>
+                    
         </div>
 
     </div>

@@ -7,10 +7,10 @@ module.exports = {
     adminMain: (req, res) => {
         db.Category.findAll().then((genres) => {
             db.Product.findAll().then((product) => {
-                db.User.findByPk(req.session.userLogged.id)
+                db.User.findAll()
                     .then(user => {
                         res.render('users/admin', { 
-                            admin: user, 
+                            admin: user ,
                             product,
                             genres,
                             userInSession: req.session.userLogged ? req.session.userLogged : '' 
