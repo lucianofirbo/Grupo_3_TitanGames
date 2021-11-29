@@ -1,3 +1,12 @@
+@-webkit-keyframes fade-in {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+  }
+  @keyframes fade-in {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+  }
+
 .edit-card {
     display: flex;
     align-items: center;
@@ -27,6 +36,8 @@ span.text-danger {
     max-height: 85px;
     margin-bottom: 27px;
     margin-top: 12px;
+    -webkit-animation: fade-in 1.2s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+    animation: fade-in 1.2s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
 }
 
 .edit-profile p{
@@ -36,6 +47,8 @@ span.text-danger {
     text-transform: uppercase;
     letter-spacing: 3px;
     text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #ffffff 0px 0px 20px, #f7f7f7 0px 0px 30px, #ffffff 0px 0px 40px, #ffffff 0px 0px 50px, #ffffff 0px 0px 75px;
+    -webkit-animation: fade-in 1.2s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+    animation: fade-in 1.2s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
 }
 
 .form-container-edit {
