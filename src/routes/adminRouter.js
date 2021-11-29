@@ -35,6 +35,7 @@ router.delete('/deleteProduct/:id', controller.deleteProduct);
 /* Ruta para administrar usuarios */
 router.get('/adminUsers', adminCheck, controller.userAdminRender);
 router.put('/userEdit/:id', adminCheck, controller.userAdminEdit);
+router.delete('/deleteUserAdmin/:id', adminCheck, controller.deleteUserAdmin);
 
 /* Ruta para buscar usuario como admin */
 router.get('/adminSearchUser', adminCheck, controller.adminSearchUser);

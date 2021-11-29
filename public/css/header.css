@@ -245,6 +245,7 @@ i {
 
 .hamburguer-username {
     display: flex;
+    justify-content: space-between;
 }
 
 .hamburguer-username-dropdown {
