@@ -4,7 +4,7 @@
     <%- include('../partials/head') -%>
     <title>Editar perfil</title>        
     <link rel="stylesheet" href="/css/index.css">
-    <!-- <script src="/js/validations/editProfile.js"></script> -->
+    <script src="/js/validations/editProfile.js"></script>
 </head>
 <body>
     <%- include('../partials/background') -%>
@@ -44,22 +44,26 @@
                             <% } %>
                         </div>               
                         <div class="input-container-edit">
-                            <input class="input-style-edit" type="text" name="address" placeholder="Dirección" value="<%= locals.old ? old.address : user.address %>">
+<<<<<<< HEAD
+                            <input class="input-style-edit" type="text" name="address" placeholder="Dirección" value="">
+=======
+                            <input class="input-style-edit" type="text" name="address" placeholder="Dirección" value="<%= locals.old ? old.street : user.address[0].street %>">
+>>>>>>> 96f3dcc3b782ac3b26c3f6a46c07cfcd052ce149
                         </div>
                     </div>
                     
     
                     <div class="group-info-profile">
                         <div class="input-container-edit">
-                            <input class="input-style-edit" type="text" name="postalCode" placeholder="Codigo postal" value="<%= locals.old ? old.postalCode : user.postalCode %>">
+                            <input class="input-style-edit" type="text" name="postalCode" placeholder="Codigo postal" value="<%= locals.old ? old.postalCode : user.address[0].postalCode %>">
                         </div>
                         <div class="form-ad-input">
-                            <select name="province" id="">
+                            <select name="province" id="provinces">
                                 <option value="">Provincia</option>
                             </select>
                         </div>
                         <div class="form-ad-input">
-                            <select name="city" id="">
+                            <select name="city" id="cities">
                                 <option value="">Localidad</option>
                             </select>
                         </div>

@@ -39,8 +39,18 @@ module.exports = {
                 rol: 0,                
                 avatar: "default_user.jpg"
             })
-            .then(() => {
-                res.redirect('/user/login');
+            .then(user => {
+                db.Address.create({
+                    street: '',
+                    city: '',
+                    province: '',
+                    postalCode: '',
+                    number: '',
+                    userId: user.id
+                })
+                .then(() => {
+                    res.redirect('/user/login');
+                })
             })
             .catch((err) => console.log(err));
         } else {
@@ -108,49 +118,24 @@ module.exports = {
                 avatar: req.file ? req.file.filename : req.session.userLogged.avatar
             }, {
                 where: {
-                    id: req.params.id,
-                    include: [models.address] 
+                    id: req.params.id
                 }
             })
             .then(() => {
-                const adressUser = db.Address.findOne({
+                db.Address.update({
+                    street: req.body.address,
+                    city: req.body.city,
+                    province: req.body.province,
+                    postalCode: req.body.postalCode,
+                    userId: req.params.id
+                }, {
                     where: {
                         userId: req.params.id
                     }
                 })
                 .then(() => {
-                    return true
+                    res.redirect('/user/profile');
                 })
-                .catch(error => {
-                    return false
-                });
-                if (adressUser == true) {
-                    db.Address.update({
-                        street: req.body.address,
-                        city: req.body.city,
-                        province: req.body.province,
-                        postalCode: req.body.postalCode,
-                        userId: req.params.id
-                    }, {
-                        where: {
-                            userId: req.params.id
-                        }
-                    })
-                    .then(() => {
-                        res.redirect('/user/profile');
-                    })
-                } else {
-                    db.Address.create({
-                        street: req.body.address,
-                        city: req.body.city,
-                        province: req.body.province,
-                        postalCode: req.body.postalCode,
-                        userId: req.params.id
-                    })
-                    .then(() => {
-                        res.redirect('/user/profile');
-                    })
-                }
             })
         } else {
             res.send('error')
@@ -162,7 +147,7 @@ module.exports = {
             where: {
                 id: req.session.userLogged.id
             },
-            include: [{association: 'Address'}]
+            include: [{association: 'address'}]
         })
         .then(() => {
             res.redirect('/')

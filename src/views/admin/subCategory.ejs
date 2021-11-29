@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') -%>
+    <title>Subcategorias</title>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+    <%- include('../partials/background') -%>
+
+    <%- include('../partials/header') -%>
+
+    <section class="categories-container">
+        <div class="cat-title">
+            <h1>Subcategorias</h1>
+        </div>
+        <div class="add-category">
+            <i class="fas fa-plus"><a href="/admin/subcategories/create">Agregar</a></i>
+        </div>
+
+        <div class="cat-box-container">
+            <% subcategories.forEach(subcategory => { %>
+                <div class="box-categories">
+                    <h3><%- subcategory.id %></h3>
+                    <h3><%- subcategory.name %></h3>
+                    <a href="/admin/subcategories/edit/<%= subcategory.id %>">Editar</a>
+                    <form action="/admin/subcategories/delete/<%- subcategory.id %>?_method=DELETE" method="POST">
+                        <button type="submit">Eliminar</button>
+                    </form>
+                </div>
+            <% }) %>
+        </div>
+
+    </section>
+    
+</body>
+</html>

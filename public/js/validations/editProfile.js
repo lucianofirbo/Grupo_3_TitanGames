@@ -29,12 +29,13 @@ window.addEventListener('load', function() {
      });
 
      $form.addEventListener('submit',function(event){
-        let error = false;        
         event.preventDefault()
+        let error = false;        
         let elementosForm = this.elements
         
         for (let index = 0; index < elementosForm.length-1; index++) {
-            if(elementosForm[index].value == "" 
+            if(elementosForm[index].value === "" 
+                                    && elementosForm[index].name !== "avatar"
                                     && elementosForm[index].name !== "email"
                                     && elementosForm[index].name !== "address"
                                     && elementosForm[index].name !== "postalCode"
@@ -69,5 +70,52 @@ window.addEventListener('load', function() {
                 $fileErrors.innerHTML = '';
             }
         }
+    });
+
+    /*  APi Provinces - Localities */
+
+    let $provinces = document.querySelector('#provinces');
+    let $cities = document.querySelector('#cities');
+
+    fetch("https://apis.datos.gob.ar/georef/api/provincias")
+    .then(function(res){
+        return res.json();
     })
+    .then(function(result){
+        let provinces = result.provincias.sort(function(prev, next){
+            return prev.nombre > next.nombre 
+            ? 1 
+            : prev.nombre < next.nombre 
+            ? -1 
+            : 0;
+        });
+        return provinces.forEach(province => {
+            $provinces.innerHTML += `<option value="${province.id}">${province.nombre}</option>`
+        });
+    }).catch(err => console.log(err));
+
+    $provinces.addEventListener('change', function(e){
+        let idProvince = e.target.value;
+        $cities.innerHTML = "";
+
+        function fetchCities(id){
+            fetch(`https://apis.datos.gob.ar/georef/api/localidades?provincia=${id}&campos=id,nombre&max=5000`)
+            .then(function(res){
+                return res.json();
+            })
+            .then(function(result){
+                let cities = result.localidades.sort(function(prev, next){
+                    return prev.nombre > next.nombre 
+                    ? 1 
+                    : prev.nombre < next.nombre 
+                    ? -1 
+                    : 0;
+                });
+                return cities.forEach(city => {
+                    $cities.innerHTML += `<option value="${city.nombre}">${city.nombre}</option>`
+                });
+            });    
+        }
+        fetchCities(idProvince);
+    });
 })
