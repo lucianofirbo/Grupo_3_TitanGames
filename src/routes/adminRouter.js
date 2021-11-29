@@ -5,8 +5,10 @@ const fileUpload = require('../middlewares/multerMiddleware');
 const adminCheck = require('../middlewares/adminCheck');
 const productValidator = require('../validations/productCreateValidator');
 const productEditValidator = require('../validations/editProductValidator');
-const {categories, categoryCreateForm, categoryStore, categoryEdit, categoryUpdate, categoryDestroy} = require('../controllers/adminCategoriesController')
-const {subcategories, subcategoryCreateForm, subcategoryStore, subcategoryEdit, subcategoryUpdate, subcategoryDestroy} = require('../controllers/adminSubcategoriesController')
+const {categories, categoryCreateForm, categoryStore, categoryEdit, categoryUpdate, categoryDestroy} = require('../controllers/adminCategoriesController');
+const categoryValidator = require('../validations/categoriesAdminValidator');
+const {subcategories, subcategoryCreateForm, subcategoryStore, subcategoryEdit, subcategoryUpdate, subcategoryDestroy} = require('../controllers/adminSubcategoriesController');
+const subcategoryValidator = require('../validations/subcategoriesAdminValidator');
 
 /* Main Admin */ 
 router.get('/adminMain/:id', adminCheck, controller.adminMain);
@@ -38,10 +40,10 @@ router.delete('/deleteProduct/:id', controller.deleteProduct);
 router.get('/categories', adminCheck, categories);
 /* Add categories */
 router.get('/categories/create', adminCheck, categoryCreateForm);
-router.post('/categories/create', adminCheck, categoryStore);
+router.post('/categories/create',  categoryValidator, categoryStore);
 /* Edit category */
 router.get('/categories/edit/:id', adminCheck, categoryEdit);
-router.put('/categories/edit/:id', adminCheck, categoryUpdate);
+router.put('/categories/edit/:id',  categoryValidator, categoryUpdate);
 /* Delete category */
 router.delete('/categories/delete/:id', categoryDestroy);
 
@@ -51,6 +53,11 @@ router.delete('/categories/delete/:id', categoryDestroy);
 router.get('/subcategories', adminCheck, subcategories);
 /* Add subcategories */
 router.get('/subcategories/create', adminCheck, subcategoryCreateForm);
-router.post('/subcategories/create', adminCheck, subcategoryStore);
+router.post('/subcategories/create', subcategoryValidator, subcategoryStore);
+/* Edit subcategory */
+router.get('/subcategories/edit/:id', adminCheck, subcategoryEdit);
+router.put('/subcategories/edit/:id', subcategoryValidator, subcategoryUpdate);
+/* Delete subcategory */
+router.delete('/subcategories/delete/:id', subcategoryDestroy);
 
 module.exports = router;
