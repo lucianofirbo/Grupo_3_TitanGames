@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
 
-
 <head>
     <%- include('../partials/head') -%>
         <title>Cargar producto</title>
+        <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="/css/admin.css">
         <link rel="stylesheet" href="/css/productAdd.css">
         <script src="/js/validations/productCreate.js" defer></script> 
 </head>
 
-
 <body>
 
     <%- include('../partials/background') -%>
-
-    <%- include('../partials/header') -%>
+    <%- include('../partials/sideBarAdmin') -%>
+    <%- include('../partials/adminHeader') -%>
 
     <!-- FORMULARIO DE CARGA DE PRODDUCTOS -->
     <div class="bar-product">
@@ -229,20 +229,10 @@
         </div>
     </section>
 
-    <%- include('../partials/footer') -%>
-
     <script src="/js/productAdd.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="pa384-JZR6SpepU02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-    <script src="/js/index.js"></script>
     <script src="/js/adminCategories.js"></script>
+    <script src="/js/adminDashboard.js" defer></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>
