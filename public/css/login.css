@@ -1,3 +1,25 @@
+@-webkit-keyframes fade-in {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+  }
+  @keyframes fade-in {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+  }
+
+  @-webkit-keyframes slide-top {
+    0% {-webkit-transform: translateY(0);
+          transform: translateY(0);}
+    100% {-webkit-transform: translateY(-10px);
+          transform: translateY(-10px);}
+  }
+  @keyframes slide-top {
+    0% {-webkit-transform: translateY(0);
+          transform: translateY(0);}
+    100% {-webkit-transform: translateY(-10px);
+          transform: translateY(-10px);}
+  }
+  
 .logReg {
     height: 100vh;
     width: 100vw;
@@ -43,6 +65,8 @@
     letter-spacing: 3px;
     font-size: 1.5rem;
     text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #ffffff 0px 0px 20px, #f7f7f7 0px 0px 30px, #ffffff 0px 0px 40px, #ffffff 0px 0px 50px, #ffffff 0px 0px 75px;
+    -webkit-animation: fade-in 1.2s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+	        animation: fade-in 1.2s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
 }
 
 .logo-login {
@@ -53,6 +77,8 @@
     max-height: 85px;
     margin-bottom: 12px;
     margin-top: 12px;
+    -webkit-animation: fade-in 1.2s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+	        animation: fade-in 1.2s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
 }
 
 .input-container {
@@ -123,12 +149,15 @@ button.submit-login {
     border: 1px solid black;
     height: 100%;
     max-height: 48px;
+    margin-left: 4rem;
     width: 120px;
     cursor: pointer;
     outline: none;
     font-size: 16px;
     transition: all ease 1s;
     padding: 20px 0;
+    -webkit-animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 button.submit-login:hover {
@@ -187,6 +216,9 @@ button.submit-login:hover {
     .input-style {
         border-radius: 50px;
     }
+    button.submit-login {
+        margin-left: 5rem;
+    }
 }
 
 @media (min-width:1024px) {   
@@ -198,4 +230,5 @@ button.submit-login:hover {
         height: 8vh;
         border-radius: 30px;
     }
+
 }
