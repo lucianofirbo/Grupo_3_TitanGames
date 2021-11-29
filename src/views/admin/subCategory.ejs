@@ -3,12 +3,14 @@
 <head>
     <%- include('../partials/head') -%>
     <title>Subcategorias</title>
+    <link rel="stylesheet" href="/css/admin.css">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
     <%- include('../partials/background') -%>
-
-    <%- include('../partials/header') -%>
+    <%- include('../partials/sideBarAdmin') -%>
+    <%- include('../partials/adminHeader') -%>
 
     <section class="categories-container">
         <div class="cat-title">
@@ -32,6 +34,7 @@
         </div>
 
     </section>
-    
+
+    <script src="/js/adminDashboard.js"></script>    
 </body>
 </html>
