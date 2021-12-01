@@ -2,15 +2,16 @@
 <html lang="en">
 <head>    
     <%- include('../partials/head') -%>
-    <link rel="stylesheet" href="/css/index.css">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/css/admin.css">
     <link rel="stylesheet" href="/css/adminUsers.css">
     <title>Admin users</title>
 </head>
 <body>
 
     <%- include('../partials/background') -%>
-
-    <%- include('../partials/header') -%>
+    <%- include('../partials/sideBarAdmin') -%>
+    <%- include('../partials/adminHeader') -%>
 
     <main>
 
@@ -46,7 +47,6 @@
         </div>
     </main>
 
-    <%- include('../partials/footer') -%>
-    
+    <script src="/js/adminDashboard.js" defer></script>
 </body>
 </html>

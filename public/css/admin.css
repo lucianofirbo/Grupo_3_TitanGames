@@ -4,14 +4,13 @@
 :root {
     --color-light: rgba(16, 17, 26, 0.18);
     --color-blue-light: #24354b;
-    --color-blue-light-light: #3767a5;
     --color-blue-dark: #0b0d13;
 }
 
 /* ==**===**===**== ASIDE BAR ==**===**===**== */
 
 aside .sidebar {
-    position: absolute;
+    position: fixed;
     height: 100%;
     width: 78px;
     background: var(--color-blue-dark);
@@ -238,6 +237,10 @@ aside .sidebar .profile-content .profile .profile-detail {
     padding: 1rem;
 }
 
+.row-admin-data .row-data span {
+    font-weight: bold;
+}
+
 .row-data {
     display: flex;
     justify-content: space-between;
@@ -297,6 +300,16 @@ aside .sidebar .profile-content .profile .profile-detail {
     border-radius: 1rem;
 }
 
+.row-dataGenres .see-more {
+    text-align: center;
+}
+
+.row-dataGenres .see-more a{
+    text-decoration: none;
+    color: var(--color-blue-light-light);
+    font-weight: bold;
+}
+
 @media screen and (min-width:768px){
     .row-admin-data {
         flex-direction: row;
@@ -341,12 +354,24 @@ aside .sidebar .profile-content .profile .profile-detail {
     }
 }
 
+@keyframes myAnim {
+    0% {
+      opacity: 0;
+      transform: translateX(250px);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
 @media screen and (min-width:1024px) {
 
     .row-admin-data2 {
         flex-direction: row;
         justify-content: space-between;
-        margin-left: 2rem;
+        margin-left: 4rem;
     }
 
     .row-admin-data2 .row-data2 {
@@ -355,6 +380,7 @@ aside .sidebar .profile-content .profile .profile-detail {
 
     .row-dataGenres {
         width: 30%;
+        animation: myAnim 1s ease 0s 1 normal forwards;
     }
 
     .dashboard-title-container h1 {

@@ -5,28 +5,43 @@
     <title>Agregar Categorias</title>
     <link rel="stylesheet" href="/css/admin.css">
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/editSubyCat.css">
 </head>
 <body>
     <%- include('../partials/background') -%>
     <%- include('../partials/sideBarAdmin') -%>
     <%- include('../partials/adminHeader') -%>
 
-    <section class="categories-container">
-        <div class="cat-title">
-            <h1>Añadir categoria</h1>
+    <section class="form-container">
+
+        <div class="form-responsive">
+
+            <div class="form-title">
+                <h1>Añadir categoria</h1>
+            </div>
+    
+            <form action="/admin/categories/create" method="POST" id="form" class="form-box">
+
+                <div class="input-container">
+
+                    <label for="name" class="label-name">Nombre:</label>
+                    <input type="text" name="name" id="inputName" class="input-style">
+                    <% if (locals.errors && errors.name) { %>
+                        <small class="text-danger"><%= errors.name.msg %></small>
+                    <% } %>
+                    <span class="text-danger" id="inputNameErrors"></span>
+
+                </div>
+
+                <div class="form-submit-cs">
+                    <button type="submit">Añadir</button>
+                    <span class="text-danger" id="submitErrors"></span>
+                </div>
+
+            </form>
+
         </div>
 
-        <form action="/admin/categories/create" method="POST" id="form">
-            <label for="name">Nombre:</label>
-            <input type="text" name="name" id="inputName">
-            <% if (locals.errors && errors.name) { %>
-                <small class="text-danger"><%= errors.name.msg %></small>
-            <% } %>
-            <span class="text-danger" id="inputNameErrors"></span>
-            <button type="submit">Añadir</button>
-            <span class="text-danger" id="submitErrors"></span>
-        </form>
 
     </section>
     <script src="/js/adminCategories.js"></script>

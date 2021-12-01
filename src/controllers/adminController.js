@@ -6,7 +6,10 @@ module.exports = {
 
     adminMain: (req, res) => {
         db.Category.findAll().then((genres) => {
-            db.Product.findAll().then((product) => {
+            db.Product.findAll({
+                order: [['id', 'DESC']],
+                include: [{association: "categories"}, {association: "subcategory"}, {association: "productImage"}]
+            }).then((product) => {
                 db.User.findAll()
                     .then(user => {
                         res.render('users/admin', { 
@@ -77,7 +80,7 @@ module.exports = {
                         }
                     })
                     db.ProductImage.bulkCreate(images)
-                        .then(() => res.redirect('/admin/products'))
+                        .then(() => res.redirect('/admin/adminMain/:id'))
                         .catch(err => console.log(err))
                 }
             });

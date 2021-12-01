@@ -56,42 +56,37 @@
             <div class="row-admin-data2">
 
                 <div class="row-data2">
-                    <div class="div-title-lastproduct">
-                        <h3>Last product name</h3>
-                    </div>
-                    <div class="img-lastproduct">
-                        <img src="/img/games/product-1635519994961.jpg" alt="">
-                    </div>
-                    <div class="detail-lastproduct">
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit, necessitatibus!</p>
-                    </div>
-                    <div class="link-product">
-                        <a href="#">Ir al producto</a>
-                    </div>
+                    <% for (i=0; i < 1; i++) { %>
+                        <div class="div-title-lastproduct">
+                            <h3><%= product[i].product %></h3>
+                        </div>
+                        <div class="img-lastproduct">
+                            <img src="/img/games/<%-product[i].productImage[0].image%>" alt="">
+                        </div>
+                        <div class="detail-lastproduct">
+                            <p><%= product[i].description %></p>
+                        </div>
+                        <div class="link-product">
+                            <a href="/product/detail/<%-product[i].id%>">Ir al producto</a>
+                        </div>
+                    <% } %>
                 </div>
 
                 <div class="row-dataGenres">
                     <div class="div-title-lastproduct">
-                        <h3>Genres In db</h3>
+                        <h3>Genres in Data Base</h3>
                     </div>
-                    <div class="all-genres">
-                        <h5>Name</h5>
+
+                    <% for (i=0; i < 6; i++) { %>
+                        <div class="all-genres">
+                            <h5><%= genres[i].name %></h5>
+                        </div>
+                    <% } %>
+
+                    <div class="see-more">
+                        <a href="/admin/categories">Ver más +</a>
                     </div>
-                    <div class="all-genres">
-                        <h5>Name</h5>
-                    </div>
-                    <div class="all-genres">
-                        <h5>Name</h5>
-                    </div>
-                    <div class="all-genres">
-                        <h5>Name</h5>
-                    </div>
-                    <div class="all-genres">
-                        <h5>Name</h5>
-                    </div>
-                    <div class="all-genres">
-                        <h5>Name</h5>
-                    </div>
+
                 </div>
             </div>
 

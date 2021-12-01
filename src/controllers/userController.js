@@ -143,14 +143,19 @@ module.exports = {
     },
 
     delete: (req, res) => {
-        db.User.destroy({
+        db.Address.findAll({
             where: {
-                id: req.session.userLogged.id
-            },
-            include: [{association: 'address'}]
-        })
-        .then(() => {
-            res.redirect('/')
+                userId: req.params.id
+            }
+        }).then((result) => {
+            db.User.destroy({
+                where: {
+                    id: req.params.id
+                }
+            })
+            .then(() => {
+                res.redirect('/')
+            })
         })
     },
 
