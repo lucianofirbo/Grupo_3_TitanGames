@@ -26,20 +26,22 @@
                 <form action="/admin/userEdit/<%-user.id%>?_method=PUT" class="formCard" method="POST">
                     <div class="userCard">
                         <img src="/img/users/<%- user.avatar %>">
-                        <p>User: <%-user.userName%></p>     
+                        <p>User: <%-user.userName%></p>
                         <p>Email: <%-user.email%></p>
                         <select name="selectRol" id="selectRol">
-                            <% if ( user.rol == 1) { %> 
+                            <% if ( user.rol == 1) { %>
                                 <option value="0">User</option>
                                 <option selected value="1">Admin</option>
-                            <% } else { %> 
+                            <% } else { %>
                                 <option value="1">Admin</option>
                                 <option selected value="0">User</option>
                             <% } %>
-                        </select>                        
+                        </select>
                         <div class="editDelete">
                             <button type="submit" class="edit" >Editar</button>
-                            <button href="/admin/deleteUserAdmin/<%-user.id%>" class="delete">Eliminar</button>
+                            <form action="/admin/deleteUserAdmin/<%-user.id%>?_method=DELETE" method="POST">
+                                <button type="submit" class="delete">Eliminar</button>
+                            </form>
                         </div>
                     </div>
                 </form>

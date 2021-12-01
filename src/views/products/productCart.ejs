@@ -15,18 +15,22 @@
         <h3 class="detalle-compra">Detalles de compra</h3>
         <div class="detail-cart"> 
             
-            <% products.forEach(product => { %>
-            <div class="game-cart">
-                <div class="game-name">
-                    <img src="agregar imagen" alt="">
-                    <h4>agregar nombre</h4>
-                </div>
-                <div class="price-flex">
-                    <p>agregar precio</p>
-                    <strong id="remove-all">eliminar</strong>
-                </div>  
-            </div>
-            <% }) %>
+            <% if(cart) { %>
+                <% cart.forEach(product => { %>
+                    <div class="game-cart">
+                        <div class="game-name">
+                            <img src="/img/games/<%-product.products.productImage[0].image%>" alt="">
+                            <h4><%-product.products.product%></h4>
+                        </div>
+                        <div class="price-flex">
+                            <p><%-product.products.price%></p>
+                            <a id="remove-all" href="/user/deleteProductCart/<%-product.products.id%>?_method=DELETE" method="POST">eliminar</a>
+                        </div>  
+                    </div>
+                <% }) %>
+            <% } else { %>
+                <h4>No tienes juegos en el carrito</h4>
+            <% } %>            
             
             <div class="button-container">
                 <button type="submit" class="btn btn-submit">Comprar</button>
@@ -34,7 +38,6 @@
         </div>
     </main>
 
-    <%- include('../partials/interestSection') -%>
     
     <%- include('../partials/footer') -%>
 

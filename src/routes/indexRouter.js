@@ -12,5 +12,7 @@ router.get('/about', controller.about);
 router.get('/search', controller.search);
 /* Ruta para busqueda por precio */
 router.get('/searchPrice/:price', controller.searchPrice);
+/* Ruta para busuqeda de ofertas */
+router.get('/searchPrice/:price', controller.searchPrice);
 
 module.exports = router;

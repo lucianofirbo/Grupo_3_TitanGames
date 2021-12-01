@@ -24,9 +24,15 @@ router.get('/profile/edit/:id', userCheck, controller.profileEdit);
 router.put('/profile/edit/:id', uploadUserAvatar.single('avatar'), controller.updateProfile);
 
 /* Ruta para eliminar perfil */
-router.delete('/profile/delete', controller.delete);
+router.delete('/profile/delete/:id', controller.delete);
 
 /* Ruta Logout */
 router.get('/logout', userCheck, controller.logout);
+
+/* Ruta para añadir producto al carrito */
+router.get('/addToCart/:id', userCheck, controller.addToCart);
+
+/* Ruta para eliminar producto de carrito */
+router.delete('/deleteProductCart/:id', userCheck, controller.deleteProductCart);
 
 module.exports = router;

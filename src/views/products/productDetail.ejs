@@ -73,8 +73,8 @@
                 <% if (productF.offers) { %>
                     <p class="sale-box">-<%-productF.offers%>%</p>
                 <% } %>
-                <div class="button-container">
-                    <button type="submit" class="btn btn-submit">Añadir al carrito <i class="fas fa-cart-plus"></i></button>
+                <div class="button-container">                   
+                    <a class="btn btn-submit" href="/user/addToCart/<%-productF.id%>">Añadir al carrito <i class="fas fa-cart-plus"></i></a>
                 </div>
             </div>
         </div>

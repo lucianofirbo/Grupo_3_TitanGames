@@ -2,7 +2,7 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const db = require('../database/models');
 
 module.exports = {
-//vista con una lista de todos los productos?
+
     index: (req, res) => {
         db.Product.findAll({
             include: [{association: "categories"}, {association: "subcategory"}, {association: "productImage"}]
@@ -47,12 +47,16 @@ module.exports = {
         )})
     },
     cart: (req, res) => {
-        db.Product.findAll({
-            include: [{association: "categories"}, {association: "subcategory"}, {association: "productImage"}]
+        db.Cart.findAll({
+            where: {
+                userId: req.session.userLogged.id
+            },
+            include: [{association: "products", include: [{association: "productImage"}]}, {association: "users"}]
         })
-        .then(product => {
+        .then(cart => {
+            /* res.send(cart[0].products.productImage[0].image) */
             res.render('products/productCart', {
-                product,
+                cart,
                 toThousand,
                 userInSession : req.session.userLogged ? req.session.userLogged : ''
             })
