@@ -143,14 +143,32 @@ module.exports = {
     },
 
     delete: (req, res) => {
-        db.User.destroy({
+        db.Cart.destroy({
             where: {
-                id: req.session.userLogged.id
-            },
-            include: [{association: 'address'}]
+                userId: req.params.id
+            }
         })
         .then(() => {
-            res.redirect('/')
+            db.Address.destroy({
+                where: {
+                    userId: req.params.id
+                }
+            })
+            .then(() => {
+                db.User.destroy({
+                    where: {
+                        id: req.params.id
+                    },
+                    include: [{association: 'address'}]
+                })
+                .then(() => {
+                    req.session.destroy()
+                    if(req.cookies.TitanGamesUser){
+                        res.cookie('TitanGamesUser', '', {maxAge: -1})
+                    }
+                    res.redirect('/')
+                }) 
+            })
         })
     },
 
@@ -160,6 +178,29 @@ module.exports = {
             res.cookie('TitanGamesUser', '', {maxAge: -1})
         }
         res.redirect('/user/login')
+    },
+
+    addToCart: (req, res) => {
+        /* console.log(req.params.id, req.session.userLogged.id) */
+        db.Cart.create({
+            userId: req.session.userLogged.id,
+            productId: req.params.id,
+            quantity: 1
+        })
+        .then(() => {
+            res.redirect('/product/cart')
+        })
+    },
+
+    deleteProductCart: (req, res) => {
+        db.Cart.destroy({
+            where: {
+                productId: req.params.id
+            }
+        })
+        .then(() => {
+            res.redirect('/product/cart')
+        })
     }
 
 }
