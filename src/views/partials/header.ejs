@@ -19,14 +19,7 @@
                         <p>Inicio</p>
                     </a>
                     <a href=""><p>Ofertas</p></a>
-                    <a href=""><p>Mas vendido</p></a>                    
-                    <div class="hamburguer-cart">
-                        <% if (userInSession) { %>
-                            <a href="http://localhost:3000/product/cart">
-                                <p>Carrito</p>
-                        <% } %>   
-                        </a>
-                    </div>
+                    <a href=""><p>Mas vendido</p></a>
                 </div>
             </div>
 
@@ -40,21 +33,22 @@
                 <button type="submit" class="search-form_button" id="buttonHeaderSubmit"></i></button>
             </form>
 
-            <div class="notificacion-dropdown-main-nav">
-                <div class="notificacion-icon-main-nav">
-                    <i class="fas fa-bell"></i>
+            <% if (userInSession) { %>
+                <div class="notificacion-dropdown-main-nav">
+                    <div class="notificacion-icon-main-nav">
+                        <a href="/product/cart">
+                            <i class="fas fa-shopping-cart"></i>
+                        </a>
+                    </div>
                 </div>
-                <div class="dropdown-content-notificacion-main-nav">
-                    <p>No tienes notificaciones nuevas</p>
-                </div>
-            </div>
+            <% } %>
             
             <div class="user-icon">
                 <% if (userInSession) { %>
                     <!-- <div class="userLoggedIcon">
                         <i class="fas fa-user-circle hamburguer-account user-icon"></i><span class="session"></span></a>
                     </div>  -->
-                     <div class="profile-image-user-icon">
+                    <div class="profile-image-user-icon">
                         <img src="/img/users/<%= userInSession.avatar %>" alt="Profile Image"></i><span class="session"></span>
                     </div> 
                     <div class="dropdown-content-user-main-nav">
@@ -101,13 +95,10 @@
                 <a href="http://localhost:3000/">
                     <p>Inicio</p>
                 </a>
-                <p>Ofertas</p>
+                <a href="/ofertas">
+                    <p>Ofertas</p>
+                </a>
                 <p>Mas vendido</p>
-                <div class="hamburguer-cart">
-                    <a href="http://localhost:3000/productCart">
-                        <p>Carrito</p>
-                    </a>
-                </div>
             </div>
         </div>
         <hr>

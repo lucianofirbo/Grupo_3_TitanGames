@@ -279,14 +279,28 @@ module.exports = {
     },
 
     deleteUserAdmin: (req, res) => {
-        db.User.destroy({
+        db.Cart.destroy({
             where: {
-                id: req.params.id
-            },
-            include: [{association: 'address'}]
+                userId: req.params.id
+            }
         })
         .then(() => {
-            res.redirect('/admin/adminUsers')
+            db.Address.destroy({
+                where: {
+                    userId: req.params.id
+                }
+            })
+            .then(() => {
+                db.User.destroy({
+                    where: {
+                        id: req.params.id
+                    },
+                    include: [{association: 'address'}]
+                })
+                .then(() => {
+                    res.redirect('/admin/adminUsers')
+                }) 
+            })
         })
     }
 
