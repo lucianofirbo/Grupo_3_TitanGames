@@ -1,6 +1,6 @@
 body {
     font-family: 'Poppins';
-    height: 100;
+    height: 100%;
     /* overflow: hidden; */
     background: radial-gradient(ellipse at bottom, #1b2735 0%,#090a0f 100%);
 }
@@ -384,7 +384,7 @@ body {
     width: 2px;
     height: 2px;
     background: transparent;
-    animation: animStar 300s linear infinite;
+    animation: animStar 100s linear infinite;
     box-shadow: 1448px 320px #fff, 1775px 1663px #fff, 332px 1364px #fff,
     878px 340px #fff, 569px 1832px #fff, 1422px 1684px #fff, 1946px 1907px #fff,
     121px 979px #fff, 1044px 1069px #fff, 463px 381px #fff, 423px 112px #fff,
@@ -569,7 +569,7 @@ body {
 
 @keyframes animStar {
     from {
-        transform: translateY(600px);
+        transform: translateY(500px);
     }
     to {
         transform: translateY(-2000px);
