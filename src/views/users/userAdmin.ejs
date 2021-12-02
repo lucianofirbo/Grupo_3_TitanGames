@@ -55,7 +55,7 @@
                 <% }) %>
             <% } else { %>
                 <% users.forEach(user => { %>
-                    <form action="/admin/userEdit/<%-user.id%>?_method=PUT" class="formCard" method="POST">
+                    <form action="" class="formCard" method="">
                         <div class="userCard">
                             <img src="/img/users/<%- user.avatar %>">
                             <p>User: <%-user.userName%></p>
@@ -74,8 +74,7 @@
                                 <% } %>
                             </select>
                             <div class="editDelete">
-                                <button class="edit" >No puedes editar</button>
-                                    <button class="delete">No puedes eliminar</button>
+                                <button class="delete">Sin permisos</button>
                             </div>
                         </div>
                     </form>
