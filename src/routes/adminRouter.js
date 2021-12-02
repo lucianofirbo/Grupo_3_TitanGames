@@ -31,6 +31,8 @@ router.put('/editProduct/:id', fileUpload.fields([
     { name: 'imagenProducto5', maxCount: 1 }]), productEditValidator,controller.editProduct);
 /* Delete Product */
 router.delete('/deleteProduct/:id', controller.deleteProduct);
+//Ruta del stock
+router.get('/productStock', adminCheck, controller.productStock);
 
 /** ** **  CATEGORIES CRUD ** ** **/
 
@@ -52,5 +54,6 @@ router.get('/subcategories', adminCheck, subcategories);
 /* Add subcategories */
 router.get('/subcategories/create', adminCheck, subcategoryCreateForm);
 router.post('/subcategories/create', adminCheck, subcategoryStore);
+
 
 module.exports = router;

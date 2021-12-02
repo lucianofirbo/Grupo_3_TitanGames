@@ -57,5 +57,6 @@ module.exports = {
                 userInSession : req.session.userLogged ? req.session.userLogged : ''
             })
         })
-    }
+    },
+    
 }

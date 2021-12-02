@@ -22,7 +22,7 @@ module.exports = {
         })
         Promise.all([product, lastGames, productSale])
         .then(function([product, lastGames, productSale]) {
-            res.render('users/index', {product, lastGames, productSale,/* toThousand, */userInSession : req.session.userLogged ? req.session.userLogged : ''});
+            res.render('users/index', {product, lastGames, productSale, userInSession : req.session.userLogged ? req.session.userLogged : ''});
         })        
     },
     politics: (req, res) => {
@@ -64,6 +64,37 @@ module.exports = {
                 userInSession : req.session.userLogged ? req.session.userLogged : ''
             });
         })
+    },
+
+    productOffer: (req, res) => {
+        db.Product.findAll({
+            include: [{association: "categories"}, {association: "subcategory"}, {association: "productImage"}],
+            where: {
+                offers: {[Op.gt]: 0}
+            }
+        })
+        .then(result => {
+            res.render('products/productOffer', {
+                result,
+                userInSession : req.session.userLogged ? req.session.userLogged : ''
+            });
+        })
+    },
+
+    bestSellers: (req, res) => {
+        db.Product.findAll({
+            include: [{association: "categories"}, {association: "subcategory"}, {association: "productImage"}],
+            where: {
+                timesVisited: {[Op.gt]: 0}
+            }
+        })
+        .then(result => {
+            res.render('products/bestSellers', {
+                result,
+                userInSession : req.session.userLogged ? req.session.userLogged : ''
+            });
+        })
     }
+
 
 }

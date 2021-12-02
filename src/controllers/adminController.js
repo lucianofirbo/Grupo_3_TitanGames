@@ -268,6 +268,17 @@ module.exports = {
                         })
                 })
         })
+    },
+    productStock: (req, res) => {
+        db.Product.findAll({
+            include: [{association: "categories"}, {association: "subcategory"}, {association: "productImage"}]
+        })
+        .then(products => {
+            res.render('/productStock', {
+                products,
+                userInSession : req.session.userLogged ? req.session.userLogged : ''
+            })        
+        })
     }
 
 }
