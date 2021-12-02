@@ -32,7 +32,7 @@ module.exports = {
                     .then(category => {
                         db.Subcategory.findAll()
                             .then(subcategory => {
-                                res.render('products/productAdd', { dataBase: product, category, subcategory, userInSession: req.session.userLogged ? req.session.userLogged : '' });
+                                res.render('products/productAdd', { dataBase: product, estilo: req.params.section, category, subcategory, userInSession: req.session.userLogged ? req.session.userLogged : '' });
                         })
                     })
             })

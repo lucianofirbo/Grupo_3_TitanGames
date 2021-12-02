@@ -24,7 +24,7 @@
         <p data-target="#section2">Stock</p>
     </div>
 
-    <section data-content id="section1" class="">
+    <section data-content id="section1" class="<%- estilo == 'section1' ? 'active' : '' %>">
         <form class="load-product" id="form" method="POST" action="/admin/products" enctype="multipart/form-data">
             <!-- CARGAR IMÁGENES -->
             <div class="other-box">
@@ -194,7 +194,7 @@
         </form>
     </section>
 
-    <section data-content id="section2" class="section-2 active">
+    <section data-content id="section2" class="section-2 <%- estilo == 'section2' ? 'active' : '' %>">
 
         <form action="/admin/adminSearchProduct" method="GET" class="search-form-admin">
             <input type="text" name="keywords" placeholder="Buscar" class="search-form_input">
