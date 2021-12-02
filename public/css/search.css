@@ -1,10 +1,6 @@
 @import url('general.css');
 @import url('scroll.css');
 
-:root {
-  --pinkTitan: #D94969;
-}
-
 /* Dropdowns */
 
 .main-search {
@@ -34,14 +30,14 @@
 
 /* Search settings */
 
-.search-settings {
+/* .search-settings {
     background-color: #00000036;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     justify-content: space-around;
-}
+} */
 
 .main-filters-search {
     display: flex;
@@ -52,7 +48,11 @@
     margin-top: 10px;
 }
 
-.filters-hamburguer {
+.img-containerflex {
+    width: 45%;
+}
+
+/* .filters-hamburguer {
     display: flex;
     margin-top: 10px;
 }
@@ -61,7 +61,7 @@
     margin-left: 5px;
     margin-top: 4.5px;
     font-size: 10px;
-}
+} */
 
 .search-settings p {
     font-size: 12px;
@@ -88,26 +88,29 @@
     color: white;
 } 
 
-/*
-.search-searchbar i {
-    color: gray;
-    background-color: #e9e9e9;
-    padding: 6px 2px;
-} */
+.search-searchbar h2 {
+    font-size: 1rem;
+}
+
+.search-searchbar h2:last-child {
+    text-transform: capitalize;
+    margin-left: 1rem;
+}
+
 
 /* Discover */
 
-.discover {
+/* .discover {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
-}
+} */
 
 .games > .game:first-child {
-    margin-top: 10px;
+    margin-top: 2rem;
 }
 
 .games > .game:last-child {
@@ -118,10 +121,10 @@
     display: flex;
     flex-direction: column;
     background-color: #00000036;
-    margin-top: 0;
+
     color: whitesmoke;
     font-weight: 600;
-    justify-content: space-around;
+
     width: 95%;
     text-align: center;
     border-radius: 0 0px 10px 10px;
@@ -136,7 +139,7 @@
 
 .game img {
     width: 100%;
-    height: 100%;
+    object-fit: cover;
     max-height: 150px;
     box-shadow: 0 5px 15px rgba(255, 255, 255, 0.144);
 }
@@ -166,10 +169,12 @@
     display: flex;
     justify-content: right;
     gap: 5px;
+    font-weight: bold;
 }
 
 .sale-box {
-    background-color: var(--pinkTitan);
+    background-color: #8ebd004a;
+    opacity: 0.8rem;
 }
 
 .game-discover-hr {
@@ -208,12 +213,30 @@
 
 @media screen and (min-width: 768px) {
     
-    .search-searchbar {
+    .search-searchbar h2{
         margin-top: 60px;
+        font-size: 1.5rem;
     }
 
-    .game img {
-        width: 350px;
+    .games {
+        margin: 0 auto;
+        width: 80%;
     }
 
+}
+
+@media screen and (min-width: 1024px){
+    .img-containerflex {
+        width: 25%;
+    }
+    .game-text {
+        flex-direction: row;
+        flex-grow: 0.8;
+    }
+    .game-text p {
+        font-size: 1.5rem;
+    }
+    .price {
+        flex-direction: column;
+    }
 }

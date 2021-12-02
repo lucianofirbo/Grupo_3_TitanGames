@@ -332,7 +332,7 @@ label {
     color: white;
     font-size: 0.9rem;
     height: 25px;
-    width: 300px;
+    width: 120px;
 }
 .search-form_button {
     background-color: rgba(0, 0, 0, 0.247);
@@ -427,6 +427,10 @@ input.search-form_input:focus {
     }
     .dropdown-content a:hover {
         text-shadow: 0 0 5px rgb(255, 255, 255);
+    }
+
+    .search-form_input {
+        width: 200px;
     }
 
 }
