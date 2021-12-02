@@ -13,22 +13,29 @@
     <%- include('../partials/sideBarAdmin') -%>
     <%- include('../partials/adminHeader') -%>
 
-    <main>
+    <main class="userAdmin-container">
 
         <form action="/admin/adminSearchUser" method="GET" class="search-form-admin">
-            <input type="text" name="keywords" placeholder="Buscar" class="search-form_input">
+            <input type="text" name="keywords" placeholder="Buscar usuarios" class="search-form-input">
             <label class="label-header" for="buttonSearchUser"><i class="fas fa-search"></i></label>
             <button type="submit" class="search-form_button" id="buttonSearchUser"></i></button>
         </form>
 
         <div class="userCards">
-            <% users.forEach(user => { %>
-                <form action="/admin/userEdit/<%-user.id%>?_method=PUT" class="formCard" method="POST">
-                    <div class="userCard">
+            <% users.forEach(user => { %>    
+                <div class="userCard-ind">
+
+                    <div class="img-user-container">
                         <img src="/img/users/<%- user.avatar %>">
-                        <p>User: <%-user.userName%></p>
-                        <p>Email: <%-user.email%></p>
-                        <select name="selectRol" id="selectRol">
+                    </div>
+
+                    <div class="info-user-container">
+                        <p><span>User:</span> <%-user.userName%></p>
+                        <p><span>Email:</span> <%-user.email%></p>
+                    </div>
+
+                    <form action="/admin/userEdit/<%-user.id%>?_method=PUT" method="POST"></form>
+                        <select name="selectRol" id="selectRol" class="style-selects">
                             <% if ( user.rol == 1) { %>
                                 <option value="0">User</option>
                                 <option selected value="1">Admin</option>
@@ -37,16 +44,22 @@
                                 <option selected value="0">User</option>
                             <% } %>
                         </select>
-                        <div class="editDelete">
-                            <button type="submit" class="edit" >Editar</button>
-                            <form action="/admin/deleteUserAdmin/<%-user.id%>?_method=DELETE" method="POST">
-                                <button type="submit" class="delete">Eliminar</button>
-                            </form>
-                        </div>
+                            <div class="edit-btn">
+                                <button type="submit"><i class="fas fa-check"></i></i>    SAVE</button>
+                            </div>
+                    </form>
+
+                    <div class="delete-btn">
+                        <form action="/admin/deleteUserAdmin/<%-user.id%>?_method=DELETE" method="POST">
+                            <button type="submit"><i class='bx bxs-trash-alt'></i></button>
+                        </form>
                     </div>
-                </form>
+
+                </div>
+                
             <% }) %>
         </div>
+
     </main>
 
     <script src="/js/adminDashboard.js" defer></script>

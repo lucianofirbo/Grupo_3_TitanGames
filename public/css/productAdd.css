@@ -11,12 +11,12 @@ aside {
     align-items: center;
     width: 100%;
     height: 5%;
-    background-color: #22223ae3;
+    background-color: #343434e3;
     box-shadow: 8px 10px 12px -9px rgba(0,0,0,1);
     -webkit-box-shadow: 8px 10px 12px -9px rgba(0,0,0,1);
     -moz-box-shadow: 8px 10px 12px -9px rgba(0,0,0,1);
     position: absolute;
-    top: 0;
+    top: 40px;
     cursor: pointer;
     z-index: 1;
 }
@@ -31,43 +31,14 @@ aside {
 
 /* SECTION1 */
 
-form.load-product {
-    margin-top: 100px;
-    width: 100%;
-}
-
 .field-product {
     display: flex;
     flex-direction: column;
     margin: 0 10px;
 }
-
-.field-flex {
-    display: flex;
-    margin: 10px;
-    width: fit-content;
-    flex-direction: column;
-}
-.field-flex .field-gen {
-    /* width: 100%; */
-    display: grid;
-    /* justify-content: start; */
-}
-
-.field-flex .field-subgen {
+form.load-product {
+    margin-top: 100px;
     width: 100%;
-    display: grid;
-    justify-content: start;
-}
-
-.desc-flex {
-    display: flex;
-    flex-direction: column;
-    margin: 0 10px;
-}
-
-label {
-    color: white;
 }
 
 .grid {
@@ -114,7 +85,33 @@ label {
     box-shadow: 0px 0px 20px 5px rgba(100,100,100, 0.1);
 }
 
-/**/
+.field-flex {
+    display: flex;
+    margin: 10px;
+    width: fit-content;
+    flex-direction: column;
+}
+.field-flex .field-gen {
+    /* width: 100%; */
+    display: grid;
+    /* justify-content: start; */
+}
+
+.field-flex .field-subgen {
+    width: 100%;
+    display: grid;
+    justify-content: start;
+}
+
+.desc-flex {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+}
+
+label {
+    color: white;
+}
 
 .form-elements-flex {
     display: flex;
@@ -215,34 +212,46 @@ span.text-danger {
     text-align: center;
 }
 
+#req-title {
+    color: white;
+    text-align: center;
+    margin: 15px 0;
+}
+
 /* SECTION2 */
 
+section.section-2 h2 {
+    color: white;
+    text-align: center;
+    text-shadow: var(--neon-shadow);
+    padding: 1rem;
+}
+
 section.section-2 {
-    background-color: rgba(255, 255, 255, 0.315);
+    background-color: rgba(0, 0, 0, 0.199);
     display: column;
     justify-content: center;
     margin: 5px;
     padding: 10px;
     box-shadow: 5px 5px 5px #0a0a0a;
-    border: 1px solid rgb(255, 255, 255);
+    border: 1px solid rgb(0, 0, 0);
     margin-top: 80px;
 }
 
-section.section-2 h2 {
-    color: white;
-}
-
-.detail-stock {
-    display: column;
+.search-form-admin {
+    text-align: center;
+    background-color: #343434e3;
+    margin-top: -5px;
+    padding: 5px;
+    border-radius: 0 0 5px 5px;
 }
 
 .game-stock {
-    padding-left: 10px;
-    padding-top: 10px;
     text-align: center;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid rgb(0, 0, 0);
     display: flex;
     justify-content: space-between;
+    backdrop-filter: blur(2px);
 }
 .game-stock img {
     width:100%;
@@ -252,29 +261,19 @@ section.section-2 h2 {
 .game-name {
     color: white;
     font-weight: bold;
+    width: 45%;
 }
 
 .game-name img {
-    height: 100px;
-    width: 250px;
+    width: 100%;
+    object-fit: cover;
 }
 
 .price {
     justify-content: center;
     display: flex;
     flex-direction: column;
-}
-
-.search-form-admin {
-    text-align: center;
-    background-color: #22223ae3;
-    margin-top: -5px;
-    padding: 5px;
-    border-radius: 0 0 5px 5px;
-}
-
-.price p {
-    color: white;
+    width: 40%;
 }
 
 .edit-remove {
@@ -289,33 +288,15 @@ section.section-2 h2 {
     margin-bottom: 10px;
 }
 
-#edit {
+.price p {
+    color: white;
     font-size: 0.8rem;
-    cursor: pointer;
-    color: var(--greenTitan);
+    font-weight: bold;
 }
 
-#edit:hover {
-    color: rgb(0, 0, 73);
-}
+[data-content] {display: none;}
 
-#remove {
-    font-size: 0.8rem;
-    cursor: pointer;
-    color: var(--greenTitan);
-}
-
-#remove:hover {
-    color: red;
-}
-
-[data-content] {
-    display: none;
-}
-
-.active[data-content] {
-    display: block;
-}
+.active[data-content] {display: block;}
 
 .row-req {
     display: flex;
@@ -330,27 +311,23 @@ section.section-2 h2 {
     margin-bottom: 15px;
     justify-content: flex-end;
 }
-#req-title {
-    color: white;
-    text-align: center;
-    margin: 15px 0;
+
+ button.delete-button {
+    background: none;
+    border: none;
 }
 
-#delete-button {
-    background-color: var(--greenTitan);
+button.delete-button  i {
+    color: rgb(252, 90, 90);
     cursor: pointer;
-    margin-bottom: 15px;
-    padding: 7px 20px;
+    font-size: 1rem;
 }
-#delete-button:hover {
-    background-color: red;
-    color: white;
-}
-/* MEDIA QUERIES */
+
+/* ************ MEDIA QUERIES ************ */
 
 @media screen and (min-width: 768px){
     .bar-product {
-        margin-top: 60px;
+        margin-top: 30px;
     }
     .field-flex .field-gen {
         margin-right: 190px;
@@ -368,15 +345,20 @@ section.section-2 h2 {
         width: 90%;
         margin: 90px auto 30px;
     }
-    .field-flex {
-        flex-direction: row;
-    }
+    .field-flex { flex-direction: row; }
+
+    .game-stock { padding: 1rem; }
+
+    .game-name { width: 35%; }
+
+    .price { width: 90%; }
+
+    .price p{ font-size: 1rem; }
 }
 
 @media screen and (min-width: 1024px){
-    form.load-product {
-        display: flex;
-    }
+    form.load-product { display: flex; }
+
     .desc-product-load {
         width: 60%;
         margin-bottom: 40px;
@@ -411,6 +393,8 @@ section.section-2 h2 {
         justify-content: flex-start;
         flex-direction: row;
     }
+
+    .bar-product { margin-top: 20px; }
     .bar-product p {
         font-size: 1rem;
         justify-content: space-evenly;
@@ -419,27 +403,41 @@ section.section-2 h2 {
         width: 80%;
         margin: 90px auto 30px;
     }
+
+    section.section-2 h2 { font-size: 2rem; }
+
     .game-stock img {
         box-shadow: 0 0 6px 5px rgba(0, 0, 0, 0.274);
         transition: all .4s ease;
     }
-    .game-stock img:hover {
-        transform: scale(1.1);
-    }
+    .game-stock img:hover { transform: scale(1.1); }
     section#section3 {
         width: 80%;
         margin: 90px auto 30px;
     }
-    .field-product label {
-        margin-top: 10px;
+    .field-product label { margin-top: 10px;}
+
+    .field-flex .field-gen { margin-right: 120px; }
+
+    aside { display: block; }
+
+    .price p{
+        text-align: initial;
+        padding-left: 2rem;
+        width: 60%;
+        font-size: 1.3rem;
     }
 
-    .field-flex .field-gen {
-        margin-right: 120px;
+    .edit-remove a,
+    button.delete-button  i {
+        font-size: 1.5rem;
+        opacity: 0.6;
+        transition: all .5s ease;
     }
 
-    aside {
-        display: block;
+    .edit-remove a:hover,
+    button.delete-button  i:hover {
+        opacity: 1;
+        transform: scale(1.1);
     }
-
 }

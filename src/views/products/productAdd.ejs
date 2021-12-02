@@ -5,6 +5,8 @@
     <%- include('../partials/head') -%>
         <title>Cargar producto</title>
         <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+        <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel='stylesheet'>
+
         <link rel="stylesheet" href="/css/admin.css">
         <link rel="stylesheet" href="/css/productAdd.css">
         <script src="/js/validations/productCreate.js" defer></script> 
@@ -22,7 +24,7 @@
         <p data-target="#section2">Stock</p>
     </div>
 
-    <section data-content id="section1" class="active">
+    <section data-content id="section1" class="">
         <form class="load-product" id="form" method="POST" action="/admin/products" enctype="multipart/form-data">
             <!-- CARGAR IMÁGENES -->
             <div class="other-box">
@@ -31,7 +33,7 @@
                     <label>PRODUCTO:</label>
                     <input class="style-input" id="productName" type="text" name="product" placeholder="Nombre del producto" value="<%= locals.old && old.product %>">
                     <% if(locals.errors && errors.product){ %>
-                        <small style="color: red; font-weight: bold;"><%= errors.product.msg%></small>
+                        <small class="text-danger"><%= errors.product.msg%></small>
                     <% } %>
                     <span class="text-danger" id="productNameErrors"></span>
                     
@@ -84,7 +86,7 @@
                     <label>PRECIO:</label>
                     <input class="style-input" id="inputPrice" type="number" name="precio" placeholder="Precio del producto" value="<%= locals.old && old.precio %>">
                     <% if(locals.errors && errors.precio){ %>
-                        <small style="color: red; font-weight: bold;"><%= errors.precio.msg%></small>
+                        <small class="text-danger"><%= errors.precio.msg%></small>
                     <% } %>
                     <span class="text-danger" id="inputPriceErrors"></span>
                     
@@ -111,7 +113,7 @@
                             <% }) %>
                         </select>
                         <% if(locals.errors && errors.genero){ %>
-                            <small style="color: red; font-weight: bold;"><%= errors.genero.msg %></small>
+                            <small class="text-danger"><%= errors.genero.msg %></small>
                         <% } %>
                         <span class="text-danger" id="categoryErrors"></span>                        
                     </div>
@@ -122,7 +124,7 @@
                             
                         </select>
                         <% if(locals.errors && errors.subGenero){ %>
-                            <small style="color: red; font-weight: bold;"><%= errors.subGenero.msg %></small>
+                            <small class="text-danger"><%= errors.subGenero.msg %></small>
                         <% } %>       
                         <span class="text-danger" id="subcategoryErrors"></span>                        
                     </div>
@@ -133,7 +135,7 @@
                         <textarea class="style-textarea" id="description" name="descripcion" cols="30" rows="20"
                             placeholder="Ingresa una descripcion para su producto"></textarea>
                             <% if(locals.errors && errors.descripcion){ %>
-                                <small style="color: red; font-weight: bold;"><%= errors.descripcion.msg %></small>
+                                <small class="text-danger"><%= errors.descripcion.msg %></small>
                             <% } %>
                         <span class="text-danger" id="descriptionErrors"></span>
                     </div>
@@ -143,23 +145,23 @@
                             <label> MÍNIMOS:</label>
                             <input class="style-input" id="minReq" type="text" name="minimumVideo" placeholder="Minimum Video Requirements" value="<%= locals.old && old.minimumVideo %>">
                             <% if(locals.errors && errors.minimumVideo){ %>
-                                <small style="color: red; font-weight: bold;"><%= errors.minimumVideo.msg%></small>
+                                <small class="text-danger"><%= errors.minimumVideo.msg%></small>
                             <% } %>   
                             <span class="text-danger" id="minReqErrors"></span><br>
                             <input class="style-input" type="text" name="minimumProcessor" placeholder="Minimum Processor Requirements" value="<%= locals.old && old.minimumProcessor %>"> <br>
                             <% if(locals.errors && errors.minimumProcessor){ %>
-                                <small style="color: red; font-weight: bold;"><%= errors.minimumProcessor.msg%></small>
+                                <small class="text-danger"><%= errors.minimumProcessor.msg%></small>
                             <% } %>
                             <input class="style-input" type="text" name="minimumRam" placeholder="Minimum Ram Requirements" value="<%= locals.old && old.minimumRam %>">
                             <% if(locals.errors && errors.minimumRam){ %>
-                                <small style="color: red; font-weight: bold;"><%= errors.minimumRam.msg%></small>
+                                <small class="text-danger"><%= errors.minimumRam.msg%></small>
                             <% } %>
                         </div>
                         <div class="req-container">
                             <label> RECOMENDADOS:</label>
                             <input class="style-input" id="maxReq" type="text" name="recommendedVideo" placeholder="Recommended Video" value="<%= locals.old && old.recommendedVideo %>">
                             <% if(locals.errors && errors.recommendedVideo){ %>
-                                <small style="color: red; font-weight: bold;"><%= errors.recommendedVideo.msg%></small>
+                                <small class="text-danger"><%= errors.recommendedVideo.msg%></small>
                             <% } %>    
                             <span class="text-danger" id="maxReqErrors"></span><br>
                             <input class="style-input" type="text" name="recommendedProcessor" placeholder="Recommended Processor" value="<%= locals.old && old.recommendedProcessor %>"> <br>
@@ -192,7 +194,7 @@
         </form>
     </section>
 
-    <section data-content id="section2" class="section-2">
+    <section data-content id="section2" class="section-2 active">
 
         <form action="/admin/adminSearchProduct" method="GET" class="search-form-admin">
             <input type="text" name="keywords" placeholder="Buscar" class="search-form_input">
@@ -219,9 +221,9 @@
                         </p>
                     </div>
                     <div class="edit-remove">
-                        <a href="/admin/editProduct/<%-product.id%>" id="edit">editar</a>
+                        <a href="/admin/editProduct/<%-product.id%>" id="edit"><i class="far fa-edit"></i></a>
                         <form method="POST" action="/admin/deleteProduct/<%-product.id%>?_method=DELETE">
-                            <button id="delete-button" type="submit" id="buttonSubmitDelete">eliminar</button>
+                            <button class="delete-button" type="submit" id="buttonSubmitDelete" onclick="sweetAlert(`<%= product.id %>`)"><i class="fas fa-trash-alt"></i></button>
                         </form>
                     </div>
                 </div>
@@ -232,7 +234,26 @@
     <script src="/js/productAdd.js"></script>
     <script src="/js/adminCategories.js"></script>
     <script src="/js/adminDashboard.js" defer></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <script>
+        function sweetAlert(id) {
+            Swal.fire({
+                title: '¿Estás segur@ de eliminar el producto?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#8ebd00',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Eliminar!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                Swal.fire(
+                    '¡Producto eliminado!',
+                    'success'
+                )
+                }
+            })
+        }
+    </script>
 </body>
 
 </html>
