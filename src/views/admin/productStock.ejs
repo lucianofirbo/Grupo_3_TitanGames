@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('../partials/head') -%>
+    <title>Stock</title>
+    <link rel="stylesheet" href="/css/productAdd.css">   
+</head>
+<body>
+    <%- include('../partials/background') -%>
+    <%- include('../partials/header') -%>
+        <h2>STOCK</h2>
+        <div class="detail-stock">
+            <% dataBase.forEach(product=> {
+                %>
+                <div class="game-stock">
+                    <div class="game-name">
+                        <img src="/img/games/<%= product.productImage[0].image %>" alt="">
+                    </div>
+                    <div class="price">
+                        <p>
+                            <%- product.product %>
+                        </p>
+                        <p>
+                            <%- product.price %>$
+                        </p>
+                    </div>
+                    <div class="edit-remove">
+                        <a href="/admin/editProduct/<%-product.id%>" id="edit">editar</a>
+                        <form method="POST" action="/admin/deleteProduct/<%-product.id%>?_method=DELETE">
+                            <button id="delete-button" type="submit" id="buttonSubmitDelete">eliminar</button>
+                        </form>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </section>
+
+    <%- include('../partials/footer') -%>
+
+</body>
+</html>
