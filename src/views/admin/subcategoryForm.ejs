@@ -3,35 +3,67 @@
 <head>
     <%- include('../partials/head') -%>
     <title>Subcategorias</title>
-    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/admin.css">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/css/editSubyCat.css">
 </head>
 <body>
     <%- include('../partials/background') -%>
+    <%- include('../partials/sideBarAdmin') -%>
+    <%- include('../partials/adminHeader') -%>
 
-    <%- include('../partials/header') -%>
+    <section class="form-container">
 
-    <section class="categories-container">
-        <div class="cat-title">
-            <h1>Añadir Subcategoria</h1>
-        </div>
+        <div class="form-responsive">
 
-        <form action="/admin/subcategories/create" method="POST">
-            <label for="name">Nombre:</label>
-            <input type="text" name="name" id="inputName" value="<%=  locals.old && old.name %>">
-
-            <div class="select-category">
-                <select class="form-select categorySelect" id="specificSizeSelect" name="category">
-                    <option selected hidden value="">Categorias</option>
-                   <% locals.categories.forEach(category => { %>
-                      <option value="<%- category.id %>" <%= locals.old && old.category == category.id ? "selected" : "" %> ><%- category.name %></option>
-                   <% }) %>
-                  </select>
+            <div class="form-title">
+                <h1>Añadir Subcategoria</h1>
             </div>
+    
+            <form action="/admin/subcategories/create" method="POST" id="form">
 
-            <button type="submit">Añadir</button>
-        </form>
+                <div class="input-container">
+
+                    <label for="name" class="label-name" >Nombre:</label>
+                    <input type="text" name="name" id="inputName" class="input-style" value="<%=  locals.old && old.name %>">
+                    <% if (locals.errors && errors.name) { %>
+                        <small class="text-danger"><%= errors.name.msg %></small>
+                    <% } %>
+                    <span class="text-danger" id="inputNameErrors"></span>
+        
+                    
+                </div>
+                
+                <div class="select-category">
+
+                    <select class="form-select categorySelect" name="categoryId" id="selectCategory">
+                        <option selected hidden value="">Categorias</option>
+                       <% locals.category.forEach(category => { %>
+                          <option value="<%- category.id %>" <%= locals.old && old.category == category.id ? "selected" : "" %> ><%- category.name %></option>
+                       <% }) %>
+                    </select>
+                    <% if (locals.errors && errors.categoryId) { %>
+                        <small class="text-danger"><%= errors.categoryId.msg %></small>
+                    <% } %>
+                    <span class="text-danger" id="categoryErrors"></span>
+                    
+                </div>
+                
+                <div class="form-submit-cs">
+
+                    <button type="submit">Añadir</button>
+                    <span class="text-danger" id="submitErrors"></span>
+
+                </div>
+    
+
+            </form>
+
+        </div>
 
     </section>
     <script src="/js/adminCategories.js"></script>
+    <script src="/js/adminDashboard.js"></script>
+    <script src="/js/validations/subcategoriesAdminValidate.js"></script>
 </body>
 </html>

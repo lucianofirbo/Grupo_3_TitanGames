@@ -16,5 +16,7 @@ router.get('/searchPrice/:price', controller.searchPrice);
 router.get('/productOffer', controller.productOffer);
 //Ruta para listas juegos mas vendidos
 router.get('/bestSellers', controller.bestSellers);
+/* Ruta para busuqeda de ofertas */
+router.get('/searchPrice/:price', controller.searchPrice);
 
 module.exports = router;

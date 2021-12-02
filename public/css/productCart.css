@@ -9,6 +9,7 @@
 }
 main {
     margin: 10px;
+    min-height: 65vh;
 }
 main h3 {
     text-transform: uppercase;

@@ -1,0 +1,71 @@
+<aside>
+    <div class="sidebar">
+        <div class="logo-content">
+            <div class="logo">
+                <img src="/img/logo-footer.png" alt="">
+                <div class="logo-name">TitanGames</div>
+            </div>
+            <i class='bx bx-menu' id='btn'></i>
+        </div>
+        <ul class="nav-list">
+            <li>
+                <a href="/admin/adminMain/<%= userInSession.id %>">
+                    <i class='bx bxs-dashboard' ></i>
+                    <span class="links-name">Dashboard</span>
+                </a>
+                <span class="tooltip">Dashboard</span>
+            </li>
+            <li>
+                <a href="http://localhost:3000/">
+                    <i class='bx bxs-home' ></i>
+                    <span class="links-name">Home</span>
+                </a>
+                <span class="tooltip">Home</span>
+            </li>
+            <li>
+                <a href="/admin/adminUsers">
+                    <i class='bx bxs-user' ></i>
+                    <span class="links-name">Usuarios</span>
+                </a>
+                <span class="tooltip">Usuarios</span>
+            </li>
+            <li>
+                <a href="/admin/products">
+                    <i class='bx bx-shopping-bag' ></i>
+                    <span class="links-name">Productos</span>
+                </a>
+                <span class="tooltip">Productos</span>
+            </li>
+            <li>
+                <a href="/admin/products">
+                    <i class='bx bx-message-square-add'></i>
+                    <span class="links-name">Agregar producto</span>
+                </a>
+                <span class="tooltip">+ producto</span>
+            </li>
+            <li>
+                <a href="/admin/categories">
+                    <i class='bx bxs-data' ></i>
+                    <span class="links-name">Categorías</span>
+                </a>
+                <span class="tooltip">Categorías</span>
+            </li>
+            <li>
+                <a href="/admin/subcategories">
+                    <i class='bx bx-data'></i>
+                    <span class="links-name">Subcategorías</span>
+                </a>
+                <span class="tooltip">Subcategorías</span>
+            </li>
+        </ul>
+        <div class="profile-content">
+            <div class="profile">
+                <div class="profile-detail">
+                    <img src="/img/users/default_user.jpg" alt="">
+                    <p class="name-admin">username</p>
+                </div>
+            </div>
+            <a href="/user/logout"><i class='bx bx-log-out' id="log-out"></i></a>
+        </div>
+    </div>
+</aside>

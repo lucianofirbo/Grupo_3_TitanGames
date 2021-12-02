@@ -51,10 +51,13 @@ app.use('/api', apiProductsRouter);
 const apiCategoriesRouter = require('./routes/api/categoriesRouter');
 app.use('/api/categories', apiCategoriesRouter);
 
+const apiUsersRouter = require('./routes/api/usersRouter');
+app.use('/api', apiUsersRouter);
+
 // catch 404 and forward to error handler
 /* app.use(function(req, res, next) {
     next(createError(404));
-}); */
+}); 
 
 // error 
 /*app.use(function(err, req, res, next) {

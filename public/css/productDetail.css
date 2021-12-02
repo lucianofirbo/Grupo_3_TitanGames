@@ -45,14 +45,39 @@ main {
   align-items: center;
   justify-content: space-between;
 }
-#offer {
-  background-color: var(--pinkTitan);
+.sale-box {
+  color: var(--greenTitan);
   line-height: 30px;
-  width: 50px;
-  height: 35px;
   text-align: center;
   border-radius: 4px;
+  font-family: var(--font-alfa);
+  text-shadow: rgb(121, 121, 121) 0px 0px 5px, rgb(131, 131, 131) 0px 0px 10px;
+  -webkit-animation-name: flash;
+  animation-name: flash;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
 }
+@-webkit-keyframes flash {
+  0%, 50%, 100% {
+  opacity: 1;
+  }
+  
+  25%, 75% {
+  opacity: 0;
+  }
+  }
+  
+  @keyframes flash {
+  0%, 50%, 100% {
+  opacity: 1;
+  }
+  
+  25%, 75% {
+  opacity: 0;
+  }
+  } 
 .buy-product p {
   font-weight: bold;
   font-size: 1rem;

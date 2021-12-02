@@ -26,7 +26,7 @@ module.exports = {
             })
             .catch((error) => console.log(error));
         } else {
-            res.render('categoryForm', {
+            res.render('admin/categoryForm', {
                 errors: errors.mapped(),
                 old: req.body,
                 userInSession: req.session.userLogged ? req.session.userLogged : ''
@@ -59,44 +59,58 @@ module.exports = {
             });
         } else {
             db.Category.findByPk(req.params.id).then((category) => {
-                res.render('/admin/categoryEditForm'), {
+                res.render('admin/categoryEditForm', {
                     category,
                     errors: errors.mapped(),
                     old: req.body,
                     userInSession: req.session.userLogged ? req.session.userLogged : ''
-                }
+                })
             });
         }
     },
     categoryDestroy: (req, res) => {
-        db.ProductImage.destroy({
+        db.Product.findAll({
             where: {
-                productId: req.params.id
+                categoryId: req.params.id
             }
-        }).catch(err => console.log(err)).then((result) => {
+        }).then(products => {
+            products.forEach(product => {
+                db.ProductImage.findAll({
+                    where: {
+                        productId: product.id
+                    }
+                }).then(images => {
+                    images.forEach((image) => {
+                        fs.existsSync("./public/img/games/", image.image)
+                        ? fs.unlinkSync("./public/img/games/" + image.image)
+                        : console.log("--No se encontró")
+                    });
+                })
+                db.ProductImage.destroy({
+                    where: {
+                        productId: product.id
+                    }
+                }).then((result) => {})
+            })
             db.Product.destroy({
                 where: {
-                    categoryId: req.params.id,
-                },                                                                 
+                    categoryId: req.params.id
+                }
             }).then((result) => {
                 db.Subcategory.destroy({
                     where: {
-                        categoryId: req.params.id,
-                    },
-                })
-                .then((result) => {
-                    db.Category.findByPk(req.params.id).then((category) => {
-                        db.Category.destroy({
-                            where: {
-                                id: req.params.id
-                            }
-                        }).then((result) => {
-                            return res.redirect('/admin/categories')
-                        });
+                        categoryId: req.params.id
+                    }
+                }).then((result) => {
+                    db.Category.destroy({
+                        where: {
+                            id: req.params.id
+                        }
+                    }).then((result) => {
+                        return res.redirect('/admin/categories')
                     })
-                }).catch(err => console.log(err))
+                })
             })
-        })
-          
+        })        
     }
 }

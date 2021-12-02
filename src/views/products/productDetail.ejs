@@ -7,8 +7,7 @@
 </head>
 <body>
 
-    <%- include('../partials/background') -%>
-
+     <%- include('../partials/background') -%>
     <%- include('../partials/header') -%>
 
     <!--ACÁ EMPIEZA LA ESTRUCTURA DEL DETALLE DEL PRODUCTO-->
@@ -70,12 +69,12 @@
             </div>
             <!-- TERMINA SLIDER-->
             <div class="buy-product">
-                <% if (productF.offers) { %>
-                    <p class="sale-box"><%-productF.offers%>%</p>
-                <% } %>
                 <p> $<%- toThousand(productF.price) %> </p>
-                <div class="button-container">
-                    <button type="submit" class="btn btn-submit" ></a>Añadir al carrito <i class="fas fa-cart-plus"></i></button>
+                <% if (productF.offers) { %>
+                    <p class="sale-box">-<%-productF.offers%>%</p>
+                <% } %>
+                <div class="button-container">                   
+                    <a class="btn btn-submit" href="/user/addToCart/<%-productF.id%>">Añadir al carrito <i class="fas fa-cart-plus"></i></a>
                 </div>
             </div>
         </div>

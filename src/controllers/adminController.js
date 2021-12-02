@@ -5,10 +5,22 @@ const Op = db.Sequelize.Op;
 module.exports = {
 
     adminMain: (req, res) => {
-        db.User.findByPk(req.session.userLogged.id)
-            .then(user => {
-                res.render('users/admin', { admin: user, userInSession: req.session.userLogged ? req.session.userLogged : '' })
+        db.Category.findAll().then((genres) => {
+            db.Product.findAll({
+                order: [['id', 'DESC']],
+                include: [{association: "categories"}, {association: "subcategory"}, {association: "productImage"}]
+            }).then((product) => {
+                db.User.findAll()
+                    .then(user => {
+                        res.render('users/admin', { 
+                            admin: user ,
+                            product,
+                            genres,
+                            userInSession: req.session.userLogged ? req.session.userLogged : '' 
+                        })
+                    })           
             })
+        })        
     },
 
     addRender: (req, res) => {
@@ -20,9 +32,8 @@ module.exports = {
                     .then(category => {
                         db.Subcategory.findAll()
                             .then(subcategory => {
-                                /* res.send(product[0].productImage) */
                                 res.render('products/productAdd', { dataBase: product, category, subcategory, userInSession: req.session.userLogged ? req.session.userLogged : '' });
-                            })
+                        })
                     })
             })
     },
@@ -69,7 +80,7 @@ module.exports = {
                         }
                     })
                     db.ProductImage.bulkCreate(images)
-                        .then(() => res.redirect('/admin/products'))
+                        .then(() => res.redirect('/admin/adminMain/:id'))
                         .catch(err => console.log(err))
                 }
             });
@@ -206,10 +217,10 @@ module.exports = {
                     where: {
                         id: req.params.id
                     },
-                    include: [/* {association: 'categories'}, {association: 'subcategory'},  */{ association: 'productImage' }]
+                    include: [{ association: 'productImage' }]
                 })
                     .then(() => {
-                        res.redirect('/admin/adminMain/:id')
+                        res.redirect('/admin/products')
                     })
             })
     },
@@ -269,15 +280,30 @@ module.exports = {
                 })
         })
     },
-    productStock: (req, res) => {
-        db.Product.findAll({
-            include: [{association: "categories"}, {association: "subcategory"}, {association: "productImage"}]
+
+    deleteUserAdmin: (req, res) => {
+        db.Cart.destroy({
+            where: {
+                userId: req.params.id
+            }
         })
-        .then(products => {
-            res.render('/productStock', {
-                products,
-                userInSession : req.session.userLogged ? req.session.userLogged : ''
-            })        
+        .then(() => {
+            db.Address.destroy({
+                where: {
+                    userId: req.params.id
+                }
+            })
+            .then(() => {
+                db.User.destroy({
+                    where: {
+                        id: req.params.id
+                    },
+                    include: [{association: 'address'}]
+                })
+                .then(() => {
+                    res.redirect('/admin/adminUsers')
+                }) 
+            })
         })
     }
 
