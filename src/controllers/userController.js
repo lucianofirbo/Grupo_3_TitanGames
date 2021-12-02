@@ -115,7 +115,7 @@ module.exports = {
             db.User.update({
                 userName: req.body.userName,
                 email: req.body.email,
-                avatar: req.file ? req.file.filename : req.session.userLogged.avatar
+                avatar: req.file ? req.file.filename : this.avatar
             }, {
                 where: {
                     id: req.params.id
