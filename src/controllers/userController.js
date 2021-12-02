@@ -88,6 +88,7 @@ module.exports = {
             res.render('users/login', {
                 errors: errors.mapped(),
                 session: req.session,
+                old: req.body,
                 userInSession : req.session.userLogged ? req.session.userLogged : ''
             })
         }
@@ -138,7 +139,12 @@ module.exports = {
                 })
             })
         } else {
-            res.send('error')
+            res.render('users/profile', {
+                errors: errors.mapped(),
+                session: req.session,
+                old: req.body,
+                userInSession : req.session.userLogged ? req.session.userLogged : ''
+            })
         }
     },
 
