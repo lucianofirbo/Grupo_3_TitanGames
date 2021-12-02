@@ -22,30 +22,65 @@
         </form>
 
         <div class="userCards">
-            <% users.forEach(user => { %>
-                <form action="/admin/userEdit/<%-user.id%>?_method=PUT" class="formCard" method="POST">
-                    <div class="userCard">
-                        <img src="/img/users/<%- user.avatar %>">
-                        <p>User: <%-user.userName%></p>
-                        <p>Email: <%-user.email%></p>
-                        <select name="selectRol" id="selectRol">
-                            <% if ( user.rol == 1) { %>
-                                <option value="0">User</option>
-                                <option selected value="1">Admin</option>
-                            <% } else { %>
-                                <option value="1">Admin</option>
-                                <option selected value="0">User</option>
-                            <% } %>
-                        </select>
-                        <div class="editDelete">
-                            <button type="submit" class="edit" >Editar</button>
-                            <form action="/admin/deleteUserAdmin/<%-user.id%>?_method=DELETE" method="POST">
-                                <button type="submit" class="delete">Eliminar</button>
-                            </form>
+            <% if ( userInSession.rol == 2 ) { %>
+                <% users.forEach(user => { %>
+                    <form action="/admin/userEdit/<%-user.id%>?_method=PUT" class="formCard" method="POST">
+                        <div class="userCard">
+                            <img src="/img/users/<%- user.avatar %>">
+                            <p>User: <%-user.userName%></p>
+                            <p>Email: <%-user.email%></p>
+                            <select name="selectRol" id="selectRol">
+                                <% if ( user.rol == 1) { %>
+                                    <option value="0">User</option>
+                                    <option selected value="1">Admin</option>
+                                    <option value="2">SuperAdmin</option>
+                                <% } else if ( user.rol == 2 ) { %>
+                                    <option value="1">Admin</option>
+                                    <option value="0">User</option>
+                                    <option value="2" selected>SuperAdmin</option>
+                                <% } else { %>
+                                    <option value="1">Admin</option>
+                                    <option selected value="0">User</option>
+                                    <option value="2">SuperAdmin</option>
+                                <% } %>
+                            </select>
+                            <div class="editDelete">
+                                <button type="submit" class="edit" >Editar</button>
+                                <form action="/admin/deleteUserAdmin/<%-user.id%>?_method=DELETE" method="POST">
+                                    <button type="submit" class="delete">Eliminar</button>
+                                </form>
+                            </div>
                         </div>
-                    </div>
-                </form>
-            <% }) %>
+                    </form>
+                <% }) %>
+            <% } else { %>
+                <% users.forEach(user => { %>
+                    <form action="/admin/userEdit/<%-user.id%>?_method=PUT" class="formCard" method="POST">
+                        <div class="userCard">
+                            <img src="/img/users/<%- user.avatar %>">
+                            <p>User: <%-user.userName%></p>
+                            <p>Email: <%-user.email%></p>
+                            <select name="selectRol" id="selectRol">
+                                <% if ( user.rol == 1) { %>
+                                    <option value="0">User</option>
+                                    <option selected value="1">Admin</option>
+                                <% } else if ( user.rol == 2 ) { %>
+                                    <option value="1">Admin</option>
+                                    <option value="0">User</option>
+                                    <option value="2" selected>SuperAdmin</option>
+                                <% } else { %>
+                                    <option value="1">Admin</option>
+                                    <option selected value="0">User</option>
+                                <% } %>
+                            </select>
+                            <div class="editDelete">
+                                <button class="edit" >No puedes editar</button>
+                                    <button class="delete">No puedes eliminar</button>
+                            </div>
+                        </div>
+                    </form>
+                <% }) %>
+            <% } %>
         </div>
     </main>
 
