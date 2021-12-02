@@ -97,6 +97,7 @@ module.exports = {
                                 res.render('products/productAdd', { 
                                     dataBase: product, category, subcategory, 
                                     errors: errors.mapped(),
+                                    old: req.body,
                                     userInSession: req.session.userLogged ? req.session.userLogged : '' });
                             })
                     })
@@ -199,6 +200,7 @@ module.exports = {
                                 res.render('products/editProduct', { 
                                     product, category, subcategory, 
                                     errors: errors.mapped(),
+                                    old: req.body,
                                     userInSession: req.session.userLogged ? req.session.userLogged : '' });
                             })
                     })
@@ -305,6 +307,14 @@ module.exports = {
                 }) 
             })
         })
+    },
+    productStock: (req, res) => {
+        db.Product.findAll({
+            include: [{association: "categories"}, {association: "subcategory"}, {association: "productImage"}]
+        }).then ((productStock) => {
+            res.render('admin/productStock', {productStock,  userInSession : req.session.userLogged ? req.session.userLogged : ''})
+        })
     }
+
 
 }
