@@ -141,6 +141,7 @@ button.submit-register:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 15rem;
 }
 
 .redirect-register span{
