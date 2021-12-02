@@ -20,7 +20,7 @@
                 <form action="/user/login" id="form" method="POST">
                     <div class="form">
                         <div class="input-container">
-                            <input class="input-style" id="email" type="email" name="email" placeholder="Ingrese su email">
+                            <input class="input-style" id="email" type="email" name="email" placeholder="Ingrese su email" value="<%- old.email %>">
                             <% if(locals.errors && errors.email) { %>
                                 <strong class="text-danger"><%= errors.email.msg %></strong>
                             <% } %>
