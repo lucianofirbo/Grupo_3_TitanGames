@@ -18,7 +18,7 @@
                     <a href="http://localhost:3000/">
                         <p>Inicio</p>
                     </a>
-                    <a href="http://localhost:3000/productOffer"><p>Ófertas</p></a>
+                    <a href="http://localhost:3000/productOffer"><p>Ofertas</p></a>
                     <a href="http://localhost:3000/bestSellers"><p>Más vendidos</p></a>                    
                    
                 </div>
@@ -102,8 +102,10 @@
                 <a href="bestSellers">
                     <i class="fas fa-clipboard-check" class="icon-dropdown"></i><p>Mas vendido</p>
                 </a>
-                <a href="/productCart"><i class="fas fa-cart-plus" class="icon-dropdown"></i><p>Carrito</p>
-                </a>
+                <% if (userInSession) { %>
+                    <a href="/productCart"><i class="fas fa-cart-plus" class="icon-dropdown"></i><p>Carrito</p></a>
+                    <a href="/user/logout"><i class="fas fa-sign-out-alt"></i><p>Cerrar sesión</p></a>
+                <% } %>
             </div>
         </div>
         
