@@ -24,19 +24,23 @@
             </ol>
             <div class="carousel-inner" style="margin-top: 0;">
                 
+                <% let productSale1 = productSale[Math.floor(Math.random()*productSale.length)] %>
+                <% let productSale2 = productSale[Math.floor(Math.random()*productSale.length)] %>
+                <% let productSale3 = productSale[Math.floor(Math.random()*productSale.length)] %>
+                
                 <div class="carousel-item">
-                    <a href="http://localhost:3000/product/detail/<%- productSale[0].id %>">
-                        <img src="img/games/<%-productSale[0].productImage[0].image %>" class="d-block w-100" alt="game">
+                    <a href="http://localhost:3000/product/detail/<%- productSale1.id %>">
+                        <img src="img/games/<%-productSale1.productImage[0].image %>" class="d-block w-100" alt="game">
                     </a>
                 </div>
                 <div class="carousel-item">
-                    <a href="http://localhost:3000/product/detail/<%- productSale[2].id %>">
-                        <img src="img/games/<%-productSale[2].productImage[0].image %>" class="d-block w-100" alt="game">
+                    <a href="http://localhost:3000/product/detail/<%- productSale2.id %>">
+                        <img src="img/games/<%-productSale2.productImage[0].image %>" class="d-block w-100" alt="game">
                     </a>
                 </div>
                 <div class="carousel-item active">
-                    <a href="http://localhost:3000/product/detail/<%- productSale[3].id %>">
-                        <img src="img/games/<%-productSale[3].productImage[0].image %>" class="d-block w-100" alt="game">
+                    <a href="http://localhost:3000/product/detail/<%- productSale3.id %>">
+                        <img src="img/games/<%-productSale3.productImage[0].image %>" class="d-block w-100" alt="game">
                     </a>
                 </div>
                 
