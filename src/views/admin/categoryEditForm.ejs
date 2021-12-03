@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
     <%- include('../partials/head') -%>
-    <title>Categorias</title>
+    <title>Categorias</title>   
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel='stylesheet'>
     <link rel="stylesheet" href="/css/admin.css">
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/editSubyCat.css">
 </head>
 <body>
     <%- include('../partials/background') -%>
@@ -13,26 +14,36 @@
     <%- include('../partials/adminHeader') -%>
 
 
-    <section class="categories-container">
-        
-        <div class="cat-title">
-            <h1>Editar categoria</h1>
+    <section class="form-container">
+
+        <div class="form-responsive">
+
+            <div class="form-title">
+                <h1>Editar categoria</h1>
+            </div>
+    
+            <form action="/admin/categories/edit/<%= category.id %>?_method=PUT" method="POST" id="form">
+                <label for="name">Nombre:</label>
+                <input class="input-style" type="text" name="name" id="inputName" value="<%= locals.old ? old.name : category.name %>">
+                <% if(locals.errors && errors.name){ %>
+                    <span class="text-danger""><%= errors.name.msg%></span>
+                <% } %>
+                <span class="text-danger" id="inputNameErrors"></span>
+    
+                <div class="form-submit-cs">
+                    <button type="submit">Guardar</button>
+                    <span class="text-danger" id="submitErrors"></span>
+                </div>
+                
+            </form>
+
         </div>
-
-        <form action="/admin/categories/edit/<%= category.id %>?_method=PUT" method="POST" id="form">
-            <label for="name">Nombre:</label>
-            <input type="text" name="name" id="inputName" value="<%= locals.old ? old.name : category.name %>">
-            <% if(locals.errors && errors.name){ %>
-                <span class="text-danger""><%= errors.name.msg%></span>
-            <% } %>
-            <span class="text-danger" id="inputNameErrors"></span>
-            <button type="submit">Guardar</button>
-            <span class="text-danger" id="submitErrors"></span>
-        </form>
-
+        
     </section>
+
     <script src="/js/adminCategories.js"></script>
     <script src="/js/adminDashboard.js"></script>
     <script src="/js/validations/categoriesEditValidate.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 </body>
 </html>

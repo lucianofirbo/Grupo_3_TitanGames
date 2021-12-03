@@ -38,8 +38,18 @@ window.addEventListener("load", function () {
                     error = true;
                 }
             }
-            if (!error) {
-                $form.submit();
-              }
+            if(!error){
+              Swal.fire({
+                  title: 'Categoría añadida con éxito',
+                  icon: 'success',
+                  showCancelButton: false,
+                  confirmButtonColor: '#8ebd00',
+                  confirmButtonText: 'Ok!'
+              }).then((result) => {
+                  if (result.isConfirmed) {
+                      $form.submit()        
+                  }
+              })
+          }
         });
 });

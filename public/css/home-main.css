@@ -54,6 +54,36 @@ p.info-polygon{
     font-weight: bold;
 }
 
+.polygon-minicontainer-special {
+    background-color: var(--green2Titan);
+    width: 30px;
+    height: 50px;
+    position: absolute;
+    top: 0px;
+    right: 1rem;
+    box-shadow: -9px -8px 46px -1px rgba(0,0,0,0.61) inset;
+-webkit-box-shadow: -9px -8px 46px -1px rgba(0,0,0,0.61) inset;
+-moz-box-shadow: -9px -8px 46px -1px rgba(0,0,0,0.61) inset;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 100% 100%, 50% 70%, 0 100%, 0 100%);
+}
+
+.offer-info {
+    font-size: 0.7rem;
+    color: white;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.offer-info p {
+    margin: 10px 0 0 0;
+    font-weight: bold;
+    text-shadow: var(--neon-shadow);
+}
+
 @-webkit-keyframes slide-right {
     0% {
       -webkit-transform: translateX(-100%);
@@ -538,6 +568,16 @@ p.info-polygon{
     .games-main-container {
         width: 90%;
         margin: 1rem auto;
+    }
+
+    .special-offer {
+        height: 50%;
+        width: 65%;
+        margin: 0 auto;
+    }
+
+    .special-offer-game {
+        height: 26rem;
     }
 
 }
