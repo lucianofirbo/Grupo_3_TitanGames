@@ -453,16 +453,7 @@ input.search-form_input:focus {
         text-shadow: 0 0 5px rgb(255, 255, 255);
     }
 
-<<<<<<< HEAD
-    @media screen and (min-width: 768px) {
-        .search-form_input {
-            width: 300px;
-        }
-    }
-=======
     .search-form_input {
-        width: 200px;
+        width: 300px;
     }
-
->>>>>>> 5ad91022af4ccb9a4a0b649288153b10afb6086e
 }
