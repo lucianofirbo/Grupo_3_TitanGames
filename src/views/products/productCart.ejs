@@ -32,10 +32,13 @@
                     </div>
                     <% cartPriceTotal = cartPriceTotal + product.products.price %>
                 <% }) %>
-                <h4>Total: <%- cartPriceTotal %></h4>
-                <div class="button-container">
-                    <button type="submit" class="btn btn-submit" id="buyButton">Comprar</button>
+                <div class="totalSubmit">
+                    <h4>Total: $<%- cartPriceTotal %></h4>
+                    <div class="button-container">
+                        <button type="submit" class="btn btn-submit" id="buyButton">Comprar</button>
+                    </div>
                 </div>
+                
             <% } else { %>
                 <h4>No tienes juegos en el carrito</h4>
                 <div class="button-container">

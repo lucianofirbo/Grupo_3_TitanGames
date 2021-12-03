@@ -57,8 +57,10 @@
                                 <p>Email: <%- userInSession.email %></p>
                                 <p>Rol: <% if (userInSession.rol === 1) { %> 
                                         Admin
-                                    <% } else { %> 
-                                        Usuario
+                                    <% } else if (userInSession.rol === 2 ) { %> 
+                                        SuperAdmin
+                                    <% } else { %>
+                                        User
                                     <% } %>
                                 </p>
                         </div>

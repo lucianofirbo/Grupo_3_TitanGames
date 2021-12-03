@@ -157,6 +157,7 @@ p.info-polygon{
 .special-offer-game img {
     width: 100%;
     box-shadow: 2px 0.7698959708213806px 1.078827142715454px 2px #00000065;
+    height: 35vh;
 }
 
 
@@ -172,7 +173,7 @@ p.info-polygon{
     font-weight: 600;
     text-align: center;
     border-radius: 5%;
-    top: 40%;
+    top: 35%;
 }
 
 .special-offer-details p {
