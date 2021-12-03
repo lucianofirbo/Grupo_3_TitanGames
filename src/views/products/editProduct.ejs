@@ -82,10 +82,7 @@
                     <% } %>
                     <span class="text-danger" id="inputPriceErrors"></span>
                 </div>
-                <div class="field-product">
-                    <label>OFERTA:</label>
-                    <input class="style-input" type="number" name="offers" value="<%- product.offers %>" placeholder="Oferta del producto">
-                </div>
+                
             </div>
 
             <!-- Text Fields -->
@@ -151,9 +148,13 @@
                 </div>
 
                 <div class="fields">
-                    <div class="field-product">
+                    <!-- <div class="field-product">
                         <label>KEY:</label>
                         <input class="style-input" type="text" name="key">
+                    </div> -->
+                    <div class="field-product">
+                        <label>OFERTA:</label>
+                        <input class="style-input" type="number" name="offers" value="<%- product.offers %>" placeholder="Oferta del producto">
                     </div>
                     <div class="field-trailer">
                         <label>TRAILER:</label>
