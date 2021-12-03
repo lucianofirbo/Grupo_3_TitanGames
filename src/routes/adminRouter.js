@@ -16,7 +16,7 @@ router.get('/adminMain/:id', adminCheck, controller.adminMain);
 /** ** **  PRODUCTS CRUD ** ** **/
 
 /* Add Product */
-router.get('/products', adminCheck, controller.addRender);
+router.get('/products/:section', adminCheck, controller.addRender);
 router.post('/products', fileUpload.fields([
     { name: 'imagenProducto', maxCount: 1 },
     { name: 'imagenProducto2', maxCount: 1 },

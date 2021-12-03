@@ -60,7 +60,7 @@
                         <a href="/user/login"><i class="fas fa-user-circle hamburguer-account user-icon"></i></a>
                         <% } %>                
                     </div>
-                    <% if (userInSession.rol === 1) { %>
+                    <% if (userInSession.rol === 1 || userInSession.rol === 2) { %>
                         <div class="admin-dashlink">
                             <a href="/admin/adminMain/<%=userInSession.id%>"><small>Hey, Admin!</small></a>
                         </div>                       

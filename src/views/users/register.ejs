@@ -18,7 +18,7 @@
                 <img src="/img/logo-footer.png" alt="logotipo" class="logo-register">
                 <div class="registrate"><p>Registrate</p></div>
                 <div class="input-container-reg">
-                    <input class="input-style" id="name" type="name" name="userName" placeholder="Ingrese su nombre de usuario" value="<%= locals.old && old.name %>" >
+                    <input class="input-style" id="name" type="name" name="userName" placeholder="Ingrese su nombre de usuario" value="<%- locals.old ? old.userName : '' %>" >
                     <% if (locals.errors && errors.userName) { %>
                         <small class="text-danger"><%= errors.userName.msg %> </small>
                     <% } %>
@@ -26,7 +26,7 @@
                 </div>
 
                 <div class="input-container-reg">
-                    <input class="input-style" id="email" type="email" name="email" placeholder="Ingrese su email">
+                    <input class="input-style" id="email" type="email" name="email" placeholder="Ingrese su email" value="<%- locals.old ? old.email : '' %>">
                     <% if (locals.errors && errors.email) { %>
                         <small class="text-danger"><%= errors.email.msg %> </small>
                     <% } %>

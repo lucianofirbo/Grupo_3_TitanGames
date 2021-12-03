@@ -96,6 +96,8 @@ main h3 {
     cursor: pointer;
     font-weight: normal;
     color: var(--greenTitan);
+    background: none;
+    border: none;
 }
 
 .interes {

@@ -155,13 +155,16 @@ window.addEventListener('load', function() {
         }   
         if(!error){
             Swal.fire({
+                title: 'Producto subido con éxito',
                 icon: 'success',
-                title: '¡Producto Agregado!',
-                showConfirmButton: true,
-                timer: 2000
+                showCancelButton: false,
+                confirmButtonColor: '#8ebd00',
+                confirmButtonText: 'Ok!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $form.submit()        
+                }
             })
-            console.log('¡Producto Agregado!');
-            $form.submit()        
         }
     });
 
@@ -268,4 +271,27 @@ window.addEventListener('load', function() {
             }
         }
     });
+
+    let $buttonSubmitDelete = qs('#buttonSubmitDelete');
+
+        
+
+    if ($buttonSubmitDelete.addEventListener === 'click') {
+        Swal.fire({
+            title: '¿Estás segur@ de eliminar el producto?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#8ebd00',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Eliminar!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire(
+                '¡Producto eliminado!',
+                'success'
+              )
+            }
+        })
+    }
+
 });

@@ -16,56 +16,56 @@
         <div class="principal-container">
             <div class="title-product">
                 
-                 <!--SLIDER-->
-                 <div class="container">
-                    <h3><%- productF.product %></h4>
+                <!--SLIDER-->
+                <div class="container">
+                <h3><%- productF.product %></h4>
 
-                    <div class="mySlides">
-                        <img src="/img/games/<%- productF.productImage[0]?.image %>" style="width:100%">
-                    </div>
-                  
-                    <div class="mySlides">
-                      <img src="/img/games/<%- productF.productImage[1]?.image %>" style="width:100%">
-                    </div>
-                  
-                    <div class="mySlides">
-                      <img src="/img/games/<%- productF.productImage[2]?.image %>" style="width:100%">
-                    </div>
-                      
-                    <div class="mySlides">
-                      <img src="/img/games/<%- productF.productImage[3]?.image %>" style="width:100%">
-                    </div>
+                <div class="mySlides">
+                    <img src="/img/games/<%- productF.productImage[0]?.image %>" style="width:100%">
+                </div>
+                
+                <div class="mySlides">
+                    <img src="/img/games/<%- productF.productImage[1]?.image %>" style="width:100%">
+                </div>
+                
+                <div class="mySlides">
+                    <img src="/img/games/<%- productF.productImage[2]?.image %>" style="width:100%">
+                </div>
+                    
+                <div class="mySlides">
+                    <img src="/img/games/<%- productF.productImage[3]?.image %>" style="width:100%">
+                </div>
 
-                    <div class="mySlides">
-                        <img src="/img/games/<%- productF.productImage[4]?.image %>" style="width:100%">
+                <div class="mySlides">
+                    <img src="/img/games/<%- productF.productImage[4]?.image %>" style="width:100%">
+                </div>
+                
+                    
+                <a class="prev" onclick="plusSlides(-1)">❮</a>
+                <a class="next" onclick="plusSlides(1)">❯</a>
+                
+                <div class="caption-container">
+                    <p id="caption"></p>
+                </div>
+                
+                <div class="row">
+                    <div class="column">
+                    <img class="demo cursor" src="/img/games/<%- productF.productImage[0]?.image %>" style="width:100%" onclick="currentSlide(1)">
                     </div>
-                  
-                      
-                    <a class="prev" onclick="plusSlides(-1)">❮</a>
-                    <a class="next" onclick="plusSlides(1)">❯</a>
-                  
-                    <div class="caption-container">
-                      <p id="caption"></p>
+                    <div class="column">
+                    <img class="demo cursor" src="/img/games/<%- productF.productImage[1]?.image %>" style="width:100%" onclick="currentSlide(2)">
                     </div>
-                  
-                    <div class="row">
-                      <div class="column">
-                        <img class="demo cursor" src="/img/games/<%- productF.productImage[0]?.image %>" style="width:100%" onclick="currentSlide(1)">
-                      </div>
-                      <div class="column">
-                        <img class="demo cursor" src="/img/games/<%- productF.productImage[1]?.image %>" style="width:100%" onclick="currentSlide(2)">
-                      </div>
-                      <div class="column">
-                        <img class="demo cursor" src="/img/games/<%- productF.productImage[2]?.image %>" style="width:100%" onclick="currentSlide(3)">
-                      </div>
-                      <div class="column">
-                        <img class="demo cursor" src="/img/games/<%- productF.productImage[3]?.image %>" style="width:100%" onclick="currentSlide(4)">
-                      </div>
-                      <div class="column">
-                        <img class="demo cursor" src="/img/games/<%- productF.productImage[4]?.image %>" style="width:100%" onclick="currentSlide(5)">
-                      </div>
+                    <div class="column">
+                    <img class="demo cursor" src="/img/games/<%- productF.productImage[2]?.image %>" style="width:100%" onclick="currentSlide(3)">
                     </div>
-                  </div>
+                    <div class="column">
+                    <img class="demo cursor" src="/img/games/<%- productF.productImage[3]?.image %>" style="width:100%" onclick="currentSlide(4)">
+                    </div>
+                    <div class="column">
+                    <img class="demo cursor" src="/img/games/<%- productF.productImage[4]?.image %>" style="width:100%" onclick="currentSlide(5)">
+                    </div>
+                </div>
+                </div>
             </div>
             <!-- TERMINA SLIDER-->
             <div class="buy-product">
@@ -84,15 +84,12 @@
             <div>
                 <div class="img-prod-descrp">
                     <img src="/img/games/<%- productF.productImage[0]?.image %>" alt="">
-                   
                     <a href="#" onclick="toggle();">Mirar Trailer</a>
                     <div class="trailer">
                         <iframe height="200px" src="<%-productF.videoURL%>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         <img src="/img/close.png" class="close" onclick="toggle()">
                     </div>
-                    
                     <p> <%- productF.description %> </p>
-
                     <div class="categoriesDetail">
                         <div class="category-container">
                             <strong id="strong-category"> Categoria: </strong><p id="category"><%- productF.categories.name %></p>
@@ -101,11 +98,9 @@
                             <strong id="strong-category"> Sub-Categoria: </strong><p id="category"><%- productF.subcategory.name %></p>
                         </div>
                     </div>
-                    
                 </div>
             </div>
-            <div class="specs-product">
-    
+            <div class="specs-product">    
                 <div>
                     <h4>Especificaciones técnicas mínimas</h4>
                 <hr>
@@ -115,7 +110,6 @@
                     <li><%- productF.minimumRam %></li>
                 </ul>
                 </div>
-    
                 <div>
                     <h4>Especificaciones técnicas Recomendadas</h4>
                 <hr>

@@ -1,83 +1,148 @@
-main {
-    min-height: 75vh;
-    background-size: cover;
-}
-
 .search-form-admin {
-    margin-top: 58px;
+    margin: 58px 0 0 58px;
     padding: 5px;
     text-align: center;
-    background-color: #0d1219;
+    background-color: #3434348c;
+}
+
+.search-form-input {
+    border: none;
+    border-radius: 10px;
+    padding: 0 25px;
+    color: white;
+    font-size: 0.9rem;
+    height: 25px;
+    width: 64%;
+    opacity: 0.8;
+}
+
+.search-form-admin input:focus {
+    outline: none;
+    box-shadow: 0 0 6px white;
 }
 
 .userCards {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 35px 0;
+    margin: 0.5rem 0 0 4rem;
     flex-wrap: wrap;
-    gap: 25px;
+    gap: 25px;      
 }
 
-.userCard {
-    min-width: 202px;
-    background-color: #0000004d;
-    display: flex;
-    flex-direction: column;
+.userCard-ind {
+    background-color: #00000044;
     text-align: center;
-    border-radius: 5%;
+    border-radius: 3%;
     box-shadow: 0 5px 15px rgb(0 0 0 / 31%);
-    padding: 5px;
+    padding: 1rem;
+    width: 80%;
+    margin: 1rem;
+    border: 1px solid black;
+    backdrop-filter: blur(2px);
 }
 
-.userCard p {
+.info-user-container span {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.userCard-ind p {
     text-align: center;
     color: white;
-    font-weight: bold;
-    padding: 5px;
+    padding: 0.5rem;
 }
 
-.userCard img {
-    align-self: center;
+.userCard-ind .img-user-container img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
     width: 85px;
     height: 85px;
-    border-radius: 50%;
-}
-
-select {
-    text-align: center;
     align-self: center;
+}
+
+select.style-selects {
+    border: none;
+    height: 2.4rem;
+    margin: 10px 0 10px 0;
+    box-shadow: 0px 0px 5px rgb(255 255 255 / 37%);
+    padding: 5px 9px;
+    opacity: 0.7;
+    border-radius: 50px;
     width: 70%;
-    padding: 5px;
+    text-align: center;
 }
 
-option {
-    text-align: left;
+select.style-selects:focus {
+    box-shadow: 0 0 6px white;
+    outline: none;
 }
 
-.editDelete {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 5px;
-    margin-top: 5px;
-}
-
-.delete {
-    background-color: red;
-    border-radius: 5%;
-    padding: 4px;
+.edit-btn button{
+    width: 100%;
+    background-color: var(--green2Titan);
+    border: none;
+    padding: 0.5rem;
     color: white;
-    text-decoration: none;
-    font-weight: bold;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .5s ease;
 }
 
-.edit {
-    background-color: yellow;
-    border-radius: 5%;
-    padding: 4px;
-    color: white;
-    text-decoration: none;
+.edit-btn button i {
     font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.delete-btn button {
+    width: 100%;
+    background-color: rgb(252, 90, 90);
+    border: none;
+    padding: 0.5rem;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.delete-btn button i {
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+@media screen and (min-width: 768px){
+    .userCards {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .userCard-ind {
+        width: 33%;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .userCard-ind {
+        width: 18%;
+    }
+    .userAdmin-container {
+        min-height: 100vh;
+    }
+
+    .edit-btn button:hover {
+        background-color: var(--greenTitan);
+    }
+
+    .delete-btn button:hover {
+        background-color: rgb(245, 59, 59);
+    }
+
+    .search-form-admin {
+        padding: 1rem;
+    }
+    .search-form-input {
+        width: 45%;
+    }
 }
