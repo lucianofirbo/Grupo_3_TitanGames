@@ -239,6 +239,32 @@ form {
     z-index: 2;
 }
 
+.buttons button#delete-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(252, 90, 90);
+    color:white;
+    font-weight: bold;
+    border-radius: 25px;
+    text-decoration: none;
+    border: 1px solid rgb(255, 68, 68);
+    height: 100%;
+    max-height: 48px;
+    width: 10rem;
+    cursor: pointer;
+    outline: none;
+    font-size: 16px;
+    transition: all ease 1s;
+    padding: 20px 0;
+    transition: all .5s ease;
+}
+
+.buttons button#delete-button:hover {
+    background: rgb(255, 55, 55);
+    transform: scale(1.1);
+}
+
 @media screen and (min-width:768px){
     body .box-shop {
         margin-top: 60px;
