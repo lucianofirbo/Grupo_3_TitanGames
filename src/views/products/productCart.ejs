@@ -15,7 +15,8 @@
         <h3 class="detalle-compra">Detalles de compra</h3>
         <div class="detail-cart"> 
             
-            <% if(cart) { %>
+            <% if(cart.length > 0) { %>
+                <% let cartPriceTotal = 0 %>
                 <% cart.forEach(product => { %>
                     <div class="game-cart">
                         <div class="game-name">
@@ -24,17 +25,24 @@
                         </div>
                         <div class="price-flex">
                             <p><%-product.products.price%></p>
-                            <a id="remove-all" href="/user/deleteProductCart/<%-product.products.id%>?_method=DELETE" method="POST">eliminar</a>
+                            <form action="/user/deleteProductCart/<%-product.products.id%>?_method=DELETE" method="POST">
+                                <button id="remove-all">eliminar</button>
+                            </form>
                         </div>  
                     </div>
+                    <% cartPriceTotal = cartPriceTotal + product.products.price %>
                 <% }) %>
+                <h4>Total: <%- cartPriceTotal %></h4>
+                <div class="button-container">
+                    <button type="submit" class="btn btn-submit" id="buyButton">Comprar</button>
+                </div>
             <% } else { %>
                 <h4>No tienes juegos en el carrito</h4>
+                <div class="button-container">
+                    <button type="submit" class="btn btn-submit" style="background-color: grey; background-image: none;">Comprar</button>
+                </div>
             <% } %>            
-            
-            <div class="button-container">
-                <button type="submit" class="btn btn-submit">Comprar</button>
-            </div>
+
         </div>
     </main>
 
