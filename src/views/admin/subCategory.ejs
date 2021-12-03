@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <%- include('../partials/head') -%>
-    <title>Subcategorias</title>
+    <title>Subcategorias</title>   
     <link rel="stylesheet" href="/css/admin.css">
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="/css/index.css">
@@ -41,7 +41,7 @@
                                 <i class='bx bx-edit-alt' ></i>
                             </a>
                             <form action="/admin/subcategories/delete/<%- subcategory.id %>?_method=DELETE" method="POST">
-                                <button type="submit"><i class='bx bxs-trash' ></i></button>
+                                <button type="submit" onclick="return confirm(`¿Estás seguro de querer eliminar la subcategoría <%- subcategory.name %>`)"><i class='bx bxs-trash' ></i></button>
                             </form>
                         </td>
                     </tr>
@@ -52,6 +52,6 @@
             
     </section>
 
-    <script src="/js/adminDashboard.js"></script>    
+    <script src="/js/adminDashboard.js"></script>  
 </body>
 </html>
