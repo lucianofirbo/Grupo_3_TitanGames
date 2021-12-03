@@ -32,10 +32,15 @@
                     </div>
                     <% cartPriceTotal = cartPriceTotal + product.products.price %>
                 <% }) %>
-                <h4>Total: <%- cartPriceTotal %></h4>
-                <div class="button-container">
-                    <button type="submit" class="btn btn-submit" id="buyButton">Comprar</button>
+                <div class="totalSubmit">
+                    <h4>Total: $<%- cartPriceTotal %></h4>
+                    <div class="button-container">
+                        <form action="/user/deleteProductsCart?_method=DELETE" method="POST">
+                            <button type="submit" class="btn btn-submit" id="buyButton">Comprar</button>
+                        </form>
+                    </div>
                 </div>
+                
             <% } else { %>
                 <h4>No tienes juegos en el carrito</h4>
                 <div class="button-container">
@@ -59,5 +64,6 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
     <script src="/js/index.js"></script>
+    <script src="/js/cart.js"></script>
 </body>
 </html>

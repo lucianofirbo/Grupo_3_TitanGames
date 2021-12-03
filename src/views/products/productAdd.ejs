@@ -93,10 +93,7 @@
                     
                 </div>
 
-                <div class="field-product">
-                    <label>OFERTA:</label>
-                    <input class="style-input" type="number" name="offers" placeholder="Oferta del producto" value="<%= locals.old && old.offers %>">
-                </div>
+                
 
             </div>
 
@@ -173,9 +170,13 @@
                 </div>
 
                 <div class="fields">
-                    <div class="field-product">
+                    <!-- <div class="field-product">
                         <label>KEY:</label>
                         <input class="style-input" type="text" name="key" value="<%= locals.old && old.key %>">
+                    </div> -->
+                    <div class="field-product">
+                        <label>OFERTA:</label>
+                        <input class="style-input" type="number" name="offers" placeholder="Oferta del producto" value="<%= locals.old && old.offers %>">
                     </div>
 
                     <div class="field-trailer">
@@ -211,7 +212,7 @@
                 %>
                 <div class="game-stock">
                     <div class="game-name">
-                        <img src="/img/games/<%= product.productImage[0].image %>" alt="">
+                        <a href="/product/detail/<%-product.id%>"><img src="/img/games/<%= product.productImage[0].image %>" alt=""></a>
                     </div>
                     <div class="price">
                         <p>
@@ -224,7 +225,7 @@
                     <div class="edit-remove">
                         <a href="/admin/editProduct/<%-product.id%>" id="edit"><i class="far fa-edit"></i></a>
                         <form method="POST" action="/admin/deleteProduct/<%-product.id%>?_method=DELETE">
-                            <button class="delete-button" type="submit" id="buttonSubmitDelete" onclick="sweetAlert(`<%= product.id %>`)"><i class="fas fa-trash-alt"></i></button>
+                            <button class="delete-button" type="submit" id="buttonSubmitDelete" onclick="return confirm(`¿Estas segur@ de querer eliminar <%-product.product%>?`)"><i class="fas fa-trash-alt"></i></button>
                         </form>
                     </div>
                 </div>
@@ -236,25 +237,6 @@
     <script src="/js/adminCategories.js"></script>
     <script src="/js/adminDashboard.js" defer></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
-    <script>
-        function sweetAlert(id) {
-            Swal.fire({
-                title: '¿Estás segur@ de eliminar el producto?',
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#8ebd00',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Eliminar!'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                Swal.fire(
-                    '¡Producto eliminado!',
-                    'success'
-                )
-                }
-            })
-        }
-    </script>
 </body>
 
 </html>

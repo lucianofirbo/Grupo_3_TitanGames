@@ -4,6 +4,7 @@
 <head>
     <%- include('../partials/head') -%>
     <title>Editar: <%- product.product %></title>
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel='stylesheet'>
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="/css/admin.css">
     <link rel="stylesheet" href="/css/productAdd.css">
@@ -81,10 +82,7 @@
                     <% } %>
                     <span class="text-danger" id="inputPriceErrors"></span>
                 </div>
-                <div class="field-product">
-                    <label>OFERTA:</label>
-                    <input class="style-input" type="number" name="offers" value="<%- product.offers %>" placeholder="Oferta del producto">
-                </div>
+                
             </div>
 
             <!-- Text Fields -->
@@ -150,9 +148,13 @@
                 </div>
 
                 <div class="fields">
-                    <div class="field-product">
+                    <!-- <div class="field-product">
                         <label>KEY:</label>
                         <input class="style-input" type="text" name="key">
+                    </div> -->
+                    <div class="field-product">
+                        <label>OFERTA:</label>
+                        <input class="style-input" type="number" name="offers" value="<%- product.offers %>" placeholder="Oferta del producto">
                     </div>
                     <div class="field-trailer">
                         <label>TRAILER:</label>
@@ -171,5 +173,6 @@
     <script src="/js/productAdd.js"></script>
     <script src="/js/adminCategories.js"></script>
     <script src="/js/adminDashboard.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 </body>
 </html>

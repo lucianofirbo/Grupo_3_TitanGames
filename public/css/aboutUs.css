@@ -1,4 +1,5 @@
 @import url('general.css');
+@import url('scroll.css');
 
 * {
     margin: 0;
@@ -6,14 +7,22 @@
     padding: 0;
 }
 
-body.about-Us {
-    
+.page1 {   
     overflow: hidden;
-    background-color: black;
-    width: 100vw;
-    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.411);
+    min-height: 100vh;
 }
 
+.page1::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, #0d1119be, transparent);
+    z-index: 1000;
+    border: none;
+}
 
 .text-log {
     display: flex;
@@ -27,138 +36,93 @@ body.about-Us {
     left: 50%;
 }
 
-.img {
-    position: absolute;
-    height: 15%;
-    width: auto;
-    z-index: 1;
-    margin-top: 100px;
-    opacity: 0.7;
-    transition: all .4s ease;
+.text-log img {
+    -webkit-animation: fade-in 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: fade-in 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
-.img:hover {
-    opacity: 1;
+/**
+ * ----------------------------------------
+ * animation fade-in
+ * ----------------------------------------
+ */
+ @-webkit-keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+.aboutus-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 3rem;
+    height: 100vh;
 }
 
-.img1 {
-    top: 5%;
-    left: 5%;
-    animation: circle1 30s linear infinite;
-}
-.img2 {
-    top: 30%;
-    left: 10%;
-    animation: circle2 30s linear infinite;
-}
-.img3 {
-    top: -5%;
-    left: 30%;
-    animation: circle3 40s linear infinite;
-}
-.img4 {
-    left: 80%;
-    top: -5%;
-    animation: circle4 50s linear infinite;
-}
-.img5 {
-    left: 5%;
-    top: 60%;
-    animation: circle5 70s linear infinite;
-}
-.img6 {
-    left: 80%;
-    top: 40%;
-    animation: circle6 30s linear infinite;
-}
-.img7{
-    top: 60%;
-    left: 60%;
-    animation: circle7 50s linear infinite;
+.aboutus-section .page2 h1{
+    color:  white;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 2em;
+    letter-spacing: 3px;
 }
 
-@keyframes circle1 {
-    from {
-        transform: rotate(0deg)
-                   translate(-30px)
-                   rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg)
-                   translate(-30px)
-                   rotate(-360deg);
-    }
+.icons-box {
+    display: flex;
+    margin-top: 5rem;
 }
 
-@keyframes circle2 {
-    from {
-        transform: rotate(360deg)
-                   translate(-30px)
-                   rotate(-360deg);
-    }
-    to {
-        transform: rotate(0deg)
-                   translate(-30px)
-                   rotate(0deg);
-    }
+.icons-box .icon-about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-@keyframes circle3 {
-    from {
-        transform: rotate(360deg)
-                   translate(-30px)
-                   rotate(-360deg);
-    }
-    to {
-        transform: rotate(0deg)
-                   translate(-30px)
-                   rotate(0deg);
-    }
+
+
+
+.icon-about .icon {
+    background: rgba(26, 25, 25, 0.863);
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .5s ease;
 }
-@keyframes circle4 {
-    from {
-        transform: rotate(360deg)
-                   translate(-60px)
-                   rotate(-360deg);
-    }
-    to {
-        transform: rotate(0deg)
-                   translate(-60px)
-                   rotate(0deg);
-    }
+
+.icon-about .icon:hover {
+    transform: scale(1.5);
 }
-@keyframes circle5 {
-    from {
-        transform: rotate(360deg)
-                   translate(-80px)
-                   rotate(-360deg);
-    }
-    to {
-        transform: rotate(0deg)
-                   translate(-80px)
-                   rotate(0deg);
-    }
+
+.icon-about .icon i {
+    font-size: 1.5rem;
 }
-@keyframes circle6 {
-    from {
-        transform: rotate(-360deg)
-                   translate(-30px)
-                   rotate(360deg);
-    }
-    to {
-        transform: rotate(0deg)
-                   translate(-30px)
-                   rotate(0deg);
-    }
+
+.icon-about .title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
 }
-@keyframes circle7 {
-    from {
-        transform: rotate(360deg)
-                   translate(-50px)
-                   rotate(-360deg);
-    }
-    to {
-        transform: rotate(0deg)
-                   translate(-50px)
-                   rotate(0deg);
-    }
+
+.icon-about .title h4 {
+    color: white;
+    width: 80%;
+    text-align: center;
+    letter-spacing: 3px;
 }

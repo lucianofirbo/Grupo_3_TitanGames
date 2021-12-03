@@ -3,46 +3,58 @@
 <head>
     <%- include('../partials/head') -%>
     <title>SubCategorias</title>
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel='stylesheet'>
     <link rel="stylesheet" href="/css/admin.css">
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/editSubyCat.css">
 </head>
 <body>
     <%- include('../partials/background') -%>
     <%- include('../partials/sideBarAdmin') -%>
     <%- include('../partials/adminHeader') -%>
 
-    <section class="categories-container">
-        
-        <div class="cat-title">
-            <h1>Editar subcategoria</h1>
-        </div>
+    <section class="form-container">
 
-        <form action="/admin/subcategories/edit/<%=subcategory.id%>?_method=PUT" method="POST">
+        <div class="form-responsive">
 
-            <label for="name">Nombre:</label>
-            <input type="text" name="name" id="inputName" value="<%= locals.old ? old.name : subcategory.name %>">
-            <% if (locals.errors && errors.name) { %>
-                <small class="text-danger"><%= errors.name.msg %></small>
-            <% } %>
-            <span class="text-danger" id="inputNameErrors"></span>
-
-            <div class="col-12">
-                <select class="form-select categorySelect" id="specificSizeSelect" name="category">
-                  <option selected hidden value="">Categorias</option>
-                 <% locals.category.forEach(category => { %>
-                    <option value="<%- category.id %>" <%- locals.old && old.category == category.id ? "selected" : category.id == subcategory.categoryId ? "selected" : "" %>><%- category.name %></option>
-                 <% }) %>
-                </select>
+            <div class="form-title">
+                <h1>Editar subcategoria</h1>
             </div>
-            
-            <button type="submit">Guardar</button>
-            <span class="text-danger" id="submitErrors"></span>
-        </form>
+    
+            <form action="/admin/subcategories/edit/<%=subcategory.id%>?_method=PUT" method="POST" id="form">
+    
+                <label for="name">Nombre:</label>
+                <input class="input-style" type="text" name="name" id="inputName" value="<%= locals.old ? old.name : subcategory.name %>">
+                <% if (locals.errors && errors.name) { %>
+                    <small class="text-danger"><%= errors.name.msg %></small>
+                <% } %>
+                <span class="text-danger" id="inputNameErrors"></span>
+    
+                <div class="select-category">
+
+                    <select class="form-select categorySelect" id="specificSizeSelect" name="category">
+                      <option selected hidden value="">Categorias</option>
+                     <% locals.category.forEach(category => { %>
+                        <option value="<%- category.id %>" <%- locals.old && old.category == category.id ? "selected" : category.id == subcategory.categoryId ? "selected" : "" %>><%- category.name %></option>
+                     <% }) %>
+                    </select>
+
+                </div>
+                
+                <div class="form-submit-cs">
+                    <button type="submit">Guardar</button>
+                    <span class="text-danger" id="submitErrors"></span>
+                </div>
+                
+            </form>
+
+        </div>
+        
 
     </section>
     <script src="/js/adminCategories.js"></script>
     <script src="/js/adminDashboard.js"></script>
     <script src="/js/validations/subcategoriesEditValidate.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 </body>
 </html>

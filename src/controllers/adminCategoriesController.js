@@ -12,7 +12,6 @@ module.exports = {
     },
     categoryCreateForm: (req, res) => {
         res.render('admin/categoryForm', {
-            old: req.body,
             userInSession: req.session.userLogged ? req.session.userLogged : ''
         });
     },
@@ -38,7 +37,6 @@ module.exports = {
         db.Category.findByPk(req.params.id).then((category) => {
             res.render('admin/categoryEditForm', {
                 category,
-                old: req.body,
                 userInSession: req.session.userLogged ? req.session.userLogged : ''
             })
         })

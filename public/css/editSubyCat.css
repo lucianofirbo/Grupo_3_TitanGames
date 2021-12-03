@@ -51,19 +51,65 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-bottom: 3px;
+    margin-bottom: 0.8rem;
     height: 100%;
     border: none;
 }
 
 .input-style {
-    padding-left: 15px;
+    padding: 8px 8px 8px 20px;
     font-size: 0.8rem;
-    opacity: 0.8;
+    opacity: 0.6;
     border: none;
+    border-radius: 15px;
+}
+
+.form-submit-cs {
+    display: flex;
+    width: 8rem;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.form-submit-cs button {
+    width: 100%;
+    background: linear-gradient(-180deg,#9fbf00,#577402 91%);
+    padding: 0.5rem;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.form-submit-cs button:hover {
+    background: linear-gradient(-180deg,#577402,#9fbf00 91%);
 }
 
 input.input-style:focus {
+    box-shadow: 0 0 6px white;
+    outline: none;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+select.form-select {
+    border: none;
+    height: 2.4rem;
+    padding: 0.7;
+    opacity: 0.8;
+    display: flex;
+    margin: 0 auto;
+    width: 10rem;
+    border-radius: 15px;
+    text-align: center;
+}
+
+select.form-select:focus {
     box-shadow: 0 0 6px white;
     outline: none;
 }
@@ -78,7 +124,7 @@ input.input-style:focus {
     }
 
     .input-style {
-        padding: 0.3rem;
+        padding: 8px 8px 8px 20px;
         font-size: 1.2rem;
     }
 }

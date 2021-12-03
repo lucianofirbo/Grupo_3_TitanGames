@@ -41,7 +41,7 @@
                                 <i class='bx bx-edit-alt' ></i>
                             </a>
                             <form action="/admin/categories/delete/<%- category.id %>?_method=DELETE" method="POST">
-                                <button type="submit"><i class='bx bxs-trash' ></i></button>
+                                <button type="submit"><i class='bx bxs-trash' onclick="return confirm(`¿Estás seguro de querer eliminar la categoría <%- category.name %>?`)"></i></button>
                             </form>
                         </td>
                     </tr>

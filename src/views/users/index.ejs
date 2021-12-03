@@ -24,19 +24,23 @@
             </ol>
             <div class="carousel-inner" style="margin-top: 0;">
                 
+                <% let productSale1 = productSale[Math.floor(Math.random()*productSale.length)] %>
+                <% let productSale2 = productSale[Math.floor(Math.random()*productSale.length)] %>
+                <% let productSale3 = productSale[Math.floor(Math.random()*productSale.length)] %>
+                
                 <div class="carousel-item">
-                    <a href="http://localhost:3000/product/detail/<%- productSale[0].id %>">
-                        <img src="img/games/<%-productSale[0].productImage[0].image %>" class="d-block w-100" alt="game">
+                    <a href="http://localhost:3000/product/detail/<%- productSale1.id %>">
+                        <img src="img/games/<%-productSale1.productImage[0].image %>" class="d-block w-100" alt="game">
                     </a>
                 </div>
                 <div class="carousel-item">
-                    <a href="http://localhost:3000/product/detail/<%- productSale[1].id %>">
-                        <img src="img/games/<%-productSale[1].productImage[0].image %>" class="d-block w-100" alt="game">
+                    <a href="http://localhost:3000/product/detail/<%- productSale2.id %>">
+                        <img src="img/games/<%-productSale2.productImage[0].image %>" class="d-block w-100" alt="game">
                     </a>
                 </div>
                 <div class="carousel-item active">
-                    <a href="http://localhost:3000/product/detail/<%- productSale[2].id %>">
-                        <img src="img/games/<%-productSale[2].productImage[0].image %>" class="d-block w-100" alt="game">
+                    <a href="http://localhost:3000/product/detail/<%- productSale3.id %>">
+                        <img src="img/games/<%-productSale3.productImage[0].image %>" class="d-block w-100" alt="game">
                     </a>
                 </div>
                 
@@ -59,7 +63,7 @@
         </div>
     
         <div class="separator">
-            <p>Ofertas Especiales</p>
+            <p>Por Precio</p>
         </div>
 
         <!-- Productos en oferta -->
@@ -71,7 +75,7 @@
                     <a href="http://localhost:3000/searchPrice/250">
                         <img src="img/blob4.png" alt="" class="sale-img3">       
                     <div class="special-offer-details">
-                        <p>HASTA</p>
+                        <p>JUEGOS HASTA</p>
                         <p id="price-offer">$250</p>
                     </div>  
                     </a>       
@@ -81,7 +85,7 @@
                     <a href="http://localhost:3000/searchPrice/500">
                         <img src="img/blob5.png">         
                     <div class="special-offer-details">
-                        <p>HASTA</p>
+                        <p>JUEGOS HASTA</p>
                         <p id="price-offer">$500</p>
                     </div>   
                     </a>   
@@ -91,7 +95,7 @@
                     <a href="http://localhost:3000/searchPrice/100000">
                         <img src="img/blob6.png" alt="">                          
                     <div class="special-offer-details">
-                        <p>MÁS DE</p>
+                        <p>JUEGOS DE</p>
                         <p id="price-offer">$500+</p>
                     </div>   
                     </a>       
@@ -119,6 +123,13 @@
                     <div class="icon-cart">
                         <i class="fas fa-cart-plus"></i>
                     </div> 
+                    <% if (lastGames[i].offers) { %>
+                        <div class="polygon-minicontainer-special">
+                            <div class="offer-info">
+                                <p>-% <%- lastGames[i].offers %></p>
+                            </div>               
+                        </div>
+                    <% } %>
                 </div></a>
             </div>
         <% } %>

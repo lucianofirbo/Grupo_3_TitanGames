@@ -120,12 +120,13 @@
 .games {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
     background-color: #00000036;
-
     color: whitesmoke;
     font-weight: 600;
-
-    width: 95%;
+    width: 90%;
     text-align: center;
     border-radius: 0 0px 10px 10px;
     border: 1px solid black;
@@ -209,6 +210,69 @@
     border: none;
 }
 
+.polygon-container-special {
+    background-color: var(--greenTitan);
+    width: 50px;
+    height: 90px;
+    position: absolute;
+    top: 0px;
+    right: 1rem;
+    box-shadow: -9px -8px 46px -1px rgba(0,0,0,0.61) inset;
+-webkit-box-shadow: -9px -8px 46px -1px rgba(0,0,0,0.61) inset;
+-moz-box-shadow: -9px -8px 46px -1px rgba(0,0,0,0.61) inset;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 100% 100%, 50% 70%, 0 100%, 0 100%);
+}
+
+.polygon-offer-info {
+    font-size: 1rem;
+    color: white;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.polygon-offer-info p {
+    margin: 20px 0 0 0;
+    font-weight: bold;
+    text-shadow: var(--neon-shadow);
+}
+
+/*  FOR HOVER PRODUCTS */
+
+.polygon-minicontainer-special {
+    background-color: var(--green2Titan);
+    width: 30px;
+    height: 50px;
+    position: absolute;
+    top: 0px;
+    right: 1rem;
+    box-shadow: -9px -8px 46px -1px rgba(0,0,0,0.61) inset;
+-webkit-box-shadow: -9px -8px 46px -1px rgba(0,0,0,0.61) inset;
+-moz-box-shadow: -9px -8px 46px -1px rgba(0,0,0,0.61) inset;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 100% 100%, 50% 70%, 0 100%, 0 100%);
+}
+
+.offer-info {
+    font-size: 0.7rem;
+    color: white;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.offer-info p {
+    margin: 10px 0 0 0;
+    font-weight: bold;
+    text-shadow: var(--neon-shadow);
+}
+
+
 /* Media querys */
 
 @media screen and (min-width: 768px) {
@@ -216,6 +280,7 @@
     .search-searchbar h2{
         margin-top: 60px;
         font-size: 1.5rem;
+        text-shadow: var(--neon-shadow);
     }
 
     .games {

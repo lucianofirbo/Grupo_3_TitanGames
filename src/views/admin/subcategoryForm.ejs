@@ -3,6 +3,7 @@
 <head>
     <%- include('../partials/head') -%>
     <title>Subcategorias</title>
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel='stylesheet'>
     <link rel="stylesheet" href="/css/admin.css">
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="/css/editSubyCat.css">
@@ -42,10 +43,13 @@
                           <option value="<%- category.id %>" <%= locals.old && old.category == category.id ? "selected" : "" %> ><%- category.name %></option>
                        <% }) %>
                     </select>
-                    <% if (locals.errors && errors.categoryId) { %>
-                        <small class="text-danger"><%= errors.categoryId.msg %></small>
-                    <% } %>
-                    <span class="text-danger" id="categoryErrors"></span>
+                    
+                    <div class="errors-msg">
+                        <% if (locals.errors && errors.categoryId) { %>
+                            <small class="text-danger"><%= errors.categoryId.msg %></small>
+                        <% } %>
+                        <span class="text-danger" id="categoryErrors"></span>
+                    </div>
                     
                 </div>
                 
@@ -55,7 +59,6 @@
                     <span class="text-danger" id="submitErrors"></span>
 
                 </div>
-    
 
             </form>
 
@@ -65,5 +68,6 @@
     <script src="/js/adminCategories.js"></script>
     <script src="/js/adminDashboard.js"></script>
     <script src="/js/validations/subcategoriesAdminValidate.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 </body>
 </html>
