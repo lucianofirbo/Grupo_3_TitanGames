@@ -3,8 +3,10 @@
 
 <head>
     <%- include('../partials/head') -%>
-    <title>Titan Games</title>
+    <title>Titan Games</title>  
+    <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/search.css">
+
 </head>
 
 <body>
@@ -41,34 +43,39 @@
             221-274 section2
             276-329 section3
             -->
-            <section class="games" id="discover-games">
-
+            <section class="games-main">
+                <div class ="games-main-container">            
                 <% if (result.length > 0) { %>
                     <% result.forEach(product => { %>
-                        <div class="game">
-                            <div class="img-containerflex">
-                                <a href="http://localhost:3000/product/detail/<%-product.id%>">                        
-                                    <img src="/img/games/<%- product.productImage[0].image %>" alt="img del juego" class="games-img-w">
-                                </a>
+                        <div class="card-container">
+                            <div class="imgBx">
+                                <a href="/product/detail/<%-product.id%>"><img src="/img/games/<%-product.productImage[0].image%>"></a>
                             </div>
-
-                            <div class="game-text">
-                                <p><%= product.product %></p>
-                                <div class="price">
-                                    <p class="sale-box">-10%</p>
-                                    <p>$<%= product.price %></p>
+                            <a href="/product/detail/<%-product.id%>"><div class="content-card">
+                                <div class="contentBx">
+                                    <h3><%- product.product %><br> <span>$<%- product.price %></span> </h3>
                                 </div>
-                            </div>
+                                <div class="icon-cart">
+                                    <i class="fas fa-cart-plus"></i>
+                                </div> 
+                                <% if (product.offers) { %>
+                                <div class="polygon-minicontainer-special">
+                                    <div class="offer-info">
+                                        <p>-% <%- product.offers %></p>
+                                    </div>               
+                                </div>
+                                <% } %>
+                            </div></a>
                         </div>
-                        <hr class="game-discover-hr">
                     <% }) %>
-                <% } else {  %>
-                    <div class="nose">
-                        <h2 class="products-title" style="color: tomato;">No se encontró ningún juego que coincida con esa búsqueda</h2>
+                <% } else { %>
+                    <div class="empty">
+                        <h2 class="products-title" style="color: tomato;">No se encontró ningún jueguito que coincida con esa búsqueda</h2>
                     </div>
                 <% } %>
-
+                </div>
             </section>
+
         </div>
 
     </main>

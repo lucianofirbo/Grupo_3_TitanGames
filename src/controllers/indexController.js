@@ -31,9 +31,14 @@ module.exports = {
         });
     },
     about: (req, res) => {
-        res.render('users/aboutUs', {
-            userInSession : req.session.userLogged ? req.session.userLogged : ''
-        });
+        db.Product.findAll({
+            include: [{association: "categories"}, {association: "subcategory"}, {association: "productImage"}],
+        }).then((product) => {
+            res.render('users/aboutUs', {
+                product,
+                userInSession : req.session.userLogged ? req.session.userLogged : ''
+            });
+        })
     },
     search: (req, res) => {
         db.Product.findAll({

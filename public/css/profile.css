@@ -21,6 +21,18 @@ main {
 .text-shop2 {
     display: none;
 }
+
+.box-shop1 .circle1 a,
+.box-shop1 .text-shop a {
+    text-decoration: none;
+}
+
+.box-shop2 .circle2 a,
+.box-shop2 .text-shop a {
+    text-decoration: none;
+}
+
+
 .box-shop .box-shop1 {
     height: 100%;
     width: 50%;

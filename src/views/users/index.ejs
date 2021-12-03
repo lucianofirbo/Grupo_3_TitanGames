@@ -71,7 +71,7 @@
                     <a href="http://localhost:3000/searchPrice/250">
                         <img src="img/blob4.png" alt="" class="sale-img3">       
                     <div class="special-offer-details">
-                        <p>HASTA</p>
+                        <p>JUEGOS HASTA</p>
                         <p id="price-offer">$250</p>
                     </div>  
                     </a>       
@@ -81,7 +81,7 @@
                     <a href="http://localhost:3000/searchPrice/500">
                         <img src="img/blob5.png">         
                     <div class="special-offer-details">
-                        <p>HASTA</p>
+                        <p>JUEGOS HASTA</p>
                         <p id="price-offer">$500</p>
                     </div>   
                     </a>   
@@ -91,7 +91,7 @@
                     <a href="http://localhost:3000/searchPrice/100000">
                         <img src="img/blob6.png" alt="">                          
                     <div class="special-offer-details">
-                        <p>MÁS DE</p>
+                        <p>JUEGOS DE</p>
                         <p id="price-offer">$500+</p>
                     </div>   
                     </a>       
@@ -119,6 +119,13 @@
                     <div class="icon-cart">
                         <i class="fas fa-cart-plus"></i>
                     </div> 
+                    <% if (lastGames[i].offers) { %>
+                        <div class="polygon-minicontainer-special">
+                            <div class="offer-info">
+                                <p>-% <%- lastGames[i].offers %></p>
+                            </div>               
+                        </div>
+                    <% } %>
                 </div></a>
             </div>
         <% } %>
