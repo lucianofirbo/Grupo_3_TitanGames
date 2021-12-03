@@ -15,20 +15,20 @@
             <div class="box-shop">
                 <div class="box-shop1">
                     <div class="circle1">
-                        <i id="icon-shop" class="fas fa-shopping-cart"></i>
+                        <a href="http://localhost:3000/"><i id="icon-shop" class="fas fa-shopping-cart"></i></a>
                     </div>
                     <div class="text-shop">
-                        <h4>TIENDA</h4>
+                        <a href="http://localhost:3000/"><h4>TIENDA</h4></a>
                     </div>
                 </div>
                 <div class="box-shop2">
                     <div class="circle2">
                         <div>
-                            <i id="shop-icon2" class="fas fa-bolt"></i>
+                            <a href="/productOffer"><i id="shop-icon2" class="fas fa-bolt"></i></a>
                         </div>
                     </div>
                     <div class="text-shop">
-                        <h4>OFERTAS</h4>
+                        <a href="/productOffer"><h4>OFERTAS</h4></a>
                     </div>
                 </div>
             </div>
@@ -57,8 +57,10 @@
                                 <p>Email: <%- userInSession.email %></p>
                                 <p>Rol: <% if (userInSession.rol === 1) { %> 
                                         Admin
-                                    <% } else { %> 
-                                        Usuario
+                                    <% } else if (userInSession.rol === 2 ) { %> 
+                                        SuperAdmin
+                                    <% } else { %>
+                                        User
                                     <% } %>
                                 </p>
                         </div>
@@ -70,9 +72,8 @@
 
                     </div>
                     <div class="buttons">                        
-                        <!-- <a href="/user/register" class="buttonDelete">Eliminar cuenta</a> -->
                         <form action="/user/profile/delete/<%= userLogged.id %>?_method=DELETE"  method="POST">
-                            <button id="delete-button" type="submit" id="buttonSubmitDelete">Eliminar cuenta</button>
+                            <button id="delete-button" type="submit" id="buttonSubmitDelete" onclick="return alert('¿Estas seguro de querer eliminar el usuario?')">Eliminar cuenta</button>
                         </form>
                     </div>
                 </div>

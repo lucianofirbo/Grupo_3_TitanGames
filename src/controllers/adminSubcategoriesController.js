@@ -14,7 +14,6 @@ module.exports = {
         db.Category.findAll().then((category) => {
             res.render('admin/subcategoryForm', {
                 category,
-                old: req.body,
                 userInSession: req.session.userLogged ? req.session.userLogged : ''
             });
         })
@@ -46,7 +45,6 @@ module.exports = {
                 res.render('admin/subCategoryEditForm', {
                     subcategory,
                     category,
-                    old: req.body,
                     userInSession: req.session.userLogged ? req.session.userLogged : ''
                 })
             })

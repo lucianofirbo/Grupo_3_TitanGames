@@ -272,26 +272,4 @@ window.addEventListener('load', function() {
         }
     });
 
-    let $buttonSubmitDelete = qs('#buttonSubmitDelete');
-
-        
-
-    if ($buttonSubmitDelete.addEventListener === 'click') {
-        Swal.fire({
-            title: '¿Estás segur@ de eliminar el producto?',
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#8ebd00',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Eliminar!'
-        }).then((result) => {
-            if (result.isConfirmed) {
-              Swal.fire(
-                '¡Producto eliminado!',
-                'success'
-              )
-            }
-        })
-    }
-
 });

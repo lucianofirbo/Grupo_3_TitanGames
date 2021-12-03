@@ -212,6 +212,6 @@ tr:nth-child(even){
     justify-content: center;
     align-items: center;
     width: 80%;
-    margin-left: 4rem;
+    margin: auto;
     margin-top: 5rem;
 }

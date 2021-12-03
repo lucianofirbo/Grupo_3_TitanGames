@@ -35,4 +35,7 @@ router.get('/addToCart/:id', userCheck, controller.addToCart);
 /* Ruta para eliminar producto de carrito */
 router.delete('/deleteProductCart/:id', userCheck, controller.deleteProductCart);
 
+/* Ruta para eliminar todos los productos del carrito */
+router.delete('/deleteProductsCart', userCheck, controller.deleteProductsCart);
+
 module.exports = router;

@@ -207,6 +207,17 @@ module.exports = {
         .then(() => {
             res.redirect('/product/cart')
         })
+    },
+
+    deleteProductsCart: (req, res) => {
+        db.Cart.destroy({
+            where: {
+                userId: req.session.userLogged.id
+            }
+        })
+        .then(() => {
+            res.redirect('/product/cart')
+        })
     }
 
 }
