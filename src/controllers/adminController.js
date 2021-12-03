@@ -180,10 +180,10 @@ module.exports = {
                             }
                         })
                         db.ProductImage.bulkCreate(images)
-                            .then(() => res.redirect('/admin/products'))
+                            .then(() => res.redirect('/admin/products/section2'))
                     })
                 }
-                res.redirect('/admin/products')
+                res.redirect('/admin/products/section2')
             })
         } else {
             db.Product.findOne({
@@ -222,7 +222,7 @@ module.exports = {
                     include: [{ association: 'productImage' }]
                 })
                     .then(() => {
-                        res.redirect('/admin/products')
+                        res.redirect('/admin/products/section2')
                     })
             })
     },
